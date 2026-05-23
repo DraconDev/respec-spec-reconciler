@@ -1,0 +1,31 @@
+{
+  "name": "respec",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Continuous spec-driven reconciliation for Pi",
+  "license": "MIT",
+  "author": "Dracon",
+  "keywords": ["pi-package", "spec", "reconciliation"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracon/respec.git",
+    "directory": "."
+  },
+  "pi": {
+    "extensions": ["./src/index.ts"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "scripts": {
+    "dev": "pi -e ./src/index.ts",
+    "build": "tsc",
+    "verify": "bash verify-spec.sh"
+  },
+    "dependencies": {
+    "@earendil-works/pi-coding-agent": "^0.75.0",
+    "@earendil-works/pi-tui": "^0.75.0",
+    "typescript": "^5.0.0"
+  }
+}
