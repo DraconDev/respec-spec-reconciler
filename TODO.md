@@ -9,41 +9,42 @@
 
 ## TODO
 
-### Phase 1: Remove verify-script infrastructure
-- [ ] Remove `src/verifier.ts` — no custom verifier
-- [ ] Remove `src/delta-engine.ts` — no verifier output to parse
-- [ ] Remove `scripts/verify-spec.sh` — not needed
-- [ ] Remove `templates/verify-template.sh` — not needed
-- [ ] Clean `src/index.ts` — remove verifier/delta imports
+### Phase 1: Remove verify-script infrastructure ✅
+- [x] Remove `src/verifier.ts` — no custom verifier
+- [x] Remove `src/delta-engine.ts` — no verifier output to parse
+- [x] Remove `scripts/verify-spec.sh` — not needed
+- [x] Remove `templates/verify-template.sh` — not needed
+- [x] Clean `src/commands.ts` — remove verifier/delta imports
+- [x] Clean `src/loop-controller.ts` — rewrite without verifier
 
-### Phase 2: Simplify spec parser
-- [ ] Rewrite `src/spec-parser.ts` — parse items with `[x]` / `[ ]` checkboxes
-- [ ] Each item has: name, description, checked status, verification hint
-- [ ] Support `### [x] Item name` or `- [x] Item name` format
+### Phase 2: Simplify spec parser ✅
+- [x] Rewrite `src/spec-parser.ts` — parse items with `[x]` / `[ ]` checkboxes
+- [x] Each item has: name, description, checked status, verification hint
+- [x] Support `### [x] Item name` or `- [x] Item name` format
 
-### Phase 3: Rewrite SPEC.md
-- [ ] New SPEC.md with operational, checkable requirements
-- [ ] Items reference standard dev commands where applicable
-- [ ] Show example of what "done" looks like
+### Phase 3: Rewrite SPEC.md ✅
+- [x] New SPEC.md with operational, checkable requirements
+- [x] Items reference standard dev commands where applicable
+- [x] Checkbox format
 
-### Phase 4: Simplify loop controller
-- [ ] Pick next unchecked item from spec
-- [ ] Track retries (stall detection still useful)
-- [ ] Agent marks items complete
-- [ ] Spec changes regenerate the queue
-- [ ] No verifier-based state transitions
+### Phase 4: Simplify loop controller ✅
+- [x] Pick next unchecked item from spec
+- [x] Track retries (stall detection still useful)
+- [x] Agent marks items complete via SPEC.md edits
+- [x] Spec changes regenerate the queue
+- [x] No verifier-based state transitions
 
-### Phase 5: Update commands
-- [ ] `/spec-init` — scaffold new-style SPEC.md only, no verify script
-- [ ] `/spec-status` — show done/undone items, current target
-- [ ] `/respec` — simplified loop: pick item, work, mark done, repeat
+### Phase 5: Update commands ✅
+- [x] `/spec-init` — scaffold new-style SPEC.md only, no verify script
+- [x] `/spec-status` — show done/undone items, current target
+- [x] `/respec` — simplified loop: pick item, work, mark done, repeat
 
 ### Phase 6: Update docs
 - [ ] Rewrite README to reflect new model
 - [ ] Update package.json description/keywords
-- [ ] Update SPEC.md architecture section if applicable
+- [ ] Push to GitHub
 
 ### Phase 7: Verify
-- [ ] TypeScript compiles cleanly
+- [x] TypeScript compiles cleanly
 - [ ] Extension loads via `pi -e ./src/index.ts`
 - [ ] Commands register correctly
