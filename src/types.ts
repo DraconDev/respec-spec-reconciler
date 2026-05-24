@@ -1,63 +1,46 @@
-// Core type definitions for respec
+// Core type definitions for respec — spec-as-source-of-truth model
 
+// A single requirement in SPEC.md
+export interface SpecItem {
+	name: string; // The requirement description
+	checked: boolean; // [x] = done, [ ] = not done
+	index: number; // Position in the spec
+	verification?: string; // How to verify (e.g., "npm test", "curl localhost:3000")
+	body?: string; // Supporting text under the item
+}
+
+// Round of reconciliation
+export interface RoundRecord {
+	round: number;
+	target: string; // Which item was worked on
+	pass: boolean; // Was the item checked off?
+	checkedCount: number; // How many items done after this round
+	turnsUsed: number;
+	timestamp: number;
+}
+
+// Escape valve when stuck
+export interface EscapeValve {
+	type: "stall" | "max-rounds" | "spin-guard";
+	item: string;
+	detail: string;
+	blockedAt: number;
+}
+
+// Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
 	status: "idle" | "active" | "paused" | "done" | "blocked";
-	focusedSpecKey?: string; // Branch-local focused spec for continuation
+	items: SpecItem[]; // Current spec items
+	currentTarget?: SpecItem; // Item currently being worked on
 	currentRound: number;
 	maxRounds: number;
-	budgetPerRound: number;
 	turnsThisRound: number;
-	currentTarget?: string; // Name of current invariant being fixed
-	invariantFailures: Map<string, number>; // invariant name → consecutive failure count
-	escapeValve?: {
-		type: "stall" | "max-rounds" | "spin-guard";
-		invariant: string;
-		detail: string;
-		blockedAt: number;
-	};
+	maxTurnsPerRound: number;
+	failureCounts: Record<string, number>; // item name → consecutive failures
 	roundHistory: RoundRecord[];
-	lastVerifierOutput?: string;
-	lastVerifierExitCode?: number;
-	contractFingerprints: {
-		specMtime: number;
-		verifyMtime: number;
-	};
-	queueConfig: QueueConfig;
+	escapeValve?: EscapeValve;
 	userInterrupted: boolean;
-}
-
-export interface RoundRecord {
-	round: number;
-	target: string;
-	pass: boolean;
-	turnsUsed: number;
-	timestamp: number;
-	verifierOutput?: string;
-}
-
-export interface QueueConfig {
-	displayMode: "compact" | "full" | "off";
-	promptMaxItems: number;
-	widgetMaxItems: number;
-}
-
-export interface InvariantResult {
-	name: string;
-	index: number;
-	passed: boolean;
-	output?: string;
-}
-
-export interface QueueItem {
-	name: string;
-	index: number;
-	status: "passed" | "failing" | "unknown" | "current" | "blocked";
-}
-
-export interface VerifierOutput {
-	exitCode: number;
-	stdout: string;
-	stderr: string;
-	results: InvariantResult[];
+	lastSpecMtime?: number;
+	focusedSpecKey?: string;
 }
