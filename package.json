@@ -5,7 +5,15 @@
   "description": "Continuous spec-driven reconciliation for Pi",
   "license": "MIT",
   "author": "Dracon",
-  "keywords": ["pi-package", "spec", "reconciliation"],
+  "keywords": [
+    "spec-reconciler",
+    "spec",
+    "reconciliation",
+    "invariant",
+    "verifier",
+    "pi-extension",
+    "ai-agent"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DraconDev/spec-reconciler.git",
