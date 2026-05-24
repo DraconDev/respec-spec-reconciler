@@ -1,99 +1,139 @@
-// Parse SPEC.md to extract invariant headings
+// Parse SPEC.md — extract requirements with [x]/[ ] checkboxes
+// Supports headings ### [x] Name or list items - [x] Name
 
 import { readFileSync } from "fs";
-import type { InvariantResult } from "./types.js";
+import type { SpecItem } from "./types.js";
 
 export interface ParsedSpec {
 	path: string;
-	invariants: InvariantInfo[];
+	items: SpecItem[];
 }
 
-export interface InvariantInfo {
-	name: string;
-	index: number;
-	lineNumber: number;
-}
-
-// Parse the SPEC.md file and extract invariant headings
+// Parse SPEC.md and extract requirement items
 export function parseSpec(specPath: string): ParsedSpec | null {
 	try {
 		const content = readFileSync(specPath, "utf-8");
 		const lines = content.split("\n");
-		const invariants: InvariantInfo[] = [];
-
-		let currentSection = "";
-		let inInvariantsSection = false;
+		const items: SpecItem[] = [];
+		let index = 0;
 
 		for (let i = 0; i < lines.length; i++) {
 			const line = lines[i];
+			const trimmed = line.trim();
 
-			// Track ## Invariants sections
-			if (line.startsWith("## ")) {
-				currentSection = line.slice(3).toLowerCase();
-				inInvariantsSection = currentSection === "invariants";
-				continue;
-			}
+			// Match ### [x] Item name or ### [ ] Item name
+			const headingMatch = trimmed.match(/^###\s+\[(x| )\]\s+(.+)/i);
+			// Match - [x] Item name or - [ ] Item name
+			const listMatch = trimmed.match(/^[-*]\s+\[(x| )\]\s+(.+)/i);
 
-			// Look for ### N. Invariant name patterns
-			const invariantMatch = line.match(/^### (\d+)\.\s+(.+)/);
-			if (invariantMatch && inInvariantsSection) {
-				invariants.push({
-					index: parseInt(invariantMatch[1]!, 10),
-					name: invariantMatch[2]!.trim(),
-					lineNumber: i + 1,
+			const match = headingMatch || listMatch;
+			if (match) {
+				const checked = match[1]!.toLowerCase() === "x";
+				const name = match[2]!.trim();
+				index++;
+
+				// Collect body text until next checkbox or heading
+				const bodyLines: string[] = [];
+				let verification: string | undefined;
+
+				for (let j = i + 1; j < lines.length; j++) {
+					const nextLine = lines[j]!.trim();
+					// Stop at next checkbox or heading
+					if (/^(###|[-*])\s+\[[x ]\]/.test(nextLine)) break;
+					if (/^##/.test(nextLine)) break;
+					if (nextLine) {
+						bodyLines.push(nextLine);
+						// Extract verification hint if present
+						const verifyMatch = nextLine.match(/^(?:verify|check|test|run):\s*(.+)/i);
+						if (verifyMatch) {
+							verification = verifyMatch[1]!.trim();
+						}
+					}
+				}
+
+				items.push({
+					name,
+					checked,
+					index,
+					verification,
+					body: bodyLines.join("\n") || undefined,
 				});
 			}
 		}
 
 		return {
 			path: specPath,
-			invariants,
+			items,
 		};
 	} catch {
 		return null;
 	}
 }
 
-// Parse verifier output to extract per-invariant results
-export function parseVerifierOutput(output: string, invariants: InvariantInfo[]): InvariantResult[] {
-	const results: InvariantResult[] = [];
+// Find the first unchecked item (the next target)
+export function findFirstUnchecked(items: SpecItem[]): SpecItem | null {
+	for (const item of items) {
+		if (!item.checked) return item;
+	}
+	return null;
+}
 
-	for (const invariant of invariants) {
-		// Look for PASS/FAIL markers for this invariant
-		const escapedName = invariant.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-		const passMatch = new RegExp(`--- Invariant ${invariant.index}:.*?---\\nPASS:?\\s*(.*)`, "i").exec(output);
-		const failMatch = new RegExp(`--- Invariant ${invariant.index}:.*?---\\nFAIL:?\\s*(.*)`, "i").exec(output);
+// Check if all items are checked
+export function allChecked(items: SpecItem[]): boolean {
+	return items.length > 0 && items.every((i) => i.checked);
+}
 
-		let passed = false;
-		let outputText = "";
+// Count checked items
+export function countChecked(items: SpecItem[]): number {
+	return items.filter((i) => i.checked).length;
+}
 
-		if (passMatch) {
-			passed = true;
-			outputText = passMatch[1] || "passed";
-		} else if (failMatch) {
-			passed = false;
-			outputText = failMatch[1] || "failed";
-		} else {
-			// Check if any output exists for this invariant
-			const idxPattern = `--- Invariant ${invariant.index}:`;
-			const idx = output.indexOf(idxPattern);
-			if (idx !== -1) {
-				// Get text after the invariant header up to the next --- or end
-				const endIdx = output.indexOf("\n---", idx + 1);
-				outputText = output.slice(idx, endIdx === -1 ? undefined : endIdx);
-				passed = outputText.includes("PASS");
-			} else {
-				outputText = "unknown";
-			}
-		}
+// Format item status for display
+export function formatItemStatus(item: SpecItem, isTarget?: boolean): string {
+	const marker = item.checked ? "[x]" : isTarget ? "[>]" : "[ ]";
+	return `${marker} ${item.name}`;
+}
 
-		results.push({
-			name: invariant.name,
-			index: invariant.index,
-			passed,
-			output: outputText,
-		});
+// Format compact queue for display
+export function formatCompactQueue(items: SpecItem[], targetIndex?: number, maxItems?: number): string[] {
+	const lines: string[] = [];
+	const limit = maxItems ?? 10;
+	const checked = countChecked(items);
+
+	lines.push(`${checked}/${items.length} done`);
+	for (const item of items.slice(0, limit)) {
+		const isTarget = item.index === targetIndex && !item.checked;
+		lines.push(formatItemStatus(item, isTarget));
+	}
+	if (items.length > limit) {
+		lines.push(`... +${items.length - limit} more`);
 	}
 
-	return results;
+	return lines;
+}
+
+// Update a parsed spec with mark-checked status (for persisting to SPEC.md)
+export function markItemChecked(
+	specPath: string,
+	itemName: string,
+	checked: boolean
+): string | null {
+	try {
+		const content = readFileSync(specPath, "utf-8");
+		const escapedName = itemName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+		// Match the item line and replace [ ] with [x] or vice versa
+		const oldStatus = checked ? "[ ]" : "[x]";
+		const newStatus = checked ? "[x]" : "[ ]";
+
+		const pattern = new RegExp(
+			`^(###|[-*])\\s+\\[${checked ? " " : "x"}\\]\\s+${escapedName}\\s*$`,
+			"im"
+		);
+		const replacement = `$1 ${newStatus} ${itemName}`;
+
+		return content.replace(pattern, replacement);
+	} catch {
+		return null;
+	}
 }

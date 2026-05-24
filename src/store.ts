@@ -1,10 +1,11 @@
-// State store for respec - in-memory + pi.appendEntry persistence
+// State store for respec — in-memory + pi.appendEntry persistence
 
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
-import type { RespecState, RoundRecord, QueueConfig } from "./types.js";
+import type { RespecState, RoundRecord, SpecItem } from "./types.js";
 
-const STORAGE_KEY = "respec-state";
-const STORAGE_PREFIX = "respec-";
+const STATE_CUSTOM_TYPE = "respec-state";
+const ROUND_CUSTOM_TYPE = "respec-round";
+const FOCUS_CUSTOM_TYPE = "respec-focus";
 
 // In-memory store (per-extension-instance)
 let store: RespecState | null = null;
@@ -28,25 +29,18 @@ export function clearStore(): void {
 }
 
 // Default state factory
-export function createDefaultState(specPath: string): RespecState {
+export function createDefaultState(specPath: string, items?: SpecItem[]): RespecState {
 	return {
 		specKey: specPath,
 		status: "idle",
 		currentRound: 0,
 		maxRounds: 50,
-		budgetPerRound: 15,
 		turnsThisRound: 0,
-		invariantFailures: new Map(),
+		maxTurnsPerRound: 15,
+		currentTarget: undefined,
+		items: items ?? [],
+		failureCounts: {},
 		roundHistory: [],
-		contractFingerprints: {
-			specMtime: 0,
-			verifyMtime: 0,
-		},
-		queueConfig: {
-			displayMode: "compact",
-			promptMaxItems: 3,
-			widgetMaxItems: 5,
-		},
 		userInterrupted: false,
 	};
 }
@@ -54,33 +48,16 @@ export function createDefaultState(specPath: string): RespecState {
 // Persist state to session via appendEntry
 function persistState(state: RespecState): void {
 	if (!pi) return;
-
-	// Serialize Map to array for JSON
-	const serialized = {
-		...state,
-		invariantFailures: Array.from(state.invariantFailures.entries()),
-	};
-
-	pi.appendEntry(STORAGE_KEY, serialized);
+	pi.appendEntry(STATE_CUSTOM_TYPE, state);
 }
 
 // Restore state from session entries
-export function restoreState(entries: Array<{ type: string; data?: unknown }>): RespecState | null {
+export function restoreState(
+	entries: Array<{ type: string; data?: unknown }>
+): RespecState | null {
 	for (const entry of entries) {
-		if (entry.type === STORAGE_KEY && entry.data && typeof entry.data === "object") {
-			const data = entry.data as Record<string, unknown>;
-			// Deserialize array back to Map
-			const invFailures = new Map<string, number>();
-			if (Array.isArray(data.invariantFailures)) {
-				for (const [key, value] of data.invariantFailures as [string, number][]) {
-					invFailures.set(key, value);
-				}
-			}
-
-			return {
-				...data,
-				invariantFailures: invFailures,
-			} as RespecState;
+		if (entry.type === STATE_CUSTOM_TYPE && entry.data && typeof entry.data === "object") {
+			return entry.data as RespecState;
 		}
 	}
 	return null;
@@ -89,16 +66,24 @@ export function restoreState(entries: Array<{ type: string; data?: unknown }>): 
 // Append a round record to session
 export function appendRoundRecord(record: RoundRecord): void {
 	if (!pi) return;
-	pi.appendEntry(`${STORAGE_PREFIX}round`, record);
+	pi.appendEntry(ROUND_CUSTOM_TYPE, record);
 }
 
 // Restore round records from session entries
-export function restoreRoundRecords(entries: Array<{ type: string; data?: unknown }>): RoundRecord[] {
+export function restoreRoundRecords(
+	entries: Array<{ type: string; data?: unknown }>
+): RoundRecord[] {
 	const records: RoundRecord[] = [];
 	for (const entry of entries) {
-		if (entry.type === `${STORAGE_PREFIX}round` && entry.data) {
+		if (entry.type === ROUND_CUSTOM_TYPE && entry.data) {
 			records.push(entry.data as RoundRecord);
 		}
 	}
 	return records.sort((a, b) => a.round - b.round);
+}
+
+// Persist focus entry
+export function persistFocus(specKey?: string): void {
+	if (!pi) return;
+	pi.appendEntry(FOCUS_CUSTOM_TYPE, { specKey });
 }
