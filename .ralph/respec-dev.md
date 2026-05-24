@@ -1,93 +1,80 @@
-## respec - Spec Reconciler Plugin ✅ COMPLETE
+# respec — Spec Reconciler Plugin
+
+## Pivot: v0.2 — Spec-as-Source-of-Truth Model
 
 ### Context
-Working Pi extension that provides `/spec-init`, `/spec-status`, and `/respec` commands for spec-driven reconciliation.
+Complete rewrite away from verifier-driven model. The old model required a custom `verify-spec.sh` that translated English spec items into shell checks — the same impossible translation problem every agent faces. The new model keeps SPEC.md as the single source of truth and lets the agent verify using standard developer tools.
 
-### Status: ALL COMPLETE
+### What Changed
 
-**Phase 1: Ship the code ✅**
-- [x] package.json + tsconfig.json
-- [x] src/index.ts — registers /respec, /spec-init, /spec-status commands
-- [x] src/store.ts — in-memory state + appendEntry persistence
-- [x] src/spec-parser.ts — parse SPEC.md headings
-- [x] src/verifier.ts — run verify-spec.sh, parse exit code
-- [x] src/delta-engine.ts — build queue from verifier output
-- [x] src/loop-controller.ts — state machine + agent_end hook for loop continuation
-- [x] tsc --noEmit compiles ✅ (TS1470 warning is benign)
-- [x] Extension loads via pi -e ./src/index.ts ✅
+**Removed:**
+- `src/verifier.ts` — custom verifier execution
+- `src/delta-engine.ts` — verifier output parsing and queue building
+- `scripts/verify-spec.sh` — custom shell verifier
+- `templates/verify-template.sh` — verifier template
 
-**Phase 2: Load as local plugin ✅**
-- [x] Add to Pi plugins: `pi install /home/dracon/Dev/respec`
-- [x] /spec-init scaffolds SPEC.md + scripts/verify-spec.sh ✅
-- [x] /respec registers and loop mechanism works ✅
+**Rewritten:**
+- `src/types.ts` — SpecItem model with `[x]`/`[ ]` checkboxes
+- `src/spec-parser.ts` — parses checkbox items, not invariants
+- `src/loop-controller.ts` — picks next unchecked item, simpler state machine
+- `src/commands.ts` — no verify script, cleaner flow
+- `src/store.ts` — updated types
+- `SPEC.md` — checkbox format, operational requirements
+- `README.md` — reflects new model and philosophy
 
-**Phase 3: Use on a real project ✅**
-- [x] 13. Pick a real project to test on — respec repo itself
-- [x] 14. Run /spec-init there — SPEC.md exists, verify-spec.sh created
-- [x] 15. Write invariants + verify-spec.sh — 3 invariants (files, scripts, pi loads)
-- [x] 16. Run /respec — commands register, loop ready
-- [x] 17. Fix whatever it breaks — SPEC_DIR path bug fixed ✅
+**Unchanged:**
+- `src/index.ts` — same entry point, same registration
 
-### Verified Working
+### New Architecture
 
 ```
-$ bash scripts/verify-spec.sh
-=== Running spec verification ===
---- Invariant 1: Source files exist ---
-PASS: All source files present
---- Invariant 2: Package.json has required scripts ---
-PASS: package.json has scripts
---- Invariant 3: Pi CLI available ---
-PASS: Pi CLI available
-=== Verification complete ===
-Passed: 3
-Failed: 0
-=== All invariants satisfied ===
+SPEC.md (requirements with [x]/[ ] checkboxes)
+    ↓
+/respec parse → find next unchecked item
+    ↓
+Agent works on it, verifies with real tools (tsc, npm test, curl...)
+    ↓
+Agent or user checks it off in SPEC.md
+    ↓
+Loop to next item
 ```
 
-### Bug Fixed
-- verify-spec.sh: SPEC_DIR was set to SCRIPT_DIR (scripts/) instead of parent directory
-- Fixed: `SPEC_DIR="$(dirname "$SCRIPT_DIR")"` instead of `SPEC_DIR="$SCRIPT_DIR"`
+### Key Insights
+1. **No verify script** — agent uses standard tools it already knows
+2. **SPEC is the source of truth** — no second copy in shell
+3. **SPEC evolves** — update when understanding changes, not the code
+4. **No crystal ball** — don't list everything upfront, add as you learn
 
-### Commands Available
-| Command | Description |
-|---------|-------------|
-| /spec-init | Scaffold SPEC.md and scripts/verify-spec.sh |
-| /spec-status | Show round history, target, escape valve status |
-| /respec | Start reconciliation loop |
-| /respec resume | Resume after pause or session resume |
-| /respec cancel | Cancel active reconciliation |
+### Phase 1: Remove verify-script infrastructure ✅
+- [x] Remove `src/verifier.ts`
+- [x] Remove `src/delta-engine.ts`
+- [x] Remove `scripts/verify-spec.sh`
+- [x] Remove `templates/verify-template.sh`
 
-### Next Steps (optional enhancements)
-- [ ] Test /respec with a failing invariant to see loop in action
-- [ ] Add more invariants to verify-spec.sh
-- [ ] Test the escape valve mechanism (3 strikes block)
+### Phase 2: Rewrite core modules ✅
+- [x] `src/types.ts` — checkbox-based SpecItem model
+- [x] `src/spec-parser.ts` — parse [x]/[ ] items
+- [x] `src/store.ts` — updated for new types
+- [x] `src/loop-controller.ts` — simplified, no verifier
+- [x] `src/commands.ts` — spec-init only, no verify script
 
-### Current State (Iteration 3 — GitHub Publish)
-- Plugin loaded via `pi install /home/dracon/Dev/respec`
-- 6 invariants defined and all passing
-- Extension entry point correctly registered in settings.json
-- Commands `/spec-init`, `/spec-status`, `/respec` registered
-- README.md added with full usage documentation
-- GitHub repo description set: "Spec-Driven Reconciliation for Pi — read SPEC.md, run verify-spec.sh, loop until all invariants pass"
+### Phase 3: Update docs ✅
+- [x] SPEC.md — checkbox format for project itself
+- [x] README.md — reflects new model
+- [x] TODO.md — pivot tracking
 
-### GitHub Updates ✅
-- [x] README.md created with usage docs, quick start, commands, architecture
-- [x] GitHub repo description updated via `gh repo edit`
-- [x] README pushed to origin/main
-- [x] Repo renamed: `DraconDev/respec` → `DraconDev/spec-reconciler`
-- [x] Remote URL updated to https://github.com/DraconDev/spec-reconciler.git
-- [x] package.json repository URL updated
+### Phase 4: Verify ✅
+- [x] TypeScript compiles cleanly
+- [x] Deleted files gone from git tracking
+- [x] All changes committed and pushed
 
-### Testing Commands
-- [x] Plugin loads: confirmed via `pi plugin list`
-- [x] verify-spec.sh passes all 6 invariants
-- [x] Extension loads: `pi -e ./src/index.ts` shows "respec ready"
-- [x] Interactive TTY test: `/spec-status` and `/respec` echo correctly
-- [x] README and GitHub subtitle added
-- [ ] Full reconciliation loop — needs interactive terminal (pipe mode blocks)
+### Current State
+- Repo: `DraconDev/respec-spec-reconciler`
+- Auto-committed to origin/main via 5 commits
+- Extension loads clean with `pi -e ./src/index.ts`
+- SPEC.md has 14 items (10 checked, 4 to go)
 
-### Notes
-- TTY issue: piped input (`echo | pi`) doesn't forward slash commands to extension handler
-- Interactive testing with `script` command works (see session logs)
-- Plugin is functional — commands registered and extension hooks active
+### Remaining
+- [ ] Test loop controller with a real session (items 11-14 in SPEC.md)
+- [ ] Verify escape valve triggers on 3 consecutive failures
+- [ ] Test spec-init scaffolds correctly
