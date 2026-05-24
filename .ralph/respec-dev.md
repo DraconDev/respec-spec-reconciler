@@ -63,17 +63,25 @@ Failed: 0
 - [ ] Add more invariants to verify-spec.sh
 - [ ] Test the escape valve mechanism (3 strikes block)
 
-### Current State (Iteration 2)
+### Current State (Iteration 3 — GitHub Publish)
 - Plugin loaded via `pi install /home/dracon/Dev/respec`
 - 6 invariants defined and all passing
 - Extension entry point correctly registered in settings.json
 - Commands `/spec-init`, `/spec-status`, `/respec` registered
+- README.md added with full usage documentation
+- GitHub repo description set: "Spec-Driven Reconciliation for Pi — read SPEC.md, run verify-spec.sh, loop until all invariants pass"
+
+### GitHub Updates ✅
+- [x] README.md created with usage docs, quick start, commands, architecture
+- [x] GitHub repo description updated via `gh repo edit`
+- [x] README pushed to origin/main
 
 ### Testing Commands
 - [x] Plugin loads: confirmed via `pi plugin list`
 - [x] verify-spec.sh passes all 6 invariants
 - [x] Extension loads: `pi -e ./src/index.ts` shows "respec ready"
 - [x] Interactive TTY test: `/spec-status` and `/respec` echo correctly
+- [x] README and GitHub subtitle added
 - [ ] Full reconciliation loop — needs interactive terminal (pipe mode blocks)
 
 ### Notes
