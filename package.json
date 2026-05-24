@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DraconDev/spec-reconciler.git",
+    "url": "git+https://github.com/DraconDev/respec-spec-reconciler.git",
     "directory": "."
   },
   "pi": {
