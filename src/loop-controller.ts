@@ -1,22 +1,25 @@
-// Loop controller - orchestrates the reconcile loop
+// Loop controller — simplified spec-as-source-of-truth reconciliation
+// No custom verifier. Agent works through spec items using standard tools.
 
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
-import type { RespecState, InvariantResult } from "./types.js";
-import { getStore, setStore, createDefaultState, appendRoundRecord } from "./store.js";
-import { parseSpec } from "./spec-parser.js";
-import { runVerifier, verifyScriptExists, scaffoldVerifyScript } from "./verifier.js";
+import type { RespecState, SpecItem } from "./types.js";
 import {
-	buildQueue,
-	checkEscapeValve,
-	formatRepairPrompt,
-	needsRegeneration,
-	getNextTarget,
-} from "./delta-engine.js";
-import { writeFileSync, mkdirSync } from "fs";
+	getStore,
+	setStore,
+	createDefaultState,
+	appendRoundRecord,
+	clearStore,
+} from "./store.js";
+import {
+	parseSpec,
+	findFirstUnchecked,
+	allChecked,
+	countChecked,
+	formatCompactQueue,
+} from "./spec-parser.js";
+import { existsSync, statSync } from "fs";
 
 const SPEC_NAME = "SPEC.md";
-const SCRIPTS_DIR = "scripts";
-const VERIFY_SCRIPT = "verify-spec.sh";
 
 export class LoopController {
 	private pi: ExtensionAPI;
@@ -29,254 +32,105 @@ export class LoopController {
 	async start(specPath: string, ctx: ExtensionContext): Promise<void> {
 		let state = getStore();
 
-		// Initialize if needed
-		if (!state || state.specKey !== specPath) {
-			state = createDefaultState(specPath);
+		// Parse the spec
+		const parsed = parseSpec(specPath);
+		if (!parsed) {
+			await ctx.ui.notify(`Cannot read SPEC.md at ${specPath}`, "error");
+			return;
+		}
+
+		if (parsed.items.length === 0) {
+			await ctx.ui.notify(
+				"No requirements found in SPEC.md. Add items with [x] or [ ] checkboxes.",
+				"warning"
+			);
+			return;
+		}
+
+		// Check if contract changed (SPEC.md modified since last run)
+		let specMtime = 0;
+		try {
+			specMtime = statSync(specPath).mtimeMs;
+		} catch {
+			// ignore
+		}
+
+		const contractChanged =
+			state && state.lastSpecMtime && specMtime > state.lastSpecMtime &&
+			state.status !== "active";
+
+		// Initialize or update state
+		if (!state || state.specKey !== specPath || contractChanged) {
+			state = createDefaultState(specPath, parsed.items);
+			state.lastSpecMtime = specMtime;
+			setStore(state);
+		} else {
+			// Update items from freshly parsed spec
+			state.items = parsed.items;
+			state.lastSpecMtime = specMtime;
 			setStore(state);
 		}
 
 		// Check if already done
-		if (state.status === "done") {
-			await this.notifySuccess(ctx, state);
-			return;
-		}
-
-		// Check if blocked
-		if (state.status === "blocked") {
-			this.showEscapeValveMessage(ctx, state);
-			return;
-		}
-
-		// Check for contract file changes
-		const verifyPath = this.deriveVerifyPath(specPath);
-		const regen = needsRegeneration(state, specPath, verifyPath);
-		if (regen.needed) {
-			state.status = "paused";
-			setStore(state);
-			await ctx.ui.notify(`📄 Contract changed: ${regen.reason}. Run /respec resume to continue.`, "warning");
-			return;
-		}
-
-		// Check if verify script exists
-		if (!verifyScriptExists(specPath)) {
-			await this.scaffoldAndPause(ctx, specPath);
-			return;
-		}
-
-		// Run verifier
-		const spec = parseSpec(specPath);
-		if (!spec || spec.invariants.length === 0) {
-			state.status = "paused";
-			setStore(state);
-			await ctx.ui.notify("📄 No invariants found in SPEC.md. Add a ## Invariants section.", "warning");
-			return;
-		}
-
-		const verifierResult = await runVerifier(specPath, spec.invariants);
-		state.lastVerifierOutput = verifierResult.stdout;
-		state.lastVerifierExitCode = verifierResult.exitCode;
-
-		// Check if all passed
-		if (verifierResult.exitCode === 0) {
+		if (allChecked(parsed.items)) {
 			state.status = "done";
 			setStore(state);
 			await this.notifySuccess(ctx, state);
 			return;
 		}
 
-		// Build queue and get next target
-		const queue = buildQueue(verifierResult.results, state.currentTarget);
-		const nextTarget = getNextTarget(queue, state);
-
-		if (!nextTarget) {
-			// All remaining invariants are blocked
-			state.status = "blocked";
-			setStore(state);
-			await ctx.ui.notify("⚠️ All remaining invariants are blocked (3+ consecutive failures).", "warning");
+		// Check if blocked
+		if (state.status === "blocked") {
+			await this.showEscapeValveMessage(ctx, state);
 			return;
 		}
 
-		// Mark active and queue the next repair
+		// Find next unchecked item
+		const target = findFirstUnchecked(state.items);
+		if (!target) {
+			// All checked? Shouldn't reach here but handle
+			state.status = "done";
+			setStore(state);
+			await this.notifySuccess(ctx, state);
+			return;
+		}
+
+		// Mark active
 		state.status = "active";
-		state.currentTarget = nextTarget;
+		state.currentTarget = target;
 		state.turnsThisRound = 0;
 		setStore(state);
 
-		// Update UI - show prominently that respec is active
-		ctx.ui.setStatus("respec", `◉ respec: r${state.currentRound} → ${nextTarget}`);
-		ctx.ui.setWorkingMessage(`[respec] Fixing: ${nextTarget} (r${state.currentRound})`);
+		// Update UI
+		const done = countChecked(state.items);
+		const total = state.items.length;
+		ctx.ui.setStatus("respec", `◉ respec: ${target.name}`);
+		ctx.ui.setWorkingMessage(`[respec] Working on: ${target.name}`);
 
-		// Show widget with current state
+		// Format queue display
+		const queueLines = formatCompactQueue(state.items, target.index);
+
 		ctx.ui.setWidget("respec", [
-			`respec active: ${nextTarget}`,
-			`Round: ${state.currentRound} | Budget: ${state.budgetPerRound} turns`,
-			`Target: ${nextTarget}`,
+			`respec active — ${done}/${total} done`,
+			`Target: ${target.name}`,
+			target.verification ? `Verify: ${target.verification}` : "",
 			``,
-			`Last verifier output:`,
-			verifierResult.stdout.split('\n').slice(0, 10).join('\n'),
+			...queueLines,
 		]);
 
-		// Queue the repair prompt
-		const repairPrompt = formatRepairPrompt(
-			nextTarget,
-			spec.invariants.find((i) => i.name === nextTarget)?.index ?? 0,
-			verifierResult.stdout,
-			specPath
-		);
-
+		// Send the focused prompt
+		const prompt = this.buildPrompt(target, state);
 		this.pi.sendMessage(
 			{
 				customType: "respec-prompt",
-				content: repairPrompt,
+				content: prompt,
 				display: false,
 			},
 			{ triggerTurn: true, deliverAs: "followUp" }
 		);
 	}
 
-	// Handle agent turn end - continue loop or stop
-	async onAgentEnd(
-		ctx: ExtensionContext,
-		toolResults: Array<{ toolCallId: string; toolName: string }>
-	): Promise<void> {
-		const state = getStore();
-		if (!state || state.status !== "active") return;
-
-		// Increment turn counter
-		state.turnsThisRound++;
-		setStore(state);
-
-		// Check escape valve
-		if (state.currentTarget) {
-			const escape = checkEscapeValve(state.currentTarget, state);
-			if (escape.triggered) {
-				state.status = "blocked";
-				state.escapeValve = {
-					type: escape.type!,
-					invariant: state.currentTarget,
-					detail: escape.detail!,
-					blockedAt: Date.now(),
-				};
-				setStore(state);
-				this.triggerEscapeValve(ctx, state);
-				return;
-			}
-		}
-
-		// Track tool usage for spin guard
-		const toolsUsed = new Set(toolResults.map((t) => t.toolName));
-
-		// Run verifier again to check progress
-		const spec = parseSpec(state.specKey);
-		if (!spec) return;
-
-		const verifierResult = await runVerifier(state.specKey, spec.invariants);
-		state.lastVerifierOutput = verifierResult.stdout;
-		state.lastVerifierExitCode = verifierResult.exitCode;
-
-		// Check if target was fixed
-		const targetResult = verifierResult.results.find(
-			(r) => r.name === state.currentTarget
-		);
-
-		if (targetResult?.passed) {
-			// Record successful round
-			const record = {
-				round: state.currentRound,
-				target: state.currentTarget!,
-				pass: true,
-				turnsUsed: state.turnsThisRound,
-				timestamp: Date.now(),
-				verifierOutput: verifierResult.stdout,
-			};
-			appendRoundRecord(record);
-			state.roundHistory.push(record);
-
-			// Reset failure count for this invariant
-			state.invariantFailures.delete(state.currentTarget!);
-
-			// Move to next round
-			state.currentRound++;
-			state.currentTarget = undefined;
-			state.turnsThisRound = 0;
-			setStore(state);
-
-			// Check if all done
-			if (verifierResult.exitCode === 0) {
-				state.status = "done";
-				setStore(state);
-				await this.notifySuccess(ctx, state);
-				return;
-			}
-
-			// Continue to next invariant
-			await this.start(state.specKey, ctx);
-			return;
-		}
-
-		// Target still failing - increment failure count
-		const failures = (state.invariantFailures.get(state.currentTarget!) ?? 0) + 1;
-		state.invariantFailures.set(state.currentTarget!, failures);
-
-		// Track target before clearing
-		const previousTarget = state.currentTarget;
-
-		// Record failed round
-		const record = {
-			round: state.currentRound,
-			target: previousTarget ?? "unknown",
-			pass: false,
-			turnsUsed: state.turnsThisRound,
-			timestamp: Date.now(),
-			verifierOutput: verifierResult.stdout,
-		};
-		appendRoundRecord(record);
-		state.roundHistory.push(record);
-		state.currentRound++;
-		state.currentTarget = undefined;
-		state.turnsThisRound = 0;
-		setStore(state);
-
-		// Check escape valve for the previous target
-		const escape = checkEscapeValve(previousTarget ?? "", state);
-		if (escape.triggered) {
-			state.status = "blocked";
-			state.escapeValve = {
-				type: escape.type!,
-				invariant: previousTarget ?? "unknown",
-				detail: escape.detail!,
-				blockedAt: Date.now(),
-			};
-			setStore(state);
-			this.triggerEscapeValve(ctx, state);
-			return;
-		}
-
-		// Pause - user can resume manually
-		state.status = "paused";
-		setStore(state);
-		ctx.ui.setStatus("respec", `⏸ respec: paused at r${state.currentRound} (run /respec resume)`);
-		ctx.ui.setWorkingMessage();
-		ctx.ui.setWidget("respec", [
-			`respec paused at round ${state.currentRound}`,
-			`Run /respec resume to continue`,
-		]);
-	}
-
-	// Handle user input - pause if interrupting
-	onInput(ctx: ExtensionContext, source: string): boolean {
-		if (source === "extension") return false; // Don't pause on our own messages
-
-		const state = getStore();
-		if (state?.status === "active") {
-			state.userInterrupted = true;
-			setStore(state);
-			return false; // Don't block, just mark for later
-		}
-		return false;
-	}
-
-	// Resume paused reconciliation
+	// Resume paused/blocked reconciliation
 	async resume(ctx: ExtensionContext): Promise<void> {
 		const state = getStore();
 		if (!state) {
@@ -284,9 +138,17 @@ export class LoopController {
 			return;
 		}
 
-		if (state.status !== "paused") {
-			await ctx.ui.notify(`Cannot resume: status is "${state.status}"`, "warning");
+		if (state.status !== "paused" && state.status !== "blocked") {
+			await ctx.ui.notify(
+				`Cannot resume: status is "${state.status}"`,
+				"warning"
+			);
 			return;
+		}
+
+		// Clear escape valve if resuming from blocked
+		if (state.status === "blocked") {
+			state.escapeValve = undefined;
 		}
 
 		state.status = "idle";
@@ -296,117 +158,254 @@ export class LoopController {
 		await this.start(state.specKey, ctx);
 	}
 
-	// Get current status for display
-	getStatus(): RespecState | null {
-		return getStore();
-	}
+	// Handle agent turn end — check spec, advance or pause
+	async onAgentEnd(ctx: ExtensionContext): Promise<void> {
+		const state = getStore();
+		if (!state || state.status !== "active") return;
 
-	private deriveVerifyPath(specPath: string): string {
-		const baseDir = specPath.replace(/\/[^/]*$/, "");
-		return `${baseDir}/${SCRIPTS_DIR}/${VERIFY_SCRIPT}`;
-	}
+		const target = state.currentTarget;
+		if (!target) return;
 
-	private async scaffoldAndPause(ctx: ExtensionContext, specPath: string): Promise<void> {
-		const verifyPath = this.deriveVerifyPath(specPath);
-		const baseDir = verifyPath.replace(/\/[^/]*$/, "");
-
-		// Create scripts directory
-		try {
-			mkdirSync(baseDir, { recursive: true });
-		} catch {
-			// Ignore
-		}
-
-		// Write scaffolded verify script
-		const content = scaffoldVerifyScript(specPath);
-		writeFileSync(verifyPath, content, "utf-8");
-		try {
-			require("fs").chmodSync(verifyPath, 0o755);
-		} catch {
-			// Ignore
-		}
-
-		const state = getStore()!;
-		state.status = "paused";
+		// Increment turns
+		state.turnsThisRound++;
 		setStore(state);
 
-		await ctx.ui.notify(
-			`📄 Scaffolded ${verifyPath}. Edit it before running /respec.`,
-			"warning"
-		);
-	}
-
-	private showEscapeValveMessage(ctx: ExtensionContext, state: RespecState): void {
-		if (!state.escapeValve) return;
-
-		let message = `⚠️ respec blocked: ${state.escapeValve.invariant}`;
-		if (state.escapeValve.type === "stall") {
-			message += " (3+ consecutive failures)";
-		} else if (state.escapeValve.type === "spin-guard") {
-			message += " (no progress detected)";
-		} else if (state.escapeValve.type === "max-rounds") {
-			message += ` (${state.maxRounds} rounds)`;
+		// Re-parse spec to see if agent checked anything off
+		const parsed = parseSpec(state.specKey);
+		const freshItems = parsed?.items ?? [];
+		state.items = freshItems;
+		if (parsed) {
+			try {
+				state.lastSpecMtime = statSync(state.specKey).mtimeMs;
+			} catch { /* ignore */ }
 		}
-		message += `. See BLOCKER.md for details.`;
 
-		ctx.ui.notify(message, "error");
-		ctx.ui.setStatus("respec", `❌ respec: blocked`);
+		// Check if the target was checked off
+		const freshTarget = freshItems.find(
+			(i) => i.name === target.name
+		);
+
+		const targetPassed = freshTarget?.checked ?? false;
+
+		if (targetPassed) {
+			// Target is done! Record success
+			const doneCount = countChecked(freshItems);
+			const record = {
+				round: state.currentRound,
+				target: target.name,
+				pass: true,
+				checkedCount: doneCount,
+				turnsUsed: state.turnsThisRound,
+				timestamp: Date.now(),
+			};
+			appendRoundRecord(record);
+			state.roundHistory.push(record);
+
+			// Reset failure count
+			delete state.failureCounts[target.name];
+
+			// Advance
+			state.currentRound++;
+			state.currentTarget = undefined;
+			state.turnsThisRound = 0;
+			setStore(state);
+
+			// Check if all done
+			if (allChecked(freshItems)) {
+				state.status = "done";
+				setStore(state);
+				await this.notifySuccess(ctx, state);
+				return;
+			}
+
+			// Continue to next item
+			await this.start(state.specKey, ctx);
+			return;
+		}
+
+		// Target still unchecked — count as failure
+		state.failureCounts[target.name] = (state.failureCounts[target.name] ?? 0) + 1;
+		const consecutiveFailures = state.failureCounts[target.name] ?? 0;
+
+		// Record failed round
+		const doneCount = countChecked(freshItems);
+		const record = {
+			round: state.currentRound,
+			target: target.name,
+			pass: false,
+			checkedCount: doneCount,
+			turnsUsed: state.turnsThisRound,
+			timestamp: Date.now(),
+		};
+		appendRoundRecord(record);
+		state.roundHistory.push(record);
+
+		// Track target before clearing
+		const previousTarget = target;
+		state.currentRound++;
+		state.currentTarget = undefined;
+		state.turnsThisRound = 0;
+		setStore(state);
+
+		// Check escape valve — 3 consecutive failures
+		if (consecutiveFailures >= 3) {
+			state.status = "blocked";
+			state.escapeValve = {
+				type: "stall",
+				item: previousTarget.name,
+				detail: `"${previousTarget.name}" failed ${consecutiveFailures} consecutive rounds`,
+				blockedAt: Date.now(),
+			};
+			setStore(state);
+			await this.triggerEscapeValve(ctx, state);
+			return;
+		}
+
+		// Check max rounds
+		if (state.currentRound >= state.maxRounds) {
+			state.status = "blocked";
+			state.escapeValve = {
+				type: "max-rounds",
+				item: previousTarget.name,
+				detail: `Hit max rounds (${state.maxRounds})`,
+				blockedAt: Date.now(),
+			};
+			setStore(state);
+			await this.triggerEscapeValve(ctx, state);
+			return;
+		}
+
+		// Pause — let user decide how to proceed
+		state.status = "paused";
+		setStore(state);
+		ctx.ui.setStatus("respec", `⏸ respec: paused at r${state.currentRound} (run /respec resume)`);
+		ctx.ui.setWorkingMessage();
+		ctx.ui.setWidget("respec", [
+			`respec paused at round ${state.currentRound}`,
+			`Target: ${previousTarget.name} — not yet done`,
+			``,
+			`${doneCount}/${freshItems.length} done`,
+			``,
+			`Run /respec resume to continue`,
+			`Or check off the item in SPEC.md manually`,
+		]);
 	}
 
-	private async triggerEscapeValve(ctx: ExtensionContext, state: RespecState): Promise<void> {
-		// Write BLOCKER.md
-		const blockerPath = `${state.specKey.replace(/\/[^/]*$/, "")}/BLOCKER.md`;
-		const content = `# Blocked
+	// Handle user input
+	onInput(ctx: ExtensionContext, source: string): boolean {
+		if (source === "extension") return false;
 
-**Invariant:** ${state.escapeValve?.invariant}
-**Type:** ${state.escapeValve?.type}
-**Detail:** ${state.escapeValve?.detail}
-**At:** ${new Date(state.escapeValve?.blockedAt ?? Date.now()).toISOString()}
+		const state = getStore();
+		if (state?.status === "active") {
+			state.userInterrupted = true;
+			setStore(state);
+		}
+		return false;
+	}
 
-## Round History
+	// Build focused prompt for an item
+	private buildPrompt(target: SpecItem, state: RespecState): string {
+		const done = countChecked(state.items);
+		const total = state.items.length;
+		const body = target.body ? `\nContext:\n${target.body}` : "";
 
-${state.roundHistory
-	.slice(-5)
-	.map((r) => `- Round ${r.round}: ${r.target} → ${r.pass ? "✅" : "❌"} (${r.turnsUsed} turns)`)
-	.join("\n")}
+		return `## Reconcile: ${target.name}
 
-## How to Unblock
+**${target.name}** is not yet satisfied. ${done}/${total} items complete.
 
-1. Edit SPEC.md to clarify the invariant, OR
-2. Edit scripts/verify-spec.sh to match the new expectation, OR
-3. Fix the underlying code issue
-4. Run \`/respec resume\` to continue
+${target.verification ? `Verify by running: \`${target.verification}\`` : ""}
+${body}
+
+**Instructions:**
+1. Work on satisfying this requirement
+2. Run the verification if specified
+3. When done, check it off in SPEC.md by changing [ ] to [x]
+
+Do NOT:
+- Add unrelated features
+- Change items you haven't been asked to work on
+- Remove or reorder spec items unless instructed
+
+Spec: ${state.specKey}
+Status: ${done}/${total} done, round ${state.currentRound}
 `;
+	}
 
-		writeFileSync(blockerPath, content, "utf-8");
-
-		ctx.ui.notify(
-			`⚠️ Blocked: ${state.escapeValve?.invariant}. See BLOCKER.md`,
-			"error"
+	// Show success notification
+	private async notifySuccess(
+		ctx: ExtensionContext,
+		state: RespecState
+	): Promise<void> {
+		const total = state.roundHistory.length;
+		const done = countChecked(state.items);
+		await ctx.ui.notify(
+			`✅ All ${done} requirements satisfied in ${total} round${total === 1 ? "" : "s"}`,
+			"info"
 		);
-		ctx.ui.setStatus("respec", `❌ respec: blocked on ${state.escapeValve?.invariant}`);
+		ctx.ui.setStatus("respec", "✅ respec: done");
 		ctx.ui.setWidget("respec", [
-			`❌ respec blocked`,
-			`Invariant: ${state.escapeValve?.invariant}`,
-			`Type: ${state.escapeValve?.type}`,
-			`Detail: ${state.escapeValve?.detail}`,
-			``,
-			`Run /respec resume after fixing the issue`,
+			"✅ respec complete",
+			`All ${done} requirements satisfied`,
+			`Total rounds: ${total}`,
 		]);
 		ctx.ui.setWorkingMessage();
 	}
 
-	private async notifySuccess(ctx: ExtensionContext, state: RespecState): Promise<void> {
-		const total = state.roundHistory.length;
+	// Show escape valve/blocked message
+	private async showEscapeValveMessage(
+		ctx: ExtensionContext,
+		state: RespecState
+	): Promise<void> {
 		await ctx.ui.notify(
-			`✅ All invariants satisfied in ${total} round${total === 1 ? "" : "s"}`,
-			"info"
+			`respec is blocked on "${state.escapeValve?.item ?? "unknown"}". Run /respec resume after fixing.`,
+			"warning"
 		);
-		ctx.ui.setStatus("respec", `✅ respec: done (${total} rounds)`);
+		ctx.ui.setStatus("respec", "❌ respec: blocked");
+	}
+
+	// Trigger escape valve — write BLOCKER.md
+	private async triggerEscapeValve(
+		ctx: ExtensionContext,
+		state: RespecState
+	): Promise<void> {
+		const ev = state.escapeValve!;
+		const blockerLines = [
+			"# Blocked",
+			"",
+			`**Item:** ${ev.item}`,
+			`**Type:** ${ev.type}`,
+			`**Detail:** ${ev.detail}`,
+			`**At:** ${new Date(ev.blockedAt).toISOString()}`,
+			"",
+			"## Recent Rounds",
+			"",
+			...state.roundHistory.slice(-5).map(
+				(r) => `- Round ${r.round}: ${r.target} → ${r.pass ? "✅" : "❌"} (${r.turnsUsed} turns)`
+			),
+			"",
+			"## How to Unblock",
+			"",
+			"1. Clarify or change the requirement in SPEC.md",
+			"2. Check it off manually if it's actually done",
+			"3. Delete this BLOCKER.md and run /respec resume",
+		];
+
+		const blockerPath = state.specKey.replace(/\/[^/]*$/, "") + "/BLOCKER.md";
+		const { writeFileSync } = await import("fs");
+		writeFileSync(blockerPath, blockerLines.join("\n"), "utf-8");
+
+		ctx.ui.notify(
+			`⚠️ Blocked: ${ev.item}. See BLOCKER.md`,
+			"error"
+		);
+		ctx.ui.setStatus("respec", `❌ respec: blocked on ${ev.item}`);
 		ctx.ui.setWidget("respec", [
-			`✅ respec complete`,
-			`All invariants satisfied`,
-			`Total rounds: ${total}`,
+			"❌ respec blocked",
+			`Item: ${ev.item}`,
+			`Type: ${ev.type}`,
+			`Detail: ${ev.detail}`,
+			"",
+			"Run /respec resume after fixing",
 		]);
 		ctx.ui.setWorkingMessage();
 	}
