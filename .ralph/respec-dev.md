@@ -75,6 +75,9 @@ Failed: 0
 - [x] README.md created with usage docs, quick start, commands, architecture
 - [x] GitHub repo description updated via `gh repo edit`
 - [x] README pushed to origin/main
+- [x] Repo renamed: `DraconDev/respec` → `DraconDev/spec-reconciler`
+- [x] Remote URL updated to https://github.com/DraconDev/spec-reconciler.git
+- [x] package.json repository URL updated
 
 ### Testing Commands
 - [x] Plugin loads: confirmed via `pi plugin list`
