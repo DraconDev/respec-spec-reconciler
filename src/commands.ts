@@ -1,24 +1,34 @@
 // Register /spec-init, /spec-status, /respec commands
+// Simplified — no verify script, spec is the source of truth
 
-import type { ExtensionAPI, ExtensionCommandContext } from "@earendil-works/pi-coding-agent";
+import type {
+	ExtensionAPI,
+	ExtensionCommandContext,
+} from "@earendil-works/pi-coding-agent";
 import { LoopController } from "./loop-controller.js";
-import { initStore, getStore, restoreState, restoreRoundRecords, createDefaultState } from "./store.js";
-import { parseSpec } from "./spec-parser.js";
-import { scaffoldVerifyScript } from "./verifier.js";
-import { writeFileSync, existsSync, mkdirSync, readFileSync, chmodSync } from "fs";
+import {
+	initStore,
+	getStore,
+	setStore,
+	restoreState,
+	restoreRoundRecords,
+} from "./store.js";
+import { parseSpec, countChecked, formatCompactQueue } from "./spec-parser.js";
+import { writeFileSync, existsSync, mkdirSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const SPEC_NAME = "SPEC.md";
-const SCRIPTS_DIR = "scripts";
-const VERIFY_SCRIPT = "verify-spec.sh";
 
 let loopController: LoopController | null = null;
 
-// Read template from package templates directory
+// Read template from templates directory
 function getTemplatePath(name: string): string {
-	// Templates are relative to the package root (parent of src/)
-	const templatesDir = join(dirname(fileURLToPath(import.meta.url)), "..", "templates");
+	const templatesDir = join(
+		dirname(fileURLToPath(import.meta.url)),
+		"..",
+		"templates"
+	);
 	return join(templatesDir, name);
 }
 
@@ -26,7 +36,7 @@ function readTemplate(name: string): string {
 	try {
 		return readFileSync(getTemplatePath(name), "utf-8");
 	} catch {
-		return ""; // Fallback to inline content
+		return "";
 	}
 }
 
@@ -34,121 +44,130 @@ export function registerCommands(pi: ExtensionAPI): void {
 	initStore(pi);
 	loopController = new LoopController(pi);
 
-	// /spec-init - scaffold SPEC.md and verify script
+	// /spec-init — scaffold SPEC.md only (no verify script)
 	pi.registerCommand("spec-init", {
-		description: "Initialize SPEC.md and verify-spec.sh in the current directory",
+		description: "Initialize SPEC.md in the current directory",
 		handler: async (args, ctx) => {
 			const cwd = ctx.cwd;
 			const specPath = `${cwd}/${SPEC_NAME}`;
-			const verifyPath = `${cwd}/${SCRIPTS_DIR}/${VERIFY_SCRIPT}`;
 
-			// Check if already exists
 			if (existsSync(specPath)) {
-				await ctx.ui.notify("SPEC.md already exists. Edit it manually.", "warning");
+				await ctx.ui.notify(
+					"SPEC.md already exists. Edit it manually.",
+					"warning"
+				);
 				return;
 			}
 
-			// Create scripts directory
-			try {
-				mkdirSync(`${cwd}/${SCRIPTS_DIR}`, { recursive: true });
-			} catch {
-				// Ignore
-			}
-
-			// Read templates from package
+			// Read template
 			const specTemplate = readTemplate("SPEC-template.md");
-			const verifyTemplate = readTemplate("verify-template.sh");
 
-			// Write SPEC.md
-			const specContent = specTemplate || `# Project Spec
+			const specContent =
+				specTemplate ||
+				`# Project Spec
 
-## Invariants
+## Requirements
 
-### 1. Example Invariant
-Description of what must be true.
-\`\`\`
-[check] Add your verification check here
-\`\`\`
+### [ ] Project compiles
+Run: \`npm run build\` or \`tsc --noEmit\`
 
-### 2. Add more invariants below
-Add more invariants following the same pattern.
+### [ ] Tests pass
+Run: \`npm test\`
+
+### [ ] Add more requirements below
+Each item should be a verifiable requirement.
 `;
 
 			writeFileSync(specPath, specContent, "utf-8");
 
-			// Write verify script
-			const verifyContent = verifyTemplate || scaffoldVerifyScript(specPath);
-			writeFileSync(verifyPath, verifyContent, "utf-8");
-
-			// Make executable
-			try {
-				chmodSync(verifyPath, 0o755);
-			} catch {
-				// Ignore
-			}
-
 			await ctx.ui.notify(
-				`📄 Created SPEC.md and scripts/verify-spec.sh. Edit them before running /respec.`,
+				"📄 Created SPEC.md. Edit it with your requirements, then run /respec.",
 				"info"
 			);
 		},
 	});
 
-	// /spec-status - show current reconciliation status
+	// /spec-status — show current reconciliation state
 	pi.registerCommand("spec-status", {
 		description: "Show respec reconciliation status",
 		handler: async (args, ctx) => {
 			const state = getStore();
 
 			if (!state) {
-				await ctx.ui.notify("No active reconciliation. Run /respec first.", "info");
+				await ctx.ui.notify(
+					"No active reconciliation. Run /respec first.",
+					"info"
+				);
 				return;
 			}
 
-			const statusIcon = {
+			const statusIcon: Record<string, string> = {
 				idle: "⬜",
 				active: "◉",
 				paused: "⏸",
 				done: "✅",
 				blocked: "❌",
-			}[state.status];
+			};
+
+			const done = countChecked(state.items);
+			const total = state.items.length;
 
 			const lines: string[] = [
-				`${statusIcon} respec - ${state.status.toUpperCase()}`,
-				`  Spec: ${state.specKey}`,
-				`  Round: ${state.currentRound}/${state.maxRounds}`,
-				`  Budget: ${state.turnsThisRound}/${state.budgetPerRound} turns`,
+				`${statusIcon[state.status] ?? "❓"} respec — ${state.status.toUpperCase()}`,
+				`Spec: ${state.specKey}`,
+				`Done: ${done}/${total}`,
+				`Round: ${state.currentRound}/${state.maxRounds}`,
+				`Budget: ${state.turnsThisRound}/${state.maxTurnsPerRound} turns`,
 			];
 
 			if (state.currentTarget) {
-				lines.push(`  Target: ${state.currentTarget}`);
+				lines.push(`Target: ${state.currentTarget.name}`);
 			}
 
 			if (state.escapeValve) {
-				lines.push(`  Blocked: ${state.escapeValve.type} - ${state.escapeValve.detail}`);
+				lines.push(
+					`Blocked: ${state.escapeValve.type} — ${state.escapeValve.detail}`
+				);
 			}
 
+			// Show items
 			lines.push("");
-			lines.push("  Round history:");
-
-			if (state.roundHistory.length === 0) {
-				lines.push("    (none yet)");
+			lines.push("Requirements:");
+			if (state.items.length === 0) {
+				lines.push("  (none)");
 			} else {
-				for (const record of state.roundHistory.slice(-5)) {
-					const icon = record.pass ? "✅" : "❌";
-					lines.push(`    #${record.round} ${record.target} → ${icon} (${record.turnsUsed} turns)`);
+				for (const item of state.items) {
+					const marker = item.checked
+						? "[x]"
+						: item.name === state.currentTarget?.name
+							? "[>]"
+							: "[ ]";
+					lines.push(`  ${marker} ${item.name}`);
 				}
 			}
 
-			// Show in widget
-			ctx.ui.setWidget("respec-status", lines, { placement: "aboveEditor" });
+			// Round history
+			lines.push("");
+			lines.push("Round history:");
+			if (state.roundHistory.length === 0) {
+				lines.push("  (none yet)");
+			} else {
+				for (const record of state.roundHistory.slice(-5)) {
+					const icon = record.pass ? "✅" : "❌";
+					lines.push(
+						`  #${record.round} ${record.target} → ${icon} (${record.turnsUsed} turns)`
+					);
+				}
+			}
 
-			// Also notify for non-TTY
+			ctx.ui.setWidget("respec-status", lines, {
+				placement: "aboveEditor",
+			});
 			await ctx.ui.notify(lines.join("\n"), "info");
 		},
 	});
 
-	// /respec - start or resume reconciliation
+	// /respec — start or resume reconciliation
 	pi.registerCommand("respec", {
 		description: "Start or resume spec-driven reconciliation",
 		handler: async (args, ctx) => {
@@ -157,7 +176,6 @@ Add more invariants following the same pattern.
 				return;
 			}
 
-			// Parse args
 			const tokens = (args ?? "").trim().split(/\s+/);
 			const command = tokens[0] ?? "";
 			const path = tokens[1] ?? `${ctx.cwd}/${SPEC_NAME}`;
@@ -168,10 +186,10 @@ Add more invariants following the same pattern.
 			}
 
 			if (command === "focus" && path) {
-				// Set focused spec
 				const state = getStore();
 				if (state) {
 					state.focusedSpecKey = path;
+					setStore(state);
 				}
 				await ctx.ui.notify(`🔭 Focused spec: ${path}`, "info");
 				return;
@@ -182,14 +200,35 @@ Add more invariants following the same pattern.
 				if (state) {
 					state.status = "idle";
 					state.currentTarget = undefined;
+					setStore(state);
 				}
+				ctx.ui.setStatus("respec", undefined);
+				ctx.ui.setWidget("respec", undefined);
 				await ctx.ui.notify("Cancelled reconciliation", "info");
+				return;
+			}
+
+			if (command === "pause") {
+				const state = getStore();
+				if (state?.status === "active") {
+					state.status = "paused";
+					setStore(state);
+					ctx.ui.setStatus("respec", "⏸ respec: paused");
+					ctx.ui.setWidget("respec", [
+						"respec paused",
+						"Run /respec resume to continue",
+					]);
+				}
+				await ctx.ui.notify("Paused reconciliation", "info");
 				return;
 			}
 
 			// Default: start new reconciliation
 			if (!existsSync(path)) {
-				await ctx.ui.notify(`No SPEC.md found at ${path}. Run /spec-init first.`, "warning");
+				await ctx.ui.notify(
+					`No SPEC.md found at ${path}. Run /spec-init first.`,
+					"warning"
+				);
 				return;
 			}
 
@@ -200,90 +239,61 @@ Add more invariants following the same pattern.
 
 // Register hooks for lifecycle events
 export function registerHooks(pi: ExtensionAPI): void {
-	// session_start - restore state and show initial status
+	// session_start — restore state
 	pi.on("session_start", async (event, ctx) => {
-		// Show respec is loaded and ready
 		ctx.ui.setStatus("respec", "respec ready");
 
 		if (event.reason === "resume" || event.reason === "fork") {
-			// Restore state from session entries
 			const branchEntries = ctx.sessionManager.getBranch();
 			const state = restoreState(branchEntries);
 			if (state) {
-				// Reconstruct round history
 				const records = restoreRoundRecords(branchEntries);
 				state.roundHistory = records;
-				// Show current state in status
-				if (state.status === "active" && state.currentTarget) {
-					ctx.ui.setStatus("respec", `◉ respec: ${state.currentTarget}`);
-				} else if (state.status === "paused") {
-					ctx.ui.setStatus("respec", `⏸ respec: paused (run /respec resume)`);
-				} else if (state.status === "done") {
-					ctx.ui.setStatus("respec", `✅ respec: done`);
-				} else if (state.status === "blocked") {
-					ctx.ui.setStatus("respec", `❌ respec: blocked`);
-				}
-				// Mark as paused (need explicit resume)
-				state.status = "paused";
-				// Clear active target
-				state.currentTarget = undefined;
 
-				const { setStore } = await import("./store.js");
+				if (state.status === "active" && state.currentTarget) {
+					ctx.ui.setStatus(
+						"respec",
+						`◉ respec: ${state.currentTarget.name}`
+					);
+				} else if (state.status === "paused") {
+					ctx.ui.setStatus("respec", "⏸ respec: paused (run /respec resume)");
+				} else if (state.status === "done") {
+					ctx.ui.setStatus("respec", "✅ respec: done");
+				} else if (state.status === "blocked") {
+					ctx.ui.setStatus("respec", "❌ respec: blocked");
+				}
+
+				// Always pause on resume (explicit resume required)
+				if (state.status === "active") {
+					state.status = "paused";
+					state.currentTarget = undefined;
+				}
+
 				setStore(state);
 			}
 		}
 	});
 
-	// before_agent_start - add context
+	// before_agent_start — track turns
 	pi.on("before_agent_start", async (event, ctx) => {
 		const state = getStore();
 		if (!state || state.status !== "active") return;
-
-		// Update turns counter
 		state.turnsThisRound++;
 	});
 
-	// before_agent_start - show active state in status bar
-	pi.on("before_agent_start", async (event, ctx) => {
-		const state = getStore();
-		if (!state) return;
-
-		if (state.status === "active" && state.currentTarget) {
-			const round = state.currentRound;
-			ctx.ui.setStatus("respec", `◉ respec: r${round} ${state.currentTarget}`);
-		}
-	});
-
-	// agent_end - continue loop or stop
+	// agent_end — continue loop
 	pi.on("agent_end", async (event, ctx) => {
 		if (!loopController) return;
-
 		const state = getStore();
 		if (!state || state.status !== "active") return;
-
-		// Extract tool results from messages
-		const toolResults: Array<{ toolCallId: string; toolName: string }> = [];
-		for (const msg of event.messages) {
-			// AgentMessage can have tool role with tool_call_id and name
-			if ("tool_call_id" in msg && msg.tool_call_id && "name" in msg) {
-				toolResults.push({ toolCallId: msg.tool_call_id as string, toolName: msg.name as string });
-			}
-		}
-
-		await loopController.onAgentEnd(ctx, toolResults);
+		await loopController.onAgentEnd(ctx);
 	});
 
-	// input - handle user interruption
+	// input — detect user interruption
 	pi.on("input", async (event, ctx) => {
-		if (event.source === "extension") return; // Don't pause on our own messages
-
+		if (event.source === "extension") return;
 		if (loopController) {
 			loopController.onInput(ctx, event.source);
 		}
-	});
-
-	// session_shutdown - preserve state (appendEntry already handles this)
-	pi.on("session_shutdown", async () => {
-		// State is already persisted via pi.appendEntry in setStore
 	});
 }

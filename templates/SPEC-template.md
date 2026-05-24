@@ -1,35 +1,26 @@
-# Project Spec
+# Project Name
 
-Write a brief description of your project here.
+Brief description of what this project should do.
 
-## Invariants
+## Requirements
 
-Add your invariants below using the format:
+### [ ] Project compiles
+The codebase must compile without errors.
+Run: `npm run build`
 
-### 1. Example Invariant Name
-Description of what must be true and under what conditions.
+### [ ] Tests pass
+All tests must pass.
+Run: `npm test`
 
-```
-[check] Description of the verification check
-```
+### [ ] Add your requirements below
 
-The `[check]` line describes how to verify this invariant.
-The verification script (`scripts/verify-spec.sh`) will use this as a guide.
+Add requirements as `### [ ] Description` or `- [ ] Description`.
+Each requirement should be verifiable — something you can check.
 
----
+When a requirement is satisfied, change [ ] to [x].
+Then run /respec to continue to the next one.
 
-### 2. Add More Invariants
-Continue adding invariants following the same `### N. Name` pattern.
-
-For each invariant:
-1. Give it a descriptive name
-2. Explain the requirement in prose
-3. Provide a `[check]` line describing the verification
-
-## Notes
-
-- Invariants are checked in order (top to bottom)
-- The first failing invariant is the repair target
-- An invariant passes when the verifier script exits 0
-- Run `/spec-status` to see current reconciliation state
-- Run `/respec` to start or resume reconciliation
+Tips:
+- Each item should be one clear thing
+- Include how to verify (e.g., "Run: `curl localhost:3000/health`")
+- Don't try to list everything upfront — add more as you learn
