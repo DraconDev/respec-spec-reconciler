@@ -1,6 +1,6 @@
-# respec — Spec-Driven Reconciliation for Pi
+# respec — Pi Extension for Spec-Driven Reconciliation
 
-**A Pi extension that reconciles your codebase against a declarative SPEC.md using a shell verifier as the only judge.**
+**A Pi extension that reads SPEC.md, runs a shell verifier, and loops until all invariants pass.**
 
 ```
 SPEC.md + scripts/verify-spec.sh → /respec → ✅ All invariants satisfied
