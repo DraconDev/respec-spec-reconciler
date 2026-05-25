@@ -8,7 +8,6 @@ import {
 	setStore,
 	createDefaultState,
 	appendRoundRecord,
-	clearStore,
 } from "./store.js";
 import {
 	parseSpec,
@@ -59,18 +58,18 @@ export class LoopController {
 
 		// Initialize or update state
 		if (!state || state.specKey !== specPath || contractChanged) {
-			state = createDefaultState(specPath, parsed.items);
+			state = createDefaultState(specPath, items);
 			state.lastSpecMtime = specMtime;
 			setStore(state);
 		} else {
 			// Update items from freshly parsed spec
-			state.items = parsed.items;
+			state.items = items;
 			state.lastSpecMtime = specMtime;
 			setStore(state);
 		}
 
 		// Check if already done
-		if (allChecked(parsed.items)) {
+		if (allChecked(items)) {
 			state.status = "done";
 			setStore(state);
 			await this.notifySuccess(ctx, state);
@@ -165,14 +164,7 @@ export class LoopController {
 		if (!target) return;
 
 		// Re-parse spec to see if agent checked anything off (don't double-count turns — before_agent_start hook already does this)
-		const parsed = parseSpec(state.specKey);
-		const freshItems = parsed?.items ?? [];
-		state.items = freshItems;
-		if (parsed) {
-			try {
-				state.lastSpecMtime = statSync(state.specKey).mtimeMs;
-			} catch { /* ignore */ }
-		}
+		const freshItems = parseSpec(state.specKey) ?? [];
 
 		// Check if the target was checked off
 		const freshTarget = freshItems.find(

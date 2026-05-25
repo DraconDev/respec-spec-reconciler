@@ -52,7 +52,7 @@ Run: `gh repo view --json name`
 ### [x] SPEC.md uses checkbox format
 Requirements use `### [x]` / `### [ ]` format.
 
-### [ ] No verifier/delta-engine files remain
+### [x] No verifier/delta-engine files remain
 Old verifier and delta engine removed.
 Run: `test ! -f src/verifier.ts && test ! -f src/delta-engine.ts`
 

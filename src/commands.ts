@@ -101,9 +101,9 @@ Each item should be a verifiable requirement.
 			}
 
 			// Re-parse SPEC.md to pick up manual edits
-			const parsed = parseSpec(state.specKey);
-			if (parsed) {
-				state.items = parsed.items;
+			const freshItems = parseSpec(state.specKey);
+			if (freshItems) {
+				state.items = freshItems;
 				setStore(state);
 			}
 
