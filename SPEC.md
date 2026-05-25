@@ -56,20 +56,60 @@ Requirements use `### [x]` / `### [ ]` format.
 Old verifier and delta engine removed.
 Run: `test ! -f src/verifier.ts && test ! -f src/delta-engine.ts`
 
-### [ ] Loop controller works with new model
-Agent picks next unchecked item, works on it, checks it off.
-Test: Run /respec in a test project with at least one unchecked item.
+### [x] Code compiles successfully
+`npx tsc --noEmit` returns no errors.
+Run: `npx tsc --noEmit`
 
-### [ ] Spec parser extracts checkboxes
-parseSpec() returns items with checked status.
-Test: Parse a SPEC.md with mixed [x]/[ ] items.
+### [x] Extension loads cleanly
+Loading the extension doesn't crash or error.
+Run: `pi -e ./src/index.ts`
 
-### [ ] Escape valve triggers on 3 consecutive failures
-Same item fails 3x, BLOCKER.md written.
-Test: Force 3 consecutive failures on a single item.
+### [x] Commands are accessible
+Extension can be loaded and commands can be used.
+Run: `pi -e ./src/index.ts`
+
+### [ ] Test the loop controller
+Run /respec in a test project with at least one unchecked item.
+Expected: Picks next unchecked item, sends agent a focused prompt.
+
+### [ ] Test spec parser
+Given a SPEC.md with mixed [x]/[ ] items, parseSpec() returns items with checked status.
+Run: Parse a SPEC.md with mixed [x]/[ ] items.
+
+### [ ] Test escape valve
+Force 3 consecutive failures on a single item.
+Expected: BLOCKER.md written, respec blocked.
+
+### [ ] Test visual feedback
+When /respec is active, UI shows progress, target, queue.
+Run: /respec on a project with items.
+
+### [ ] Test spec-status refresh
+Run /spec-status after editing SPEC.md.
+Expected: Shows updated items from SPEC.md.
+
+### [ ] Test resume functionality
+After pausing, run /respec resume.
+Expected: Continues from where it left off.
+
+### [ ] Test cancel functionality
+Run /respec cancel.
+Expected: Clears active state, shows status.
+
+### [ ] Test pause functionality
+Run /respec pause.
+Expected: Sets status to paused.
 
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
 - Each item should be verifiable — something you can check with real tools.
 - Don't try to list everything upfront. Do a thing, learn, add the next thing.
+
+## Tips for Writing Good Checks
+
+1. **Use standard tools**: The agent already knows how to run `npm test`, `tsc`, `curl`, etc.
+2. **Be specific**: "No type errors" is better than "It works"
+3. **Include verification command**: When helpful, add "Run: `command`" to each item
+4. **One thing per item**: Don't mix multiple requirements in one item
+5. **Keep it testable**: The agent should be able to verify it with standard tools
