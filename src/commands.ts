@@ -3,7 +3,6 @@
 
 import type {
 	ExtensionAPI,
-	ExtensionCommandContext,
 } from "@earendil-works/pi-coding-agent";
 import { LoopController } from "./loop-controller.js";
 import {
@@ -13,8 +12,8 @@ import {
 	restoreState,
 	restoreRoundRecords,
 } from "./store.js";
-import { parseSpec, countChecked, formatCompactQueue } from "./spec-parser.js";
-import { writeFileSync, existsSync, mkdirSync, readFileSync } from "fs";
+import { parseSpec, countChecked } from "./spec-parser.js";
+import { writeFileSync, existsSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -99,6 +98,13 @@ Each item should be a verifiable requirement.
 					"info"
 				);
 				return;
+			}
+
+			// Re-parse SPEC.md to pick up manual edits
+			const parsed = parseSpec(state.specKey);
+			if (parsed) {
+				state.items = parsed.items;
+				setStore(state);
 			}
 
 			const statusIcon: Record<string, string> = {

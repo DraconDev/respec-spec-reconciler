@@ -4,13 +4,8 @@
 import { readFileSync } from "fs";
 import type { SpecItem } from "./types.js";
 
-export interface ParsedSpec {
-	path: string;
-	items: SpecItem[];
-}
-
 // Parse SPEC.md and extract requirement items
-export function parseSpec(specPath: string): ParsedSpec | null {
+export function parseSpec(specPath: string): SpecItem[] | null {
 	try {
 		const content = readFileSync(specPath, "utf-8");
 		const lines = content.split("\n");

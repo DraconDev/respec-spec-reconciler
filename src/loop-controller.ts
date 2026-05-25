@@ -17,9 +17,7 @@ import {
 	countChecked,
 	formatCompactQueue,
 } from "./spec-parser.js";
-import { existsSync, statSync } from "fs";
-
-const SPEC_NAME = "SPEC.md";
+import { existsSync, statSync, writeFileSync } from "fs";
 
 export class LoopController {
 	private pi: ExtensionAPI;
@@ -166,11 +164,7 @@ export class LoopController {
 		const target = state.currentTarget;
 		if (!target) return;
 
-		// Increment turns
-		state.turnsThisRound++;
-		setStore(state);
-
-		// Re-parse spec to see if agent checked anything off
+		// Re-parse spec to see if agent checked anything off (don't double-count turns — before_agent_start hook already does this)
 		const parsed = parseSpec(state.specKey);
 		const freshItems = parsed?.items ?? [];
 		state.items = freshItems;
@@ -351,6 +345,11 @@ Status: ${done}/${total} done, round ${state.currentRound}
 		ctx.ui.setWorkingMessage();
 	}
 
+	// Check budget exhaustion
+	private checkBudgetExceeded(state: RespecState): boolean {
+		return state.turnsThisRound >= state.maxTurnsPerRound;
+	}
+
 	// Show escape valve/blocked message
 	private async showEscapeValveMessage(
 		ctx: ExtensionContext,
@@ -391,7 +390,6 @@ Status: ${done}/${total} done, round ${state.currentRound}
 		];
 
 		const blockerPath = state.specKey.replace(/\/[^/]*$/, "") + "/BLOCKER.md";
-		const { writeFileSync } = await import("fs");
 		writeFileSync(blockerPath, blockerLines.join("\n"), "utf-8");
 
 		ctx.ui.notify(

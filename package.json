@@ -29,7 +29,7 @@
   "scripts": {
     "dev": "pi -e ./src/index.ts",
     "build": "tsc",
-    "verify": "bash verify-spec.sh"
+    "typecheck": "npx tsc --noEmit"
   },
     "dependencies": {
     "@earendil-works/pi-coding-agent": "^0.75.0",
