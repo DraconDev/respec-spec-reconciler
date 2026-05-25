@@ -101,42 +101,6 @@ Each item should be a verifiable requirement.
 				return;
 			}
 
-			// Re-parse SPEC.md to pick up manual edits
-			const freshItems = parseSpec(state.specKey);
-			if (freshItems) {
-				state.items = freshItems;
-				setStore(state);
-			}
-
-			const statusIcon: Record<string, string> = {
-				idle: "⬜",
-				active: "◉",
-				paused: "⏸",
-				done: "✅",
-				blocked: "❌",
-			};
-
-			const done = countChecked(state.items);
-			const total = state.items.length;
-
-			const lines: string[] = [
-				`${statusIcon[state.status] ?? "❓"} respec — ${state.status.toUpperCase()}`,
-				`Spec: ${state.specKey}`,
-				`Done: ${done}/${total}`,
-				`Round: ${state.currentRound}/${state.maxRounds}`,
-				`Budget: ${state.turnsThisRound}/${state.maxTurnsPerRound} turns`,
-			];
-
-			if (state.currentTarget) {
-				lines.push(`Target: ${state.currentTarget.name}`);
-			}
-
-			if (state.escapeValve) {
-				lines.push(
-					`Blocked: ${state.escapeValve.type} — ${state.escapeValve.detail}`
-				);
-			}
-
 			// Show items
 			lines.push("");
 			lines.push("Requirements:");
@@ -173,7 +137,6 @@ Each item should be a verifiable requirement.
 			await ctx.ui.notify(lines.join("\n"), "info");
 		},
 	});
-
 	// /respec — start or resume reconciliation
 	pi.registerCommand("respec", {
 		description: "Start or resume spec-driven reconciliation",
