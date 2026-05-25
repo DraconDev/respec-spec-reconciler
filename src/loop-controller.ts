@@ -31,13 +31,13 @@ export class LoopController {
 		let state = getStore();
 
 		// Parse the spec
-		const parsed = parseSpec(specPath);
-		if (!parsed) {
+		const items = parseSpec(specPath);
+		if (!items) {
 			await ctx.ui.notify(`Cannot read SPEC.md at ${specPath}`, "error");
 			return;
 		}
 
-		if (parsed.items.length === 0) {
+		if (items.length === 0) {
 			await ctx.ui.notify(
 				"No requirements found in SPEC.md. Add items with [x] or [ ] checkboxes.",
 				"warning"

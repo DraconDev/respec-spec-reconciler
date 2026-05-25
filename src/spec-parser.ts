@@ -56,10 +56,7 @@ export function parseSpec(specPath: string): SpecItem[] | null {
 			}
 		}
 
-		return {
-			path: specPath,
-			items,
-		};
+		return items;
 	} catch {
 		return null;
 	}
@@ -105,30 +102,4 @@ export function formatCompactQueue(items: SpecItem[], targetIndex?: number, maxI
 	}
 
 	return lines;
-}
-
-// Update a parsed spec with mark-checked status (for persisting to SPEC.md)
-export function markItemChecked(
-	specPath: string,
-	itemName: string,
-	checked: boolean
-): string | null {
-	try {
-		const content = readFileSync(specPath, "utf-8");
-		const escapedName = itemName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
-		// Match the item line and replace [ ] with [x] or vice versa
-		const oldStatus = checked ? "[ ]" : "[x]";
-		const newStatus = checked ? "[x]" : "[ ]";
-
-		const pattern = new RegExp(
-			`^(###|[-*])\\s+\\[${checked ? " " : "x"}\\]\\s+${escapedName}\\s*$`,
-			"im"
-		);
-		const replacement = `$1 ${newStatus} ${itemName}`;
-
-		return content.replace(pattern, replacement);
-	} catch {
-		return null;
-	}
 }
