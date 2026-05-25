@@ -1,5 +1,6 @@
 {
   "packages": [
-    ".."
+    "..",
+    "/home/dracon/.pi/agent/git/github.com/tmustier/pi-extensions/stuck-detection"
   ]
 }
