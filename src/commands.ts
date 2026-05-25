@@ -14,6 +14,7 @@ import {
 } from "./store.js";
 import { parseSpec, countChecked } from "./spec-parser.js";
 import { writeFileSync, existsSync, readFileSync } from "fs";
+import { buildFullStatus } from "./visual.js";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
