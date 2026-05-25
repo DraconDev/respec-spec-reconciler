@@ -101,40 +101,40 @@ Each item should be a verifiable requirement.
 				return;
 			}
 
-			// Show items
-			lines.push("");
-			lines.push("Requirements:");
-			if (state.items.length === 0) {
-				lines.push("  (none)");
-			} else {
-				for (const item of state.items) {
-					const marker = item.checked
-						? "[x]"
-						: item.name === state.currentTarget?.name
-							? "[>]"
-							: "[ ]";
-					lines.push(`  ${marker} ${item.name}`);
-				}
+		
+		// Show items
+		const lines: string[] = ["Requirements:"];
+		if (state.items.length === 0) {
+			lines.push("  (none)");
+		} else {
+			for (const item of state.items) {
+				const marker = item.checked
+					? "[x]"
+					: item.name === state.currentTarget?.name
+						? "[>]"
+						: "[ ]";
+				lines.push(`  ${marker} ${item.name}`);
 			}
+		}
 
-			// Round history
-			lines.push("");
-			lines.push("Round history:");
-			if (state.roundHistory.length === 0) {
-				lines.push("  (none yet)");
-			} else {
-				for (const record of state.roundHistory.slice(-5)) {
-					const icon = record.pass ? "✅" : "❌";
-					lines.push(
-						`  #${record.round} ${record.target} → ${icon} (${record.turnsUsed} turns)`
-					);
-				}
+		// Round history
+		lines.push("");
+		lines.push("Round history:");
+		if (state.roundHistory.length === 0) {
+			lines.push("  (none yet)");
+		} else {
+			for (const record of state.roundHistory.slice(-5)) {
+				const icon = record.pass ? "✅" : "❌";
+				lines.push(
+					`  #${record.round} ${record.target} → ${icon} (${record.turnsUsed} turns)`
+				);
 			}
+		}
 
-			ctx.ui.setWidget("respec-status", lines, {
-				placement: "aboveEditor",
-			});
-			await ctx.ui.notify(lines.join("\n"), "info");
+		ctx.ui.setWidget("respec-status", lines, {
+			placement: "aboveEditor",
+		});
+		await ctx.ui.notify(lines.join("\n"), "info");
 		},
 	});
 	// /respec — start or resume reconciliation
