@@ -14,8 +14,13 @@ import {
 	findFirstUnchecked,
 	allChecked,
 	countChecked,
-	formatCompactQueue,
 } from "./spec-parser.js";
+import {
+	buildWidget,
+	buildStatusText,
+	buildWorkingMessage,
+	formatRoundHistory,
+} from "./visual.js";
 import { existsSync, statSync, writeFileSync } from "fs";
 
 export class LoopController {
@@ -98,22 +103,10 @@ export class LoopController {
 		state.turnsThisRound = 0;
 		setStore(state);
 
-		// Update UI
-		const done = countChecked(state.items);
-		const total = state.items.length;
-		ctx.ui.setStatus("respec", `◉ respec: ${target.name}`);
-		ctx.ui.setWorkingMessage(`[respec] Working on: ${target.name}`);
-
-		// Format queue display
-		const queueLines = formatCompactQueue(state.items, target.index);
-
-		ctx.ui.setWidget("respec", [
-			`respec active — ${done}/${total} done`,
-			`Target: ${target.name}`,
-			target.verification ? `Verify: ${target.verification}` : "",
-			``,
-			...queueLines,
-		]);
+		// Update UI with nice widget
+		ctx.ui.setStatus("respec", buildStatusText(state));
+		ctx.ui.setWorkingMessage(buildWorkingMessage(state));
+		ctx.ui.setWidget("respec", buildWidget(state));
 
 		// Send the focused prompt
 		const prompt = this.buildPrompt(target, state);
@@ -264,17 +257,9 @@ export class LoopController {
 		// Pause — let user decide how to proceed
 		state.status = "paused";
 		setStore(state);
-		ctx.ui.setStatus("respec", `⏸ respec: paused at r${state.currentRound} (run /respec resume)`);
+		ctx.ui.setStatus("respec", buildStatusText(state));
 		ctx.ui.setWorkingMessage();
-		ctx.ui.setWidget("respec", [
-			`respec paused at round ${state.currentRound}`,
-			`Target: ${previousTarget.name} — not yet done`,
-			``,
-			`${doneCount}/${freshItems.length} done`,
-			``,
-			`Run /respec resume to continue`,
-			`Or check off the item in SPEC.md manually`,
-		]);
+		ctx.ui.setWidget("respec", buildWidget(state));
 	}
 
 	// Handle user input
@@ -388,15 +373,8 @@ Status: ${done}/${total} done, round ${state.currentRound}
 			`⚠️ Blocked: ${ev.item}. See BLOCKER.md`,
 			"error"
 		);
-		ctx.ui.setStatus("respec", `❌ respec: blocked on ${ev.item}`);
-		ctx.ui.setWidget("respec", [
-			"❌ respec blocked",
-			`Item: ${ev.item}`,
-			`Type: ${ev.type}`,
-			`Detail: ${ev.detail}`,
-			"",
-			"Run /respec resume after fixing",
-		]);
+		ctx.ui.setStatus("respec", buildStatusText(state));
+		ctx.ui.setWidget("respec", buildWidget(state));
 		ctx.ui.setWorkingMessage();
 	}
 }
