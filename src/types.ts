@@ -37,6 +37,13 @@ export interface TurnBudget {
 	avgTurns: number; // Computed average
 }
 
+// Spec change record for rollback detection
+export interface SpecSnapshot {
+	itemName: string;
+	wasChecked: boolean;
+	timestamp: number;
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
