@@ -12,7 +12,7 @@
 ### Medium Priority
 - [x] **Checkpointing** — save progress mid-item for resume after crash
 - [x] **Spec analytics** — track which item types take longest, common failure patterns
-- [ ] **Team sync** — share learned budgets across team members via git
+- [x] **Team sync** — share learned budgets across team members via git
 - [ ] **Interactive spec editing** — edit SPEC.md via natural language commands
 
 ### Low Priority
