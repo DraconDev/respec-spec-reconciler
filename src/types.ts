@@ -53,6 +53,13 @@ export interface Checkpoint {
 	notes?: string; // Optional agent notes about progress
 }
 
+// A spec file with its items
+export interface SpecFile {
+	path: string; // Absolute path to the spec file
+	items: SpecItem[]; // Parsed items
+	lastMtime?: number; // Last modification time
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
