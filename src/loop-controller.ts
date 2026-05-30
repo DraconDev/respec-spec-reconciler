@@ -20,6 +20,8 @@ import {
 	getFailureHints,
 	learnTurnBudget,
 	getSuggestedBudget,
+	detectRollbacks,
+	updateSpecHistory,
 } from "./spec-parser.js";
 import {
 	buildWidget,
@@ -76,6 +78,18 @@ export class LoopController {
 			// Update items from freshly parsed spec
 			state.items = items;
 			state.lastSpecMtime = specMtime;
+
+			// Detect rollbacks - items that were checked but got unchecked
+			const rollbacks = detectRollbacks(items, state.specHistory);
+			if (rollbacks.length > 0) {
+				await ctx.ui.notify(
+					`⚠️ Rollback detected: ${rollbacks.join(", ")} were checked but are now unchecked.`,
+					"warning"
+				);
+			}
+
+			// Update spec history
+			state.specHistory = updateSpecHistory(items, state.specHistory);
 			setStore(state);
 		}
 
