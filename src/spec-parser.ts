@@ -280,6 +280,58 @@ export function getSuggestedBudget(
 	return Math.max(5, baseComplexity * 3 + 3);
 }
 
+// Detect regressions when spec items get unchecked after being checked
+export function detectRollbacks(
+	currentItems: SpecItem[],
+	specHistory: SpecSnapshot[]
+): string[] {
+	const rollbacks: string[] = [];
+
+	for (const item of currentItems) {
+		if (!item.checked) {
+			// Item is currently unchecked - check if it was checked before
+			const wasChecked = specHistory.some(
+				(s) => s.itemName === item.name && s.wasChecked
+			);
+			if (wasChecked) {
+				rollbacks.push(item.name);
+			}
+	}
+
+	return rollbacks;
+}
+
+// Update spec history with current state
+export function updateSpecHistory(
+	currentItems: SpecItem[],
+	specHistory: SpecSnapshot[]
+): SpecSnapshot[] {
+	const now = Date.now();
+	const newHistory = [...specHistory];
+
+	for (const item of currentItems) {
+		if (item.checked) {
+			// Only add if not already tracked as checked recently
+			const existing = newHistory.findIndex((s) => s.itemName === item.name);
+			if (existing >= 0) {
+				newHistory[existing] = {
+					itemName: item.name,
+					wasChecked: true,
+					timestamp: now,
+				};
+			} else {
+				newHistory.push({
+					itemName: item.name,
+					wasChecked: true,
+					timestamp: now,
+				});
+			}
+		}
+	}
+
+	return newHistory;
+}
+
 // Format item status for display
 export function formatItemStatus(item: SpecItem, isTarget?: boolean): string {
 	const marker = item.checked ? "[x]" : isTarget ? "[>]" : "[ ]";
