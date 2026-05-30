@@ -246,6 +246,21 @@ Each item should be a verifiable requirement.
 				return;
 			}
 
+			if (command === "analytics") {
+				const state = getStore();
+				if (state && state.roundHistory.length > 0) {
+					const analytics = generateAnalytics(state.roundHistory);
+					const lines = formatAnalytics(analytics);
+					ctx.ui.notify(lines.join("\n"), "info");
+				} else {
+					await ctx.ui.notify(
+						"No round history yet",
+						"info"
+					);
+				}
+				return;
+			}
+
 			// Default: start new reconciliation
 			if (!existsSync(path)) {
 				await ctx.ui.notify(
