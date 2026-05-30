@@ -80,6 +80,40 @@ export function countChecked(items: SpecItem[]): number {
 	return items.filter((i) => i.checked).length;
 }
 
+// Suggest a verification command based on item name and patterns
+export function suggestVerification(item: SpecItem): string | null {
+	const name = item.name.toLowerCase();
+	const body = item.body?.toLowerCase() ?? "";
+
+	// Known patterns for verification commands
+	const patterns: Array<[RegExp, string]> = [
+		// Build/compile patterns
+		[/compil|build|typecheck/i, "tsc --noEmit"],
+		[/lint|eslint|prettier/i, "eslint . || npx prettier --check ."],
+		[/test/i, "npm test"],
+		[/integration.test|e2e/i, "npm run test:e2e"],
+		[/api|endpoint|route/i, "curl -s localhost:3000/health || npm test"],
+		[/security|vuln/i, "npm audit"],
+		[/performance|benchmark/i, "npm run benchmark"],
+		[/coverage/i, "npm run test -- --coverage"],
+		[/types|exports/i, "tsc --noEmit && node -e \"require('./')\""],
+		[/readme|docs/i, "test -f README.md && echo 'README exists'"],
+		[/package|metadata/i, "npm pkg get name version"],
+		[/github|repo|remote/i, "gh repo view --json name"],
+		[/config|settings/i, "test -f config.json"],
+		[/install|setup|init/i, "npm ci"],
+	];
+
+	for (const [pattern, cmd] of patterns) {
+		if (pattern.test(name) || pattern.test(body)) {
+			return cmd;
+		}
+	}
+
+	// Generic fallback
+	return null;
+}
+
 // Estimate item complexity based on name keywords and body length
 export function estimateComplexity(item: SpecItem): number {
 	let score = 0;
