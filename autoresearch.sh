@@ -41,7 +41,8 @@ fi
 PROMPT_QUALITY=5  # baseline
 
 # Count items with verification hints
-WITH_VERIFY=$(grep -cE '(verify|check|test|run):' "$SPEC_PATH" || echo "0")
+WITH_VERIFY=$(grep -cE '(verify|check|test|run):' "$SPEC_PATH" 2>/dev/null || true)
+[ -n "$WITH_VERIFY" ] || WITH_VERIFY=0
 if [ "$WITH_VERIFY" -gt 0 ]; then
     PROMPT_QUALITY=$((PROMPT_QUALITY + 2))
 fi
