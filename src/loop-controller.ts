@@ -91,8 +91,8 @@ export class LoopController {
 			return;
 		}
 
-		// Find next unchecked item
-		const target = findFirstUnchecked(state.items);
+		// Find next unchecked item using smart ordering
+		const target = this.findSmartTarget(state.items, state.roundHistory);
 		if (!target) {
 			// All checked? Shouldn't reach here but handle
 			state.status = "done";
@@ -284,26 +284,74 @@ export class LoopController {
 		const total = state.items.length;
 		const body = target.body ? `\nContext:\n${target.body}` : "";
 
-		return `## Reconcile: ${target.name}
 
-**${target.name}** is not yet satisfied. ${done}/${total} items complete.
+		// Get failure hints if this item has been attempted before
+		const failureHint = getFailureHints(target.name, state.roundHistory);
 
-${target.verification ? `Verify by running: \`${target.verification}\`` : ""}
-${body}
+		// Estimate complexity and suggest turn budget
+		const complexity = estimateComplexity(target);
+		const suggestedBudget = Math.max(5, complexity * 3 + 3);
 
-**Instructions:**
-1. Work on satisfying this requirement
-2. Run the verification if specified
-3. When done, check it off in SPEC.md by changing [ ] to [x]
+		// Build context-aware prompt
+		let prompt = `## Reconcile: ${target.name}\n\n`;
+		prompt += `**${target.name}** is not yet satisfied. ${done}/${total} items complete.\n\n`;
 
-Do NOT:
-- Add unrelated features
-- Change items you haven't been asked to work on
-- Remove or reorder spec items unless instructed
+		if (target.verification) {
+			prompt += `Verify by running: \`${target.verification}\`\n\n`;
+		}
 
-Spec: ${state.specKey}
-Status: ${done}/${total} done, round ${state.currentRound}
-`;
+		if (body) {
+			prompt += `Context:\n${body}\n\n`;
+		}
+
+		if (failureHint) {
+			prompt += `⚠️ **Previous attempt hint:** ${failureHint}\n\n`;
+		}
+
+		prompt += `**Suggested approach:**\n`;
+		if (complexity >= 5) {
+			prompt += `- This looks complex. Work incrementally.\n`;
+			prompt += `- Consider: ${suggestedBudget} turns max, then pause for review.\n`;
+		} else if (complexity >= 3) {
+			prompt += `- Moderate complexity. Standard approach should work.\n`;
+		} else {
+			prompt += `- Should be straightforward.\n`;
+		}
+
+		prompt += `\n**Instructions:**\n`;
+		prompt += `1. Work on satisfying this requirement\n`;
+		prompt += `2. Run the verification if specified\n`;
+		prompt += `3. When done, check it off in SPEC.md by changing [ ] to [x]\n\n`;
+
+		prompt += `Do NOT:\n`;
+		prompt += `- Add unrelated features\n`;
+		prompt += `- Change items you haven't been asked to work on\n`;
+		prompt += `- Remove or reorder spec items unless instructed\n\n`;
+
+		prompt += `Spec: ${state.specKey}\n`;
+		prompt += `Status: ${done}/${total} done, round ${state.currentRound}\n`;
+
+		return prompt;
+	}
+
+	// Smart target selection — prefer ready items based on dependencies
+	private findSmartTarget(items: SpecItem[], history: RoundRecord[]): SpecItem | null {
+		// First, try to find items with satisfied dependencies
+		const deps = inferDependencies(items);
+		const readyItems = findReadyItems(items, deps);
+
+		if (readyItems.length > 0) {
+			// Sort by complexity (easiest first to build momentum)
+			readyItems.sort((a, b) => {
+				const aComplexity = estimateComplexity(a);
+				const bComplexity = estimateComplexity(b);
+				return aComplexity - bComplexity;
+			});
+			return readyItems[0];
+		}
+
+		// Fallback: first unchecked (legacy behavior)
+		return findFirstUnchecked(items);
 	}
 
 	// Show success notification
