@@ -30,7 +30,10 @@ SPEC.md (requirements) → /respec → agent works → checks off → loop
 - **Smart item ordering** — infers which items depend on others (compiles → test → api)
 - **Parallel batching** — process independent items together via `/respec batch`
 
-### 💡 Context-Aware Prompts
+### 🛡️ Reliability
+- **Rollback detection** — warns when previously checked items get unchecked
+- **Spec history tracking** — remembers checked state across sessions
+- **Regression alerts** — immediate notification if items regress
 - **Failure hints** — "Previous attempt used 12 turns, consider breaking this down"
 - **Complexity guidance** — "This looks complex, work incrementally"
 - **Verification suggestions** — auto-suggests commands based on item patterns

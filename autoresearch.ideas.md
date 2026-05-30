@@ -3,8 +3,8 @@
 ## Ideas to Try (Deferred)
 
 ### High Priority
+- [x] **Rollback detection** — alert if a previously checked item regresses
 - [ ] **Multi-spec composition** — support for multiple SPEC.md files in different directories
-- [ ] **Rollback detection** — alert if a previously checked item regresses
 - [ ] **Spec diffing** — show what changed between SPEC.md versions
 - [ ] **Confidence scoring** — rate how confident the agent should be based on item type
 
