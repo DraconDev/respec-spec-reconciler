@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Autoresearch benchmark for evolutionary reconciler
 # Measures spec coverage, turn efficiency, stall rate, and prompt quality
 
