@@ -38,7 +38,11 @@ SPEC.md (requirements) → /respec → agent works → checks off → loop
 - **Complexity guidance** — "This looks complex, work incrementally"
 - **Verification suggestions** — auto-suggests commands based on item patterns
 
-### 📋 Multi-Spec Support
+### 📈 Spec Analytics
+- **Analytics dashboard** — `/respec analytics` shows completion stats
+- **Difficulty tracking** — identifies most time-consuming items
+- **Failure analysis** — shows items that fail most often
+- **Category breakdown** — avg turns per item category
 - **Multiple spec files** — track SPEC.md across the entire project tree
 - **Multi-spec mode** — `/respec multi` to enable cross-directory reconciliation
 - **Aggregated progress** — shows completion across all spec files
@@ -125,6 +129,7 @@ respec supports nested requirements:
 | `/respec batch <N>` | Set batch size (2-5) |
 | `/respec checkpoint` | Save checkpoint for resume after crash |
 | `/respec multi` | Toggle multi-spec mode for multiple SPEC.md files |
+| `/respec analytics` | Show spec analytics (completion, difficulty, failures) |
 
 ## How It Works
 
