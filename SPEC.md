@@ -100,6 +100,62 @@ Expected: Clears active state, shows status.
 Run /respec pause.
 Expected: Sets status to paused.
 
+### [x] Commands include batch mode
+/respec batch command exists in commands.ts.
+Run: `grep -q "batch" src/commands.ts`
+
+### [x] Commands include checkpoint
+/respec checkpoint command exists in commands.ts.
+Run: `grep -q "checkpoint" src/commands.ts`
+
+### [x] Commands include multi-spec
+/respec multi command exists in commands.ts.
+Run: `grep -q "multi" src/commands.ts`
+
+### [x] Commands include analytics
+/respec analytics command exists in commands.ts.
+Run: `grep -q "analytics" src/commands.ts`
+
+### [x] Commands include team sync
+/respec sync and /respec import commands exist.
+Run: `grep -q "sync" src/commands.ts && grep -q "import" src/commands.ts`
+
+### [x] Learned budgets implemented
+Turn budget learning in spec-parser.ts.
+Run: `grep -q "learnTurnBudget" src/spec-parser.ts`
+
+### [x] Dependency inference implemented
+Dependency inference for spec items.
+Run: `grep -q "inferDependencies" src/spec-parser.ts`
+
+### [x] Confidence scoring implemented
+Confidence scoring based on history.
+Run: `grep -q "calculateConfidence" src/spec-parser.ts`
+
+### [x] Rollback detection implemented
+Rollback detection for checked items.
+Run: `grep -q "detectRollbacks" src/spec-parser.ts`
+
+### [x] Spec diffing implemented
+Spec diffing for changes.
+Run: `grep -q "diffSpecs" src/spec-parser.ts`
+
+### [x] Multi-spec composition implemented
+Multi-spec file tracking.
+Run: `grep -q "findSpecFiles" src/spec-parser.ts`
+
+### [x] Spec analytics implemented
+Spec analytics generation.
+Run: `grep -q "generateAnalytics" src/spec-parser.ts`
+
+### [x] Team sync export/import implemented
+Export and import learned budgets.
+Run: `grep -q "respec-budgets" src/commands.ts`
+
+### [x] Checkpoint state tracking
+Checkpoint interface in types.ts.
+Run: `grep -q "interface Checkpoint" src/types.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
