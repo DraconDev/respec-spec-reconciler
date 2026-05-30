@@ -2,7 +2,7 @@
 // No custom verifier. Agent works through spec items using standard tools.
 
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
-import type { RespecState, SpecItem } from "./types.js";
+import type { RespecState, SpecItem, RoundRecord } from "./types.js";
 import {
 	getStore,
 	setStore,

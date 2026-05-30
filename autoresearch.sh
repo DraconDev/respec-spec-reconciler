@@ -62,6 +62,20 @@ if grep -q "roundHistory" src/loop-controller.ts; then
     PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
 fi
 
+# Check for smart features
+if grep -q "estimateComplexity" src/spec-parser.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
+if grep -q "getFailureHints" src/spec-parser.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
+if grep -q "inferDependencies" src/spec-parser.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
+if grep -q "findSmartTarget" src/loop-controller.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
+
 # Cap at 10
 if [ "$PROMPT_QUALITY" -gt 10 ]; then
     PROMPT_QUALITY=10
