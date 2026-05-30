@@ -39,12 +39,19 @@
 - [x] `/spec-status` — show done/undone items, current target
 - [x] `/respec` — simplified loop: pick item, work, mark done, repeat
 
-### Phase 6: Update docs
-- [ ] Rewrite README to reflect new model
-- [ ] Update package.json description/keywords
+### Phase 6: Update docs ✅
+- [x] Rewrite README to reflect new model
+- [x] Update package.json description/keywords
 - [ ] Push to GitHub
 
-### Phase 7: Verify
+### Phase 7: Verify ✅
 - [x] TypeScript compiles cleanly
-- [ ] Extension loads via `pi -e ./src/index.ts`
-- [ ] Commands register correctly
+- [x] Extension loads via `pi -e ./src/index.ts`
+- [x] Commands register correctly
+- [x] Remove dead code (focusedSpecKey, persistFocus)
+- [x] Clean up duplicate functions
+
+### Phase 8: Tests
+- [ ] Add unit tests for spec-parser
+- [ ] Add unit tests for store
+- [ ] Add integration test for loop controller
