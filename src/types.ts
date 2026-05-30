@@ -7,6 +7,8 @@ export interface SpecItem {
 	index: number; // Position in the spec
 	verification?: string; // How to verify (e.g., "npm test", "curl localhost:3000")
 	body?: string; // Supporting text under the item
+	parent?: string; // Parent section name for hierarchical specs
+	depth?: number; // Nesting depth (0 = top level)
 }
 
 // Round of reconciliation

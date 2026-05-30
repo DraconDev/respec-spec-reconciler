@@ -12,19 +12,33 @@ export function parseSpec(specPath: string): SpecItem[] | null {
 		const items: SpecItem[] = [];
 		let index = 0;
 
+		// Track section hierarchy for nested requirements
+		const sectionStack: string[] = [];
+
 		for (let i = 0; i < lines.length; i++) {
 			const line = lines[i];
 			const trimmed = line.trim();
 
+			// Track section hierarchy
+			const h2Match = trimmed.match(/^##\s+(.+)/);
+			if (h2Match) {
+				// Update section stack - remove deeper levels
+				sectionStack.length = 1; // Keep "Requirements" or root
+				sectionStack.push(h2Match[1]!.trim());
+			}
+
 			// Match ### [x] Item name or ### [ ] Item name
 			const headingMatch = trimmed.match(/^###\s+\[(x| )\]\s+(.+)/i);
-			// Match - [x] Item name or - [ ] Item name
+			// Match - [x] Item name or - [ ] Item name (list items)
 			const listMatch = trimmed.match(/^[-*]\s+\[(x| )\]\s+(.+)/i);
 
 			const match = headingMatch || listMatch;
 			if (match) {
 				const checked = match[1]!.toLowerCase() === "x";
 				const name = match[2]!.trim();
+				const isList = !!listMatch;
+				const depth = isList ? sectionStack.length : sectionStack.length + 1;
+				const parent = sectionStack.length > 0 ? sectionStack[sectionStack.length - 1] : undefined;
 				index++;
 
 				// Collect body text until next checkbox or heading
@@ -52,6 +66,8 @@ export function parseSpec(specPath: string): SpecItem[] | null {
 					index,
 					verification,
 					body: bodyLines.join("\n") || undefined,
+					parent,
+					depth,
 				});
 			}
 		}
