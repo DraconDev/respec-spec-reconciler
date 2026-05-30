@@ -6,7 +6,8 @@
 - [x] **Rollback detection** — alert if a previously checked item regresses
 - [x] **Spec diffing** — show what changed between SPEC.md versions
 - [x] **Confidence scoring** — rate how confident the agent should be based on item type
-- [ ] **Multi-spec composition** — support for multiple SPEC.md files in different directories
+- [x] **Multi-spec composition** — support for multiple SPEC.md files in different directories
+- [ ] **Team sync** — share learned budgets across team members via git
 
 ### Medium Priority
 - [x] **Checkpointing** — save progress mid-item for resume after crash
