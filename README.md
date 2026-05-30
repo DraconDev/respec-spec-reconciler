@@ -38,7 +38,10 @@ SPEC.md (requirements) → /respec → agent works → checks off → loop
 - **Complexity guidance** — "This looks complex, work incrementally"
 - **Verification suggestions** — auto-suggests commands based on item patterns
 
-### 📈 Spec Analytics
+### 🔄 Team Sync
+- **Shared learning** — export/import learned budgets via `.respec-budgets.json`
+- **Git integration** — commit sync files to share with team
+- **Merged budgets** — imports only new categories
 - **Analytics dashboard** — `/respec analytics` shows completion stats
 - **Difficulty tracking** — identifies most time-consuming items
 - **Failure analysis** — shows items that fail most often
@@ -130,6 +133,8 @@ respec supports nested requirements:
 | `/respec checkpoint` | Save checkpoint for resume after crash |
 | `/respec multi` | Toggle multi-spec mode for multiple SPEC.md files |
 | `/respec analytics` | Show spec analytics (completion, difficulty, failures) |
+| `/respec sync` | Export learned budgets to `.respec-budgets.json` |
+| `/respec import` | Import learned budgets from `.respec-budgets.json` |
 
 ## How It Works
 

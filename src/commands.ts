@@ -286,6 +286,10 @@ Each item should be a verifiable requirement.
 
 			if (command === "import") {
 				const state = getStore();
+				if (!state) {
+					await ctx.ui.notify("No respec state found", "warning");
+					return;
+				}
 				const syncPath = join(dirname(path), ".respec-budgets.json");
 				if (existsSync(syncPath)) {
 					try {
