@@ -64,4 +64,5 @@ export interface RespecState {
 	batchMode: boolean; // Enable parallel item processing
 	batchSize: number; // Max items to batch together
 	learnedBudgets: TurnBudget[]; // Learned turn budgets by category
+	specHistory: SpecSnapshot[]; // Previous spec snapshots for rollback detection
 }
