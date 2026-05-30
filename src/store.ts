@@ -5,7 +5,6 @@ import type { RespecState, RoundRecord, SpecItem } from "./types.js";
 
 const STATE_CUSTOM_TYPE = "respec-state";
 const ROUND_CUSTOM_TYPE = "respec-round";
-const FOCUS_CUSTOM_TYPE = "respec-focus";
 
 // In-memory store (per-extension-instance)
 let store: RespecState | null = null;
@@ -71,19 +70,3 @@ export function appendRoundRecord(record: RoundRecord): void {
 
 // Restore round records from session entries
 export function restoreRoundRecords(
-	entries: Array<{ type: string; data?: unknown }>
-): RoundRecord[] {
-	const records: RoundRecord[] = [];
-	for (const entry of entries) {
-		if (entry.type === ROUND_CUSTOM_TYPE && entry.data) {
-			records.push(entry.data as RoundRecord);
-		}
-	}
-	return records.sort((a, b) => a.round - b.round);
-}
-
-// Persist focus entry
-export function persistFocus(specKey?: string): void {
-	if (!pi) return;
-	pi.appendEntry(FOCUS_CUSTOM_TYPE, { specKey });
-}
