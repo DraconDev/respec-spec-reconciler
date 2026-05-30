@@ -80,6 +80,92 @@ export function countChecked(items: SpecItem[]): number {
 	return items.filter((i) => i.checked).length;
 }
 
+// Estimate item complexity based on name keywords and body length
+export function estimateComplexity(item: SpecItem): number {
+	let score = 0;
+	const name = item.name.toLowerCase();
+	const body = item.body?.toLowerCase() ?? "";
+
+	// Complex keywords
+	if (/concurrent|parallel|async|thread|mutex|lock/.test(name + body)) score += 3;
+	if (/refactor|restructure|rewrite|migrate/.test(name + body)) score += 3;
+	if (/test|integration|e2e|benchmark/.test(name + body)) score += 2;
+	if (/api|endpoint|route|handler/.test(name + body)) score += 2;
+	if (/config|setup|init|install/.test(name + body)) score += 1;
+	if (/compile|build|typecheck|lint/.test(name + body)) score += 1;
+
+	// Body length as complexity proxy
+	score += Math.min(3, Math.floor((body.length + item.name.length) / 100));
+
+	return score;
+}
+
+// Infer dependencies from item relationships
+export function inferDependencies(items: SpecItem[]): Map<number, number[]> {
+	const deps = new Map<number, number[]>();
+
+	for (let i = 0; i < items.length; i++) {
+		const item = items[i];
+		const name = item.name.toLowerCase();
+		const body = (item.body ?? "").toLowerCase();
+		const dependencies: number[] = [];
+
+		// Items that likely depend on "compiles" or "builds"
+		if (/test|api|endpoint|feature|component/.test(name)) {
+			for (let j = 0; j < i; j++) {
+				const prev = items[j].name.toLowerCase();
+				if (/compil|build|setup|config/.test(prev)) {
+					dependencies.push(j);
+				}
+			}
+		}
+
+		// Items that depend on "tests pass"
+		if (/api|endpoint|feature/.test(name)) {
+			for (let j = 0; j < i; j++) {
+				const prev = items[j].name.toLowerCase();
+				if (/test|compile/.test(prev)) {
+					if (!dependencies.includes(j)) dependencies.push(j);
+				}
+			}
+		}
+
+		if (dependencies.length > 0) {
+			deps.set(i, dependencies);
+		}
+	}
+
+	return deps;
+}
+
+// Find items whose dependencies are all satisfied
+export function findReadyItems(items: SpecItem[], deps: Map<number, number[]>): SpecItem[] {
+	return items.filter((item, idx) => {
+		if (item.checked) return false;
+		const itemDeps = deps.get(idx) ?? [];
+		return itemDeps.every((depIdx) => items[depIdx]?.checked);
+	});
+}
+
+// Get failure hints from round history
+export function getFailureHints(targetName: string, history: RoundRecord[]): string | null {
+	const targetHistory = history.filter((r) => r.target === targetName);
+	if (targetHistory.length === 0) return null;
+
+	const recent = targetHistory[targetHistory.length - 1];
+	const avgTurns = targetHistory.reduce((sum, r) => sum + r.turnsUsed, 0) / targetHistory.length;
+
+	if (avgTurns > 5) {
+		return `Previous attempts took ${Math.round(avgTurns)} turns on average. Consider breaking this into smaller steps.`;
+	}
+
+	if (recent.turnsUsed >= 10) {
+		return `Last attempt used ${recent.turnsUsed} turns without success. Check if there are blocking issues.`;
+	}
+
+	return null;
+}
+
 // Format item status for display
 export function formatItemStatus(item: SpecItem, isTarget?: boolean): string {
 	const marker = item.checked ? "[x]" : isTarget ? "[>]" : "[ ]";
