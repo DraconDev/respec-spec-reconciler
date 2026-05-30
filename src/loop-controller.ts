@@ -299,9 +299,9 @@ export class LoopController {
 		// Get failure hints if this item has been attempted before
 		const failureHint = getFailureHints(target.name, state.roundHistory);
 
-		// Estimate complexity and suggest turn budget
+		// Estimate complexity and suggest turn budget (use learned data if available)
 		const complexity = estimateComplexity(target);
-		const suggestedBudget = Math.max(5, complexity * 3 + 3);
+		const suggestedBudget = getSuggestedBudget(target.name, state.learnedBudgets, complexity);
 
 		// Build context-aware prompt
 		let prompt = `## Reconcile: ${target.name}\n\n`;
