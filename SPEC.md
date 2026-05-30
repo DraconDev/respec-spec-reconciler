@@ -212,6 +212,74 @@ Run: `grep -q "getConfidenceLabel" src/spec-parser.ts`
 analyzeFailure function in loop-controller.
 Run: `grep -q "analyzeFailure" src/loop-controller.ts`
 
+### [x] getFailureHints function exists
+Failure hints generation in spec-parser.
+Run: `grep -q "getFailureHints" src/spec-parser.ts`
+
+### [x] Extract category function exists
+Extract item category.
+Run: `grep -q "extractCategory" src/spec-parser.ts`
+
+### [x] Learn turn budget function exists
+Learn from completed items.
+Run: `grep -q "learnTurnBudget" src/spec-parser.ts`
+
+### [x] Get suggested budget function exists
+Get turn budget based on category.
+Run: `grep -q "getSuggestedBudget" src/spec-parser.ts`
+
+### [x] detectRollbacks function exists
+Detect spec rollback.
+Run: `grep -q "detectRollbacks" src/spec-parser.ts`
+
+### [x] updateSpecHistory function exists
+Update spec history.
+Run: `grep -q "updateSpecHistory" src/spec-parser.ts`
+
+### [x] calculateConfidence function exists
+Calculate confidence score.
+Run: `grep -q "calculateConfidence" src/spec-parser.ts`
+
+### [x] diffSpecs function exists
+Diff two spec versions.
+Run: `grep -q "diffSpecs" src/spec-parser.ts`
+
+### [x] formatDiff function exists
+Format diff for display.
+Run: `grep -q "formatDiff" src/spec-parser.ts`
+
+### [x] findReadyItems function exists
+Find items with satisfied dependencies.
+Run: `grep -q "findReadyItems" src/spec-parser.ts`
+
+### [x] estimateComplexity function exists
+Estimate item complexity.
+Run: `grep -q "estimateComplexity" src/spec-parser.ts`
+
+### [x] buildBatchPrompt function exists
+Build batch mode prompts.
+Run: `grep -q "buildBatchPrompt" src/loop-controller.ts`
+
+### [x] multiSpec mode flag exists
+Multi-spec mode tracking in state.
+Run: `grep -q "multiSpec" src/types.ts`
+
+### [x] specFiles array exists
+All spec files being tracked.
+Run: `grep -q "specFiles" src/types.ts`
+
+### [x] Checkpoint in default state
+Checkpoint initialized in store.
+Run: `grep -q "checkpoint: undefined" src/store.ts`
+
+### [x] Multi-spec mode flag in default state
+Multi-spec initialized in store.
+Run: `grep -q "multiSpec: false" src/store.ts`
+
+### [x] Spec files array in default state
+Spec files initialized in store.
+Run: `grep -q "specFiles: \[\]" src/store.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
