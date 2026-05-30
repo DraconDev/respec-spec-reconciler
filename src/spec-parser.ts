@@ -200,6 +200,70 @@ export function getFailureHints(targetName: string, history: RoundRecord[]): str
 	return null;
 }
 
+// Extract category from item name for budget learning
+function extractCategory(itemName: string): string {
+	const name = itemName.toLowerCase();
+	if (/compil|build|typecheck|lint/i.test(name)) return "compile";
+	if (/test/i.test(name)) return "test";
+	if (/api|endpoint|route|handler/i.test(name)) return "api";
+	if (/config|settings|setup/i.test(name)) return "config";
+	if (/docs?|readme|documentation/i.test(name)) return "docs";
+	if (/refactor|restructure/i.test(name)) return "refactor";
+	if (/security|vuln|audit/i.test(name)) return "security";
+	if (/performance|benchmark/i.test(name)) return "perf";
+	if (/install|setup|init/i.test(name)) return "setup";
+	if (/github|repo|remote/i.test(name)) return "repo";
+	return "other";
+}
+
+// Learn turn budget from a completed round
+export function learnTurnBudget(
+	existingBudgets: TurnBudget[],
+	itemName: string,
+	turnsUsed: number
+): TurnBudget[] {
+	const category = extractCategory(itemName);
+	const budgets = [...existingBudgets];
+	const existingIndex = budgets.findIndex((b) => b.category === category);
+
+	if (existingIndex >= 0) {
+		const existing = budgets[existingIndex];
+		budgets[existingIndex] = {
+			category,
+			totalTurns: existing.totalTurns + turnsUsed,
+			count: existing.count + 1,
+			avgTurns: (existing.totalTurns + turnsUsed) / (existing.count + 1),
+		};
+	} else {
+		budgets.push({
+			category,
+			totalTurns: turnsUsed,
+			count: 1,
+			avgTurns: turnsUsed,
+		});
+	}
+
+	return budgets;
+}
+
+// Get suggested turn budget for an item based on learned data
+export function getSuggestedBudget(
+	itemName: string,
+	budgets: TurnBudget[],
+	baseComplexity: number
+): number {
+	const category = extractCategory(itemName);
+	const learnedBudget = budgets.find((b) => b.category === category);
+
+	if (learnedBudget && learnedBudget.count >= 2) {
+		// Use learned data if we have at least 2 samples
+		return Math.max(5, Math.ceil(learnedBudget.avgTurns * 1.2));
+	}
+
+	// Fallback to complexity-based estimate
+	return Math.max(5, baseComplexity * 3 + 3);
+}
+
 // Format item status for display
 export function formatItemStatus(item: SpecItem, isTarget?: boolean): string {
 	const marker = item.checked ? "[x]" : isTarget ? "[>]" : "[ ]";
