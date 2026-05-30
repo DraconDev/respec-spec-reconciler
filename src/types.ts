@@ -27,6 +27,14 @@ export interface EscapeValve {
 	blockedAt: number;
 }
 
+// Learned turn budget by category
+export interface TurnBudget {
+	category: string; // e.g., "compile", "test", "api"
+	totalTurns: number; // Sum of turns used
+	count: number; // Number of items completed
+	avgTurns: number; // Computed average
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
@@ -46,4 +54,5 @@ export interface RespecState {
 	focusedSpecKey?: string;
 	batchMode: boolean; // Enable parallel item processing
 	batchSize: number; // Max items to batch together
+	learnedBudgets: TurnBudget[]; // Learned turn budgets by category
 }
