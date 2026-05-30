@@ -14,6 +14,10 @@ import {
 	findFirstUnchecked,
 	allChecked,
 	countChecked,
+	estimateComplexity,
+	inferDependencies,
+	findReadyItems,
+	getFailureHints,
 } from "./spec-parser.js";
 import {
 	buildWidget,
