@@ -112,8 +112,10 @@ export class LoopController {
 		ctx.ui.setWorkingMessage(buildWorkingMessage(state));
 		ctx.ui.setWidget("respec", buildWidget(state));
 
-		// Send the focused prompt
-		const prompt = this.buildPrompt(target, state);
+		// Send the focused prompt (batch mode if enabled)
+		const prompt = state.batchMode
+			? this.buildBatchPrompt(target, state)
+			: this.buildPrompt(target, state);
 		this.pi.sendMessage(
 			{
 				customType: "respec-prompt",
