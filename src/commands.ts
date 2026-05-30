@@ -1,9 +1,8 @@
 // Register /spec-init, /spec-status, /respec commands
 // Simplified — no verify script, spec is the source of truth
 
-import type {
-	ExtensionAPI,
-} from "@earendil-works/pi-coding-agent";
+import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
+import type { TurnBudget } from "./types.js";
 import { LoopController } from "./loop-controller.js";
 import {
 	initStore,
@@ -255,6 +254,61 @@ Each item should be a verifiable requirement.
 				} else {
 					await ctx.ui.notify(
 						"No round history yet",
+						"info"
+					);
+				}
+				return;
+			}
+
+			if (command === "sync") {
+				const state = getStore();
+				if (state && state.learnedBudgets.length > 0) {
+					// Export learned budgets to .respec-budgets.json
+					const syncPath = join(dirname(path), ".respec-budgets.json");
+					const syncData = {
+						version: 1,
+						exported: new Date().toISOString(),
+						budgets: state.learnedBudgets,
+					};
+					writeFileSync(syncPath, JSON.stringify(syncData, null, 2));
+					await ctx.ui.notify(
+						`Exported ${state.learnedBudgets.length} learned budgets to ${syncPath}`,
+						"info"
+					);
+					} else {
+						await ctx.ui.notify(
+							"No learned budgets to export",
+							"info"
+						);
+					}
+				return;
+			}
+
+			if (command === "import") {
+				const state = getStore();
+				const syncPath = join(dirname(path), ".respec-budgets.json");
+				if (existsSync(syncPath)) {
+					try {
+						const data = JSON.parse(readFileSync(syncPath, "utf-8"));
+						if (data.budgets && Array.isArray(data.budgets)) {
+							// Merge with existing budgets
+							const existingKeys = new Set(state.learnedBudgets.map((b) => b.category));
+							const newBudgets = data.budgets.filter(
+								(b: TurnBudget) => !existingKeys.has(b.category)
+							);
+							state.learnedBudgets.push(...newBudgets);
+							setStore(state);
+							await ctx.ui.notify(
+								`Imported ${newBudgets.length} learned budgets`,
+								"info"
+							);
+						}
+					} catch {
+						await ctx.ui.notify("Failed to parse sync file", "error");
+					}
+				} else {
+					await ctx.ui.notify(
+						`No sync file found at ${syncPath}`,
 						"info"
 					);
 				}
