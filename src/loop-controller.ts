@@ -26,6 +26,7 @@ import {
 	getConfidenceLabel,
 	diffSpecs,
 	formatDiff,
+	findSpecFiles,
 } from "./spec-parser.js";
 import {
 	buildWidget,
@@ -45,6 +46,13 @@ export class LoopController {
 	// Start or resume reconciliation
 	async start(specPath: string, ctx: ExtensionContext): Promise<void> {
 		let state = getStore();
+
+		// Handle multi-spec mode
+		if (state?.multiSpec && state.specFiles.length > 0) {
+			// In multi-spec mode, use all spec files
+			await this.startMultiSpec(state, ctx);
+			return;
+		}
 
 		// Parse the spec
 		const items = parseSpec(specPath);
