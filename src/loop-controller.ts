@@ -24,6 +24,8 @@ import {
 	updateSpecHistory,
 	calculateConfidence,
 	getConfidenceLabel,
+	diffSpecs,
+	formatDiff,
 } from "./spec-parser.js";
 import {
 	buildWidget,
