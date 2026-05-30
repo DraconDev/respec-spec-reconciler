@@ -280,6 +280,26 @@ Run: `grep -q "multiSpec: false" src/store.ts`
 Spec files initialized in store.
 Run: `grep -q "specFiles: \[\]" src/store.ts`
 
+### [x] Type definitions complete
+All type definitions present.
+Run: `grep -c "interface\|type" src/types.ts`
+
+### [x] Store module exports functions
+Store module has initStore, getStore, setStore.
+Run: `grep -c "export function" src/store.ts`
+
+### [x] Commands registered with pi
+Commands registered with extension.
+Run: `grep -q "registerCommand" src/commands.ts`
+
+### [x] Extension entry point exports function
+Main entry point exports function.
+Run: `grep -q "export" src/index.ts`
+
+### [x] All source files compile
+TypeScript compilation succeeds.
+Run: `npx tsc --noEmit`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
