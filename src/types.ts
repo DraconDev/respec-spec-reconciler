@@ -33,6 +33,7 @@ export interface RespecState {
 	status: "idle" | "active" | "paused" | "done" | "blocked";
 	items: SpecItem[]; // Current spec items
 	currentTarget?: SpecItem; // Item currently being worked on
+	currentBatch?: SpecItem[]; // Items being worked on in parallel (batch mode)
 	currentRound: number;
 	maxRounds: number;
 	turnsThisRound: number;
@@ -43,4 +44,6 @@ export interface RespecState {
 	userInterrupted: boolean;
 	lastSpecMtime?: number;
 	focusedSpecKey?: string;
+	batchMode: boolean; // Enable parallel item processing
+	batchSize: number; // Max items to batch together
 }

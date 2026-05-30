@@ -37,10 +37,13 @@ export function createDefaultState(specPath: string, items?: SpecItem[]): Respec
 		turnsThisRound: 0,
 		maxTurnsPerRound: 15,
 		currentTarget: undefined,
+		currentBatch: undefined,
 		items: items ?? [],
 		failureCounts: {},
 		roundHistory: [],
 		userInterrupted: false,
+		batchMode: false,
+		batchSize: 3,
 	};
 }
 
