@@ -4,9 +4,9 @@
 
 ### High Priority
 - [x] **Rollback detection** — alert if a previously checked item regresses
+- [x] **Spec diffing** — show what changed between SPEC.md versions
+- [x] **Confidence scoring** — rate how confident the agent should be based on item type
 - [ ] **Multi-spec composition** — support for multiple SPEC.md files in different directories
-- [ ] **Spec diffing** — show what changed between SPEC.md versions
-- [ ] **Confidence scoring** — rate how confident the agent should be based on item type
 
 ### Medium Priority
 - [ ] **Checkpointing** — save progress mid-item for resume after crash

@@ -46,6 +46,7 @@ export function createDefaultState(specPath: string, items?: SpecItem[]): Respec
 		batchSize: 3,
 		learnedBudgets: [],
 		specHistory: [],
+		checkpoint: undefined,
 	};
 }
 

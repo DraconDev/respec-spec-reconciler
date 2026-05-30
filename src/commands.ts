@@ -210,6 +210,29 @@ Each item should be a verifiable requirement.
 				return;
 			}
 
+			if (command === "checkpoint") {
+				const state = getStore();
+				if (state && state.status === "active" && state.currentTarget) {
+					state.checkpoint = {
+						itemName: state.currentTarget.name,
+						round: state.currentRound,
+						turnsUsed: state.turnsThisRound,
+						timestamp: Date.now(),
+					};
+					setStore(state);
+					await ctx.ui.notify(
+						`Checkpoint saved: ${state.currentTarget.name} (round ${state.currentRound}, ${state.turnsThisRound} turns)`,
+						"info"
+					);
+				} else {
+					await ctx.ui.notify(
+						"No active reconciliation to checkpoint",
+						"warning"
+					);
+				}
+				return;
+			}
+
 			// Default: start new reconciliation
 			if (!existsSync(path)) {
 				await ctx.ui.notify(

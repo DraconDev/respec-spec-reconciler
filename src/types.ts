@@ -44,6 +44,15 @@ export interface SpecSnapshot {
 	timestamp: number;
 }
 
+// Checkpoint for saving progress mid-item
+export interface Checkpoint {
+	itemName: string;
+	round: number;
+	turnsUsed: number;
+	timestamp: number;
+	notes?: string; // Optional agent notes about progress
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
@@ -65,4 +74,5 @@ export interface RespecState {
 	batchSize: number; // Max items to batch together
 	learnedBudgets: TurnBudget[]; // Learned turn budgets by category
 	specHistory: SpecSnapshot[]; // Previous spec snapshots for rollback detection
+	checkpoint?: Checkpoint; // Current checkpoint for resume
 }
