@@ -130,6 +130,108 @@ export function findSpecFiles(rootPath: string): string[] {
 	return specs;
 }
 
+// Spec analytics - track which item types take longest
+export interface SpecAnalytics {
+	totalItems: number;
+	totalChecked: number;
+	completedByCategory: Record<string, { count: number; avgTurns: number }>;
+	topDifficultyItems: Array<{ name: string; turns: number }>;
+	mostFailedItems: Array<{ name: string; failures: number }>;
+}
+
+export function generateAnalytics(history: RoundRecord[]): SpecAnalytics {
+	const completed = history.filter((r) => r.pass);
+	const failed = history.filter((r) => !r.pass);
+
+	// Count by category
+	const byCategory: Record<string, { turns: number[]; failures: number }> = {};
+	for (const record of history) {
+		const cat = extractCategory(record.target);
+		if (!byCategory[cat]) {
+			byCategory[cat] = { turns: [], failures: 0 };
+		}
+		if (record.pass) {
+			byCategory[cat].turns.push(record.turnsUsed);
+		} else {
+			byCategory[cat].failures++;
+		}
+	}
+
+	const completedByCategory: SpecAnalytics["completedByCategory"] = {};
+	for (const [cat, data] of Object.entries(byCategory)) {
+		const avg = data.turns.length > 0
+			? data.turns.reduce((a, b) => a + b, 0) / data.turns.length
+			: 0;
+		completedByCategory[cat] = {
+			count: data.turns.length,
+			avgTurns: Math.round(avg * 10) / 10,
+		};
+	}
+
+	// Top difficulty items (most turns)
+	const difficultyMap = new Map<string, number>();
+	for (const record of completed) {
+		const prev = difficultyMap.get(record.target) ?? 0;
+		difficultyMap.set(record.target, prev + record.turnsUsed);
+	}
+	const topDifficultyItems = Array.from(difficultyMap.entries())
+		.map(([name, turns]) => ({ name, turns }))
+		.sort((a, b) => b.turns - a.turns)
+		.slice(0, 5);
+
+	// Most failed items
+	const failureMap = new Map<string, number>();
+	for (const record of failed) {
+		failureMap.set(record.target, (failureMap.get(record.target) ?? 0) + 1);
+	}
+	const mostFailedItems = Array.from(failureMap.entries())
+		.map(([name, failures]) => ({ name, failures }))
+		.sort((a, b) => b.failures - a.failures)
+		.slice(0, 5);
+
+	return {
+		totalItems: history.length,
+		totalChecked: completed.length,
+		completedByCategory,
+		topDifficultyItems,
+		mostFailedItems,
+	};
+}
+
+// Format analytics for display
+export function formatAnalytics(analytics: SpecAnalytics): string[] {
+	const lines: string[] = [];
+
+	lines.push("**Spec Analytics:**");
+	lines.push(`Total: ${analytics.totalChecked}/${analytics.totalItems} completed`);
+
+	if (Object.keys(analytics.completedByCategory).length > 0) {
+		lines.push("");
+		lines.push("By category:");
+		for (const [cat, data] of Object.entries(analytics.completedByCategory)) {
+			lines.push(`  ${cat}: ${data.count} items, avg ${data.avgTurns} turns`);
+		}
+	}
+
+	if (analytics.topDifficultyItems.length > 0) {
+		lines.push("");
+		lines.push("Most difficult:");
+		for (const item of analytics.topDifficultyItems) {
+			lines.push(`  ${item.name}: ${item.turns} turns`);
+		}
+	}
+
+	if (analytics.mostFailedItems.length > 0) {
+		lines.push("");
+		lines.push("Most failures:");
+		for (const item of analytics.mostFailedItems) {
+			lines.push(`  ${item.name}: ${item.failures} fails`);
+		}
+	}
+
+	return lines;
+}
+
 // Check if all items are checked
 export function allChecked(items: SpecItem[]): boolean {
 	return items.length > 0 && items.every((i) => i.checked);
