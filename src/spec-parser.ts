@@ -296,6 +296,7 @@ export function detectRollbacks(
 			if (wasChecked) {
 				rollbacks.push(item.name);
 			}
+		}
 
 	return rollbacks;
 }
