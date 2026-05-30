@@ -42,10 +42,27 @@ export function buildActiveWidget(state: RespecState): string[] {
 	const bar = progressBar(done, total);
 	const lines: string[] = [];
 
+	// Calculate efficiency metrics
+	const history = state.roundHistory;
+	const completedRounds = history.filter((r) => r.pass);
+	const avgTurns = completedRounds.length > 0
+		? completedRounds.reduce((sum, r) => sum + r.turnsUsed, 0) / completedRounds.length
+		: 0;
+	const successRate = history.length > 0
+		? Math.round((completedRounds.length / history.length) * 100)
+		: 100;
+
 	lines.push(`◉ respec — round ${state.currentRound}/${state.maxRounds}`);
-	lines.push(`  ${bar}  ${done}/${total} done  •  ${state.turnsThisRound}/${state.maxTurnsPerRound} turns`);
+	lines.push(`  ${bar}  ${done}/${total} done`);
+	lines.push(`  • turns: ${state.turnsThisRound}/${state.maxTurnsPerRound}`);
+	lines.push(`  • success: ${successRate}% (avg ${avgTurns.toFixed(1)} turns/item)`);
+
+	if (state.batchMode) {
+		lines.push(`  • batch mode: ${state.batchSize} items`);
+	}
 
 	if (target) {
+		lines.push("");
 		lines.push(`  → ${target.name}`);
 		if (target.verification) {
 			lines.push(`    verify: ${target.verification}`);
