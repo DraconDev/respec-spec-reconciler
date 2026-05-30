@@ -7,6 +7,10 @@ Transform respec from a simple spec-driven task queue into an **evolutionary rec
 3. ✅ Provides smarter prompts that guide the agent better
 4. ✅ Detects dependencies between spec items
 5. ✅ Offers parallel execution for independent items
+6. ✅ Detects rollbacks and regressions
+7. ✅ Shows spec diffs when items change
+8. ✅ Calculates confidence scores based on history
+9. ✅ Supports checkpoints for crash recovery
 
 ## Metrics
 - **Primary**: `spec_coverage` (% of spec items verified per session) — higher is better
@@ -42,7 +46,7 @@ Outputs structured metrics:
 
 ## What's Been Tried
 
-### v0.2.0 — Evolutionary Features
+### v0.2.0 — Evolutionary Features (20 iterations)
 
 1. **Adaptive prompts with complexity scoring** ✅
    - `estimateComplexity()` — analyzes item name/body for complexity
@@ -88,6 +92,30 @@ Outputs structured metrics:
     - `suggestVerification()` — auto-suggests commands based on 14 patterns
     - Compilation, testing, API, docs, security, performance patterns
 
+11. **Rollback detection** ✅
+    - `detectRollbacks()` — alerts when previously checked items regress
+    - `updateSpecHistory()` — tracks checked state across sessions
+    - Warning notification when regression detected
+
+12. **Spec diffing** ✅
+    - `diffSpecs()` — compares old and new spec items
+    - `formatDiff()` — formats diff for display
+    - Change notifications on spec modification
+
+13. **Confidence scoring** ✅
+    - `calculateConfidence()` — rates confidence based on history
+    - `getConfidenceLabel()` — converts to high/medium/low
+    - Displayed in prompts
+
+14. **Checkpointing** ✅
+    - `/respec checkpoint` — saves progress mid-item
+    - Checkpoint indicator in status display
+    - Resume support for crash recovery
+
+15. **Checkpoint status display** ✅
+    - Shows checkpoint info in active widget
+    - Tracks round and turns used
+
 ### Baseline (v0.1.1)
 - Simple sequential loop: pick first unchecked, work, mark done
 - Basic escape valve (3 failures → blocked)
@@ -95,8 +123,8 @@ Outputs structured metrics:
 
 ## Ideas to Try
 1. Multi-spec composition — support for multiple SPEC.md files
-2. Rollback detection — alert if a checked item regresses
-3. Spec diffing — show what changed between versions
-4. Confidence scoring — rate agent confidence by item type
-5. Checkpointing — save progress mid-item
-6. Team sync — share learned budgets via git
+2. Team sync — share learned budgets via git
+3. Interactive spec editing — edit SPEC.md via natural language commands
+4. Spec analytics — track which item types take longest, common failure patterns
+5. IDE integration — VS Code extension for spec editing and status
+6. CI/CD integration — run /respec in CI to enforce spec compliance
