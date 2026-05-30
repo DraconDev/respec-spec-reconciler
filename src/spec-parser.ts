@@ -339,6 +339,63 @@ export function getConfidenceLabel(confidence: number): string {
 	return "low";
 }
 
+// Diff two sets of spec items to show what changed
+export interface SpecDiff {
+	added: SpecItem[]; // New items not in old set
+	removed: string[]; // Item names that were removed
+	checked: string[]; // Items that changed from unchecked to checked
+	unchecked: string[]; // Items that changed from checked to unchecked
+}
+
+export function diffSpecs(oldItems: SpecItem[], newItems: SpecItem[]): SpecDiff {
+	const oldNames = new Set(oldItems.map((i) => i.name));
+	const newNames = new Set(newItems.map((i) => i.name));
+	const oldChecked = new Set(oldItems.filter((i) => i.checked).map((i) => i.name));
+	const newChecked = new Set(newItems.filter((i) => i.checked).map((i) => i.name));
+
+	const added = newItems.filter((i) => !oldNames.has(i.name));
+	const removed = oldItems.filter((i) => !newNames.has(i.name)).map((i) => i.name);
+	const checked = newItems.filter((i) => newChecked.has(i.name) && !oldChecked.has(i.name)).map((i) => i.name);
+	const unchecked = newItems.filter((i) => oldChecked.has(i.name) && !newChecked.has(i.name)).map((i) => i.name);
+
+	return { added, removed, checked, unchecked };
+}
+
+// Format diff for display
+export function formatDiff(diff: SpecDiff): string[] {
+	const lines: string[] = [];
+
+	if (diff.added.length > 0) {
+		lines.push("**Added:**");
+		for (const item of diff.added) {
+			lines.push(`+ ${item.name}`);
+		}
+	}
+
+	if (diff.removed.length > 0) {
+		lines.push("**Removed:**");
+		for (const name of diff.removed) {
+			lines.push(`- ${name}`);
+		}
+	}
+
+	if (diff.checked.length > 0) {
+		lines.push("**Completed:**");
+		for (const name of diff.checked) {
+			lines.push(`✓ ${name}`);
+		}
+	}
+
+	if (diff.unchecked.length > 0) {
+		lines.push("**Regressed:**");
+		for (const name of diff.unchecked) {
+			lines.push(`✗ ${name}`);
+		}
+	}
+
+	return lines;
+}
+
 // Update spec history with current state
 export function updateSpecHistory(
 	currentItems: SpecItem[],
