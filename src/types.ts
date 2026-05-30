@@ -82,4 +82,6 @@ export interface RespecState {
 	learnedBudgets: TurnBudget[]; // Learned turn budgets by category
 	specHistory: SpecSnapshot[]; // Previous spec snapshots for rollback detection
 	checkpoint?: Checkpoint; // Current checkpoint for resume
+	multiSpec: boolean; // Enable multi-spec composition
+	specFiles: SpecFile[]; // All spec files being tracked
 }
