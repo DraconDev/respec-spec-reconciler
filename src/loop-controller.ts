@@ -319,9 +319,14 @@ export class LoopController {
 		const complexity = estimateComplexity(target);
 		const suggestedBudget = getSuggestedBudget(target.name, state.learnedBudgets, complexity);
 
+		// Calculate confidence based on past success
+		const confidence = calculateConfidence(target.name, state.roundHistory);
+		const confidenceLabel = getConfidenceLabel(confidence);
+
 		// Build context-aware prompt
 		let prompt = `## Reconcile: ${target.name}\n\n`;
-		prompt += `**${target.name}** is not yet satisfied. ${done}/${total} items complete.\n\n`;
+		prompt += `**${target.name}** is not yet satisfied. ${done}/${total} items complete.\n`;
+		prompt += `Confidence: ${confidenceLabel} (${confidence}%)\n\n`;
 
 		if (target.verification) {
 			prompt += `Verify by running: \`${target.verification}\`\n\n`;
