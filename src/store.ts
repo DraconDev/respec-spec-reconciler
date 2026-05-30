@@ -44,6 +44,7 @@ export function createDefaultState(specPath: string, items?: SpecItem[]): Respec
 		userInterrupted: false,
 		batchMode: false,
 		batchSize: 3,
+		learnedBudgets: [],
 	};
 }
 
