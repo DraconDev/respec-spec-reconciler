@@ -47,7 +47,7 @@ if [ "$WITH_VERIFY" -gt 0 ]; then
 fi
 
 # Count items with body text (more context = better prompts)
-WITH_BODY=$(awk '/^\s*(###|[-*])\s+\[[x ]\]/ {found=1} found && /^\s*[^#\-\*]/ && !/^\s*$/ {body++} /^\s*(###|[-*])\s+\[[x ]\]/ && found {if(body>0) count++; body=0} END {print count+0}' "$SPEC_PATH" || echo "0")
+WITH_BODY=$(awk '/^\s*(###|[-*])\s+\[[x ]\]/ {found=1} found && /^\s*[^#\-\*]/ && !/^\s*$/ {body++} /^\s*(###|[-*])\s+\[[x ]\]/ && found {if(body>0) count++; body=0} END {print (count+0)}' "$SPEC_PATH" 2>/dev/null || echo "0")
 if [ "$WITH_BODY" -gt 0 ]; then
     PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
 fi
