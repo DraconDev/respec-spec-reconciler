@@ -33,6 +33,13 @@ export function itemMarker(item: SpecItem, isCurrent?: boolean): string {
 	return "[ ]";
 }
 
+// Format item for hierarchical display
+export function formatItemHierarchical(item: SpecItem, isCurrent?: boolean): string {
+	const marker = itemMarker(item, isCurrent);
+	const indent = item.depth ? "  ".repeat(item.depth - 1) : "";
+	return `${indent}${marker} ${item.name}`;
+}
+
 // ─── Active widget ──────────────────────────────────────────────
 
 export function buildActiveWidget(state: RespecState): string[] {
@@ -69,12 +76,18 @@ export function buildActiveWidget(state: RespecState): string[] {
 		}
 	}
 
-	// Queue: show items with markers
+	// Queue: show items with markers (hierarchical if depth is available)
 	lines.push("");
 	lines.push("  Queue:");
 	for (const item of state.items.slice(0, 10)) {
 		const marker = itemMarker(item, item.name === target?.name);
-		lines.push(`  ${marker} ${item.name}`);
+		if (item.depth && item.depth > 1) {
+			// Hierarchical display
+			const indent = "  ".repeat(item.depth - 1);
+			lines.push(`  ${indent}${marker} ${item.name}`);
+		} else {
+			lines.push(`  ${marker} ${item.name}`);
+		}
 	}
 	if (state.items.length > 10) {
 		lines.push(`  ... +${state.items.length - 10} more`);
