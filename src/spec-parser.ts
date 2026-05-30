@@ -302,6 +302,43 @@ export function detectRollbacks(
 	return rollbacks;
 }
 
+// Calculate confidence score for an item based on past success
+export function calculateConfidence(
+	itemName: string,
+	history: RoundRecord[]
+): number {
+	// 0-100 confidence scale
+	const itemHistory = history.filter((r) => r.target === itemName);
+
+	if (itemHistory.length === 0) {
+		// No history - medium confidence
+		return 50;
+	}
+
+	const successes = itemHistory.filter((r) => r.pass).length;
+	const total = itemHistory.length;
+	const successRate = (successes / total) * 100;
+
+	// Factor in average turns - lower turns = higher confidence
+	const avgTurns = itemHistory.reduce((sum, r) => sum + r.turnsUsed, 0) / total;
+	let turnFactor = 100;
+	if (avgTurns > 10) turnFactor = 60;
+	else if (avgTurns > 7) turnFactor = 75;
+	else if (avgTurns > 5) turnFactor = 85;
+	else turnFactor = 95;
+
+	// Combine success rate and turn efficiency
+	const confidence = Math.round((successRate * 0.7) + (turnFactor * 0.3));
+	return Math.min(100, Math.max(0, confidence));
+}
+
+// Get confidence label for display
+export function getConfidenceLabel(confidence: number): string {
+	if (confidence >= 80) return "high";
+	if (confidence >= 50) return "medium";
+	return "low";
+}
+
 // Update spec history with current state
 export function updateSpecHistory(
 	currentItems: SpecItem[],

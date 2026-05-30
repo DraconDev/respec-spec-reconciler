@@ -22,6 +22,8 @@ import {
 	getSuggestedBudget,
 	detectRollbacks,
 	updateSpecHistory,
+	calculateConfidence,
+	getConfidenceLabel,
 } from "./spec-parser.js";
 import {
 	buildWidget,
