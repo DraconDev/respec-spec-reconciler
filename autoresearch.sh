@@ -75,6 +75,15 @@ fi
 if grep -q "findSmartTarget" src/loop-controller.ts; then
     PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
 fi
+if grep -q "buildBatchPrompt" src/loop-controller.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
+if grep -q "analyzeFailure" src/loop-controller.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
+if grep -q "batchMode" src/commands.ts; then
+    PROMPT_QUALITY=$((PROMPT_QUALITY + 1))
+fi
 
 # Cap at 10
 if [ "$PROMPT_QUALITY" -gt 10 ]; then

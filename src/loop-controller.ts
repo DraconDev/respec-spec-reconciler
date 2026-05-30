@@ -356,6 +356,55 @@ export class LoopController {
 		return findFirstUnchecked(items);
 	}
 
+	// Build batch prompt for multiple independent items
+	private buildBatchPrompt(primaryTarget: SpecItem, state: RespecState): string {
+		const deps = inferDependencies(state.items);
+		const readyItems = findReadyItems(state.items, deps);
+
+		// Take up to batchSize items
+		const batchItems = readyItems.slice(0, state.batchSize);
+		const done = countChecked(state.items);
+		const total = state.items.length;
+
+		let prompt = `## Batch Reconcile: ${batchItems.length} items\n\n`;
+		prompt += `Working on ${batchItems.length} independent items. ${done}/${total} items complete.\n\n`;
+
+		// List all items in the batch
+		prompt += `**Items to reconcile:**\n`;
+		for (let i = 0; i < batchItems.length; i++) {
+			const item = batchItems[i];
+			const complexity = estimateComplexity(item);
+			const failureHint = getFailureHints(item.name, state.roundHistory);
+
+			prompt += `\n### ${i + 1}. ${item.name}`;
+			if (item.verification) {
+				prompt += `\nVerify: \`${item.verification}\``;
+			}
+			if (item.body) {
+				prompt += `\n${item.body}`;
+			}
+			if (failureHint) {
+				prompt += `\n⚠️ Previous: ${failureHint}`;
+			}
+			prompt += `\nComplexity: ${complexity >= 5 ? "high" : complexity >= 3 ? "medium" : "low"}`;
+		}
+
+		prompt += `\n\n**Instructions:**\n`;
+		prompt += `1. Work through each item in order (or skip if blocked)\n`;
+		prompt += `2. Run verification for each item\n`;
+		prompt += `3. Check off completed items in SPEC.md\n`;
+		prompt += `4. If stuck on one, try the next — no need to complete all in one go\n\n`;
+
+		prompt += `Do NOT:\n`;
+		prompt += `- Add unrelated features\n`;
+		prompt += `- Change items not in this batch\n\n`;
+
+		prompt += `Spec: ${state.specKey}\n`;
+		prompt += `Status: ${done}/${total} done, round ${state.currentRound}\n`;
+
+		return prompt;
+	}
+
 	// Show success notification
 	private async notifySuccess(
 		ctx: ExtensionContext,
