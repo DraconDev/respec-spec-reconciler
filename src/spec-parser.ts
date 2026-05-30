@@ -2,7 +2,7 @@
 // Supports headings ### [x] Name or list items - [x] Name
 
 import { readFileSync } from "fs";
-import type { SpecItem, RoundRecord } from "./types.js";
+import type { SpecItem, RoundRecord, TurnBudget } from "./types.js";
 
 // Parse SPEC.md and extract requirement items
 export function parseSpec(specPath: string): SpecItem[] | null {

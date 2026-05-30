@@ -18,6 +18,8 @@ import {
 	inferDependencies,
 	findReadyItems,
 	getFailureHints,
+	learnTurnBudget,
+	getSuggestedBudget,
 } from "./spec-parser.js";
 import {
 	buildWidget,
@@ -185,6 +187,13 @@ export class LoopController {
 			};
 			appendRoundRecord(record);
 			state.roundHistory.push(record);
+
+			// Learn from this success
+			state.learnedBudgets = learnTurnBudget(
+				state.learnedBudgets,
+				target.name,
+				state.turnsThisRound
+			);
 
 			// Reset failure count
 			delete state.failureCounts[target.name];
