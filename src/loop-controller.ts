@@ -2,7 +2,7 @@
 // No custom verifier. Agent works through spec items using standard tools.
 
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
-import type { RespecState, SpecItem, RoundRecord } from "./types.js";
+import type { RespecState, SpecItem, RoundRecord, SpecFile } from "./types.js";
 import {
 	getStore,
 	setStore,
@@ -476,6 +476,111 @@ export class LoopController {
 			`Total rounds: ${total}`,
 		]);
 		ctx.ui.setWorkingMessage();
+	}
+
+	// Start reconciliation in multi-spec mode
+	private async startMultiSpec(state: RespecState, ctx: ExtensionContext): Promise<void> {
+		// Collect all unchecked items from all specs
+		const allUnchecked: Array<SpecItem & { specPath: string }> = [];
+		for (const spec of state.specFiles) {
+			const items = parseSpec(spec.path);
+			if (items) {
+				for (const item of items) {
+					if (!item.checked) {
+						allUnchecked.push({ ...item, specPath: spec.path });
+					}
+				}
+			}
+		}
+
+		if (allUnchecked.length === 0) {
+			state.status = "done";
+			setStore(state);
+			await this.notifySuccess(ctx, state);
+			return;
+		}
+
+		// Sort by complexity (easiest first)
+		allUnchecked.sort((a, b) => {
+			const aComplexity = estimateComplexity(a);
+			const bComplexity = estimateComplexity(b);
+			return aComplexity - bComplexity;
+		});
+
+		const target = allUnchecked[0];
+
+		// Update state
+		state.status = "active";
+		state.currentTarget = target;
+		state.turnsThisRound = 0;
+		setStore(state);
+
+		// Update UI
+		ctx.ui.setStatus("respec", buildStatusText(state));
+		ctx.ui.setWorkingMessage(buildWorkingMessage(state));
+		ctx.ui.setWidget("respec", buildWidget(state));
+
+		// Build multi-spec prompt
+		const prompt = this.buildMultiSpecPrompt(target, state);
+		this.pi.sendMessage(
+			{
+				customType: "respec-prompt",
+				content: prompt,
+				display: false,
+			},
+			{ triggerTurn: true, deliverAs: "followUp" }
+		);
+	}
+
+	// Build prompt for multi-spec mode
+	private buildMultiSpecPrompt(target: SpecItem & { specPath: string }, state: RespecState): string {
+		const allItems = state.specFiles.flatMap((s) => s.items);
+		const done = countChecked(allItems);
+		const total = allItems.length;
+		const body = target.body ? `\nContext:\n${target.body}` : "";
+
+		// Get failure hints
+		const failureHint = getFailureHints(target.name, state.roundHistory);
+
+		// Calculate confidence
+		const complexity = estimateComplexity(target);
+		const confidence = calculateConfidence(target.name, state.roundHistory);
+		const confidenceLabel = getConfidenceLabel(confidence);
+
+		// Build prompt
+		let prompt = `## Reconcile: ${target.name}\n\n`;
+		prompt += `**${target.name}** (${target.specPath})\n`;
+		prompt += `Not yet satisfied. ${done}/${total} items complete across ${state.specFiles.length} spec files.\n`;
+		prompt += `Confidence: ${confidenceLabel} (${confidence}%)\n\n`;
+
+		if (target.verification) {
+			prompt += `Verify by running: \`${target.verification}\`\n\n`;
+		}
+
+		if (body) {
+			prompt += `Context:\n${body}\n\n`;
+		}
+
+		if (failureHint) {
+			prompt += `⚠️ **Previous attempt hint:** ${failureHint}\n\n`;
+		}
+
+		// List all specs being tracked
+		prompt += `**Spec files tracked:**\n`;
+		for (const spec of state.specFiles) {
+			const checked = spec.items.filter((i) => i.checked).length;
+			prompt += `- ${spec.path}: ${checked}/${spec.items.length}\n`;
+		}
+
+		prompt += `\n**Instructions:**\n`;
+		prompt += `1. Work on satisfying this requirement\n`;
+		prompt += `2. Run the verification if specified\n`;
+		prompt += `3. Check it off in the appropriate SPEC.md\n\n`;
+
+		prompt += `Spec: ${target.specPath}\n`;
+		prompt += `Status: ${done}/${total} done, round ${state.currentRound}\n`;
+
+		return prompt;
 	}
 
 	// Check budget exhaustion
