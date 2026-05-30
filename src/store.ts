@@ -70,3 +70,13 @@ export function appendRoundRecord(record: RoundRecord): void {
 
 // Restore round records from session entries
 export function restoreRoundRecords(
+	entries: Array<{ type: string; data?: unknown }>
+): RoundRecord[] {
+	const records: RoundRecord[] = [];
+	for (const entry of entries) {
+		if (entry.type === ROUND_CUSTOM_TYPE && entry.data) {
+			records.push(entry.data as RoundRecord);
+		}
+	}
+	return records.sort((a, b) => a.round - b.round);
+}
