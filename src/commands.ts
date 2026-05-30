@@ -193,6 +193,23 @@ Each item should be a verifiable requirement.
 				return;
 			}
 
+			if (command === "batch") {
+				const state = getStore();
+				if (state) {
+					state.batchMode = !state.batchMode;
+					const size = parseInt(tokens[1] ?? "3", 10);
+					if (size > 0 && size <= 5) {
+						state.batchSize = size;
+					}
+					setStore(state);
+					await ctx.ui.notify(
+						`Batch mode ${state.batchMode ? "enabled" : "disabled"} (size: ${state.batchSize})`,
+						"info"
+					);
+				}
+				return;
+			}
+
 			// Default: start new reconciliation
 			if (!existsSync(path)) {
 				await ctx.ui.notify(
