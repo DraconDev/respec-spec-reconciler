@@ -86,6 +86,50 @@ export function findFirstUnchecked(items: SpecItem[]): SpecItem | null {
 	return null;
 }
 
+// Find all unchecked items across multiple specs
+export function findAllUnchecked(specFiles: SpecFile[]): SpecItem[] {
+	const unchecked: SpecItem[] = [];
+	for (const spec of specFiles) {
+		for (const item of spec.items) {
+			if (!item.checked) {
+				unchecked.push(item);
+			}
+		}
+	}
+	return unchecked;
+}
+
+// Scan directory for all SPEC.md files
+export function findSpecFiles(rootPath: string): string[] {
+	const specs: string[] = [];
+	const { readdirSync, statSync } = require("fs");
+	const { join } = require("path");
+
+	function scanDir(dir: string) {
+		try {
+			const entries = readdirSync(dir);
+			for (const entry of entries) {
+				const fullPath = join(dir, entry);
+				try {
+					const stat = statSync(fullPath);
+					if (stat.isDirectory() && !entry.startsWith(".") && entry !== "node_modules") {
+						scanDir(fullPath);
+					} else if (entry === "SPEC.md") {
+						specs.push(fullPath);
+					}
+				} catch {
+					// Skip inaccessible files
+				}
+			}
+		} catch {
+			// Skip inaccessible directories
+		}
+	}
+
+	scanDir(rootPath);
+	return specs;
+}
+
 // Check if all items are checked
 export function allChecked(items: SpecItem[]): boolean {
 	return items.length > 0 && items.every((i) => i.checked);

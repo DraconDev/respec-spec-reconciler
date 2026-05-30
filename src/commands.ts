@@ -233,6 +233,19 @@ Each item should be a verifiable requirement.
 				return;
 			}
 
+			if (command === "multi") {
+				const state = getStore();
+				if (state) {
+					state.multiSpec = !state.multiSpec;
+					setStore(state);
+					await ctx.ui.notify(
+						`Multi-spec mode ${state.multiSpec ? "enabled" : "disabled"}`,
+						"info"
+					);
+				}
+				return;
+			}
+
 			// Default: start new reconciliation
 			if (!existsSync(path)) {
 				await ctx.ui.notify(

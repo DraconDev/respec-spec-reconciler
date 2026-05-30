@@ -47,6 +47,8 @@ export function createDefaultState(specPath: string, items?: SpecItem[]): Respec
 		learnedBudgets: [],
 		specHistory: [],
 		checkpoint: undefined,
+		multiSpec: false,
+		specFiles: [],
 	};
 }
 
