@@ -156,6 +156,62 @@ Run: `grep -q "respec-budgets" src/commands.ts`
 Checkpoint interface in types.ts.
 Run: `grep -q "interface Checkpoint" src/types.ts`
 
+### [x] Visual feedback includes batch mode
+Batch mode indicator in visual.ts.
+Run: `grep -q "batch mode" src/visual.ts`
+
+### [x] Visual feedback includes checkpoint info
+Checkpoint indicator in active widget.
+Run: `grep -q "checkpoint" src/visual.ts`
+
+### [x] Visual feedback includes efficiency metrics
+Success rate and avg turns in visual.
+Run: `grep -q "avgTurns" src/visual.ts`
+
+### [x] Visual feedback includes hierarchical display
+Hierarchical item display in visual.
+Run: `grep -q "item.depth" src/visual.ts`
+
+### [x] SpecFile interface exists
+SpecFile interface for multi-spec tracking.
+Run: `grep -q "interface SpecFile" src/types.ts`
+
+### [x] findSpecFiles function exists
+Scan directory for SPEC.md files.
+Run: `grep -q "findSpecFiles" src/spec-parser.ts`
+
+### [x] findAllUnchecked function exists
+Find unchecked items across specs.
+Run: `grep -q "findAllUnchecked" src/spec-parser.ts`
+
+### [x] generateAnalytics function exists
+Generate spec analytics.
+Run: `grep -q "generateAnalytics" src/spec-parser.ts`
+
+### [x] formatAnalytics function exists
+Format analytics for display.
+Run: `grep -q "formatAnalytics" src/spec-parser.ts`
+
+### [x] Smart target selection implemented
+findSmartTarget function in loop-controller.
+Run: `grep -q "findSmartTarget" src/loop-controller.ts`
+
+### [x] Suggest verification implemented
+suggestVerification function in spec-parser.
+Run: `grep -q "suggestVerification" src/spec-parser.ts`
+
+### [x] Build multi-spec prompt implemented
+buildMultiSpecPrompt function in loop-controller.
+Run: `grep -q "buildMultiSpecPrompt" src/loop-controller.ts`
+
+### [x] Get confidence label implemented
+getConfidenceLabel function in spec-parser.
+Run: `grep -q "getConfidenceLabel" src/spec-parser.ts`
+
+### [x] Escape valve analyze failure implemented
+analyzeFailure function in loop-controller.
+Run: `grep -q "analyzeFailure" src/loop-controller.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
