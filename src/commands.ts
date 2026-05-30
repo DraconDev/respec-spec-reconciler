@@ -12,7 +12,7 @@ import {
 	restoreState,
 	restoreRoundRecords,
 } from "./store.js";
-import { parseSpec, countChecked } from "./spec-parser.js";
+import { parseSpec, countChecked, findSpecFiles } from "./spec-parser.js";
 import { writeFileSync, existsSync, readFileSync } from "fs";
 import { buildFullStatus } from "./visual.js";
 import { join, dirname } from "path";
