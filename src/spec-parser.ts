@@ -103,3 +103,27 @@ export function formatCompactQueue(items: SpecItem[], targetIndex?: number, maxI
 
 	return lines;
 }
+
+// Format item status for display
+export function formatItemStatus(item: SpecItem, isTarget?: boolean): string {
+	const marker = item.checked ? "[x]" : isTarget ? "[>]" : "[ ]";
+	return `${marker} ${item.name}`;
+}
+
+// Format compact queue for display
+export function formatCompactQueue(items: SpecItem[], targetIndex?: number, maxItems?: number): string[] {
+	const lines: string[] = [];
+	const limit = maxItems ?? 10;
+	const checked = countChecked(items);
+
+	lines.push(`${checked}/${items.length} done`);
+	for (const item of items.slice(0, limit)) {
+		const isTarget = item.index === targetIndex && !item.checked;
+		lines.push(formatItemStatus(item, isTarget));
+	}
+	if (items.length > limit) {
+		lines.push(`... +${items.length - limit} more`);
+	}
+
+	return lines;
+}

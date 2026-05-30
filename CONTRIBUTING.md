@@ -4,9 +4,9 @@ Thank you for your interest in contributing to Dracon projects.
 
 ## License
 
-All contributions are subject to the terms of the [AGPLv3 license](./LICENSE).
+All contributions are subject to the terms of the [MIT license](./LICENSE).
 
-**By submitting a Contribution, you agree that your work will be licensed under AGPLv3.**
+**By submitting a Contribution, you agree that your work will be licensed under MIT.**
 
 ## Before You Submit a Pull Request
 
@@ -27,4 +27,4 @@ If you have questions or need guidance, open an issue or reach out to the mainta
 ## Legal Notes
 
 - You must have the right to submit the work you are contributing.
-- All contributions will be licensed under AGPLv3.
+- All contributions will be licensed under MIT.
