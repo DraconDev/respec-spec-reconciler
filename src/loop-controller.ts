@@ -391,12 +391,17 @@ export class LoopController {
 		ctx.ui.setStatus("respec", "❌ respec: blocked");
 	}
 
-	// Trigger escape valve — write BLOCKER.md
+	// Trigger escape valve — write BLOCKER.md with smart analysis
 	private async triggerEscapeValve(
 		ctx: ExtensionContext,
 		state: RespecState
 	): Promise<void> {
 		const ev = state.escapeValve!;
+
+		// Analyze failure pattern for better suggestions
+		const failureAnalysis = this.analyzeFailure(state);
+
+
 		const blockerLines = [
 			"# Blocked",
 			"",
@@ -404,6 +409,10 @@ export class LoopController {
 			`**Type:** ${ev.type}`,
 			`**Detail:** ${ev.detail}`,
 			`**At:** ${new Date(ev.blockedAt).toISOString()}`,
+			"",
+			"## Failure Analysis",
+			"",
+			failureAnalysis,
 			"",
 			"## Recent Rounds",
 			"",
@@ -418,8 +427,10 @@ export class LoopController {
 			"3. Delete this BLOCKER.md and run /respec resume",
 		];
 
+
 		const blockerPath = state.specKey.replace(/\/[^/]*$/, "") + "/BLOCKER.md";
 		writeFileSync(blockerPath, blockerLines.join("\n"), "utf-8");
+
 
 		ctx.ui.notify(
 			`⚠️ Blocked: ${ev.item}. See BLOCKER.md`,
@@ -428,5 +439,36 @@ export class LoopController {
 		ctx.ui.setStatus("respec", buildStatusText(state));
 		ctx.ui.setWidget("respec", buildWidget(state));
 		ctx.ui.setWorkingMessage();
+	}
+
+	// Analyze failure pattern and suggest root cause
+	private analyzeFailure(state: RespecState): string {
+		const targetName = state.escapeValve?.item ?? "";
+		const targetHistory = state.roundHistory.filter(
+			(r) => r.target === targetName
+		);
+
+		if (targetHistory.length === 0) {
+			return "No prior attempts recorded.";
+		}
+
+		const avgTurns = targetHistory.reduce((sum, r) => sum + r.turnsUsed, 0) / targetHistory.length;
+		const maxTurns = Math.max(...targetHistory.map((r) => r.turnsUsed));
+		const latestRecord = targetHistory[targetHistory.length - 1];
+
+		// Generate analysis based on patterns
+		if (maxTurns > 15) {
+			return "**Pattern:** High turn count suggests the requirement may be too broad or there are hidden blockers.\n\n**Suggestion:** Consider breaking this into smaller, testable sub-items in SPEC.md.";
+		}
+
+		if (avgTurns < 3 && targetHistory.length >= 3) {
+			return "**Pattern:** Quick failures suggest the requirement may be impossible as written or depends on upstream work.\n\n**Suggestion:** Check if earlier items (compilation, tests) are fully satisfied. The requirement may need clarification.";
+		}
+
+		if (latestRecord && latestRecord.turnsUsed > avgTurns * 1.5) {
+			return "**Pattern:** Last attempt used significantly more turns than average, suggesting diminishing returns.\n\n**Suggestion:** There may be a specific blocker in the current approach. Try a different strategy or break down the requirement.";
+		}
+
+		return "**Pattern:** Consistent failures after multiple attempts.\n\n**Suggestion:** The requirement may need to be reworded, the verification command may be incorrect, or there may be an external dependency not captured in SPEC.md.";
 	}
 }
