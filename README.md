@@ -120,6 +120,7 @@ respec supports nested requirements:
 | `/respec pause` | Pause the loop |
 | `/respec batch` | Toggle batch mode for parallel items |
 | `/respec batch <N>` | Set batch size (2-5) |
+| `/respec checkpoint` | Save checkpoint for resume after crash |
 
 ## How It Works
 
