@@ -9,7 +9,7 @@
 - [ ] **Multi-spec composition** — support for multiple SPEC.md files in different directories
 
 ### Medium Priority
-- [ ] **Checkpointing** — save progress mid-item for resume after crash
+- [x] **Checkpointing** — save progress mid-item for resume after crash
 - [ ] **Team sync** — share learned budgets across team members via git
 - [ ] **Interactive spec editing** — edit SPEC.md via natural language commands
 - [ ] **Spec analytics** — track which item types take longest, common failure patterns

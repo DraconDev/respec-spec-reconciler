@@ -68,6 +68,10 @@ export function buildActiveWidget(state: RespecState): string[] {
 		lines.push(`  • batch mode: ${state.batchSize} items`);
 	}
 
+	if (state.checkpoint) {
+		lines.push(`  • checkpoint: round ${state.checkpoint.round} (${state.checkpoint.turnsUsed} turns)`);
+	}
+
 	if (target) {
 		lines.push("");
 		lines.push(`  → ${target.name}`);
