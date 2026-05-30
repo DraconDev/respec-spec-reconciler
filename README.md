@@ -1,4 +1,4 @@
-# respec — Spec Reconciler for AI Coding Agents
+# respec — Evolutionary Spec Reconciler for AI Coding Agents
 
 **Read SPEC.md, work through requirements, learn, update the spec. The spec is the source of truth.**
 
@@ -8,16 +8,37 @@ SPEC.md (requirements) → /respec → agent works → checks off → loop
 
 ## What It Does
 
-**respec** keeps your codebase reconciled against a `SPEC.md` that defines what should be true. No custom verifier scripts — the agent works through requirements using the tools it already has (compiler, test runner, curl, etc.).
+**respec** is an *evolutionary* spec-driven reconciliation system that keeps your codebase synchronized with a `SPEC.md` that defines what should be true. It learns from past rounds, adapts strategies based on item complexity, and provides intelligent guidance to the agent.
 
 ```
 1. SPEC.md has requirements with [x]/[ ] checkboxes
-2. /respec picks the first unchecked item
-3. Agent works on it, verifies with real tools
-4. Checks it off in SPEC.md → goes to next
-5. When understanding changes, update SPEC.md
+2. /respec analyzes items — complexity, dependencies, history
+3. Agent works on prioritized items with contextual hints
+4. System learns from successes and failures
+5. Checks items off in SPEC.md → goes to next
 6. Loop continues — the spec evolves with the project
 ```
+
+## Key Features
+
+### 🧠 Adaptive Intelligence
+- **Complexity scoring** — estimates how hard each item is based on keywords
+- **Learned turn budgets** — tracks average turns per item category (compile, test, api, etc.)
+- **Failure pattern analysis** — distinguishes high-turn, quick-fail, and diminishing-returns patterns
+
+### 🔗 Dependency Awareness
+- **Smart item ordering** — infers which items depend on others (compiles → test → api)
+- **Parallel batching** — process independent items together via `/respec batch`
+
+### 💡 Context-Aware Prompts
+- **Failure hints** — "Previous attempt used 12 turns, consider breaking this down"
+- **Complexity guidance** — "This looks complex, work incrementally"
+- **Verification suggestions** — auto-suggests commands based on item patterns
+
+### 📊 Rich Visual Feedback
+- Progress bars, success rates, average turns per item
+- Hierarchical spec display with nesting
+- Batch mode indicators
 
 ## Why Not Verify Scripts?
 
@@ -68,32 +89,51 @@ Verify: all endpoints reject invalid data with 4xx
 
 Each item should be **one verifiable thing**. Include how to verify when helpful.
 
+### Hierarchical Specs
+
+respec supports nested requirements:
+
+```markdown
+## Requirements
+
+### Core Infrastructure
+- [ ] Project compiles
+- [ ] Tests pass
+
+### API Features
+- [ ] Health endpoint works
+- [ ] User CRUD endpoints
+```
+
 ## Commands
 
 | Command | Description |
 |---------|-------------|
 | `/spec-init` | Scaffold SPEC.md with example requirements |
-| `/spec-status` | Show current reconciliation state, done/undone items |
+| `/spec-status` | Show current reconciliation state |
 | `/respec` | Start reconciliation — pick next unchecked item |
 | `/respec resume` | Resume after pause |
 | `/respec cancel` | Cancel active reconciliation |
 | `/respec pause` | Pause the loop |
+| `/respec batch` | Toggle batch mode for parallel items |
+| `/respec batch <N>` | Set batch size (2-5) |
 
 ## How It Works
 
-1. **Parse SPEC.md** — extract items with `[x]` / `[ ]` checkboxes
-2. **Find next unchecked item** — first undone requirement
-3. **Send focused prompt** — tell the agent what to work on and how to verify
-4. **Agent works** — uses standard tools, checks off when done
-5. **Loop or pause** — continue to next item or pause for manual input
-6. **Spec evolves** — update SPEC.md when understanding changes
+1. **Parse SPEC.md** — extract items with `[x]` / `[ ]` checkboxes, track hierarchy
+2. **Analyze items** — complexity scoring, dependency inference, learned budgets
+3. **Find next target** — prioritize easiest ready items (dependencies satisfied)
+4. **Send contextual prompt** — include complexity hints, failure history, verification
+5. **Agent works** — uses standard tools, checks off when done
+6. **Learn & adapt** — update turn budgets, adjust strategies
+7. **Loop or pause** — continue to next item or pause for manual input
 
 ## Escape Valve
 
-If the same item fails 3 consecutive rounds, respec writes a `BLOCKER.md` and stops. This prevents infinite loops when:
-- The requirement is impossible as written
-- The requirement needs to be clarified in SPEC.md
-- Something else is wrong
+If the same item fails 3 consecutive rounds, respec writes a `BLOCKER.md` with:
+- **Failure pattern analysis** — what's likely wrong
+- **Actionable suggestions** — how to unblock
+- **Recent round history** — what was tried
 
 ## State Machine
 
@@ -102,13 +142,6 @@ idle → active → done (all checked)
            └→ blocked (3 strikes or max rounds)
            └→ paused (user interrupt or after each round)
 ```
-
-## Why This Model?
-
-- **No crystal ball** — don't try to list everything upfront. Add items as you learn.
-- **No translation layer** — spec items reference real checks, not custom scripts
-- **Spec evolves** — the spec changes when understanding changes, not the code
-- **Source of truth** — SPEC.md is the single source, no duplicate in shell
 
 ## Requirements
 
