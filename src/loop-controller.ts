@@ -92,6 +92,19 @@ export class LoopController {
 				);
 			}
 
+			// Show spec diff if there were changes
+			const previousItems = state.items;
+			const diff = diffSpecs(previousItems, items);
+			if (diff.added.length > 0 || diff.removed.length > 0 || diff.checked.length > 0) {
+				const diffLines = formatDiff(diff);
+				if (diffLines.length > 0) {
+					ctx.ui.notify(
+						`Spec changed:\n${diffLines.join("\n")}`,
+						"info"
+					);
+				}
+			}
+
 			// Update spec history
 			state.specHistory = updateSpecHistory(items, state.specHistory);
 			setStore(state);
