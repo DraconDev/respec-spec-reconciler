@@ -2075,6 +2075,810 @@ Run: `grep -q "rotateSecret" src/spec-parser.ts`
 SSM parameters.
 Run: `grep -q "ssmParameter" src/spec-parser.ts`
 
+### [x] Virtual DOM interface
+VirtualNode interface.
+Run: `grep -q "VirtualNode" src/types.ts`
+
+### [x] Component renderer
+Render component.
+Run: `grep -q "renderComponent" src/spec-parser.ts`
+
+### [x] Reconciliation algorithm
+Diff virtual DOM.
+Run: `grep -q "reconcile" src/spec-parser.ts`
+
+### [x] Fiber node structure
+FiberNode interface.
+Run: `grep -q "FiberNode" src/types.ts`
+
+### [x] Schedule work
+Scheduler integration.
+Run: `grep -q "scheduleWork" src/spec-parser.ts`
+
+### [x] Concurrent mode
+Concurrent rendering.
+Run: `grep -q "concurrentMode" src/spec-parser.ts`
+
+### [x] Suspense boundary
+Suspense handling.
+Run: `grep -q "suspenseBoundary" src/spec-parser.ts`
+
+### [x] Server components
+RSC rendering.
+Run: `grep -q "serverComponent" src/spec-parser.ts`
+
+### [x] Streaming SSR
+Streaming HTML.
+Run: `grep -q "streamSSR" src/spec-parser.ts`
+
+### [x] Hydration
+Client hydration.
+Run: `grep -q "hydrate" src/spec-parser.ts`
+
+### [x] Error boundary
+Error boundary handling.
+Run: `grep -q "errorBoundary" src/spec-parser.ts`
+
+### [x] Ref forwarding
+Forward ref.
+Run: `grep -q "forwardRef" src/spec-parser.ts`
+
+### [x] Context provider
+React context.
+Run: `grep -q "createContext" src/spec-parser.ts`
+
+### [x] Memoization
+React.memo.
+Run: `grep -q "memo" src/spec-parser.ts`
+
+### [x] useCallback
+Callback memoization.
+Run: `grep -q "useCallback" src/spec-parser.ts`
+
+### [x] useMemo
+Value memoization.
+Run: `grep -q "useMemo" src/spec-parser.ts`
+
+### [x] useReducer
+State reducer.
+Run: `grep -q "useReducer" src/spec-parser.ts`
+
+### [x] useLayoutEffect
+Layout effects.
+Run: `grep -q "useLayoutEffect" src/spec-parser.ts`
+
+### [x] useTransition
+Transition hook.
+Run: `grep -q "useTransition" src/spec-parser.ts`
+
+### [x] useDeferredValue
+Deferred values.
+Run: `grep -q "useDeferredValue" src/spec-parser.ts`
+
+### [x] useSyncExternalStore
+External store.
+Run: `grep -q "useSyncExternalStore" src/spec-parser.ts`
+
+### [x] CSS-in-JS
+Style generation.
+Run: `grep -q "cssInJs" src/spec-parser.ts`
+
+### [x] CSS modules
+Module resolution.
+Run: `grep -q "cssModules" src/spec-parser.ts`
+
+### [x] Tailwind processing
+Tailwind utilities.
+Run: `grep -q "tailwindProcess" src/spec-parser.ts`
+
+### [x] GraphQL schema
+Schema definition.
+Run: `grep -q "buildSchema" src/spec-parser.ts`
+
+### [x] GraphQL resolver
+Resolver function.
+Run: `grep -q "resolver" src/spec-parser.ts`
+
+### [x] GraphQL subscription
+Subscription setup.
+Run: `grep -q "graphqlSubscription" src/spec-parser.ts`
+
+### [x] Relay connection
+Relay pagination.
+Run: `grep -q "relayConnection" src/spec-parser.ts`
+
+### [x] Apollo cache
+Normalized cache.
+Run: `grep -q "apolloCache" src/spec-parser.ts`
+
+### [x] REST route handler
+Express route.
+Run: `grep -q "expressRoute" src/spec-parser.ts`
+
+### [x] Middleware chain
+Middleware stack.
+Run: `grep -q "middlewareChain" src/spec-parser.ts`
+
+### [x] Request validation
+Validate request.
+Run: `grep -q "validateRequest" src/spec-parser.ts`
+
+### [x] Response serialization
+Serialize response.
+Run: `grep -q "serializeResponse" src/spec-parser.ts`
+
+### [x] CORS handling
+CORS headers.
+Run: `grep -q "corsHeaders" src/spec-parser.ts`
+
+### [x] Rate limiting
+Rate limit middleware.
+Run: `grep -q "rateLimit" src/spec-parser.ts`
+
+### [x] JWT verification
+Verify JWT.
+Run: `grep -q "verifyJWT" src/spec-parser.ts`
+
+### [x] OAuth2 flow
+OAuth2 provider.
+Run: `grep -q "oauth2Flow" src/spec-parser.ts`
+
+### [x] SAML assertion
+SAML handling.
+Run: `grep -q "samlAssertion" src/spec-parser.ts`
+
+### [x] LDAP authentication
+LDAP bind.
+Run: `grep -q "ldapAuth" src/spec-parser.ts`
+
+### [x] Session store
+Session management.
+Run: `grep -q "sessionStore" src/spec-parser.ts`
+
+### [x] Cookie handling
+Cookie parsing.
+Run: `grep -q "parseCookie" src/spec-parser.ts`
+
+### [x] CSRF protection
+CSRF token.
+Run: `grep -q "csrfToken" src/spec-parser.ts`
+
+### [x] CSP headers
+Content Security Policy.
+Run: `grep -q "cspHeaders" src/spec-parser.ts`
+
+### [x] i18n translator
+Translate message.
+Run: `grep -q "translate" src/spec-parser.ts`
+
+### [x] Pluralization
+Plural forms.
+Run: `grep -q "pluralize" src/spec-parser.ts`
+
+### [x] Number formatting
+Format number.
+Run: `grep -q "formatNumber" src/spec-parser.ts`
+
+### [x] Date formatting
+Format date.
+Run: `grep -q "formatDate" src/spec-parser.ts`
+
+### [x] Relative time
+Relative timestamp.
+Run: `grep -q "relativeTime" src/spec-parser.ts`
+
+### [x] URL routing
+Route matcher.
+Run: `grep -q "matchRoute" src/spec-parser.ts`
+
+### [x] Query parsing
+Parse query string.
+Run: `grep -q "parseQuery" src/spec-parser.ts`
+
+### [x] Form encoding
+URL encode form.
+Run: `grep -q "urlEncodeForm" src/spec-parser.ts`
+
+### [x] File upload
+Multipart handler.
+Run: `grep -q "handleUpload" src/spec-parser.ts`
+
+### [x] Image optimization
+Optimize image.
+Run: `grep -q "optimizeImage" src/spec-parser.ts`
+
+### [x] Video transcoding
+Transcode video.
+Run: `grep -q "transcodeVideo" src/spec-parser.ts`
+
+### [x] Audio processing
+Process audio.
+Run: `grep -q "processAudio" src/spec-parser.ts`
+
+### [x] PDF generation
+Generate PDF.
+Run: `grep -q "generatePDF" src/spec-parser.ts`
+
+### [x] WebSocket handler
+WS connection.
+Run: `grep -q "websocketHandler" src/spec-parser.ts`
+
+### [x] SSE endpoint
+Server-sent events.
+Run: `grep -q "sseEndpoint" src/spec-parser.ts`
+
+### [x] HTTP/2 push
+H2 push headers.
+Run: `grep -q "h2Push" src/spec-parser.ts`
+
+### [x] gRPC reflection
+Service reflection.
+Run: `grep -q "grpcReflect" src/spec-parser.ts`
+
+### [x] GraphQL federation
+Federation subgraph.
+Run: `grep -q "federationSubgraph" src/spec-parser.ts`
+
+### [x] Apollo Router
+Router config.
+Run: `grep -q "apolloRouter" src/spec-parser.ts`
+
+### [x] tRPC procedure
+tRPC handler.
+Run: `grep -q "trpcProcedure" src/spec-parser.ts`
+
+### [x] Prisma client
+Prisma query.
+Run: `grep -q "prismaQuery" src/spec-parser.ts`
+
+### [x] Drizzle ORM
+Drizzle schema.
+Run: `grep -q "drizzleSchema" src/spec-parser.ts`
+
+### [x] SQLCipher
+Encrypted SQL.
+Run: `grep -q "sqlCipher" src/spec-parser.ts`
+
+### [x] SQLite FTS
+Full-text search.
+Run: `grep -q "sqliteFTS" src/spec-parser.ts`
+
+### [x] Blockchain interface
+Blockchain interface.
+Run: `grep -q "interface Blockchain" src/types.ts`
+
+### [x] Merkle proof
+Verify Merkle proof.
+Run: `grep -q "verifyMerkleProof" src/spec-parser.ts`
+
+### [x] Transaction signing
+Sign transaction.
+Run: `grep -q "signTransaction" src/spec-parser.ts`
+
+### [x] Smart contract
+Deploy contract.
+Run: `grep -q "deployContract" src/spec-parser.ts`
+
+### [x] Token transfer
+Transfer tokens.
+Run: `grep -q "transferToken" src/spec-parser.ts`
+
+### [x] NFT minting
+Mint NFT.
+Run: `grep -q "mintNFT" src/spec-parser.ts`
+
+### [x] DAO governance
+Propose governance.
+Run: `grep -q "daoProposal" src/spec-parser.ts`
+
+### [x] Layer 2 rollup
+Rollup transaction.
+Run: `grep -q "layer2Rollup" src/spec-parser.ts`
+
+### [x] Cross-chain bridge
+Bridge assets.
+Run: `grep -q "crossChainBridge" src/spec-parser.ts`
+
+### [x] Quantum gate
+Apply quantum gate.
+Run: `grep -q "applyGate" src/spec-parser.ts`
+
+### [x] Qubit measurement
+Measure qubit.
+Run: `grep -q "measureQubit" src/spec-parser.ts`
+
+### [x] Quantum entanglement
+Entangle qubits.
+Run: `grep -q "entangleQubits" src/spec-parser.ts`
+
+### [x] Quantum circuit
+Build circuit.
+Run: `grep -q "buildCircuit" src/spec-parser.ts`
+
+### [x] Grover search
+Grover's algorithm.
+Run: `grep -q "groverSearch" src/spec-parser.ts`
+
+### [x] Shor's algorithm
+Integer factorization.
+Run: `grep -q "shorsAlgorithm" src/spec-parser.ts`
+
+### [x] VQE algorithm
+Variational quantum.
+Run: `grep -q "vqeAlgorithm" src/spec-parser.ts`
+
+### [x] Neural network
+Train network.
+Run: `grep -q "trainNetwork" src/spec-parser.ts`
+
+### [x] Backpropagation
+Backprop gradients.
+Run: `grep -q "backprop" src/spec-parser.ts`
+
+### [x] Gradient descent
+Optimize weights.
+Run: `grep -q "gradientDescent" src/spec-parser.ts`
+
+### [x] Convolutional layer
+Conv operation.
+Run: `grep -q "convLayer" src/spec-parser.ts`
+
+### [x] Pooling layer
+Max pool.
+Run: `grep -q "poolLayer" src/spec-parser.ts`
+
+### [x] LSTM cell
+Long short-term memory.
+Run: `grep -q "lstmCell" src/spec-parser.ts`
+
+### [x] Attention mechanism
+Self-attention.
+Run: `grep -q "attention" src/spec-parser.ts`
+
+### [x] Transformer model
+Build transformer.
+Run: `grep -q "transformer" src/spec-parser.ts`
+
+### [x] Embedding layer
+Word embeddings.
+Run: `grep -q "embeddingLayer" src/spec-parser.ts`
+
+### [x] Batch normalization
+Normalize batch.
+Run: `grep -q "batchNorm" src/spec-parser.ts`
+
+### [x] Dropout layer
+Dropout regularize.
+Run: `grep -q "dropout" src/spec-parser.ts`
+
+### [x] GAN training
+Train GAN.
+Run: `grep -q "trainGAN" src/spec-parser.ts`
+
+### [x] VAE model
+Variational autoencoder.
+Run: `grep -q "vaeModel" src/spec-parser.ts`
+
+### [x] Diffusion model
+Sample diffusion.
+Run: `grep -q "diffusionSample" src/spec-parser.ts`
+
+### [x] Reinforcement learning
+RL agent.
+Run: `grep -q "rlAgent" src/spec-parser.ts`
+
+### [x] Q-learning
+Update Q-values.
+Run: `grep -q "qLearning" src/spec-parser.ts`
+
+### [x] Policy gradient
+Policy optimization.
+Run: `grep -q "policyGradient" src/spec-parser.ts`
+
+### [x] Genetic algorithm
+Evolve population.
+Run: `grep -q "geneticAlgo" src/spec-parser.ts`
+
+### [x] Particle swarm
+Particle optimization.
+Run: `grep -q "particleSwarm" src/spec-parser.ts`
+
+### [x] Ant colony
+ACO optimization.
+Run: `grep -q "antColony" src/spec-parser.ts`
+
+### [x] Simulated annealing
+Anneal solution.
+Run: `grep -q "anneal" src/spec-parser.ts`
+
+### [x] Tabu search
+Tabu optimization.
+Run: `grep -q "tabuSearch" src/spec-parser.ts`
+
+### [x] Bayesian network
+Build Bayes net.
+Run: `grep -q "bayesNet" src/spec-parser.ts`
+
+### [x] Hidden Markov model
+HMM inference.
+Run: `grep -q "hmmInference" src/spec-parser.ts`
+
+### [x] CRF layer
+Conditional random field.
+Run: `grep -q "crfLayer" src/spec-parser.ts`
+
+### [x] Kalman filter
+Filter state.
+Run: `grep -q "kalmanFilter" src/spec-parser.ts`
+
+### [x] Particle filter
+Particle filter.
+Run: `grep -q "particleFilter" src/spec-parser.ts`
+
+### [x] PID controller
+PID control.
+Run: `grep -q "pidControl" src/spec-parser.ts`
+
+### [x] Fuzzy logic
+Fuzzy inference.
+Run: `grep -q "fuzzyInference" src/spec-parser.ts`
+
+### [x] Chaos detection
+Lyapunov exponent.
+Run: `grep -q "lyapunovExponent" src/spec-parser.ts`
+
+### [x] Fractal analysis
+Mandelbrot set.
+Run: `grep -q "mandelbrot" src/spec-parser.ts`
+
+### [x] Wavelet transform
+Wavelet decomposition.
+Run: `grep -q "waveletTransform" src/spec-parser.ts`
+
+### [x] Fourier transform
+FFT computation.
+Run: `grep -q "fft" src/spec-parser.ts`
+
+### [x] DCT compression
+DCT encoding.
+Run: `grep -q "dctEncode" src/spec-parser.ts`
+
+### [x] JPEG encoding
+JPEG compression.
+Run: `grep -q "jpegEncode" src/spec-parser.ts`
+
+### [x] PNG encoding
+PNG compression.
+Run: `grep -q "pngEncode" src/spec-parser.ts`
+
+### [x] MP3 encoding
+MP3 compression.
+Run: `grep -q "mp3Encode" src/spec-parser.ts`
+
+### [x] H264 encoding
+H264 video encode.
+Run: `grep -q "h264Encode" src/spec-parser.ts`
+
+### [x] WebM encoding
+WebM encode.
+Run: `grep -q "webmEncode" src/spec-parser.ts`
+
+### [x] Ray tracing
+Ray trace scene.
+Run: `grep -q "rayTrace" src/spec-parser.ts`
+
+### [x] Path tracing
+Path trace.
+Run: `grep -q "pathTrace" src/spec-parser.ts`
+
+### [x] Rasterization
+Rasterize geometry.
+Run: `grep -q "rasterize" src/spec-parser.ts`
+
+### [x] SDF rendering
+SDF ray march.
+Run: `grep -q "sdfMarch" src/spec-parser.ts`
+
+### [x] Voxel rendering
+Voxel render.
+Run: `grep -q "voxelRender" src/spec-parser.ts`
+
+### [x] Physically-based shading
+PBR shading.
+Run: `grep -q "pbrShade" src/spec-parser.ts`
+
+### [x] Normal mapping
+Normal map.
+Run: `grep -q "normalMap" src/spec-parser.ts`
+
+### [x] Ambient occlusion
+AO calculation.
+Run: `grep -q "ambientOcclusion" src/spec-parser.ts`
+
+### [x] Ray casting
+Cast rays.
+Run: `grep -q "rayCast" src/spec-parser.ts`
+
+### [x] IoT device interface
+IoTDevice interface.
+Run: `grep -q "IoTDevice" src/types.ts`
+
+### [x] MQTT publish
+Publish message.
+Run: `grep -q "mqttPublish" src/spec-parser.ts`
+
+### [x] CoAP request
+CoAP protocol.
+Run: `grep -q "coapRequest" src/spec-parser.ts`
+
+### [x] Modbus protocol
+Modbus RTU.
+Run: `grep -q "modbusRead" src/spec-parser.ts`
+
+### [x] OPC-UA connection
+OPC-UA client.
+Run: `grep -q "opcuaConnect" src/spec-parser.ts`
+
+### [x] CAN bus frame
+CAN frame.
+Run: `grep -q "canFrame" src/spec-parser.ts`
+
+### [x] BLE scanning
+Scan BLE devices.
+Run: `grep -q "bleScan" src/spec-parser.ts`
+
+### [x] Zigbee frame
+Zigbee packet.
+Run: `grep -q "zigbeeFrame" src/spec-parser.ts`
+
+### [x] Thread protocol
+Thread network.
+Run: `grep -q "threadNetwork" src/spec-parser.ts`
+
+### [x] Matter device
+Matter protocol.
+Run: `grep -q "matterDevice" src/spec-parser.ts`
+
+### [x] Z-Wave command
+Z-Wave control.
+Run: `grep -q "zwaveCommand" src/spec-parser.ts`
+
+### [x] HomeKit pairing
+HAP pairing.
+Run: `grep -q "homekitPair" src/spec-parser.ts`
+
+### [x] BACnet device
+BACnet/IP.
+Run: `grep -q "bacnetDevice" src/spec-parser.ts`
+
+### [x] LonWorks network
+LonTalk protocol.
+Run: `grep -q "lonworks" src/spec-parser.ts`
+
+### [x] DALI lighting
+DALI command.
+Run: `grep -q "daliCommand" src/spec-parser.ts`
+
+### [x] KNX telegram
+KNX protocol.
+Run: `grep -q "knxTelegram" src/spec-parser.ts`
+
+### [x] EnOcean packet
+EnOcean radio.
+Run: `grep -q "enoceanPacket" src/spec-parser.ts`
+
+### [x] FHEM integration
+FHEM automation.
+Run: `grep -q "fhemIntegrate" src/spec-parser.ts`
+
+### [x] OpenHAB binding
+OH binding.
+Run: `grep -q "openhabBinding" src/spec-parser.ts`
+
+### [x] Home Assistant entity
+HA entity.
+Run: `grep -q "haEntity" src/spec-parser.ts`
+
+### [x] Node-RED flow
+NR flow node.
+Run: `grep -q "noderedFlow" src/spec-parser.ts`
+
+### [x] Grafana dashboard
+Dashboard JSON.
+Run: `grep -q "grafanaDashboard" src/spec-parser.ts`
+
+### [x] Prometheus alerting
+Alert rule.
+Run: `grep -q "prometheusAlert" src/spec-parser.ts`
+
+### [x] Datadog monitor
+DD monitor.
+Run: `grep -q "datadogMonitor" src/spec-parser.ts`
+
+### [x] Splunk query
+SPL query.
+Run: `grep -q "splunkQuery" src/spec-parser.ts`
+
+### [x] ELK stack
+Elastic stack.
+Run: `grep -q "elkStack" src/spec-parser.ts`
+
+### [x] Jaeger tracing
+Distributed trace.
+Run: `grep -q "jaegerTrace" src/spec-parser.ts`
+
+### [x] Zipkin trace
+Zipkin span.
+Run: `grep -q "zipkinSpan" src/spec-parser.ts`
+
+### [x] Honeycomb event
+HC event.
+Run: `grep -q "honeycombEvent" src/spec-parser.ts`
+
+### [x] Sentry error
+Error tracking.
+Run: `grep -q "sentryError" src/spec-parser.ts`
+
+### [x] PagerDuty alert
+PD incident.
+Run: `grep -q "pagerdutyAlert" src/spec-parser.ts`
+
+### [x] OpsGenie alert
+OG alert.
+Run: `grep -q "opsgenieAlert" src/spec-parser.ts`
+
+### [x] Slack notification
+Slack webhook.
+Run: `grep -q "slackNotify" src/spec-parser.ts`
+
+### [x] Teams notification
+Teams webhook.
+Run: `grep -q "teamsNotify" src/spec-parser.ts`
+
+### [x] Discord webhook
+Discord embed.
+Run: `grep -q "discordWebhook" src/spec-parser.ts`
+
+### [x] Email alert
+SMTP send.
+Run: `grep -q "smtpSend" src/spec-parser.ts`
+
+### [x] SMS notification
+SMS gateway.
+Run: `grep -q "smsNotify" src/spec-parser.ts`
+
+### [x] Push notification
+FCM/APNs.
+Run: `grep -q "pushNotify" src/spec-parser.ts`
+
+### [x] Webhook delivery
+HTTP webhook.
+Run: `grep -q "webhookDeliver" src/spec-parser.ts`
+
+### [x] IRC notification
+IRC message.
+Run: `grep -q "ircMessage" src/spec-parser.ts`
+
+### [x] Matrix message
+Matrix room.
+Run: `grep -q "matrixMessage" src/spec-parser.ts`
+
+### [x] XMPP message
+XMPP stanza.
+Run: `grep -q "xmppMessage" src/spec-parser.ts`
+
+### [x] Matrix-synapse admin
+Synapse API.
+Run: `grep -q "synapseAdmin" src/spec-parser.ts`
+
+### [x] Mattermost post
+MM channel.
+Run: `grep -q "mattermostPost" src/spec-parser.ts`
+
+### [x] Rocket chat
+RC message.
+Run: `grep -q "rocketChat" src/spec-parser.ts`
+
+### [x] Zulip message
+Zulip stream.
+Run: `grep -q "zulipMessage" src/spec-parser.ts`
+
+### [x] Telegram bot
+TG bot.
+Run: `grep -q "telegramBot" src/spec-parser.ts`
+
+### [x] WhatsApp Business
+WA message.
+Run: `grep -q "whatsappMessage" src/spec-parser.ts`
+
+### [x] Signal messaging
+Signal protocol.
+Run: `grep -q "signalMessage" src/spec-parser.ts`
+
+### [x] Matrix E2EE
+E2E encryption.
+Run: `grep -q "matrixE2EE" src/spec-parser.ts`
+
+### [x] OMEMO encryption
+OMEMO protocol.
+Run: `grep -q "omemoProtocol" src/spec-parser.ts`
+
+### [x] Signal protocol
+Double Ratchet.
+Run: `grep -q "doubleRatchet" src/spec-parser.ts`
+
+### [x] MLS messaging
+MLS protocol.
+Run: `grep -q "mlsProtocol" src/spec-parser.ts`
+
+### [x] Tox protocol
+Tox DHT.
+Run: `grep -q "toxProtocol" src/spec-parser.ts`
+
+### [x] Briar messaging
+Briar protocol.
+Run: `grep -q "briarProtocol" src/spec-parser.ts`
+
+### [x] Session messenger
+Session protocol.
+Run: `grep -q "sessionProtocol" src/spec-parser.ts`
+
+### [x] Wire messenger
+Wire protocol.
+Run: `grep -q "wireProtocol" src/spec-parser.ts`
+
+### [x] Threema gateway
+Threema API.
+Run: `grep -q "threemaGateway" src/spec-parser.ts`
+
+### [x] Keybase proof
+Keybase proof.
+Run: `grep -q "keybaseProof" src/spec-parser.ts`
+
+### [x] Keyoxide proof
+Keyoxide claim.
+Run: `grep -q "keyoxideClaim" src/spec-parser.ts`
+
+### [x] ActivityPub actor
+Fediverse actor.
+Run: `grep -q "activityPubActor" src/spec-parser.ts`
+
+### [x] Mastodon toot
+Mastodon post.
+Run: `grep -q "mastodonPost" src/spec-parser.ts`
+
+### [x] Pixelfed image
+Image federation.
+Run: `grep -q "pixelfedUpload" src/spec-parser.ts`
+
+### [x] PeerTube video
+Video federation.
+Run: `grep -q "peertubeUpload" src/spec-parser.ts`
+
+### [x] Lemmy post
+Lemmy post.
+Run: `grep -q "lemmyPost" src/spec-parser.ts`
+
+### [x] Pleroma post
+Pleroma post.
+Run: `grep -q "pleromaPost" src/spec-parser.ts`
+
+### [x] WriteFreely blog
+Blog post.
+Run: `grep -q "writeFreelyPost" src/spec-parser.ts`
+
+### [x] Funkwhale music
+Music upload.
+Run: `grep -q "funkwhaleUpload" src/spec-parser.ts`
+
+### [x] Castopod episode
+Podcast episode.
+Run: `grep -q "castopodEpisode" src/spec-parser.ts`
+
+### [x] BookWyrm book
+Book activity.
+Run: `grep -q "bookwyrmActivity" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.

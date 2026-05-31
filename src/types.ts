@@ -1005,6 +1005,52 @@ export interface LambdaFunction {
 	timeout: number;
 }
 
+// Virtual DOM
+
+export interface VirtualNode {
+	type: string;
+	props: Record<string, unknown>;
+	children?: VirtualNode[];
+	key?: string;
+}
+
+// React Fiber
+export interface FiberNode {
+	type: string | null;
+	key: string | null;
+	stateNode: unknown;
+	child: FiberNode | null;
+	sibling: FiberNode | null;
+	return: FiberNode | null;
+	tag: number;
+	pendingProps: unknown;
+	memoizedProps: unknown;
+	alternate: FiberNode | null;
+}
+
+// Blockchain
+export interface Blockchain {
+	name: string;
+	chainId: number;
+	consensus: "PoW" | "PoS" | "PBFT";
+}
+
+export interface Transaction {
+	from: string;
+	to: string;
+	value: bigint;
+	data: string;
+	gasLimit: bigint;
+	gasPrice: bigint;
+}
+
+// IoT
+export interface IoTDevice {
+	id: string;
+	type: "sensor" | "actuator" | "gateway";
+	protocol: "mqtt" | "coap" | "modbus" | "zigbee";
+}
+
 // WAF
 export interface WebACL {
 	name: string;
