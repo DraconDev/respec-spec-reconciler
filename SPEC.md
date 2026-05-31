@@ -13755,6 +13755,1114 @@ Run: `grep -q "controlnethyperConfig" src/spec-parser.ts`
 ControlNetLora.
 Run: `grep -q "controlnetloraConfig" src/spec-parser.ts`
 
+### [x] DevOps Insights
+DevOpsInsights.
+Run: `grep -q "devopsinsightsConfig" src/spec-parser.ts`
+
+### [x] Splunk
+Splunk.
+Run: `grep -q "splunkConfig" src/spec-parser.ts`
+
+### [x] Elasticsearch
+ElasticsearchOps.
+Run: `grep -q "elasticsearchopsConfig" src/spec-parser.ts`
+
+### [x] Grafana
+GrafanaOps.
+Run: `grep -q "grafanaopsConfig" src/spec-parser.ts`
+
+### [x] Kibana
+Kibana.
+Run: `grep -q "kibanaConfig" src/spec-parser.ts`
+
+### [x] Datadog Logs
+DatadogLogs.
+Run: `grep -q "datadoglogsConfig" src/spec-parser.ts`
+
+### [x] Sumo Logic
+SumoLogic.
+Run: `grep -q "sumologicConfig" src/spec-parser.ts`
+
+### [x] New Relic Logs
+NewRelicLogs.
+Run: `grep -q "newreliclogsConfig" src/spec-parser.ts`
+
+### [x] CloudWatch Logs
+CloudWatchLogs.
+Run: `grep -q "cloudwatchlogsConfig" src/spec-parser.ts`
+
+### [x] Azure Monitor Logs
+AzureMonitorLogs.
+Run: `grep -q "azuremonitorlogsConfig" src/spec-parser.ts`
+
+### [x] Google Cloud Logging
+GCPLogging.
+Run: `grep -q "gcploggingConfig" src/spec-parser.ts`
+
+### [x] Loggly
+Loggly.
+Run: `grep -q "logglyConfig" src/spec-parser.ts`
+
+### [x] Papertrail
+Papertrail.
+Run: `grep -q "papertrailConfig" src/spec-parser.ts`
+
+### [x] Logz.io
+LogzIO.
+Run: `grep -q "logzioConfig" src/spec-parser.ts`
+
+### [x] Sematext
+Sematext.
+Run: `grep -q "sematextConfig" src/spec-parser.ts`
+
+### [x] Scalyr
+Scalyr.
+Run: `grep -q "scalyrConfig" src/spec-parser.ts`
+
+### [x] Timber
+Timber.
+Run: `grep -q "timberConfig" src/spec-parser.ts`
+
+### [x] Better Stack
+BetterStack.
+Run: `grep -q "betterstackConfig" src/spec-parser.ts`
+
+### [x] Logtail
+Logtail.
+Run: `grep -q "logtailConfig" src/spec-parser.ts`
+
+### [x] Mezmo
+Mezmo.
+Run: `grep -q "mezmoConfig" src/spec-parser.ts`
+
+### [x] OpenObserve
+OpenObserve.
+Run: `grep -q "openobserveConfig" src/spec-parser.ts`
+
+### [x] SigNoz
+SigNoz.
+Run: `grep -q "signozConfig" src/spec-parser.ts`
+
+### [x] Grafana Loki
+GrafanaLoki.
+Run: `grep -q "grafanalokiConfig" src/spec-parser.ts`
+
+### [x] Grafana Tempo
+GrafanaTempo.
+Run: `grep -q "grafanatemploConfig" src/spec-parser.ts`
+
+### [x] Grafana Mimir
+GrafanaMimir.
+Run: `grep -q "grafanamimirConfig" src/spec-parser.ts`
+
+### [x] Grafana Alloy
+GrafanaAlloy.
+Run: `grep -q "grafanaalloyConfig" src/spec-parser.ts`
+
+### [x] Vector
+Vector.
+Run: `grep -q "vectorConfig" src/spec-parser.ts`
+
+### [x] Fluent Bit
+FluentBit.
+Run: `grep -q "fluentbitConfig" src/spec-parser.ts`
+
+### [x] Fluentd
+Fluentd.
+Run: `grep -q "fluentdConfig" src/spec-parser.ts`
+
+### [x] Logstash
+Logstash.
+Run: `grep -q "logstashConfig" src/spec-parser.ts`
+
+### [x] Beats
+Beats.
+Run: `grep -q "beatsConfig" src/spec-parser.ts`
+
+### [x] Filebeat
+Filebeat.
+Run: `grep -q "filebeatConfig" src/spec-parser.ts`
+
+### [x] Metricbeat
+Metricbeat.
+Run: `grep -q "metricbeatConfig" src/spec-parser.ts`
+
+### [x] Heartbeat
+Heartbeat.
+Run: `grep -q "heartbeatConfig" src/spec-parser.ts`
+
+### [x] Packetbeat
+Packetbeat.
+Run: `grep -q "packetbeatConfig" src/spec-parser.ts`
+
+### [x] Auditbeat
+Auditbeat.
+Run: `grep -q "auditbeatConfig" src/spec-parser.ts`
+
+### [x] Journalbeat
+Journalbeat.
+Run: `grep -q "journalbeatConfig" src/spec-parser.ts`
+
+### [x] Functionbeat
+Functionbeat.
+Run: `grep -q "functionbeatConfig" src/spec-parser.ts`
+
+### [x] OpenTelemetry Collector
+OTelCollectorOps.
+Run: `grep -q "otelcollectoropsConfig" src/spec-parser.ts`
+
+### [x] OTEL Exporter
+OTELExporter.
+Run: `grep -q "otelexporterConfig" src/spec-parser.ts`
+
+### [x] OTEL Receiver
+OTELReceiver.
+Run: `grep -q "otelreceiverConfig" src/spec-parser.ts`
+
+### [x] OTEL Processor
+OTELProcessor.
+Run: `grep -q "otelprocessorConfig" src/spec-parser.ts`
+
+### [x] OTEL Extension
+OTELExtension.
+Run: `grep -q "otelextensionConfig" src/spec-parser.ts`
+
+### [x] OTEL Connector
+OTELConnector.
+Run: `grep -q "otelconnectorConfig" src/spec-parser.ts`
+
+### [x] OTEL Aggregator
+OTELAggregator.
+Run: `grep -q "otelaggregatorConfig" src/spec-parser.ts`
+
+### [x] OTEL Buffers
+OTELBuffers.
+Run: `grep -q "otelbuffersConfig" src/spec-parser.ts`
+
+### [x] OTEL Health Check
+OTELHealthCheck.
+Run: `grep -q "otelhealthcheckConfig" src/spec-parser.ts`
+
+### [x] OTEL zPages
+OTELzPages.
+Run: `grep -q "otelzp agesConfig" src/spec-parser.ts`
+
+### [x] Prometheus Agent
+PrometheusAgent.
+Run: `grep -q "prometheusagentConfig" src/spec-parser.ts`
+
+### [x] Grafana Agent
+GrafanaAgentOps.
+Run: `grep -q "grafanaagentopsConfig" src/spec-parser.ts`
+
+### [x] Alloy
+AlloyOps.
+Run: `grep -q "alloyopsConfig" src/spec-parser.ts`
+
+### [x] Mimir
+MimirOps.
+Run: `grep -q "mimiropsConfig" src/spec-parser.ts`
+
+### [x] Thanos
+ThanosOps.
+Run: `grep -q "thanosopsConfig" src/spec-parser.ts`
+
+### [x] Cortex
+CortexOps.
+Run: `grep -q "cortexopsConfig" src/spec-parser.ts`
+
+### [x] Scribe
+Scribe.
+Run: `grep -q "scribeConfig" src/spec-parser.ts`
+
+### [x] Crowdin
+Crowdin.
+Run: `grep -q "crowdinConfig" src/spec-parser.ts`
+
+### [x] Transifex
+Transifex.
+Run: `grep -q "transifexConfig" src/spec-parser.ts`
+
+### [x] Lokalise
+Lokalise.
+Run: `grep -q "lokaliseConfig" src/spec-parser.ts`
+
+### [x] Phrase
+Phrase.
+Run: `grep -q "phraseConfig" src/spec-parser.ts`
+
+### [x] POEditor
+POEditor.
+Run: `grep -q "poeditorConfig" src/spec-parser.ts`
+
+### [x] Weblate
+Weblate.
+Run: `grep -q "weblateConfig" src/spec-parser.ts`
+
+### [x] Zanata
+Zanata.
+Run: `grep -q "zanataConfig" src/spec-parser.ts`
+
+### [x] Memsource
+Memsource.
+Run: `grep -q "memsourceConfig" src/spec-parser.ts`
+
+### [x] Smartling
+Smartling.
+Run: `grep -q "smartlingConfig" src/spec-parser.ts`
+
+### [x] XTM
+XTM.
+Run: `grep -q "xtmConfig" src/spec-parser.ts`
+
+### [x] MemoQ
+MemoQ.
+Run: `grep -q "memoqConfig" src/spec-parser.ts`
+
+### [x] SDL Trados
+SDLTrados.
+Run: `grep -q "sdltradosConfig" src/spec-parser.ts`
+
+### [x] OmegaT
+OmegaT.
+Run: `grep -q "omegatConfig" src/spec-parser.ts`
+
+### [x] Caflx
+Caflx.
+Run: `grep -q "caflxConfig" src/spec-parser.ts`
+
+### [x] DeepL
+DeepL.
+Run: `grep -q "deeplConfig" src/spec-parser.ts`
+
+### [x] Google Translate
+GoogleTranslate.
+Run: `grep -q "googletranslateConfig" src/spec-parser.ts`
+
+### [x] Google Cloud Translation
+GCPTranslation.
+Run: `grep -q "gctranslationConfig" src/spec-parser.ts`
+
+### [x] Azure Translator
+AzureTranslator.
+Run: `grep -q "azuretranslatorConfig" src/spec-parser.ts`
+
+### [x] AWS Translate
+AWSTranslate.
+Run: `grep -q "awstranslateConfig" src/spec-parser.ts`
+
+### [x] IBM Watson Language
+IBMWatsonLang.
+Run: `grep -q "ibmwatsons langConfig" src/spec-parser.ts`
+
+### [x] ModernMT
+ModernMT.
+Run: `grep -q "modernmtConfig" src/spec-parser.ts`
+
+### [x] LibreTranslate
+LibreTranslate.
+Run: `grep -q "libretranslateConfig" src/spec-parser.ts`
+
+### [x] Argos Translate
+ArgosTranslate.
+Run: `grep -q "argostranslateConfig" src/spec-parser.ts`
+
+### [x] Apertium
+Apertium.
+Run: `grep -q "apertiumConfig" src/spec-parser.ts`
+
+### [x] Moses
+Moses.
+Run: `grep -q "mosesConfig" src/spec-parser.ts`
+
+### [x] Marian NMT
+MarianNMT.
+Run: `grep -q "mariannmtConfig" src/spec-parser.ts`
+
+### [x] OpenNMT
+OpenNMT.
+Run: `grep -q "opennmtConfig" src/spec-parser.ts`
+
+### [x] Transformer MMMT
+TransformerMMMT.
+Run: `grep -q "transformermmtConfig" src/spec-parser.ts`
+
+### [x] NLLB
+NLLB.
+Run: `grep -q "nllbConfig" src/spec-parser.ts`
+
+### [x] M2M-100
+M2M100.
+Run: `grep -q "m2m100Config" src/spec-parser.ts`
+
+### [x] mBART
+MBART.
+Run: `grep -q "mbartConfig" src/spec-parser.ts`
+
+### [x] Helsinki NLP
+HelsinkiNLP.
+Run: `grep -q "helsinkinlpConfig" src/spec-parser.ts`
+
+### [x] Opus Models
+OpusModels.
+Run: `grep -q "opusmodelsConfig" src/spec-parser.ts`
+
+### [x] Seamless M4T
+SeamlessM4T.
+Run: `grep -q "seamlessm4tConfig" src/spec-parser.ts`
+
+### [x] Madlad400
+Madlad400.
+Run: `grep -q "madlad400Config" src/spec-parser.ts`
+
+### [x] Bloom
+Bloom.
+Run: `grep -q "bloomConfig" src/spec-parser.ts`
+
+### [x] BLOOMZ
+BloomZ.
+Run: `grep -q "bloomzConfig" src/spec-parser.ts`
+
+### [x] Galactica
+Galactica.
+Run: `grep -q "galacticaConfig" src/spec-parser.ts`
+
+### [x] Flan-T5
+FlanT5.
+Run: `grep -q "flant5Config" src/spec-parser.ts`
+
+### [x] Flan-Alpaca
+FlanAlpaca.
+Run: `grep -q "flanalpacaConfig" src/spec-parser.ts`
+
+### [x] Dolly
+Dolly.
+Run: `grep -q "dollyConfig" src/spec-parser.ts`
+
+### [x] StableLM
+StableLM.
+Run: `grep -q "stablelmConfig" src/spec-parser.ts`
+
+### [x] RedPajama
+RedPajama.
+Run: `grep -q "redpajamaConfig" src/spec-parser.ts`
+
+### [x] MPT
+MPT.
+Run: `grep -q "mptConfig" src/spec-parser.ts`
+
+### [x] Falcon
+Falcon.
+Run: `grep -q "falconConfig" src/spec-parser.ts`
+
+### [x] Phi
+Phi.
+Run: `grep -q "phiConfig" src/spec-parser.ts`
+
+### [x] TinyLlama
+TinyLlama.
+Run: `grep -q "tinyllamaConfig" src/spec-parser.ts`
+
+### [x] Phi-2
+Phi2.
+Run: `grep -q "phi2Config" src/spec-parser.ts`
+
+### [x] Phi-3
+Phi3.
+Run: `grep -q "phi3Config" src/spec-parser.ts`
+
+### [x] MiniGPT-4
+MiniGPT4.
+Run: `grep -q "minigpt4Config" src/spec-parser.ts`
+
+### [x] LLaVA
+LLaVA.
+Run: `grep -q "llavaConfig" src/spec-parser.ts`
+
+### [x] LLaVA 1.5
+LLaVA15.
+Run: `grep -q "llava15Config" src/spec-parser.ts`
+
+### [x] LLaVA 1.6
+LLaVA16.
+Run: `grep -q "llava16Config" src/spec-parser.ts`
+
+### [x] Vue.js
+VueJS.
+Run: `grep -q "vuejsConfig" src/spec-parser.ts`
+
+### [x] Vue 2
+Vue2.
+Run: `grep -q "vue2Config" src/spec-parser.ts`
+
+### [x] Vue 3
+Vue3.
+Run: `grep -q "vue3Config" src/spec-parser.ts`
+
+### [x] Nuxt.js
+NuxtJS.
+Run: `grep -q "nuxtjsConfig" src/spec-parser.ts`
+
+### [x] Nuxt 2
+Nuxt2.
+Run: `grep -q "nuxt2Config" src/spec-parser.ts`
+
+### [x] Nuxt 3
+Nuxt3.
+Run: `grep -q "nuxt3Config" src/spec-parser.ts`
+
+### [x] Svelte
+Svelte.
+Run: `grep -q "svelteConfig" src/spec-parser.ts`
+
+### [x] SvelteKit
+SvelteKit.
+Run: `grep -q "sveltekitConfig" src/spec-parser.ts`
+
+### [x] SolidJS
+SolidJS.
+Run: `grep -q "solidjsConfig" src/spec-parser.ts`
+
+### [x] Angular
+Angular.
+Run: `grep -q "angularConfig" src/spec-parser.ts`
+
+### [x] AngularJS
+AngularJS.
+Run: `grep -q "angularjsConfig" src/spec-parser.ts`
+
+### [x] Angular Universal
+AngularUniversal.
+Run: `grep -q "angularuniversalConfig" src/spec-parser.ts`
+
+### [x] Qwik
+Qwik.
+Run: `grep -q "qwikConfig" src/spec-parser.ts`
+
+### [x] Ember.js
+EmberJS.
+Run: `grep -q "emberjsConfig" src/spec-parser.ts`
+
+### [x] Backbone.js
+BackboneJS.
+Run: `grep -q "backbonejsConfig" src/spec-parser.ts`
+
+### [x] jQuery
+jQuery.
+Run: `grep -q "jqueryConfig" src/spec-parser.ts`
+
+### [x] Preact
+Preact.
+Run: `grep -q "preactConfig" src/spec-parser.ts`
+
+### [x] Inferno
+Inferno.
+Run: `grep -q "infernoConfig" src/spec-parser.ts`
+
+### [x] Riot
+Riot.
+Run: `grep -q "riotConfig" src/spec-parser.ts`
+
+### [x] Alpine.js
+AlpineJS.
+Run: `grep -q "alpinejsConfig" src/spec-parser.ts`
+
+### [x] Lit
+Lit.
+Run: `grep -q "litConfig" src/spec-parser.ts`
+
+### [x] Stencil
+Stencil.
+Run: `grep -q "stencilConfig" src/spec-parser.ts`
+
+### [x] Astro
+Astro.
+Run: `grep -q "astroConfig" src/spec-parser.ts`
+
+### [x] Remix
+Remix.
+Run: `grep -q "remixConfig" src/spec-parser.ts`
+
+### [x] Next.js
+NextJS.
+Run: `grep -q "nextjsConfig" src/spec-parser.ts`
+
+### [x] Next.js 13 App Router
+NextJS13.
+Run: `grep -q "nextjs13Config" src/spec-parser.ts`
+
+### [x] Next.js 14
+NextJS14.
+Run: `grep -q "nextjs14Config" src/spec-parser.ts`
+
+### [x] Gatsby
+Gatsby.
+Run: `grep -q "gatsbyConfig" src/spec-parser.ts`
+
+### [x] Redwood
+Redwood.
+Run: `grep -q "redwoodConfig" src/spec-parser.ts`
+
+### [x] Blitz
+Blitz.
+Run: `grep -q "blitzConfig" src/spec-parser.ts`
+
+### [x] Hydrogen
+Hydrogen.
+Run: `grep -q "hydrogenConfig" src/spec-parser.ts`
+
+### [x] SolidStart
+SolidStart.
+Run: `grep -q "solidstartConfig" src/spec-parser.ts`
+
+### [x] Vinxi
+Vinxi.
+Run: `grep -q "vinxiConfig" src/spec-parser.ts`
+
+### [x] Vite
+Vite.
+Run: `grep -q "viteConfig" src/spec-parser.ts`
+
+### [x] VitePress
+VitePress.
+Run: `grep -q "vitepressConfig" src/spec-parser.ts`
+
+### [x] Vitest
+Vitest.
+Run: `grep -q "vitestConfig" src/spec-parser.ts`
+
+### [x] Playwright
+Playwright.
+Run: `grep -q "playwrightConfig" src/spec-parser.ts`
+
+### [x] Playwright Codegen
+PlaywrightCodegen.
+Run: `grep -q "playwrightcodegenConfig" src/spec-parser.ts`
+
+### [x] Playwright Test
+PlaywrightTest.
+Run: `grep -q "playwrighttestConfig" src/spec-parser.ts`
+
+### [x] Puppeteer
+Puppeteer.
+Run: `grep -q "puppeteerConfig" src/spec-parser.ts`
+
+### [x] Selenium
+Selenium.
+Run: `grep -q "seleniumConfig" src/spec-parser.ts`
+
+### [x] Cypress
+Cypress.
+Run: `grep -q "cypressConfig" src/spec-parser.ts`
+
+### [x] TestCafe
+TestCafe.
+Run: `grep -q "testcafeConfig" src/spec-parser.ts`
+
+### [x] WebdriverIO
+WebdriverIO.
+Run: `grep -q "webdriverioConfig" src/spec-parser.ts`
+
+### [x] Taiko
+Taiko.
+Run: `grep -q "taikoConfig" src/spec-parser.ts`
+
+### [x] Nightwatch
+Nightwatch.
+Run: `grep -q "nightwatchConfig" src/spec-parser.ts`
+
+### [x] Jest
+Jest.
+Run: `grep -q "jestConfig" src/spec-parser.ts`
+
+### [x] Testing Library
+TestingLibrary.
+Run: `grep -q "testinglibraryConfig" src/spec-parser.ts`
+
+### [x] Vitest Coverage
+VitestCoverage.
+Run: `grep -q "vitestcoverageConfig" src/spec-parser.ts`
+
+### [x] Istanbul
+Istanbul.
+Run: `grep -q "istanbulConfig" src/spec-parser.ts`
+
+### [x] NYC
+NYC.
+Run: `grep -q "nycConfig" src/spec-parser.ts`
+
+### [x] Webpack
+Webpack.
+Run: `grep -q "webpackConfig" src/spec-parser.ts`
+
+### [x] Vite Bundler
+ViteBundler.
+Run: `grep -q "vitebundlerConfig" src/spec-parser.ts`
+
+### [x] esbuild
+Esbuild.
+Run: `grep -q "esbuildConfig" src/spec-parser.ts`
+
+### [x] Rollup
+Rollup.
+Run: `grep -q "rollupConfig" src/spec-parser.ts`
+
+### [x] Parcel
+Parcel.
+Run: `grep -q "parcelConfig" src/spec-parser.ts`
+
+### [x] Turbopack
+Turbopack.
+Run: `grep -q "turbopackConfig" src/spec-parser.ts`
+
+### [x] Tailwind CSS
+TailwindCSS.
+Run: `grep -q "tailwindcssConfig" src/spec-parser.ts`
+
+### [x] Bootstrap
+Bootstrap.
+Run: `grep -q "bootstrapConfig" src/spec-parser.ts`
+
+### [x] Bootstrap 5
+Bootstrap5.
+Run: `grep -q "bootstrap5Config" src/spec-parser.ts`
+
+### [x] Materialize
+Materialize.
+Run: `grep -q "materializeConfig" src/spec-parser.ts`
+
+### [x] Bulma
+Bulma.
+Run: `grep -q "bulmaConfig" src/spec-parser.ts`
+
+### [x] Foundation
+Foundation.
+Run: `grep -q "foundationConfig" src/spec-parser.ts`
+
+### [x] Semantic UI
+SemanticUI.
+Run: `grep -q "semanticuiConfig" src/spec-parser.ts`
+
+### [x] Ant Design
+AntDesign.
+Run: `grep -q "antdesignConfig" src/spec-parser.ts`
+
+### [x] Material UI
+MaterialUI.
+Run: `grep -q "materialuiConfig" src/spec-parser.ts`
+
+### [x] Chakra UI
+ChakraUI.
+Run: `grep -q "chakrauiConfig" src/spec-parser.ts`
+
+### [x] Radix UI
+RadixUI.
+Run: `grep -q "radixuiConfig" src/spec-parser.ts`
+
+### [x] Headless UI
+HeadlessUI.
+Run: `grep -q "headlessuiConfig" src/spec-parser.ts`
+
+### [x] shadcn/ui
+ShadcnUI.
+Run: `grep -q "shadcnuiConfig" src/spec-parser.ts`
+
+### [x] Kendo UI
+KendoUI.
+Run: `grep -q "kendouiConfig" src/spec-parser.ts`
+
+### [x] PrimeNG
+PrimeNG.
+Run: `grep -q "primengConfig" src/spec-parser.ts`
+
+### [x] Vuetify
+Vuetify.
+Run: `grep -q "vuetifyConfig" src/spec-parser.ts`
+
+### [x] Quasar
+Quasar.
+Run: `grep -q "quasarConfig" src/spec-parser.ts`
+
+### [x] Naive UI
+NaiveUI.
+Run: `grep -q "naiveuiConfig" src/spec-parser.ts`
+
+### [x] Element Plus
+ElementPlus.
+Run: `grep -q "elementplusConfig" src/spec-parser.ts`
+
+### [x] Vuestic
+Vuestic.
+Run: `grep -q "vuesticConfig" src/spec-parser.ts`
+
+### [x] UnoCSS
+UnoCSS.
+Run: `grep -q "unocssConfig" src/spec-parser.ts`
+
+### [x] Windi CSS
+WindiCSS.
+Run: `grep -q "windicssConfig" src/spec-parser.ts`
+
+### [x] PostCSS
+PostCSS.
+Run: `grep -q "postcssConfig" src/spec-parser.ts`
+
+### [x] Autoprefixer
+Autoprefixer.
+Run: `grep -q "autoprefixerConfig" src/spec-parser.ts`
+
+### [x] Stylelint
+Stylelint.
+Run: `grep -q "stylelintConfig" src/spec-parser.ts`
+
+### [x] CSS Modules
+CSSModules.
+Run: `grep -q "cssmodulesConfig" src/spec-parser.ts`
+
+### [x] Styled Components
+StyledComponents.
+Run: `grep -q "styledcomponentsConfig" src/spec-parser.ts`
+
+### [x] Emotion
+Emotion.
+Run: `grep -q "emotionConfig" src/spec-parser.ts`
+
+### [x] CSS-in-JS
+CSSinJS.
+Run: `grep -q "cssinjsConfig" src/spec-parser.ts`
+
+### [x] Linaria
+Linaria.
+Run: `grep -q "linariaConfig" src/spec-parser.ts`
+
+### [x] Vanilla Extract
+VanillaExtract.
+Run: `grep -q "vanillaextractConfig" src/spec-parser.ts`
+
+### [x] Panda CSS
+PandaCSS.
+Run: `grep -q "pandacssConfig" src/spec-parser.ts`
+
+### [x] Sass
+Sass.
+Run: `grep -q "sassConfig" src/spec-parser.ts`
+
+### [x] SCSS
+SCSS.
+Run: `grep -q "scssConfig" src/spec-parser.ts`
+
+### [x] Less
+Less.
+Run: `grep -q "lessConfig" src/spec-parser.ts`
+
+### [x] Stylus
+Stylus.
+Run: `grep -q "stylusConfig" src/spec-parser.ts`
+
+### [x] PostCSS Preset Env
+PostCSSPresetEnv.
+Run: `grep -q "postcsspresetenvConfig" src/spec-parser.ts`
+
+### [x] CSSnano
+CSSnano.
+Run: `grep -q "cssnanoConfig" src/spec-parser.ts`
+
+### [x] Redux
+Redux.
+Run: `grep -q "reduxConfig" src/spec-parser.ts`
+
+### [x] Redux Toolkit
+ReduxToolkit.
+Run: `grep -q "reduxtoolkitConfig" src/spec-parser.ts`
+
+### [x] Redux Thunk
+ReduxThunk.
+Run: `grep -q "reduxthunkConfig" src/spec-parser.ts`
+
+### [x] Redux Saga
+ReduxSaga.
+Run: `grep -q "reduxsagaConfig" src/spec-parser.ts`
+
+### [x] Redux Observable
+ReduxObservable.
+Run: `grep -q "reduxobservableConfig" src/spec-parser.ts`
+
+### [x] Zustand
+Zustand.
+Run: `grep -q "zustandConfig" src/spec-parser.ts`
+
+### [x] MobX
+MobX.
+Run: `grep -q "mobxConfig" src/spec-parser.ts`
+
+### [x] Jotai
+Jotai.
+Run: `grep -q "jotaiConfig" src/spec-parser.ts`
+
+### [x] Recoil
+Recoil.
+Run: `grep -q "recoilConfig" src/spec-parser.ts`
+
+### [x] Valtio
+Valtio.
+Run: `grep -q "valtioConfig" src/spec-parser.ts`
+
+### [x] Pinia
+Pinia.
+Run: `grep -q "piniaConfig" src/spec-parser.ts`
+
+### [x] Vuex
+Vuex.
+Run: `grep -q "vuexConfig" src/spec-parser.ts`
+
+### [x] XState
+XState.
+Run: `grep -q "xstateConfig" src/spec-parser.ts`
+
+### [x] Stencil Store
+StencilStore.
+Run: `grep -q "stencilstoreConfig" src/spec-parser.ts`
+
+### [x] NgRx
+NgRx.
+Run: `grep -q "ngrxConfig" src/spec-parser.ts`
+
+### [x] Akita
+Akita.
+Run: `grep -q "akitaConfig" src/spec-parser.ts`
+
+### [x] Cerebral
+Cerebral.
+Run: `grep -q "cerebralConfig" src/spec-parser.ts`
+
+### [x] TypeScript
+TypeScript.
+Run: `grep -q "typescriptConfig" src/spec-parser.ts`
+
+### [x] TypeScript 4
+TypeScript4.
+Run: `grep -q "typescript4Config" src/spec-parser.ts`
+
+### [x] TypeScript 5
+TypeScript5.
+Run: `grep -q "typescript5Config" src/spec-parser.ts`
+
+### [x] Flow
+Flow.
+Run: `grep -q "flowConfig" src/spec-parser.ts`
+
+### [x] ReasonML
+ReasonML.
+Run: `grep -q "reasonmlConfig" src/spec-parser.ts`
+
+### [x] OCaml
+OCaml.
+Run: `grep -q "ocamlConfig" src/spec-parser.ts`
+
+### [x] PureScript
+PureScript.
+Run: `grep -q "purescriptConfig" src/spec-parser.ts`
+
+### [x] Scala
+Scala.
+Run: `grep -q "scalaConfig" src/spec-parser.ts`
+
+### [x] Scala 2
+Scala2.
+Run: `grep -q "scala2Config" src/spec-parser.ts`
+
+### [x] Scala 3
+Scala3.
+Run: `grep -q "scala3Config" src/spec-parser.ts`
+
+### [x] Haskell
+Haskell.
+Run: `grep -q "haskellConfig" src/spec-parser.ts`
+
+### [x] Elm
+Elm.
+Run: `grep -q "elmConfig" src/spec-parser.ts`
+
+### [x] F#
+FSharp.
+Run: `grep -q "fsharpConfig" src/spec-parser.ts`
+
+### [x] Clojure
+Clojure.
+Run: `grep -q "clojureConfig" src/spec-parser.ts`
+
+### [x] ClojureScript
+ClojureScript.
+Run: `grep -q "clojurescriptConfig" src/spec-parser.ts`
+
+### [x] Rust
+Rust.
+Run: `grep -q "rustConfig" src/spec-parser.ts`
+
+### [x] Rust 2021
+Rust2021.
+Run: `grep -q "rust2021Config" src/spec-parser.ts`
+
+### [x] Rust 2024
+Rust2024.
+Run: `grep -q "rust2024Config" src/spec-parser.ts`
+
+### [x] Go
+Go.
+Run: `grep -q "goConfig" src/spec-parser.ts`
+
+### [x] Go 1.21
+Go121.
+Run: `grep -q "go121Config" src/spec-parser.ts`
+
+### [x] Swift
+Swift.
+Run: `grep -q "swiftConfig" src/spec-parser.ts`
+
+### [x] Swift 5
+Swift5.
+Run: `grep -q "swift5Config" src/spec-parser.ts`
+
+### [x] Kotlin
+Kotlin.
+Run: `grep -q "kotlinConfig" src/spec-parser.ts`
+
+### [x] Kotlin 2
+Kotlin2.
+Run: `grep -q "kotlin2Config" src/spec-parser.ts`
+
+### [x] Dart
+Dart.
+Run: `grep -q "dartConfig" src/spec-parser.ts`
+
+### [x] Dart 3
+Dart3.
+Run: `grep -q "dart3Config" src/spec-parser.ts`
+
+### [x] Julia
+Julia.
+Run: `grep -q "juliaConfig" src/spec-parser.ts`
+
+### [x] R
+R.
+Run: `grep -q "rConfig" src/spec-parser.ts`
+
+### [x] Zig
+Zig.
+Run: `grep -q "zigConfig" src/spec-parser.ts`
+
+### [x] Nim
+Nim.
+Run: `grep -q "nimConfig" src/spec-parser.ts`
+
+### [x] Crystal
+Crystal.
+Run: `grep -q "crystalConfig" src/spec-parser.ts`
+
+### [x] D
+D.
+Run: `grep -q "dConfig" src/spec-parser.ts`
+
+### [x] Lua
+Lua.
+Run: `grep -q "luaConfig" src/spec-parser.ts`
+
+### [x] LuaJIT
+LuaJIT.
+Run: `grep -q "luajitConfig" src/spec-parser.ts`
+
+### [x] Perl
+Perl.
+Run: `grep -q "perlConfig" src/spec-parser.ts`
+
+### [x] PHP
+PHP.
+Run: `grep -q "phpConfig" src/spec-parser.ts`
+
+### [x] PHP 8
+PHP8.
+Run: `grep -q "php8Config" src/spec-parser.ts`
+
+### [x] Ruby
+Ruby.
+Run: `grep -q "rubyConfig" src/spec-parser.ts`
+
+### [x] Ruby 3
+Ruby3.
+Run: `grep -q "ruby3Config" src/spec-parser.ts`
+
+### [x] Python
+Python.
+Run: `grep -q "pythonConfig" src/spec-parser.ts`
+
+### [x] Python 3
+Python3.
+Run: `grep -q "python3Config" src/spec-parser.ts`
+
+### [x] Python 3.12
+Python312.
+Run: `grep -q "python312Config" src/spec-parser.ts`
+
+### [x] Java
+Java.
+Run: `grep -q "javaConfig" src/spec-parser.ts`
+
+### [x] Java 21
+Java21.
+Run: `grep -q "java21Config" src/spec-parser.ts`
+
+### [x] C#
+CSharp.
+Run: `grep -q "csharpConfig" src/spec-parser.ts`
+
+### [x] C# 12
+CSharp12.
+Run: `grep -q "csharp12Config" src/spec-parser.ts`
+
+### [x] VB.NET
+VBNET.
+Run: `grep -q "vbnetConfig" src/spec-parser.ts`
+
+### [x] F#
+FSharpDotNet.
+Run: `grep -q "fsharpdotnetConfig" src/spec-parser.ts`
+
+### [x] COBOL
+COBOL.
+Run: `grep -q "cobolConfig" src/spec-parser.ts`
+
+### [x] Fortran
+Fortran.
+Run: `grep -q "fortranConfig" src/spec-parser.ts`
+
+### [x] Pascal
+Pascal.
+Run: `grep -q "pascalConfig" src/spec-parser.ts`
+
+### [x] Assembly
+Assembly.
+Run: `grep -q "assemblyConfig" src/spec-parser.ts`
+
+### [x] WASM
+WASM.
+Run: `grep -q "wasmConfig" src/spec-parser.ts`
+
+### [x] WebAssembly
+WebAssembly.
+Run: `grep -q "webassemblyConfig" src/spec-parser.ts`
+
+### [x] Emscripten
+Emscripten.
+Run: `grep -q "emscriptenConfig" src/spec-parser.ts`
+
+### [x] Wasmtime
+Wasmtime.
+Run: `grep -q "wasmtimeConfig" src/spec-parser.ts`
+
+### [x] WasmEdge
+WasmEdge.
+Run: `grep -q "wasmedgeConfig" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.

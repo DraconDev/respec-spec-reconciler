@@ -13969,7 +13969,7 @@ export function cohereConfig(cohereApiKey: string): { apiKey: string; model: str
 }
 
 export function claudeConfig(claudeApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKVGtwSVBzQXgwL0YwRDNUZC9YaDhDOFRqTXFENFZnZFoyTFVRMVhKbmlNCk9JL2d6cGtVTjZGL2tvZUF4cWdHREUwZHIzWlpFYlJaNGEvWnFZeVMxMkkKLT4gc3B4LWdyZWFzZSAkNXwgbn4gKwpxd0NOK1BwK1VaOVdsdjQ0VCt3V2Z0a2hWMjl4Zjk2RGpCRTA0dGllVmZHd3lqU1RIcTEyeDVGTG1GRQotLS0gZ1RDUVFqUWplWFJDeWYzVEZmK05TTVU1WkxlMDFDNEMvVHhLcExJSU5SRQoYVtynYUMZgbE0d5eBqrm5XDDuTapneqQ3uDTdr0qas+OceyzJ/nidAcAJTWVTQelD2/VrZoMJJRZ6SXwF7FuXT2BVbI5EWw==] };
+	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBUWVBVK1VnMFM0UmxWREVqSzBFRFovOXh1Z2dCRkQ5K0M1dlJidVJZYURnCmtheGhwWEdQMWpPM2hsaGlXaEdZZGdPR0JVRmJrNnBSUHlqV2dVUHlxaTgKLT4geE9gXSwnLWdyZWFzZSAvND8gJiAlOW5wP0xjCgotLS0gUEgzWkZidEd0Mm41WTJIczZpakwrSXluUmVVcU1zY0F3N3NXYnBjREs4cwoOaAiOSrYlxSqtEhJTJyMtP2SYQ8fbtg7Wr/l4WtSlxtLbqmcnX8/T6n5LLUcZjaVtBZYSKAKRR1Wya9p89SvVv1T42Caxdg==] };
 }
 
 export function huggingfaceConfig(hfToken: string): { token: string; model: string } {
@@ -14711,7 +14711,7 @@ export function renlpConfig(reNlpModel: string): { model: string; language: stri
 }
 
 export function naturalConfig(naturalModel: string): { model: string; tokenizer: string } {
-	return { model: naturalModel, [DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjYjJpU04rbFFFNWRzWG81VXkrL0xhY0FGSVFhN2F3WmJLbk83QnRLcG44CjJNdE9TQTRzc2VQMHVNdVRxZ2FZNlQ2Q3A2bHhkaW9tQXUrTFI0MW9tNkkKLT4gcFo1UWteYi1ncmVhc2UgU3glISAtQTYKV1hZWmpoMXFXSXJaSjh5NXlZR01HZ2xWRThpZWpPeG44eHVNMWkxdldGQ3NYNGdxUmxzRWlmUVNoT3VFYTRteApjTE9pNjFWZEp1blYrWTJHZk9kRVNZOFE5TjdjbnJtOC8weHZuWEtwCi0tLSBWbVAva2hDeFF5ZVhiMnZQUFo3MmZPb01mZ3VwSHBEZXdYbEF4eTMxRzJ3CiUkSk6AFUDQhYZYk1NC3jp1S9OAOyP3TtrUJBzvLkO0AA629JURF7Nn1ii6fx79QZ/SOqBbNC/aw/EistlaN74=] };
+	return { model: naturalModel, [DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBETXNWaFRkZy9NS1hmT04rSm51RGtnKzAxTHNaeGpuRm1rM3hBQy9uTmxzCnhyNmc5dXVDOXJaa1JiSXN2eEIrY2NWV3BHRDdSaEg1am1mdkRkVkFsQ28KLT4gci1ncmVhc2UgV2haIClDIDI4P3pOKQpwYjlwZHJIaUZzVW94SkMvRFRteklnTk5pa1FWbzFHM05IblNCUEw2VGFIbEN2SktZSWI0QzRCWmh3UTlUeWsvCjJUK0VBN0JsQWFZZldId0NQeUp1LzlvaWNKRUhIN3NsakYwVWNiLzY5Q1lFRVYxYmd1aXcKLS0tIERYeTEzY0tYRnlPNEVJWU5DVENwK3NTK3dWVXNLdG4xQlpSSjNOUVJsalkKZaCCff8adG6SvvaNXifs8YEHi5/enzM3HbbaZhbRSToUokEg4wFEzhUiLtCBfs3WtiIcO95Q+z0fkBC7/OX7lw==] };
 }
 
 export function compromiseConfig(compromiseText: string): { text: string; addTags: string[] } {
@@ -15007,7 +15007,7 @@ export function cohereembedConfig(cohereApiKey: string): { apiKey: string; model
 }
 
 export function openaiembeddingsConfig(openaiApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: openai[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBuU0ZJZ0IvTzlIQ0x1Mkk2L2w2S2o1SDdmTUVNeXI5SUNxMG1UM3RoTWdzClMzdS8rdnlxQm1sKzZmRnR4RkRlczQrV1FvRThjN3NpWmxzTFJwNEU0OTAKLT4gJVpaWi1ncmVhc2UgfmhIJQpjVC9KYThyOUxYVkd0TkExeVpjcy9RCi0tLSBsaDUyVGRXODJpTU03QmNBalkrMU55Wmp0RDQyWS9weXlWekZRT1MyTGhnChYAEL9m5oBQUWw/Wh7ItvQSzF52MGB+C0aK21550Wh8au5obOG+xGOJtaoiyBf29ib9anTngNMS+FIBxu5zH+ZMr6OmiVvs] };
+	return { apiKey: openai[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBLREo0QVhhTTBOZWZtU1BXQzVLaXdtWjZTQ01IdzdpZUlETUQzRnlZTFRrClpXbDhPOFhoZHpqSE1tRXkxbzlqTlJ2eThnOXlaUUx5UFBDS3F4ODBXQjAKLT4gWWkmKTgpci1ncmVhc2UgK0MgLzJKQnp8RwpkWk1hSENPaUx5SVQ3WUlsMGs0azVMM1dlT1hrOGtYZC9nNGhQMEkxVFNadDZjSW5OVEh5NlgySFJ2LzY3V0pzCk9iQmM2NFBCK3FQZHUxVHB1QS9FcmNocnZsbUJVUUlTYnpSSlpFdFpkZnM2YTVkUAotLS0gYmsvU1VLWkcyRStrMzVBN0MxdmpxZHJYOGtITHMxU0x3YWNNc0VZSXVHcwowEn2cdOiDx7+xPnHnxfHYy5uNzSXUAK6glJR2zjqa+WjTu8uoaKJVLmzaQte70+iaLDkaSoRp3nm53c5ddzm7hwoxLYKJGw==] };
 }
 
 export function azureopenaiembeddingsConfig(azureOpenAiEndpoint: string): { endpoint: string; apiVersion: string } {
@@ -15019,11 +15019,11 @@ export function vertexaiembeddingsConfig(gcpProject: string): { project: string;
 }
 
 export function mistralaiConfig(mistralApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBiSEM3T0RmcFFrUFZKUG1tYUg4c1RTb0hGTEtFbWQrZXdDRy81dzVTZzIwCkgwcUV0aDhNblBJNnIva3FVOHozOXp1UnB3WDJlQk5yRjNEVndWQXhjVzAKLT4gW01TPF9pLWdyZWFzZSBhMXQ0ewpQdjQzWk9jWXlaRFg5MFlRL2NrTzdxVS96c3ZrTksrYWJIcWx4Q3ZWbkFXTzBYMzIKLS0tIGlmSVRjNHBIbmlQNGRCTmFjSTJTQ3dmR1FObC9DSkVsT3Y5Yk1kdkpybjQKtuwGjMHPSebLER2br1A/Wr8YsDDGepLkp/lFtEc+EQLaxw006FPCVM2y6umIv4VJ9hOHhmhCgyLNrHQYr7nTbrd4S8sv] };
+	return { apiKey: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDVTRwWUhvYjVxdlFmUlNObXBVamZ3Y1NCLzRMM0lOZlREaUhBdXNhNXo0CmhNL3VsMVpEM1NmbUIzaE9iSEIySkFleUpjeXZrUkdQdEFKSFphOHF1RVEKLT4gTCRZXX0he0QtZ3JlYXNlIDI+PVZPIHEvWTNHKy0KWm41b0x3REFDR1psM2hKd1JBCi0tLSBvWXUzamR0ZlN1d3VzQ3N1VnM0MlFMVzlXWWh1NjRqTzNFRCtDZGUzWGRBCurOCda3H9zR8SW6OMfxkkEz+vjYdpoSKaoGZKrod3VZOaZQ4q7YjVPEOKrzg9dvsrRaMNsVRDH881dToZVgRmJUu0VsYw==] };
 }
 
 export function groqConfig(groqApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: groq[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA1QmJXamJ0RGxJTlFveTYzV0x0a281SDZEQVlMVmF1TG9nSFFWS2wyY1RBCkNnQ2Y2TDFDUHZDeDhNWVJ0bmRLMjJMSjVXUGV2USszUSt5RFpGSFBLZ28KLT4gaG5BOCctZ3JlYXNlIHkzeXMxICpyKGBkIHcgXls7L0cKUEZVb0ZPa1hEdFpIa1FPbDlmaVVaQnBiWlpvL2FnNmF5WUpPY1lCbzZ0VE1mNDY1L2tMZmpiRkJHK2xBdFBwegorYUI0d2J4SkY2SWxPQUUKLS0tIEs4UXN1ajV4aWxjalQwcG1MY3hGQjlYSWVDS1hWbjkwVnpJMGZRWlBwbzAKy0mjtCRDs6DckK4x9JT5FSwWkaMBCLbXWFi/9jeg2Gm1/fN+ziCWGIVXooTtOCxR17b/ppRPiGMmdKJL1hAlZzDTlB8+Kkwx] };
+	return { apiKey: groq[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxSEF1UzNOTXhvN3d3ZDNkYkFtSmRFbkdaMGt0UWxrZjIrWU9XTVJDZ24wCjVIYU1BVVhRSGNmTDRlS0FRd0NzQXVQUVU1OFFtSmRvZWZrbXF0Ty9GaW8KLT4gJDlhU28tZ3JlYXNlIFtKT1FBCi9GcVBDOFhYc2ZjME55eGlvYU43Q0diU216WHk2ZkJxMGNZRWNtTE9obGZQSlFKTmNMbzVQdjVLNDhFNmdDSmUKUUw0MVRZRUNnTExoY2l4S1l5TUVMVXM4RDZxYm1MMkpLTy9DcWxIdTlvVGYKLS0tIGF1bi91MHFmTlpPNnVtOFlTQURLcDFqME5MeXA5c1hOWXkvNTQ1VU5mRGcKf81KJjAtbjNN031gvTfUnEX9Yv+NuOVxeXvQ97gbT/L7Tq/IPDnP9TOzD8WhoGNzky/tleCg+L7qN02uxRWFq9yv0s22obHL] };
 }
 
 export function perplexityConfig(perplexityApiKey: string): { apiKey: string; model: string } {
@@ -15031,7 +15031,7 @@ export function perplexityConfig(perplexityApiKey: string): { apiKey: string; mo
 }
 
 export function togetheraiConfig(togetherApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: together[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzVkZtNkNuOXpGdXVPZUdnUkRrV2lmdXVERUUvRDROYk5HZTBueTFkbVhnCktnU1JqRDk2eXA2OUp3eWZ6c2lHajZZNVFKTTh3WWlyUStlUk9UYXFsTWsKLT4geCJ4fT4rLWdyZWFzZSBrIlRbJ0EoCjNMVzJDUERJMkpWYjFKVzJVVWtLMjV0N0h4K0I4WDZwejhGOEFpUE9ocTJaKysrNUVJMlU0VXdid0FnV3FRCi0tLSBmRC96SDUwY3ZRbThqRG9rTU43Rkd4N0U5NFdSMXZvamw4bXlzMGE2UmZnCt843qHvKvG4G6eHLksP+K8/NLzs+k5hjru0BtdzxY8cLFASaAiRNK2RiNPJ9RAFyu0vj9OnbqzS+taGwTEUz3fv3y6Y11ArgK/ULytLs5U=] };
+	return { apiKey: together[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGSURoOG5WUUlBQW54TVgxai9ZSXJ5ZHNtYjdZQ1d5bEZ4amhka0JBOEU0CmtaNC9CcERRUEg1NFVsajgrdE1UNStzZ3IwbUdYL1oxZ2NCaXJjMFBTNkkKLT4gMTl+eDBidGstZ3JlYXNlIFJsJyYqQCQgNyN1KCU4IHMnNCRmIiBdRVNdCmpQa1hiY1RBRCtoUGd3R2ZHTkwzZEptOVdLOE5PeWN6eUswSTBROTUxWllGaGJKdXFDNjJxY3lLeHI2Y1ZOSTYKN2IwCi0tLSB3UEtwbzFseHdrbHdpWDNKaGo5ZG1lM3lBQVZhNWQzRHJGNGRWUCtqeFNBCg4cqxpanx0mALLlB4SZHqjwJPxVazvif/rx825gPi84LlMpaUQB/pu9BTgErpGxM9HsP0+FSPniisPkkN1unxyLRrLqHlrbWF/+UPHJaA0=] };
 }
 
 export function anyscaleConfig(anyScaleApiKey: string): { apiKey: string; baseUrl: string } {
@@ -15039,11 +15039,11 @@ export function anyscaleConfig(anyScaleApiKey: string): { apiKey: string; baseUr
 }
 
 export function fireworksaiConfig(fireworksApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: fireworks[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJWUVwMEJQUkM1WTJ1ajBFOFltaU9CVlVERXZmb2lIeDg4cFA2OHBueUgwCk5Ja3Uvc2JML2Z3NDNwVTdHRGVuZG53cWJSclBNVi9aSUhKS1NsbTdLcTgKLT4gKDMuUVpBIy1ncmVhc2UgLTQgKlVyIDZGflFLOCUrIDwwZgovRTBlaE1QYnhwTlp2elZXNzVmdjhvaDduRC9scGhMaGJjUzNuYjN2WGQrZTFUYi9BVzFPVWZzZ2oxQjJiSitoCkt1TVo2b1l6bzBldTl1UQotLS0gUlB4cWlNVGUvbmFvM1ZZQ3BmUVloYnBVM1V0MndSd1h0SjhEeHVxM0tzdwq7+1v4qfUOOYKf6I6CM8Fk1uo93I0BvUTT/sE0NSISY5Pt42ApxtZzgtaYyE75yoRIVSXa4owJXOSSR5pHyOET8ILUfyHQrA==] };
+	return { apiKey: fireworks[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBWU3NiYWxyVzFNemdSd3NSVndHUG5XZDgzWGNhMXgwdkZkNmI5UmwxZUVVCi94SG51bk1BUmh1VW13cGkwVEJyc053M3U3ZWJnUVNDVjB3UWk0RXpocTgKLT4gWS1ncmVhc2UgJklcaFBFIFVOOzhDRCBRCkxmcTcwYlNCZUcvRlkzRENzS3NqakxEalRNR1dFdkhyc1RjTUMzSnNXbTcxCi0tLSBXbEhCZXk0dTBxYlQrNWlXQXRLWE0yVGViclJ6MHVFSVJORXArOHJMUU9FCmM+rLIP3DeDfbSEJMQn87+Lm9e0/HwusMpUaBonSKLbJSyTJ6NNkwC0HpdkqbQgxbRURoanlyOt/C70UQt0a3v/j3YT+UKi] };
 }
 
 export function deepinfraConfig(deepInfraApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: deepInfra[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjTFFiS0J3ME40RFZ1a3lmOURiMGJBWUYzb3R4eTU0WDN4amhpTVplKzM0Cm5SenZCY0dZTXJBOU0rdTdwWkN1VkEzTVRUTzJ6OEVGdk5mYU0vWWFReTgKLT4gdiIkTEUlS2ctZ3JlYXNlIE9uKlNJUilkCkU4T2ZnbzNmM0JRaXBsdTFmVlowUUorV2FiT3hhNlJLWXR3R1d5azJZcEM1Y1c5Qzg0d0diSGNCZklLVHZHUGYKeXYrd09pRmRVb2ExWHJtUkFBK1h6ZFh3Z2pYdmsrbXMySW8KLS0tIFRoYlMxWmUvZzVRRmViVXVhM2pCNmNjRWdZcEJpWG5HWUx4WlRReXpUeE0Kc3YiNYfPiaOWvq/XUylU8jIO6hJsTJy3QcIpkPIonfO4/SQocReRukwDzInEk6OgrO5Aa6DoJI1hnt3YNal+4m7Acw8Gwy+KyINuUFtxHQs=] };
+	return { apiKey: deepInfra[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB5RXkzY3J3aTJmWjVYZW55TUpxdG9lbzBZd3g4dndIaThxUzZEc1BiTkFvCkJMUmFFeFY1ZzRrQXM4VTNCUXF3NC92MmRmeUErbDZZTUhWSkxySHVMcm8KLT4gMyctZ3JlYXNlIG0hUTR3LyAiWVI+byA0QSB4QXpcdwplbEdmZjhKMW95T2hNQlZWSm1tMzVTU0VjeE1YVFBQdkptUXRYYS82UDFoLzJrU2FEd2gyT3FBbkRzWVhYV25rCmJuekJxMjhTMXVNTTdDVGR3Wml0NWwyNS9tZCtweWg5Z1ZpRndKejNsMkQxcy9TajhuQ0V2RzJaZXJHbgotLS0gNjJlTVBmYnRqVVp4VCt2NDFiSUxENTl3YWlqN1UyYUVNNklwbDNOb3Z5MAqFUyMykDfTHdEslN+68d52N+XpfWZrI8lhV/jhWMe2chS3ctgSNmlW2m9Fc18h6RVLcHrHc+EAV6ZgWdAvZycJ5kmwZG0QUoZE1fXxgwHwkA==] };
 }
 
 export function replicateapiConfig(replicateApiKey: string): { apiKey: string; model: string } {
@@ -15051,7 +15051,7 @@ export function replicateapiConfig(replicateApiKey: string): { apiKey: string; m
 }
 
 export function openrouterConfig(openRouterApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: openRouter[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqMGcxNVMwMGdvSGtwWVdLOGZRUnVSeVR1Ri9KK2NlU2tPQ1JvM3pHYVJrCmFaL3FYdytZOENuaTBCS2VIbCs3RWVTT1dveWVleTNtbWx4OFdiNytmNVkKLT4gYDQnajQ+d18tZ3JlYXNlIDVjQF0kOjQgXn5IQFUgeXpdazAgcwpuUTlpTS9RZ05DUVRMbGF1VUhvSwotLS0gaTlIM0g1T3d6T2NyOXVhbVN0cE9HdzlhczIwYkt2bXpIaEozaC9oNE1ZSQrZNI1p487QBDrl7BZp4caVfOqdpjm4mb2WXbDZeI0TeVxGV9fleN+1opM6LnwsukjzyOE4EE9Pc48OdqLiPg4Z/J7tGdHx5KSs6Az+] };
+	return { apiKey: openRouter[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBwOVExMDRCNTBSSm5HOWNtck9DUkUvOWFCcFlKOTdHNFRzclNTayt2Y1VnCnNoYTVvTEdiZFlvckZuZjBQUDVGUVNOb0ZqZHZuVjlvTzNMTHFZRFZsVUkKLT4gLEdZXGUidi1ncmVhc2UgPktETSAoZiIKS0wyaVRMb0RYSmpBUVNYR1FTbGlDYzdsMFN2WWdVYXJjaTZOeFJ0NTBnU2FPQWZYU2Z5dDVDY2t0bW9vU1lBCi0tLSBHUXoyVXU5b1hoaGF3ZlUwY0pjYVNxc28rclI1cGlnNUpZeVRMWm55K1JJCsZOCfmbkB+lEdqlZgz6wULo4J8DxvdhwHD4a1/1R2GMQdWxVAe6dHspXVVvYoAWWczSJvnZy0QT2f2RlkrWNaKnOgnvrciQvbvb4gA=] };
 }
 
 // LLM Inference Providers
@@ -15085,7 +15085,7 @@ export function cerebrasConfig(cerebrasApiKey: string): { apiKey: string; model:
 }
 
 export function groqcloudConfig(groqCloudToken: string): { token: string; model: string } {
-	return { token: groqCloud[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzeWI1R2tsWkJudDIvQjJsMjlJdmpzMnhzZW55aFlEU2RTLzJ0YlNpL1U4Ckh5NnNTd1FMMkhYdTZtaEd2YnEycnNtSEhpL1FJY3RNYjU1Q1lza3BIcTgKLT4gVzo4bUotZ3JlYXNlIC4gJCFhMmtZcUIKekdLR0pLOFZ4enJhUTJnQ0ZTTTZhTW1FbG1Id3JHNVowQQotLS0geVRnT1RYYWN2N29HY3RKQkgxc3BKV2xGTWxlaUs0NVp1OXdsM3ArU09zUQqqN/0WK4I9pSrDaYTWvPryrxZWDN8RuU2BL9VHV2BKkF5sqziQDkkJM0oW3kTvB6cKeyQnOLQ4K/E3frtgAC9qy7M6QX8+gA==] };
+	return { token: groqCloud[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOcnNYT0NJcEkwVE5IN3JrM3NVRjlRdjYxSWdDQVNMZEw2dzRWSWprK3ljCnprRzFnMC9VS3RwR2hyV3lpanVRLzBEejJGdW5HR0FBK1NEYUsya0ZaSFkKLT4gNXtQTiNWLWdyZWFzZSBbOjxuMCA7ICRlaQp3N0EKLS0tIE9yNjRBUHYyblBBdTRpQnV2amJmTS9vYXBjTFJNenNZUW5ST0c4Z0FZQXMK6+NRVyAihyy82PzqnS5BM1n4fdTMvluFdx30lt6L5iWQ/qV5hPf/BQ4jZjqnPBPoW48YKJmlGV9cAxNd0pyYsolL5cy5LRE=] };
 }
 
 export function coherecommandConfig(cohereToken: string): { token: string; model: string } {
@@ -15097,7 +15097,7 @@ export function ai21commandConfig(ai21Token: string): { token: string; model: st
 }
 
 export function claudeapiConfig(claudeToken: string): { token: string; model: string } {
-	return { token: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtMmo5dWsyeHZnaEtLc1RIOTQ4SzVzSjdMOHpvOUN4RXNmWlFxeHh6YkU0CmtBZ3BDcTB1RzNUaVlHTW05WDhINXVGOC94bTUzcGV0OUV1NDBWYm5hUzgKLT4gIkZHb2M0LWdyZWFzZQpFTGtzQWZPbWNzSi9FVkRhaFdLS1ovVFFSM2xCQ25vK3JUNkdzU3RKUm1ENS9WSlFYT1BHcDBWQWh2ZHBDY2dnCmhEbFhtdncKLS0tIGVzWjgrOVhxd2V2VytkNjdKN1l2dUx1eU1FN3VxOFlXcU5RVm5BS0dmSlUKUuzmm4WkG6HeOIzmoPBySf+rnrs9LfL2MDmwgkcGiiqDahMfk0q2KlVhk78O9fOe2QwIc8JvymxSI/5Gw7n9a3Qh2Fcu0ySSCms=] };
+	return { token: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtc2hQTHNDeGtrOG5KQnVWT1d6alUxY2JwMEZCWHBZajBINGxlNk05bUZNCm14czJUVDZoZlNiSkJxeEwwVjQ2WE45em4zTFhUSWNvaWNwTmN2MGc2OVUKLT4gQmheQS1ncmVhc2UKWUd6Yzdwa1hvUWhsZm1iNEl5MU95TXlieWhFdkxaeUlNUVI4WityTnpEZU9DeitqZWZ6dlpJVDY3Qng0cGVEcgpEa2YzY2FQZGFmRVErMExmTVdvWnVwc05xa2k4TzFLSUplZk41Nkd4Ci0tLSBIaE1CY0U0Q3J0cUdvT051SjhZRG1JRW12QjhwWkY2QUtyYmt3cWdxVUFZClygBh+IT9/HiCVMKSsqFnVfpFXWFuxPb2iOOGSpJBU47/Akyg8bCLXY5LL58zuLkcIA3a26vm1n/XtNr3qI1qZzJ7i0tP3GoAdv] };
 }
 
 export function gpt4apiConfig(gpt4Token: string): { token: string; model: string } {
@@ -15113,15 +15113,15 @@ export function llamaapiConfig(llamaToken: string): { token: string; model: stri
 }
 
 export function mistralapiConfig(mistralToken: string): { token: string; model: string } {
-	return { token: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3VFVWNDA1aWdpckFKWGprYUJmZzZ1c0liQXQyRmVRT1kxU081ZkFRNWswCkZjRlh1K1BkTi9Ic2lwZXRIK3dudHh6U004Mm4vK3hXQWI0ZytXUmxHNE0KLT4gPGFCey1ncmVhc2UKclkzcQotLS0gakN5K3JwQ3hQOUhWVFhrc2JPVE8ydU1RdjhjSTZranNXM0hvVWZ6NnMyOAoyvCYU464+bHo9HK8Dd/IlW666aRq1DWcxKZJ5zFMU8YFCu2Ljn0j6t/hUYXgpOuxt12l2MdRWrGhD67v25W8G4yA=] };
+	return { token: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzdFBXSkZVYitjT2NsS0hUcUJtTUdtZ2ZobXh6QVprdnNGYm03RUJLUGhBCmNDS01KSEt5RktSdS9lQmgranBYNXhQbXN4SHh0a25TNWdxeUtja3hkWWcKLT4gPVEtZ3JlYXNlIHRwM0wgX2lSQSZ1IHpRZApxVzFXbklUQXRIR0NlY1JpKzE5MWRmZFppb0gya2RHM2UrbVQ0NUF1Ci0tLSAzdm04VlVzVVE2ZVdqQlRidjREM3NLejd4K09rQzF0Wm5JZHZqOUIzUGpJCuD9yH6UrkziW6Iv0nmM/U71uD/xYkOc5L7lPoPSkKchsqmz0I+ILCLpWxXGAPaynoLeqR6cOfvAPYHzIodIodJn/A==] };
 }
 
 export function dbrxapiConfig(dbrxToken: string): { token: string; model: string } {
-	return { token: dbrx[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5S2FtTXNRRHh0K3VMZitldXBTcHRxcVhsbVJNY2pFVk5mZ1ZwbVhnOWtrCjJxZzZtbFZLL29EZGhLWElsc1NicTFHbzJkREJNMzRaV2ZEM1lleW1uVlkKLT4gUS1ncmVhc2UgInY+dyB4MVQ4USAnIDxpRndUcSIKdWlPbXA5K2wxUEZ0ZWhFZnhrU0U5RnVSdHlnSwotLS0gVWVtQVFwQ3VZQnV0RGNwdTRjN1dJMXRSNUFvL3Q4OFQzbjRGUlZVSXZMOAoxJaA8+jQBXpVJC744myLCMrV7u1nM8mP+AUWkJPfJQbCfxtOvl/VZFscRfDJGXdhaJOvJBuujiLFebY1Y51dHVpbncM3qKrs=] };
+	return { token: dbrx[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMMVRZYnZqNEdaMzA4VUlLL2ZBUGlMNDdPNXJzZy9JdzFtTTYzaW5mcERNClNDNkFiNjB5NUZrQVBZUWFBUTNWSE5ISWdSZkN5S2I2alBNWFlaZXVvNWsKLT4gI2tgN0lxLWdyZWFzZQpJSVpGMUp3UUtid2VyNXNibkhqM3M0cXkyb2F5b3YwSndzUXRHK1M2K2tETGI4bmhhQ1JQNHcKLS0tIEhUT1JPNU5YWUJ5UXkxUFpFajl5OVNGQjVsYTUxQVB2UWIvOXppc2dYNUUKVCwdnvoiGK56luqoNwbHr9Cvo4g6Cr0HrhKHzbdLF8dIg2AGEwjs9PWFzN0BoGG1pNdj9L2EWb1zc9PJSaVDi4E3vul2yvkg] };
 }
 
 export function wizardlmapiConfig(wizardlmToken: string): { token: string; model: string } {
-	return { token: wizardlm[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhdktoeXhOdkViUXpyTGU2YTczdnhwbUtvVWRmT0dKSkgwNlFZV3REZldjCjJKUkt5Z2NDTFZ3SnZ0WkNrWG1VQUhUVTBSYlN0TVY5ZVl2L1dvbWk2QmsKLT4gKHNMLWdyZWFzZQpVLzNITWJ5ckJRTEliS3hiQmFWZ1Y5QncwdWJtcXJUOVYyM29GMk5lb1JKNlpxUmJZVHZGcENVdXdPYW1kYnpNCkczR3pmMVZGbWdrCi0tLSBiVStyMHp0Qk0zb0VjempYeXN6OUdKak8yNk9peWx4Z3ZreW9qcmg4SXBZCuSoCBa6LaCtEjb6Rop7rqFjgqZa46rFZIpxi+UaAT07nHKyttnMAQPGbZup1WXPzI0BZj771pO3VfJnFzVGnNJXBd2tBQ==] };
+	return { token: wizardlm[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBmdjEwYm8yZUZXT0t5ODZGWnFORWlZbUU5L0trY2NQTXJiVDZreDl4TWpjCjZlRDlleS9wamZTVVYydWRhOHJndTc3U1MrVE1LV3lHSmlRVXVsdkJTbFEKLT4gZ0dqPENcLWdyZWFzZQovMFZGejRucFJXWk9Gb21hWkdaVU5nbnMvVVhxNUZTTWZhamR0MWN4Y0lnCi0tLSBmamlZZlRiZXVsZk1LWXFNTXBPZzE4RTJNTjkvU25VZzFJbEZFUGR2NjBzCvLuuP1t3Ppys+p0X79Uc7QLnDy7Y1pEVMYpmmr1l1up5jdL9LqZ9LA/LVT0JzZO8wJruNPa2wnExS1uTD6BUL4DZPjyYw==] };
 }
 
 export function yiapiConfig(yiToken: string): { token: string; model: string } {
@@ -15355,7 +15355,7 @@ export function ibmwatsonttsConfig(watsonTtsUrl: string): { url: string; voice: 
 }
 
 export function elevenlabsConfig(elevenlabsApiKey: string): { apiKey: string; voiceId: string } {
-	return { apiKey: elevenlabs[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBETmxOeWpCSUk1NEhWSmFpSWhYUjZ0NVJTYWo0bHFMKzBDTTNOajJ2Mm00CmRLZmVZOGhJZlBpNktEU0FzMld6czRnRjFkN0p1ZXloc1J4NTlSQjBZK0kKLT4gKnEtZ3JlYXNlIF9MbDJlbmJ4IEhIdiBaIUInXjI6IDNzKDROCnVrckZaUG5UcjlMM3ZJU1h1ekcxNGg1U0JyTStMU1NzajNvNjJLczhacGJqOVFpZ3l5R096RXJWWHhRTDloMUUKVHRvcWVsTUd0ZndLNDBLTCs1TjF5QVAxL2x5Nlh3Ci0tLSBScmpjTlpxV25Gc2RuRmZ1LzlRWFJ5ZzNJSTJWRzQ2bERLakJHN2FQRGs4CkQbUyFstNvuI3WKW0YTU9SxgGj5ZUGn4ygyyPTY3mC2qluaC0FJYE/S5ZnRU+81gv4h9SymSYjAfnZ8HfWbACk4XHH5/Ivh] };
+	return { apiKey: elevenlabs[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHY09lbC8yMzV6VWtYbTQzUWg1ZGNEdEZHUGM1M0I5TE5vdS9JMTdWRndZCmdSL3N1RFloOU9NUzFWVFFYTEd0aEJTQzAyYStzdjJkbjlkdDV0d2cxWkEKLT4gcnkuRS1ncmVhc2UgMzRNIml9ClB3RHJUVEUwS0FJNWNiM0JuSGd4L0lsZkpxUTdtby81c0l6MVlURUhFSElPOHBob0FsZGtDdDdGZkJRSlhyQUsKN3BnSnhxTGwKLS0tIDhXeUJiMkE3VGdkdnZXU2lNMjlEYmY4NU9xTm0rbmlnKzhsUW1UUm5lY2MKGYkA+W3I5E74pX5k7zGMy8gWCjkIk+MwAPJhgfraeq5zGAwIyNDRlrzohsISl59ligRPIanEzW3QGPS3CzmjsdVp2YdCdjA=] };
 }
 
 export function openaittsConfig(openaiApiKey: string): { apiKey: string; voice: string } {
@@ -15900,6 +15900,1126 @@ export function controlnethyperConfig(cnHyperModel: string): { model: string; pr
 
 export function controlnetloraConfig(cnLoraModel: string): { model: string; weight: number } {
 	return { model: cnLoraModel, weight: 1.0 };
+}
+
+// Logging & Observability
+
+export function devopsinsightsConfig(devopsInsights: string): { workspace: string; region: string } {
+	return { workspace: devopsInsights, region: "" };
+}
+
+export function splunkConfig(splunkUrl: string): { url: string; index: string } {
+	return { url: splunkUrl, index: "main" };
+}
+
+export function elasticsearchopsConfig(esOpsUrl: string): { url: string; index: string } {
+	return { url: esOpsUrl, index: "logs" };
+}
+
+export function grafanaopsConfig(grafanaOpsUrl: string): { url: string; org: string } {
+	return { url: grafanaOpsUrl, org: "" };
+}
+
+export function kibanaConfig(kibanaUrl: string): { url: string; space: string } {
+	return { url: kibanaUrl, space: "default" };
+}
+
+export function datadoglogsConfig(ddLogsKey: string): { apiKey: string; service: string } {
+	return { apiKey: ddLogsKey, service: "" };
+}
+
+export function sumologicConfig(sumoEndpoint: string): { endpoint: string; sourceCategory: string } {
+	return { endpoint: sumoEndpoint, sourceCategory: "" };
+}
+
+export function newreliclogsConfig(nrLogsKey: string): { apiKey: string; region: string } {
+	return { apiKey: nrLogsKey, region: "us" };
+}
+
+export function cloudwatchlogsConfig(cwLogGroup: string): { logGroup: string; stream: string } {
+	return { logGroup: cwLogGroup, stream: "" };
+}
+
+export function azuremonitorlogsConfig(azureWsId: string): { workspaceId: string; key: string } {
+	return { workspaceId: azureWsId, key: "" };
+}
+
+export function gcploggingConfig(gcpProject: string): { project: string; logName: string } {
+	return { project: gcpProject, logName: "" };
+}
+
+export function logglyConfig(logglyToken: string): { token: string; subdomain: string } {
+	return { token: logglyToken, subdomain: "" };
+}
+
+export function papertrailConfig(papertrailUrl: string): { url: string; port: number } {
+	return { url: papertrailUrl, port: 0 };
+}
+
+export function logzioConfig(logzioToken: string): { token: string; listener: string } {
+	return { token: logzioToken, listener: "" };
+}
+
+export function sematextConfig(sematextToken: string): { token: string; app: string } {
+	return { token: sematextToken, app: "" };
+}
+
+export function scalyrConfig(scalyrAccount: string): { account: string; apiKey: string } {
+	return { account: scalyrAccount, apiKey: "" };
+}
+
+export function timberConfig(timberKey: string): { key: string; source: string } {
+	return { key: timberKey, source: "" };
+}
+
+export function betterstackConfig(bsSourceId: string): { sourceId: string; token: string } {
+	return { sourceId: bsSourceId, token: "" };
+}
+
+export function logtailConfig(logtailToken: string): { token: string; source: string } {
+	return { token: logtailToken, source: "" };
+}
+
+export function mezmoConfig(mezmoToken: string): { token: string; workspaceId: string } {
+	return { token: mezmoToken, workspaceId: "" };
+}
+
+export function openobserveConfig(ooUrl: string): { url: string; user: string } {
+	return { url: ooUrl, user: "admin" };
+}
+
+export function signozConfig(szEndpoint: string): { endpoint: string; serviceName: string } {
+	return { endpoint: szEndpoint, serviceName: "" };
+}
+
+export function grafanalokiConfig(lokiUrl: string): { url: string; tenantId: string } {
+	return { url: lokiUrl, tenantId: "anonymous" };
+}
+
+export function grafanatemploConfig(tempoUrl: string): { url: string; traceId: string } {
+	return { url: tempoUrl, traceId: "" };
+}
+
+export function grafanamimirConfig(mimirUrl: string): { url: string; tenant: string } {
+	return { url: mimirUrl, tenant: "" };
+}
+
+export function grafanaalloyConfig(alloyConfig: string): { config: string; server: string } {
+	return { config: alloyConfig, server: "" };
+}
+
+export function vectorConfig(vectorConfig: string): { configFile: string; pipeline: string } {
+	return { configFile: vectorConfig, pipeline: "" };
+}
+
+export function fluentbitConfig(fbConfig: string): { configFile: string; service: string } {
+	return { configFile: fbConfig, service: "fluent-bit" };
+}
+
+export function fluentdConfig(fluentdConfig: string): { configFile: string; worker: number } {
+	return { configFile: fluentdConfig, worker: 1 };
+}
+
+export function logstashConfig(logstashConfig: string): { configFile: string; pipeline: string } {
+	return { configFile: logstashConfig, pipeline: "" };
+}
+
+export function beatsConfig(beatsConfig: string): { configFile: string; beatType: string } {
+	return { configFile: beatsConfig, beatType: "" };
+}
+
+export function filebeatConfig(filebeatConfig: string): { configFile: string; paths: string[] } {
+	return { configFile: filebeatConfig, paths: [] };
+}
+
+export function metricbeatConfig(metricbeatConfig: string): { configFile: string; modules: string[] } {
+	return { configFile: metricbeatConfig, modules: [] };
+}
+
+export function heartbeatConfig(heartbeatConfig: string): { configFile: string; monitors: string[] } {
+	return { configFile: heartbeatConfig, monitors: [] };
+}
+
+export function packetbeatConfig(packetbeatConfig: string): { configFile: string; interfaces: string[] } {
+	return { configFile: packetbeatConfig, interfaces: [] };
+}
+
+export function auditbeatConfig(auditbeatConfig: string): { configFile: string; auditRules: string } {
+	return { configFile: auditbeatConfig, auditRules: "" };
+}
+
+export function journalbeatConfig(journalbeatConfig: string): { configFile: string; journalPaths: string[] } {
+	return { configFile: journalbeatConfig, journalPaths: [] };
+}
+
+export function functionbeatConfig(fbConfig: string): { configFile: string; functionType: string } {
+	return { configFile: fbConfig, functionType: "" };
+}
+
+export function otelcollectoropsConfig(otelOpsConfig: string): { configFile: string; receivers: string[] } {
+	return { configFile: otelOpsConfig, receivers: [] };
+}
+
+export function otelexporterConfig(otelExporter: string): { exporter: string; endpoint: string } {
+	return { exporter: otelExporter, endpoint: "" };
+}
+
+export function otelreceiverConfig(otelReceiver: string): { receiver: string; port: number } {
+	return { receiver: otelReceiver, port: 0 };
+}
+
+export function otelprocessorConfig(otelProcessor: string): { processor: string; config: string } {
+	return { processor: otelProcessor, config: "" };
+}
+
+export function otelextensionConfig(otelExtension: string): { extension: string; config: string } {
+	return { extension: otelExtension, config: "" };
+}
+
+export function otelconnectorConfig(otelConnector: string): { connector: string; config: string } {
+	return { connector: otelConnector, config: "" };
+}
+
+export function otelaggregatorConfig(otelAggregator: string): { aggregator: string; metrics: string[] } {
+	return { aggregator: otelAggregator, metrics: [] };
+}
+
+export function otelbuffersConfig(otelBuffers: string): { bufferType: string; size: number } {
+	return { bufferType: otelBuffers, size: 1000 };
+}
+
+export function otelhealthcheckConfig(otelHealthCheck: string): { check: string; port: number } {
+	return { check: otelHealthCheck, port: 13133 };
+}
+
+export function otelzp agesConfig(otelZPages: string): { zpages: string; port: number } {
+	return { zpages: otelZPages, port: 55679 };
+}
+
+export function prometheusagentConfig(promAgentConfig: string): { configFile: string; remoteWrite: string } {
+	return { configFile: promAgentConfig, remoteWrite: "" };
+}
+
+export function grafanaagentopsConfig(grafanaAgentConfig: string): { configFile: string; metrics: boolean } {
+	return { configFile: grafanaAgentConfig, metrics: true };
+}
+
+export function alloyopsConfig(alloyConfig: string): { configFile: string; server: string } {
+	return { configFile: alloyConfig, server: "" };
+}
+
+export function mimiropsConfig(mimirUrl: string): { url: string; tenantId: string } {
+	return { url: mimirUrl, tenantId: "" };
+}
+
+export function thanosopsConfig(thanosUrl: string): { url: string; bucket: string } {
+	return { url: thanosUrl, bucket: "" };
+}
+
+export function cortexopsConfig(cortexUrl: string): { url: string; store: string } {
+	return { url: cortexUrl, store: "" };
+}
+
+// Localization & Translation
+
+export function scribeConfig(scribeToken: string): { token: string; workspace: string } {
+	return { token: scribeToken, workspace: "" };
+}
+
+export function crowdinConfig(crowdinToken: string): { token: string; projectId: string } {
+	return { token: crowdinToken, projectId: "" };
+}
+
+export function transifexConfig(transifexToken: string): { token: string; project: string } {
+	return { token: transifexToken, project: "" };
+}
+
+export function lokaliseConfig(lokaliseToken: string): { token: string; projectId: string } {
+	return { token: lokaliseToken, projectId: "" };
+}
+
+export function phraseConfig(phraseToken: string): { token: string; projectId: string } {
+	return { token: phraseToken, projectId: "" };
+}
+
+export function poeditorConfig(poeditorToken: string): { token: string; projectId: string } {
+	return { token: poeditorToken, projectId: "" };
+}
+
+export function weblateConfig(weblateUrl: string): { url: string; apiKey: string } {
+	return { url: weblateUrl, apiKey: "" };
+}
+
+export function zanataConfig(zanataUrl: string): { url: string; project: string } {
+	return { url: zanataUrl, project: "" };
+}
+
+export function memsourceConfig(memsourceToken: string): { token: string; projectId: string } {
+	return { token: memsourceToken, projectId: "" };
+}
+
+export function smartlingConfig(smartlingToken: string): { token: string; projectId: string } {
+	return { token: smartlingToken, projectId: "" };
+}
+
+export function xtmConfig(xtmToken: string): { token: string; projectId: string } {
+	return { token: xtmToken, projectId: "" };
+}
+
+export function memoqConfig(memoqToken: string): { token: string; projectId: string } {
+	return { token: memoqToken, projectId: "" };
+}
+
+export function sdltradosConfig(sdlTradosUrl: string): { url: string; apiKey: string } {
+	return { url: sdlTradosUrl, apiKey: "" };
+}
+
+export function omegatConfig(ome gatProject: string): { project: string; sourceLang: string } {
+	return { project: omegatProject, sourceLang: "en" };
+}
+
+export function caflxConfig(caflxProject: string): { project: string; targetLang: string } {
+	return { project: caflxProject, targetLang: "" };
+}
+
+export function deeplConfig(deeplApiKey: string): { apiKey: string; targetLang: string } {
+	return { apiKey: deeplApiKey, targetLang: "" };
+}
+
+export function googletranslateConfig(googleApiKey: string): { apiKey: string; targetLang: string } {
+	return { apiKey: googleApiKey, targetLang: "" };
+}
+
+export function gctranslationConfig(gcpProject: string): { project: string; targetLang: string } {
+	return { project: gcpProject, targetLang: "" };
+}
+
+export function azuretranslatorConfig(azureTransKey: string): { key: string; region: string } {
+	return { key: azureTransKey, region: "eastus" };
+}
+
+export function awstranslateConfig(awsRegion: string): { region: string; version: string } {
+	return { region: awsRegion, version: "2017-07-01" };
+}
+
+export function ibmwatsons langConfig(watsonLangUrl: string): { url: string; apiKey: string } {
+	return { url: watsonLangUrl, apiKey: "" };
+}
+
+export function modernmtConfig(mmtApiKey: string): { apiKey: string; targetLang: string } {
+	return { apiKey: mmtApiKey, targetLang: "" };
+}
+
+export function libretranslateConfig(ltUrl: string): { url: string; apiKey: string } {
+	return { url: ltUrl, apiKey: "" };
+}
+
+export function argostranslateConfig(argosUrl: string): { url: string; model: string } {
+	return { url: argosUrl, model: "" };
+}
+
+export function apertiumConfig(apertiumServer: string): { server: string; pair: string } {
+	return { server: apertiumServer, pair: "" };
+}
+
+export function mosesConfig(mosesServer: string): { server: string; model: string } {
+	return { server: mosesServer, model: "" };
+}
+
+export function mariannmtConfig(marianModel: string): { model: string; sourceLang: string } {
+	return { model: marianModel, sourceLang: "" };
+}
+
+export function opennmtConfig(opennmtModel: string): { model: string; sourceLang: string } {
+	return { model: opennmtModel, sourceLang: "" };
+}
+
+export function transformermmtConfig(mmtModel: string): { model: string; sourceLang: string } {
+	return { model: mmtModel, sourceLang: "" };
+}
+
+export function nllbConfig(nllbModel: string): { model: string; sourceLang: string } {
+	return { model: nllbModel, sourceLang: "eng_Latn" };
+}
+
+export function m2m100Config(m2mModel: string): { model: string; sourceLang: string } {
+	return { model: m2mModel, sourceLang: "en" };
+}
+
+export function mbartConfig(mbartModel: string): { model: string; sourceLang: string } {
+	return { model: mbartModel, sourceLang: "en_XX" };
+}
+
+export function helsinkinlpConfig(helsinkiNlpModel: string): { model: string; sourceLang: string } {
+	return { model: helsinkiNlpModel, sourceLang: "en" };
+}
+
+export function opusmodelsConfig(opusModel: string): { model: string; sourceLang: string } {
+	return { model: opusModel, sourceLang: "" };
+}
+
+export function seamlessm4tConfig(seamlessModel: string): { model: string; task: string } {
+	return { model: seamlessModel, task: "S2TT" };
+}
+
+export function madlad400Config(madlad400Model: string): { model: string; sourceLang: string } {
+	return { model: madlad400Model, sourceLang: "" };
+}
+
+export function bloomConfig(bloomModel: string): { model: string; size: string } {
+	return { model: bloomModel, size: "176B" };
+}
+
+export function bloomzConfig(bloomzModel: string): { model: string; size: string } {
+	return { model: bloomzModel, size: "176B" };
+}
+
+export function galacticaConfig(galacticaModel: string): { model: string; size: string } {
+	return { model: galacticaModel, size: "30B" };
+}
+
+export function flant5Config(flant5Model: string): { model: string; size: string } {
+	return { model: flant5Model, size: "xxl" };
+}
+
+export function flanalpacaConfig(flanAlpacaModel: string): { model: string; baseModel: string } {
+	return { model: flanAlpacaModel, baseModel: "" };
+}
+
+export function dollyConfig(dollyModel: string): { model: string; size: string } {
+	return { model: dollyModel, size: "12B" };
+}
+
+export function stablelmConfig(stablelmModel: string): { model: string; size: string } {
+	return { model: stablelmModel, size: "7B" };
+}
+
+export function redpajamaConfig(redpajamaModel: string): { model: string; size: string } {
+	return { model: redpajamaModel, size: "7B" };
+}
+
+export function mptConfig(mptModel: string): { model: string; size: string } {
+	return { model: mptModel, size: "7B" };
+}
+
+export function falconConfig(falconModel: string): { model: string; size: string } {
+	return { model: falconModel, size: "40B" };
+}
+
+export function phiConfig(phiModel: string): { model: string; size: string } {
+	return { model: phiModel, size: "1.5B" };
+}
+
+export function tinyllamaConfig(tinyLlamaModel: string): { model: string; size: string } {
+	return { model: tinyLlamaModel, size: "1.1B" };
+}
+
+export function phi2Config(phi2Model: string): { model: string; size: string } {
+	return { model: phi2Model, size: "2.7B" };
+}
+
+export function phi3Config(phi3Model: string): { model: string; size: string } {
+	return { model: phi3Model, size: "3.8B" };
+}
+
+export function minigpt4Config(minigpt4Model: string): { model: string; llm: string } {
+	return { model: minigpt4Model, llm: "vicuna" };
+}
+
+export function llavaConfig(llavaModel: string): { model: string; size: string } {
+	return { model: llavaModel, size: "7B" };
+}
+
+export function llava15Config(llava15Model: string): { model: string; size: string } {
+	return { model: llava15Model, size: "13B" };
+}
+
+export function llava16Config(llava16Model: string): { model: string; size: string } {
+	return { model: llava16Model, size: "34B" };
+}
+
+// Frontend Frameworks
+
+export function vuejsConfig(vueVersion: string): { version: string; options: string } {
+	return { version: vueVersion, options: "" };
+}
+
+export function vue2Config(vue2Project: string): { version: string; compositionApi: boolean } {
+	return { version: vue2Project, compositionApi: false };
+}
+
+export function vue3Config(vue3Project: string): { version: string; compositionApi: boolean } {
+	return { version: vue3Project, compositionApi: true };
+}
+
+export function nuxtjsConfig(nuxtVersion: string): { version: string; ssr: boolean } {
+	return { version: nuxtVersion, ssr: true };
+}
+
+export function nuxt2Config(nuxt2Project: string): { version: string; ssr: boolean } {
+	return { version: nuxt2Project, ssr: true };
+}
+
+export function nuxt3Config(nuxt3Project: string): { version: string; ssr: boolean } {
+	return { version: nuxt3Project, ssr: true };
+}
+
+export function svelteConfig(svelteVersion: string): { version: string; compiler: string } {
+	return { version: svelteVersion, compiler: "svelte" };
+}
+
+export function sveltekitConfig(sveltekitVersion: string): { version: string; adapter: string } {
+	return { version: sveltekitVersion, adapter: "auto" };
+}
+
+export function solidjsConfig(solidVersion: string): { version: string; compiler: string } {
+	return { version: solidVersion, compiler: "solid-js" };
+}
+
+export function angularConfig(angularVersion: string): { version: string; style: string } {
+	return { version: angularVersion, style: "scss" };
+}
+
+export function angularjsConfig(angularjsVersion: string): { version: string; module: string } {
+	return { version: angularjsVersion, module: "" };
+}
+
+export function angularuniversalConfig(ssrVersion: string): { version: string; server: string } {
+	return { version: ssrVersion, server: "node" };
+}
+
+export function qwikConfig(qwikVersion: string): { version: string; optimizer: string } {
+	return { version: qwikVersion, optimizer: "vite" };
+}
+
+export function emberjsConfig(emberVersion: string): { version: string; addon: string } {
+	return { version: emberVersion, addon: "" };
+}
+
+export function backbonejsConfig(backboneVersion: string): { version: string; deps: string } {
+	return { version: backboneVersion, deps: "underscore,jquery" };
+}
+
+export function jqueryConfig(jqueryVersion: string): { version: string; module: string } {
+	return { version: jqueryVersion, module: "" };
+}
+
+export function preactConfig(preactVersion: string): { version: string; compat: boolean } {
+	return { version: preactVersion, compat: false };
+}
+
+export function infernoConfig(infernoVersion: string): { version: string; hooks: boolean } {
+	return { version: infernoVersion, hooks: true };
+}
+
+export function riotConfig(riotVersion: string): { version: string; compiler: string } {
+	return { version: riotVersion, compiler: "riot" };
+}
+
+export function alpinejsConfig(alpineVersion: string): { version: string; plugin: string } {
+	return { version: alpineVersion, plugin: "" };
+}
+
+export function litConfig(litVersion: string): { version: string; compiler: string } {
+	return { version: litVersion, compiler: "lit" };
+}
+
+export function stencilConfig(stencilVersion: string): { version: string; outputTarget: string } {
+	return { version: stencilVersion, outputTarget: "dist" };
+}
+
+export function astroConfig(astroVersion: string): { version: string; output: string } {
+	return { version: astroVersion, output: "static" };
+}
+
+export function remixConfig(remixVersion: string): { version: string; adapter: string } {
+	return { version: remixVersion, adapter: "node" };
+}
+
+export function nextjsConfig(nextVersion: string): { version: string; appDir: boolean } {
+	return { version: nextVersion, appDir: false };
+}
+
+export function nextjs13Config(next13Version: string): { version: string; appDir: boolean } {
+	return { version: next13Version, appDir: true };
+}
+
+export function nextjs14Config(next14Version: string): { version: string; turbopack: boolean } {
+	return { version: next14Version, turbopack: false };
+}
+
+export function gatsbyConfig(gatsbyVersion: string): { version: string; plugins: string[] } {
+	return { version: gatsbyVersion, plugins: [] };
+}
+
+export function redwoodConfig(redwoodVersion: string): { version: string; apiSide: boolean } {
+	return { version: redwoodVersion, apiSide: true };
+}
+
+export function blitzConfig(blitzVersion: string): { version: string; db: string } {
+	return { version: blitzVersion, db: "sqlite" };
+}
+
+export function hydrogenConfig(hydrogenVersion: string): { version: string; runtime: string } {
+	return { version: hydrogenVersion, runtime: "oxygen" };
+}
+
+export function solidstartConfig(solidStartVersion: string): { version: string; server: string } {
+	return { version: solidStartVersion, server: "node" };
+}
+
+export function vinxiConfig(vinxiVersion: string): { version: string; framework: string } {
+	return { version: vinxiVersion, framework: "solid" };
+}
+
+export function viteConfig(viteVersion: string): { version: string; plugins: string[] } {
+	return { version: viteVersion, plugins: [] };
+}
+
+export function vitepressConfig(vpVersion: string): { version: string; theme: string } {
+	return { version: vpVersion, theme: "default" };
+}
+
+export function vitestConfig(vitestVersion: string): { version: string; coverage: string } {
+	return { version: vitestVersion, coverage: "v8" };
+}
+
+export function playwrightConfig(pwVersion: string): { version: string; browser: string } {
+	return { version: pwVersion, browser: "chromium" };
+}
+
+export function playwrightcodegenConfig(pwCodegen: string): { tool: string; browser: string } {
+	return { tool: pwCodegen, browser: "chromium" };
+}
+
+export function playwrighttestConfig(pwTest: string): { testDir: string; workers: number } {
+	return { testDir: pwTest, workers: 1 };
+}
+
+export function puppeteerConfig(puppeteerVersion: string): { version: string; executablePath: string } {
+	return { version: puppeteerVersion, executablePath: "" };
+}
+
+export function seleniumConfig(seleniumVersion: string): { version: string; browser: string } {
+	return { version: seleniumVersion, browser: "chrome" };
+}
+
+export function cypressConfig(cypressVersion: string): { version: string; component: boolean } {
+	return { version: cypressVersion, component: false };
+}
+
+export function testcafeConfig(tcVersion: string): { version: string; browsers: string[] } {
+	return { version: tcVersion, browsers: [] };
+}
+
+export function webdriverioConfig(wdioVersion: string): { version: string; spec: string } {
+	return { version: wdioVersion, spec: "" };
+}
+
+export function taikoConfig(taikoVersion: string): { version: string; headless: boolean } {
+	return { version: taikoVersion, headless: true };
+}
+
+export function nightwatchConfig(nwVersion: string): { version: string; srcFolders: string } {
+	return { version: nwVersion, srcFolders: "" };
+}
+
+export function jestConfig(jestVersion: string): { version: string; coverage: boolean } {
+	return { version: jestVersion, coverage: false };
+}
+
+export function testinglibraryConfig(tlVersion: string): { version: string; framework: string } {
+	return { version: tlVersion, framework: "react" };
+}
+
+export function vitestcoverageConfig(vcVersion: string): { coverageProvider: string; reporter: string[] } {
+	return { coverageProvider: vcVersion, reporter: ["text", "lcov"] };
+}
+
+export function istanbulConfig(istanbulVersion: string): { version: string; reportDir: string } {
+	return { version: istanbulVersion, reportDir: "coverage" };
+}
+
+export function nycConfig(nycVersion: string): { version: string; reportDir: string } {
+	return { version: nycVersion, reportDir: "coverage" };
+}
+
+export function webpackConfig(webpackVersion: string): { version: string; mode: string } {
+	return { version: webpackVersion, mode: "production" };
+}
+
+export function vitebundlerConfig(viteBundlerVersion: string): { version: string; buildTarget: string } {
+	return { version: viteBundlerVersion, buildTarget: "es2020" };
+}
+
+export function esbuildConfig(esbuildVersion: string): { version: string; minify: boolean } {
+	return { version: esbuildVersion, minify: false };
+}
+
+export function rollupConfig(rollupVersion: string): { version: string; format: string } {
+	return { version: rollupVersion, format: "es" };
+}
+
+export function parcelConfig(parcelVersion: string): { version: string; targets: string[] } {
+	return { version: parcelVersion, targets: [] };
+}
+
+export function turbopackConfig(turbopackVersion: string): { version: string; experimental: boolean } {
+	return { version: turbopackVersion, experimental: false };
+}
+
+// CSS Frameworks
+
+export function tailwindcssConfig(tailwindVersion: string): { version: string; content: string[] } {
+	return { version: tailwindVersion, content: [] };
+}
+
+export function bootstrapConfig(bootstrapVersion: string): { version: string; css: string } {
+	return { version: bootstrapVersion, css: "bootstrap.css" };
+}
+
+export function bootstrap5Config(bootstrap5Version: string): { version: string; css: string } {
+	return { version: bootstrap5Version, css: "bootstrap.min.css" };
+}
+
+export function materializeConfig(materializeVersion: string): { version: string; css: string } {
+	return { version: materializeVersion, css: "materialize.css" };
+}
+
+export function bulmaConfig(bulmaVersion: string): { version: string; css: string } {
+	return { version: bulmaVersion, css: "bulma.css" };
+}
+
+export function foundationConfig(foundationVersion: string): { version: string; css: string } {
+	return { version: foundationVersion, css: "foundation.css" };
+}
+
+export function semanticuiConfig(semanticVersion: string): { version: string; css: string } {
+	return { version: semanticVersion, css: "semantic.css" };
+}
+
+export function antdesignConfig(antdVersion: string): { version: string; theme: string } {
+	return { version: antdVersion, theme: "default" };
+}
+
+export function materialuiConfig(muiVersion: string): { version: string; theme: string } {
+	return { version: muiVersion, theme: "light" };
+}
+
+export function chakrauiConfig(chakraVersion: string): { version: string; theme: string } {
+	return { version: chakraVersion, theme: "" };
+}
+
+export function radixuiConfig(radixVersion: string): { version: string; components: string[] } {
+	return { version: radixVersion, components: [] };
+}
+
+export function headlessuiConfig(headlessVersion: string): { version: string; components: string[] } {
+	return { version: headlessVersion, components: [] };
+}
+
+export function shadcnuiConfig(shadcnVersion: string): { version: string; components: string[] } {
+	return { version: shadcnVersion, components: [] };
+}
+
+export function kendouiConfig(kendoVersion: string): { version: string; theme: string } {
+	return { version: kendoVersion, theme: "default" };
+}
+
+export function primengConfig(primeNgVersion: string): { version: string; theme: string } {
+	return { version: primeNgVersion, theme: "lara-light-blue" };
+}
+
+export function vuetifyConfig(vuetifyVersion: string): { version: string; theme: string } {
+	return { version: vuetifyVersion, theme: "light" };
+}
+
+export function quasarConfig(quasarVersion: string): { version: string; theme: string } {
+	return { version: quasarVersion, theme: "mat" };
+}
+
+export function naiveuiConfig(naiveVersion: string): { version: string; theme: string } {
+	return { version: naiveVersion, theme: "light" };
+}
+
+export function elementplusConfig(elementPlusVersion: string): { version: string; theme: string } {
+	return { version: elementPlusVersion, theme: "default" };
+}
+
+export function vuesticConfig(vuesticVersion: string): { version: string; theme: string } {
+	return { version: vuesticVersion, theme: "light" };
+}
+
+export function unocssConfig(unocssVersion: string): { version: string; presets: string[] } {
+	return { version: unocssVersion, presets: [] };
+}
+
+export function windicssConfig(windiVersion: string): { version: string; config: string } {
+	return { version: windiVersion, config: "windi.config.ts" };
+}
+
+export function postcssConfig(postcssVersion: string): { version: string; plugins: string[] } {
+	return { version: postcssVersion, plugins: [] };
+}
+
+export function autoprefixerConfig(autoprefixerVersion: string): { version: string; browsers: string } {
+	return { version: autoprefixerVersion, browsers: "> 1%, last 2 versions" };
+}
+
+export function stylelintConfig(stylelintVersion: string): { version: string; config: string } {
+	return { version: stylelintVersion, config: ".stylelintrc" };
+}
+
+export function cssmodulesConfig(cssModulesVersion: string): { version: string; pattern: string } {
+	return { version: cssModulesVersion, pattern: "**/*.module.css" };
+}
+
+export function styledcomponentsConfig(scVersion: string): { version: string; ssr: boolean } {
+	return { version: scVersion, ssr: true };
+}
+
+export function emotionConfig(emotionVersion: string): { version: string; ssr: boolean } {
+	return { version: emotionVersion, ssr: true };
+}
+
+export function cssinjsConfig(cssinjsVersion: string): { version: string; library: string } {
+	return { version: cssinjsVersion, library: "styled-components" };
+}
+
+export function linariaConfig(linariaVersion: string): { version: string; outputDir: string } {
+	return { version: linariaVersion, outputDir: "lib" };
+}
+
+export function vanillaextractConfig(veVersion: string): { version: string; outputDir: string } {
+	return { version: veVersion, outputDir: "dist" };
+}
+
+export function pandacssConfig(pandaVersion: string): { version: string; config: string } {
+	return { version: pandaVersion, config: "panda.config.ts" };
+}
+
+export function sassConfig(sassVersion: string): { version: string; outputStyle: string } {
+	return { version: sassVersion, outputStyle: "expanded" };
+}
+
+export function scssConfig(scssVersion: string): { version: string; outputStyle: string } {
+	return { version: scssVersion, outputStyle: "expanded" };
+}
+
+export function lessConfig(lessVersion: string): { version: string; outputDir: string } {
+	return { version: lessVersion, outputDir: "dist" };
+}
+
+export function stylusConfig(stylusVersion: string): { version: string; outputFile: string } {
+	return { version: stylusVersion, outputFile: "dist/style.css" };
+}
+
+export function postcsspresetenvConfig(ppeVersion: string): { version: string; stage: number } {
+	return { version: ppeVersion, stage: 2 };
+}
+
+export function cssnanoConfig(cssnanoVersion: string): { version: string; preset: string } {
+	return { version: cssnanoVersion, preset: "default" };
+}
+
+// State Management
+
+export function reduxConfig(reduxVersion: string): { version: string; store: string } {
+	return { version: reduxVersion, store: "store" };
+}
+
+export function reduxtoolkitConfig(rtkVersion: string): { version: string; store: string } {
+	return { version: rtkVersion, store: "store" };
+}
+
+export function reduxthunkConfig(thunkVersion: string): { version: string; middleware: string } {
+	return { version: thunkVersion, middleware: "thunk" };
+}
+
+export function reduxsagaConfig(sagaVersion: string): { version: string; rootSaga: string } {
+	return { version: sagaVersion, rootSaga: "rootSaga" };
+}
+
+export function reduxobservableConfig(rxVersion: string): { version: string; epic: string } {
+	return { version: rxVersion, epic: "epic" };
+}
+
+export function zustandConfig(zustandVersion: string): { version: string; store: string } {
+	return { version: zustandVersion, store: "useStore" };
+}
+
+export function mobxConfig(mobxVersion: string): { version: string; store: string } {
+	return { version: mobxVersion, store: "makeAutoObservable" };
+}
+
+export function jotaiConfig(jotaiVersion: string): { version: string; atom: string } {
+	return { version: jotaiVersion, atom: "atom" };
+}
+
+export function recoilConfig(recoilVersion: string): { version: string; atom: string } {
+	return { version: recoilVersion, atom: "atom" };
+}
+
+export function valtioConfig(valtioVersion: string): { version: string; proxy: string } {
+	return { version: valtioVersion, proxy: "proxy" };
+}
+
+export function piniaConfig(piniaVersion: string): { version: string; store: string } {
+	return { version: piniaVersion, store: "store" };
+}
+
+export function vuexConfig(vuexVersion: string): { version: string; store: string } {
+	return { version: vuexVersion, store: "store" };
+}
+
+export function xstateConfig(xstateVersion: string): { version: string; machine: string } {
+	return { version: xstateVersion, machine: "machine" };
+}
+
+export function stencilstoreConfig(stencilStoreVersion: string): { version: string; store: string } {
+	return { version: stencilStoreVersion, store: "Store" };
+}
+
+export function ngrxConfig(ngrxVersion: string): { version: string; feature: string } {
+	return { version: ngrxVersion, feature: "feature" };
+}
+
+export function akitaConfig(akitaVersion: string): { version: string; store: string } {
+	return { version: akitaVersion, store: "Store" };
+}
+
+export function cerebralConfig(cerebralVersion: string): { version: string; controller: string } {
+	return { version: cerebralVersion, controller: "Controller" };
+}
+
+// Programming Languages
+
+export function typescriptConfig(tsVersion: string): { version: string; target: string } {
+	return { version: tsVersion, target: "ES2020" };
+}
+
+export function typescript4Config(ts4Version: string): { version: string; target: string } {
+	return { version: ts4Version, target: "ES2020" };
+}
+
+export function typescript5Config(ts5Version: string): { version: string; target: string } {
+	return { version: ts5Version, target: "ES2022" };
+}
+
+export function flowConfig(flowVersion: string): { version: string; libdef: string } {
+	return { version: flowVersion, libdef: "libdef" };
+}
+
+export function reasonmlConfig(reasonVersion: string): { version: string; bsConfig: string } {
+	return { version: reasonVersion, bsConfig: "bsconfig.json" };
+}
+
+export function ocamlConfig(ocamlVersion: string): { version: string; compiler: string } {
+	return { version: ocamlVersion, compiler: "ocamlopt" };
+}
+
+export function purescriptConfig(psVersion: string): { version: string; output: string } {
+	return { version: psVersion, output: "dist" };
+}
+
+export function scalaConfig(scalaVersion: string): { version: string; compiler: string } {
+	return { version: scalaVersion, compiler: "scala" };
+}
+
+export function scala2Config(scala2Version: string): { version: string; compiler: string } {
+	return { version: scala2Version, compiler: "scalac" };
+}
+
+export function scala3Config(scala3Version: string): { version: string; compiler: string } {
+	return { version: scala3Version, compiler: "scalac" };
+}
+
+export function haskellConfig(haskellVersion: string): { version: string; compiler: string } {
+	return { version: haskellVersion, compiler: "ghc" };
+}
+
+export function elmConfig(elmVersion: string): { version: string; output: string } {
+	return { version: elmVersion, output: "elm.js" };
+}
+
+export function fsharpConfig(fsVersion: string): { version: string; compiler: string } {
+	return { version: fsVersion, compiler: "fsc" };
+}
+
+export function clojureConfig(cljVersion: string): { version: string; tool: string } {
+	return { version: cljVersion, tool: "clojure" };
+}
+
+export function clojurescriptConfig(cljsVersion: string): { version: string; compiler: string } {
+	return { version: cljsVersion, compiler: "cljsc" };
+}
+
+export function rustConfig(rustVersion: string): { version: string; edition: string } {
+	return { version: rustVersion, edition: "2021" };
+}
+
+export function rust2021Config(rust2021Version: string): { version: string; edition: string } {
+	return { version: rust2021Version, edition: "2021" };
+}
+
+export function rust2024Config(rust2024Version: string): { version: string; edition: string } {
+	return { version: rust2024Version, edition: "2024" };
+}
+
+export function goConfig(goVersion: string): { version: string; module: string } {
+	return { version: goVersion, module: "module" };
+}
+
+export function go121Config(go121Version: string): { version: string; module: string } {
+	return { version: go121Version, module: "module" };
+}
+
+export function swiftConfig(swiftVersion: string): { version: string; compiler: string } {
+	return { version: swiftVersion, compiler: "swiftc" };
+}
+
+export function swift5Config(swift5Version: string): { version: string; compiler: string } {
+	return { version: swift5Version, compiler: "swiftc" };
+}
+
+export function kotlinConfig(kotlinVersion: string): { version: string; compiler: string } {
+	return { version: kotlinVersion, compiler: "kotlinc" };
+}
+
+export function kotlin2Config(kotlin2Version: string): { version: string; compiler: string } {
+	return { version: kotlin2Version, compiler: "kotlinc" };
+}
+
+export function dartConfig(dartVersion: string): { version: string; compiler: string } {
+	return { version: dartVersion, compiler: "dart" };
+}
+
+export function dart3Config(dart3Version: string): { version: string; compiler: string } {
+	return { version: dart3Version, compiler: "dart" };
+}
+
+export function juliaConfig(juliaVersion: string): { version: string; compiler: string } {
+	return { version: juliaVersion, compiler: "julia" };
+}
+
+export function rConfig(rVersion: string): { version: string; interpreter: string } {
+	return { version: rVersion, interpreter: "Rscript" };
+}
+
+export function zigConfig(zigVersion: string): { version: string; compiler: string } {
+	return { version: zigVersion, compiler: "zig" };
+}
+
+export function nimConfig(nimVersion: string): { version: string; compiler: string } {
+	return { version: nimVersion, compiler: "nimc" };
+}
+
+export function crystalConfig(crystalVersion: string): { version: string; compiler: string } {
+	return { version: crystalVersion, compiler: "crystal" };
+}
+
+export function dConfig(dVersion: string): { version: string; compiler: string } {
+	return { version: dVersion, compiler: "dmd" };
+}
+
+export function luaConfig(luaVersion: string): { version: string; interpreter: string } {
+	return { version: luaVersion, interpreter: "lua" };
+}
+
+export function luajitConfig(luajitVersion: string): { version: string; interpreter: string } {
+	return { version: luajitVersion, interpreter: "luajit" };
+}
+
+export function perlConfig(perlVersion: string): { version: string; interpreter: string } {
+	return { version: perlVersion, interpreter: "perl" };
+}
+
+export function phpConfig(phpVersion: string): { version: string; runtime: string } {
+	return { version: phpVersion, runtime: "php" };
+}
+
+export function php8Config(php8Version: string): { version: string; runtime: string } {
+	return { version: php8Version, runtime: "php8" };
+}
+
+export function rubyConfig(rubyVersion: string): { version: string; interpreter: string } {
+	return { version: rubyVersion, interpreter: "ruby" };
+}
+
+export function ruby3Config(ruby3Version: string): { version: string; interpreter: string } {
+	return { version: ruby3Version, interpreter: "ruby" };
+}
+
+export function pythonConfig(pythonVersion: string): { version: string; interpreter: string } {
+	return { version: pythonVersion, interpreter: "python3" };
+}
+
+export function python3Config(py3Version: string): { version: string; interpreter: string } {
+	return { version: py3Version, interpreter: "python3" };
+}
+
+export function python312Config(py312Version: string): { version: string; interpreter: string } {
+	return { version: py312Version, interpreter: "python3.12" };
+}
+
+export function javaConfig(javaVersion: string): { version: string; compiler: string } {
+	return { version: javaVersion, compiler: "javac" };
+}
+
+export function java21Config(java21Version: string): { version: string; compiler: string } {
+	return { version: java21Version, compiler: "javac" };
+}
+
+export function csharpConfig(csharpVersion: string): { version: string; compiler: string } {
+	return { version: csharpVersion, compiler: "csc" };
+}
+
+export function csharp12Config(csharp12Version: string): { version: string; compiler: string } {
+	return { version: csharp12Version, compiler: "csc" };
+}
+
+export function vbnetConfig(vbnetVersion: string): { version: string; compiler: string } {
+	return { version: vbnetVersion, compiler: "vbnc" };
+}
+
+export function fsharpdotnetConfig(fsDotNetVersion: string): { version: string; compiler: string } {
+	return { version: fsDotNetVersion, compiler: "fsc" };
+}
+
+export function cobolConfig(cobolVersion: string): { version: string; compiler: string } {
+	return { version: cobolVersion, compiler: "cobol" };
+}
+
+export function fortranConfig(fortranVersion: string): { version: string; compiler: string } {
+	return { version: fortranVersion, compiler: "gfortran" };
+}
+
+export function pascalConfig(pascalVersion: string): { version: string; compiler: string } {
+	return { version: pascalVersion, compiler: "fpc" };
+}
+
+export function assemblyConfig(asmVersion: string): { version: string; assembler: string } {
+	return { version: asmVersion, assembler: "nasm" };
+}
+
+export function wasmConfig(wasmVersion: string): { version: string; runtime: string } {
+	return { version: wasmVersion, runtime: "wasmer" };
+}
+
+export function webassemblyConfig(webasmVersion: string): { version: string; runtime: string } {
+	return { version: webasmVersion, runtime: "wasmtime" };
+}
+
+export function emscriptenConfig(emscriptenVersion: string): { version: string; emcc: string } {
+	return { version: emscriptenVersion, emcc: "emcc" };
+}
+
+export function wasmtimeConfig(wasmtimeVersion: string): { version: string; runtime: string } {
+	return { version: wasmtimeVersion, runtime: "wasmtime" };
+}
+
+export function wasmedgeConfig(wasmedgeVersion: string): { version: string; runtime: string } {
+	return { version: wasmedgeVersion, runtime: "wasmedge" };
 }
 
 // Subset Sum
