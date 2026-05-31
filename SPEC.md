@@ -18871,6 +18871,218 @@ Run: `grep -q "grafanaalloyconfConfig" src/spec-parser.ts`
 Alloy.
 Run: `grep -q "alloyConfig" src/spec-parser.ts`
 
+### [x] Scribe
+Scribe.
+Run: `grep -q "scribeConfig" src/spec-parser.ts`
+
+### [x] Crowdin
+Crowdin.
+Run: `grep -q "crowdinConfig" src/spec-parser.ts`
+
+### [x] Transifex
+Transifex.
+Run: `grep -q "transifexConfig" src/spec-parser.ts`
+
+### [x] Lokalise
+Lokalise.
+Run: `grep -q "lokaliseConfig" src/spec-parser.ts`
+
+### [x] Phrase
+Phrase.
+Run: `grep -q "phraseConfig" src/spec-parser.ts`
+
+### [x] POEditor
+POEditor.
+Run: `grep -q "poeditorConfig" src/spec-parser.ts`
+
+### [x] Weblate
+Weblate.
+Run: `grep -q "weblateConfig" src/spec-parser.ts`
+
+### [x] Zanata
+Zanata.
+Run: `grep -q "zanataConfig" src/spec-parser.ts`
+
+### [x] Memsource
+Memsource.
+Run: `grep -q "memsourceConfig" src/spec-parser.ts`
+
+### [x] Smartling
+Smartling.
+Run: `grep -q "smartlingConfig" src/spec-parser.ts`
+
+### [x] XTM
+XTM.
+Run: `grep -q "xtmConfig" src/spec-parser.ts`
+
+### [x] MemoQ
+MemoQ.
+Run: `grep -q "memoqConfig" src/spec-parser.ts`
+
+### [x] SDL Trados
+SDLTrados.
+Run: `grep -q "sdltradosConfig" src/spec-parser.ts`
+
+### [x] OmegaT
+OmegaT.
+Run: `grep -q "omegatConfig" src/spec-parser.ts`
+
+### [x] DeepL
+DeepL.
+Run: `grep -q "deeplConfig" src/spec-parser.ts`
+
+### [x] Google Translate
+GoogleTranslate.
+Run: `grep -q "googletranslateConfig" src/spec-parser.ts`
+
+### [x] GCP Translation
+GCPTranslation.
+Run: `grep -q "gcptranslationConfig" src/spec-parser.ts`
+
+### [x] Azure Translator
+AzureTranslator.
+Run: `grep -q "azuretranslatorConfig" src/spec-parser.ts`
+
+### [x] AWS Translate
+AWSTranslate.
+Run: `grep -q "awstranslateConfig" src/spec-parser.ts`
+
+### [x] IBM Watson Language
+IBMWatsonLanguage.
+Run: `grep -q "ibmwatsonlanguageConfig" src/spec-parser.ts`
+
+### [x] ModernMT
+ModernMT.
+Run: `grep -q "modernmtConfig" src/spec-parser.ts`
+
+### [x] LibreTranslate
+LibreTranslate.
+Run: `grep -q "libretranslateConfig" src/spec-parser.ts`
+
+### [x] Argos Translate
+ArgosTranslate.
+Run: `grep -q "argostranslateConfig" src/spec-parser.ts`
+
+### [x] Apertium
+Apertium.
+Run: `grep -q "apertiumConfig" src/spec-parser.ts`
+
+### [x] Moses
+Moses.
+Run: `grep -q "mosesConfig" src/spec-parser.ts`
+
+### [x] Marian NMT
+MarianNMT.
+Run: `grep -q "mariannmtConfig" src/spec-parser.ts`
+
+### [x] OpenNMT
+OpenNMT.
+Run: `grep -q "opennmtConfig" src/spec-parser.ts`
+
+### [x] Transformer MMMT
+TransformerMMMT.
+Run: `grep -q "transformermmmtConfig" src/spec-parser.ts`
+
+### [x] NLLB
+NLLB.
+Run: `grep -q "nllbConfig" src/spec-parser.ts`
+
+### [x] M2M-100
+M2M100.
+Run: `grep -q "m2m100Config" src/spec-parser.ts`
+
+### [x] mBART
+MBART.
+Run: `grep -q "mbartConfig" src/spec-parser.ts`
+
+### [x] Helsinki NLP
+HelsinkiNLP.
+Run: `grep -q "helsinkinlpConfig" src/spec-parser.ts`
+
+### [x] Opus Models
+OpusModels.
+Run: `grep -q "opusmodelsConfig" src/spec-parser.ts`
+
+### [x] Seamless M4T
+SeamlessM4T.
+Run: `grep -q "seamlessm4tConfig" src/spec-parser.ts`
+
+### [x] Madlad400
+Madlad400.
+Run: `grep -q "madlad400Config" src/spec-parser.ts`
+
+### [x] BLOOM
+BLOOM.
+Run: `grep -q "bloomConfig" src/spec-parser.ts`
+
+### [x] BLOOMZ
+BLOOMZ.
+Run: `grep -q "bloomzConfig" src/spec-parser.ts`
+
+### [x] Galactica
+Galactica.
+Run: `grep -q "galacticaConfig" src/spec-parser.ts`
+
+### [x] Flan-T5
+FlanT5.
+Run: `grep -q "flant5Config" src/spec-parser.ts`
+
+### [x] Flan-Alpaca
+FlanAlpaca.
+Run: `grep -q "flanalpacaConfig" src/spec-parser.ts`
+
+### [x] Dolly
+Dolly.
+Run: `grep -q "dollyConfig" src/spec-parser.ts`
+
+### [x] StableLM
+StableLM.
+Run: `grep -q "stablelmConfig" src/spec-parser.ts`
+
+### [x] RedPajama
+RedPajama.
+Run: `grep -q "redpajamaConfig" src/spec-parser.ts`
+
+### [x] MPT
+MPT.
+Run: `grep -q "mptConfig" src/spec-parser.ts`
+
+### [x] Falcon
+Falcon.
+Run: `grep -q "falconConfig" src/spec-parser.ts`
+
+### [x] Phi
+Phi.
+Run: `grep -q "phiConfig" src/spec-parser.ts`
+
+### [x] TinyLlama
+TinyLlama.
+Run: `grep -q "tinyllamaConfig" src/spec-parser.ts`
+
+### [x] Phi-2
+Phi2.
+Run: `grep -q "phi2Config" src/spec-parser.ts`
+
+### [x] Phi-3
+Phi3.
+Run: `grep -q "phi3Config" src/spec-parser.ts`
+
+### [x] MiniGPT-4
+MiniGPT4.
+Run: `grep -q "minigpt4Config" src/spec-parser.ts`
+
+### [x] LLaVA
+LLaVA.
+Run: `grep -q "llavaConfig" src/spec-parser.ts`
+
+### [x] LLaVA 1.5
+LLaVA15.
+Run: `grep -q "llava15Config" src/spec-parser.ts`
+
+### [x] LLaVA 1.6
+LLaVA16.
+Run: `grep -q "llava16Config" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
