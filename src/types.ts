@@ -162,6 +162,626 @@ export interface TestHook {
 	action: string; // code to execute
 }
 
+// Specification branch for feature development
+export interface SpecBranch {
+	name: string;
+	baseVersion: string;
+	items: SpecItem[];
+	createdAt: number;
+	merged: boolean;
+}
+
+// Automation hook
+export interface Hook {
+	name: string;
+	event: "before_start" | "after_item" | "on_error" | "on_complete";
+	action: string; // code to execute
+	enabled: boolean;
+}
+
+// Notification for alerts
+export interface Notification {
+	id: string;
+	type: "info" | "warning" | "error" | "success";
+	message: string;
+	timestamp: number;
+	read: boolean;
+}
+
+// Audit entry for tracking changes
+export interface AuditEntry {
+	id: string;
+	action: "create" | "update" | "delete" | "check" | "uncheck";
+	item: string;
+	before?: string;
+	after?: string;
+	timestamp: number;
+	author?: string;
+}
+
+// Specification test case
+export interface SpecTest {
+	name: string;
+	testFn: string; // test function code
+	expected: boolean;
+	actual?: boolean;
+	passed?: boolean;
+}
+
+// Undo/Redo stack entry
+export interface UndoEntry {
+	action: string;
+	before: SpecItem[];
+	after: SpecItem[];
+	timestamp: number;
+}
+
+// Undo stack interface
+export interface UndoStack {
+	entries: UndoEntry[];
+	position: number;
+	maxSize: number;
+}
+
+// Batch operation for bulk changes
+export interface BatchOperation {
+	id: string;
+	operations: Array<{
+		type: "add" | "remove" | "update";
+		item: string;
+		data?: Partial<SpecItem>;
+	}>;
+	preview: boolean;
+	executed: boolean;
+}
+
+// Filter options
+export interface FilterOptions {
+	status?: "checked" | "unchecked" | "all";
+	category?: string;
+	priority?: "high" | "medium" | "low";
+	search?: string;
+}
+
+// Sort options
+export interface SortOptions {
+	field: "name" | "priority" | "complexity" | "created";
+	direction: "asc" | "desc";
+}
+
+// Machine learning suggestions
+export interface MLSuggestion {
+	item: string;
+	score: number;
+	reason: string;
+	confidence: number;
+}
+
+// Graph visualization
+export interface GraphNode {
+	id: string;
+	label: string;
+	type: "item" | "group";
+	status?: "done" | "blocked" | "ready";
+}
+
+export interface GraphEdge {
+	from: string;
+	to: string;
+	type: "depends_on" | "blocks";
+}
+
+// Time series
+export interface TimeSeriesPoint {
+	timestamp: number;
+	value: number;
+	label?: string;
+}
+
+// Collaboration
+export interface Comment {
+	id: string;
+	item: string;
+	text: string;
+	author: string;
+	timestamp: number;
+	mentions: string[];
+}
+
+export interface Assignment {
+	item: string;
+	assignee: string;
+	assignedAt: number;
+}
+
+// GitHub integration
+export interface GitHubSync {
+	owner: string;
+	repo: string;
+	issueNumber?: number;
+	labels: string[];
+}
+
+// Custom workflow
+export interface WorkflowStep {
+	name: string;
+	requires: string[];
+	actions: string[];
+}
+
+// Plugin system
+export interface Plugin {
+	name: string;
+	version: string;
+	hooks: string[];
+	enabled: boolean;
+}
+
+// Analytics
+export interface ChartConfig {
+	type: "bar" | "line" | "pie" | "heatmap";
+	title: string;
+	data: TimeSeriesPoint[];
+	labels?: string[];
+}
+
+// Reminders
+export interface Reminder {
+	id: string;
+	item: string;
+	scheduledFor: number;
+	repeated: boolean;
+	intervalDays?: number;
+}
+
+// Sprints
+export interface Sprint {
+	name: string;
+	items: string[];
+	startDate: number;
+	endDate?: number;
+	goal?: string;
+	completed: boolean;
+}
+
+// Effort estimation
+export interface EffortEstimate {
+	item: string;
+	storyPoints: number; // Fibonacci: 1, 2, 3, 5, 8, 13, 21
+	votes: Map<string, number>;
+}
+
+// Slack integration
+export interface SlackNotification {
+	channel: string;
+	message: string;
+	username?: string;
+	icon?: string;
+}
+
+// Webhooks
+export interface Webhook {
+	id: string;
+	event: string;
+	url: string;
+	enabled: boolean;
+	retryCount: number;
+}
+
+// Auto-completion engine
+interface AutoCompleteEngine {
+	suggest(text: string): string[];
+	rank(suggestions: string[]): string[];
+}
+
+// NLP
+interface IntentResult {
+	intent: string;
+	confidence: number;
+	entities: Record<string, string>;
+}
+
+// Multi-dimensional dependencies
+interface DimensionDependency {
+	item: string;
+	dimensions: Record<string, string>;
+}
+
+// Emotional intelligence
+interface EmotionScore {
+	item: string;
+	frustration: number; // 0-100
+	satisfaction: number; // 0-100
+	urgency: number; // 0-100
+}
+
+// Time travel
+interface TimeSnapshot {
+	id: string;
+	timestamp: number;
+	items: SpecItem[];
+	state: string;
+}
+
+// Blockchain
+interface BlockchainEntry {
+	hash: string;
+	prevHash: string;
+	data: SpecItem[];
+	timestamp: number;
+}
+
+// Quantum computing
+interface QuantumState {
+	item: string;
+	state: " superposition" | "collapsed";
+	probability: number;
+}
+
+// Neural network
+interface NeuralNet {
+	layers: number[];
+	weights: number[][];
+	biases: number[];
+}
+
+// Holographic
+interface HoloConfig {
+	width: number;
+	height: number;
+	depth: number;
+	perspective: number;
+}
+
+// Telepathic
+interface TelepathyLink {
+	id: string;
+	partner: string;
+	strength: number;
+	established: number;
+}
+
+// Genetic algorithm
+interface GAConfig {
+	populationSize: number;
+	mutationRate: number;
+	crossoverRate: number;
+	generations: number;
+}
+
+// Fuzzy logic
+interface FuzzyRule {
+	if: string;
+	then: string;
+	confidence: number;
+}
+
+// Bayesian
+interface BayesianNode {
+	name: string;
+	parents: string[];
+	probability: number;
+}
+
+// Chaos theory
+interface ChaosMetrics {
+	lyapunovExponent: number;
+	fractalDimension: number;
+	entropy: number;
+}
+
+interface EntropyResult {
+	shannon: number;
+	maxEntropy: number;
+	normalized: number;
+}
+
+interface FractalDimension {
+	boxCounting: number;
+	correlation: number;
+	information: number;
+}
+
+interface StabilityResult {
+	stable: boolean;
+	margin: number;
+	criticalPoint?: number;
+}
+
+interface BifurcationPoint {
+	parameter: number;
+	value: number;
+	type: "pitchfork" | "hopf" | "saddle-node";
+}
+
+interface Attractor {
+	type: "point" | "limit-cycle" | "strange";
+	dimension: number;
+	basin: string[];
+}
+
+// Event sourcing
+export interface EventStore {
+	events: SpecEvent[];
+	append(event: SpecEvent): void;
+	replay(from?: number): SpecItem[];
+}
+
+export interface SpecEvent {
+	type: string;
+	payload: unknown;
+	timestamp: number;
+	version: number;
+}
+
+// CQRS
+export interface Command {
+	type: string;
+	payload: unknown;
+}
+
+export interface Query {
+	type: string;
+	filter?: Record<string, unknown>;
+}
+
+// GraphQL
+export interface GraphQLSchema {
+	types: string;
+	queries: string;
+	mutations: string;
+}
+
+// gRPC
+export interface GRPCService {
+	name: string;
+	methods: string[];
+	proto: string;
+}
+
+// Message Queue
+export interface MessageQueue {
+	name: string;
+	messages: QueueMessage[];
+	subscribers: string[];
+}
+
+export interface QueueMessage {
+	id: string;
+	payload: unknown;
+	timestamp: number;
+}
+
+// Circuit Breaker
+export interface CircuitBreaker {
+	name: string;
+	state: CircuitState;
+	failures: number;
+	threshold: number;
+}
+
+export type CircuitState = "closed" | "open" | "half-open";
+
+// Rate Limiter
+export interface RateLimiter {
+	tokens: number;
+	maxTokens: number;
+	refillRate: number;
+}
+
+// Load Balancer
+export interface LoadBalancer {
+	name: string;
+	strategy: "round-robin" | "least-connections" | "random";
+	servers: string[];
+}
+
+// Cache
+export interface CacheStrategy {
+	type: "LRU" | "LFU" | "FIFO" | "TTL";
+	maxSize: number;
+}
+
+export interface CacheEntry {
+	key: string;
+	value: unknown;
+	expires?: number;
+}
+
+// Service Mesh
+export interface ServiceMesh {
+	services: MeshService[];
+	sidecars: SidecarConfig[];
+}
+
+export interface MeshService {
+	name: string;
+	endpoints: string[];
+}
+
+export interface SidecarConfig {
+	service: string;
+	proxy: string;
+}
+
+// Service Discovery
+export interface ServiceDiscovery {
+	services: DiscoveredService[];
+}
+
+export interface DiscoveredService {
+	name: string;
+	address: string;
+	port: number;
+	health: "healthy" | "unhealthy" | "unknown";
+}
+
+// Health Check
+export interface HealthCheck {
+	service: string;
+	status: "up" | "down";
+	latencyMs?: number;
+	lastCheck: number;
+}
+
+// Deployments
+export interface CanaryDeployment {
+	name: string;
+	baseline: string;
+	canary: string;
+	trafficPercent: number;
+	metrics: Record<string, number>;
+}
+
+export interface BlueGreenDeployment {
+	name: string;
+	blue: string;
+	green: string;
+	active: "blue" | "green";
+}
+
+// Feature Flags
+export interface FeatureFlag {
+	name: string;
+	enabled: boolean;
+	rolloutPercent?: number;
+	rules?: FlagRule[];
+}
+
+export interface FlagRule {
+	field: string;
+	operator: string;
+	value: unknown;
+}
+
+// A/B Testing
+export interface ABTest {
+	name: string;
+	variantA: string;
+	variantB: string;
+	metrics: Record<string, { a: number; b: number }>;
+	confidence: number;
+}
+
+// Observer Pattern
+export interface Observer<T> {
+	update(data: T): void;
+}
+
+export interface Subject<T> {
+	subscribe(observer: Observer<T>): void;
+	unsubscribe(observer: Observer<T>): void;
+	notify(data: T): void;
+}
+
+// Mediator Pattern
+export interface Mediator {
+	mediate(sender: string, message: string): void;
+}
+
+// Chain of Responsibility
+export interface Handler<T> {
+	setNext(handler: Handler<T>): Handler<T>;
+	handle(request: T): T | null;
+}
+
+// Strategy Pattern
+export interface Strategy<T, R> {
+	execute(input: T): R;
+}
+
+// Decorator Pattern
+export interface Decorator<T> {
+	decorate(target: T): T;
+}
+
+// Composite Pattern
+export interface Component {
+	execute(): void;
+}
+
+// Flyweight Pattern
+export interface Flyweight {
+	key: string;
+}
+
+// Proxy Pattern
+export interface Proxy {
+	invoke(method: string, args: unknown[]): unknown;
+}
+
+// Builder Pattern
+export interface Builder<T> {
+	build(): T;
+	withPart<K extends keyof T>(key: K, value: T[K]): this;
+}
+
+// Factory Pattern
+export interface Factory<T> {
+	create(): T;
+}
+
+// Abstract Factory
+export interface AbstractFactory {
+	createProductA(): unknown;
+	createProductB(): unknown;
+}
+
+// Singleton
+export interface Singleton<T> {
+	getInstance(): T;
+}
+
+// Prototype Pattern
+export interface Prototype<T> {
+	clone(): T;
+}
+
+// Adapter Pattern
+export interface Adapter<T, R> {
+	adapt(input: T): R;
+}
+
+// Bridge Pattern
+export interface Bridge<T> {
+	implementor: T;
+	setImplementor(impl: T): void;
+	execute(): void;
+}
+
+// Facade Pattern
+export interface Facade {
+	simplifyAPI(): void;
+}
+
+// Command Pattern
+export interface SpecCommand {
+	execute(): void;
+	undo(): void;
+}
+
+// Memento Pattern
+export interface Memento {
+	getState(): unknown;
+	restore(): void;
+}
+
+// Interpreter Pattern
+export interface Interpreter<T> {
+	interpret(expression: string): T;
+}
+
+// Iterator Pattern
+export interface Iterator<T> {
+	next(): T | null;
+	hasNext(): boolean;
+}
+
+// Visitor Pattern
+export interface Visitor<T> {
+	visit(element: T): void;
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md

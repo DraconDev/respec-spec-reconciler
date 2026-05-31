@@ -1,7 +1,191 @@
 // Visual formatting for respec — progress bars, widgets, status displays
 
-import type { RespecState, SpecItem, RoundRecord } from "./types.js";
+import type { RespecState, SpecItem, RoundRecord, SpecDiff } from "./types.js";
 import { countChecked } from "./spec-parser.js";
+
+// Highlighted diff for changes
+export function highlightDiff(diff: SpecDiff): string[] {
+	const lines: string[] = [];
+	
+	if (diff.added.length > 0) {
+		lines.push("\x1b[32m+ Added:\x1b[0m"); // Green
+		for (const item of diff.added) {
+			lines.push(`\x1b[32m  + ${item.name}\x1b[0m`);
+		}
+	}
+	
+	if (diff.removed.length > 0) {
+		lines.push("\x1b[31m- Removed:\x1b[0m"); // Red
+		for (const name of diff.removed) {
+			lines.push(`\x1b[31m  - ${name}\x1b[0m`);
+		}
+	}
+	
+	if (diff.checked.length > 0) {
+		lines.push("\x1b[33m✓ Completed:\x1b[0m"); // Yellow
+		for (const name of diff.checked) {
+			lines.push(`\x1b[33m  ✓ ${name}\x1b[0m`);
+		}
+	}
+	
+	if (diff.unchecked.length > 0) {
+		lines.push("\x1b[35m✗ Regressed:\x1b[0m"); // Magenta
+		for (const name of diff.unchecked) {
+			lines.push(`\x1b[35m  ✗ ${name}\x1b[0m`);
+		}
+	}
+	
+	return lines;
+}
+
+// Generate completion chart (ASCII)
+export function generateCompletionChart(data: Array<{ label: string; value: number }>): string[] {
+	const lines: string[] = [];
+	const maxValue = Math.max(...data.map((d) => d.value));
+	
+	lines.push("Completion Chart:");
+	lines.push("");
+	
+	for (const { label, value } of data) {
+		const barLength = maxValue > 0 ? Math.round((value / maxValue) * 40) : 0;
+		const bar = "█".repeat(barLength);
+		lines.push(`${label.padEnd(20)} |${bar} ${value}`);
+	}
+	
+	return lines;
+}
+
+// Generate category breakdown
+export function generateCategoryBreakdown(categories: Map<string, number>): string[] {
+	const lines: string[] = [];
+	const total = [...categories.values()].reduce((a, b) => a + b, 0);
+	
+	lines.push("Category Breakdown:");
+	lines.push("");
+	
+	const sortedCategories = [...categories.entries()].sort((a, b) => b[1] - a[1]);
+	
+	for (const [category, count] of sortedCategories) {
+		const percentage = total > 0 ? Math.round((count / total) * 100) : 0;
+		const barLength = Math.round(percentage / 2.5);
+		const bar = "▓".repeat(barLength);
+		lines.push(`${category.padEnd(15)} ${bar.padEnd(40)} ${percentage}% (${count})`);
+	}
+	
+	return lines;
+}
+
+// Generate coverage heatmap
+export function generateHeatmap(items: Array<{ name: string; coverage: number }>): string[] {
+	const lines: string[] = [];
+	lines.push("Coverage Heatmap:");
+	lines.push("");
+	
+	for (const { name, coverage } of items) {
+		const filledLength = Math.round(coverage / 2.5);
+		const emptyLength = 40 - filledLength;
+		const color = coverage >= 80 ? "\x1b[32m" : coverage >= 50 ? "\x1b[33m" : "\x1b[31m";
+		const reset = "\x1b[0m";
+		lines.push(`${name.substring(0, 20).padEnd(20)} ${color}${"█".repeat(filledLength)}${"░".repeat(emptyLength)}${reset} ${coverage}%`);
+	}
+	
+	return lines;
+}
+
+// Generate burndown chart data
+export function generateBurndown(totalItems: number, completedItems: number[], idealLine: boolean = true): string[] {
+	const lines: string[] = [];
+	lines.push("Burndown Chart:");
+	lines.push("");
+	
+	const maxY = totalItems;
+	
+	for (let i = 0; i < completedItems.length; i++) {
+		const remaining = totalItems - completedItems[i]!;
+		const barLength = Math.round((remaining / maxY) * 40);
+		const bar = "▓".repeat(barLength);
+		lines.push(`Day ${String(i + 1).padStart(3)} |${bar.padEnd(40)}| ${remaining}`);
+		
+		if (idealLine && i > 0) {
+			const idealRemaining = totalItems - (totalItems / completedItems.length) * (i + 1);
+			const idealPos = Math.round((idealRemaining / maxY) * 40);
+			// Could show ideal line marker
+		}
+	}
+	
+	return lines;
+}
+
+// Generate cumulative flow diagram (simplified)
+export function generateCFD(data: Array<{ day: string; done: number; inProgress: number; todo: number }>): string[] {
+	const lines: string[] = [];
+	lines.push("Cumulative Flow Diagram:");
+	lines.push("");
+	
+	for (const { day, done, inProgress, todo } of data) {
+		const doneBar = "\x1b[32m█\x1b[0m".repeat(Math.min(done, 20));
+		const progressBar = "\x1b[33m▓\x1b[0m".repeat(Math.min(inProgress, 10));
+		const todoBar = "\x1b[37m░\x1b[0m".repeat(Math.min(todo, 10));
+		lines.push(`${day} |${doneBar}${progressBar}${todoBar}| D:${done} P:${inProgress} T:${todo}`);
+	}
+	
+	return lines;
+}
+
+// Generate holographic visualization (ASCII 3D)
+export function generateHologram(items: SpecItem[], config: HoloConfig): string[] {
+	const lines: string[] = [];
+	lines.push("╔══════════════════════════════════════════╗");
+	lines.push("║     HOLOGRAPHIC SPEC VISUALIZATION       ║");
+	lines.push("╠══════════════════════════════════════════╣");
+	
+	const checked = items.filter((i) => i.checked).length;
+	const total = items.length;
+	const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+	
+	lines.push(`║  Progress: ${percentage}%                        ║`);
+	lines.push(`║  Completed: ${checked}/${total}                      ║`);
+	lines.push("║                                          ║");
+	
+	// 3D-ish bar chart
+	const bar = "█".repeat(Math.round(percentage / 5));
+	lines.push(`║  [${bar.padEnd(20)}]  ║`);
+	lines.push("╚══════════════════════════════════════════╝");
+	
+	return lines;
+}
+
+// Strange attractor visualization (Lorenz-like)
+export function strangeAttractor(iterations = 100): string[] {
+	const lines: string[] = [];
+	lines.push("Strange Attractor Visualization:");
+	lines.push("");
+	
+	let x = 0.1, y = 0, z = 0;
+	const sigma = 10, rho = 28, beta = 8 / 3;
+	const dt = 0.01;
+	
+	for (let i = 0; i < iterations; i++) {
+		x += sigma * (y - x) * dt;
+		y += (x * (rho - z) - y) * dt;
+		z += (x * y - beta * z) * dt;
+		
+		// Project to 2D
+		const px = Math.round((x + 20) / 40 * 60);
+		const py = Math.round((z + 10) / 40 * 20);
+		
+		if (px >= 0 && px < 60 && py >= 0 && py < 20) {
+			const row = " ".repeat(py) + "*" + " ".repeat(60 - py - 1);
+			lines.push(row);
+		}
+	}
+	
+	return lines.slice(0, 20);
+}
+
+
+
+
 
 // ─── Progress bar ──────────────────────────────────────────────
 
