@@ -21,6 +21,72 @@ const SPEC_NAME = "SPEC.md";
 
 let loopController: LoopController | null = null;
 
+// Helper: merge budgets with conflict detection
+function mergeBudgetsWithConflictDetection(
+	existing: TurnBudget[],
+	incoming: TurnBudget[]
+): { conflicts: string[]; merged: TurnBudget[] } {
+	const conflicts: string[] = [];
+	const merged = [...existing];
+	const existingMap = new Map(existing.map((b) => [b.category, b]));
+
+	for (const incomingBudget of incoming) {
+		const existingBudget = existingMap.get(incomingBudget.category);
+		if (existingBudget) {
+			// Conflict: same category exists in both
+			conflicts.push(incomingBudget.category);
+			// Merge strategy: keep the one with more samples (higher confidence)
+			if (incomingBudget.count > existingBudget.count) {
+				const idx = merged.findIndex((b) => b.category === incomingBudget.category);
+				if (idx !== -1) merged[idx] = incomingBudget;
+			}
+		} else {
+			merged.push(incomingBudget);
+		}
+	}
+
+	return { conflicts, merged };
+}
+
+// Helper: parse natural language to spec item
+function parseNaturalLanguage(text: string): { name: string; verification?: string } {
+	// Extract verification commands from natural language
+	const verifyPatterns = [
+		/(?:run|execute|check|test)\s+(?:`([^`]+)`|(\S+))/gi,
+		/(?:verify|ensure)\s+(?:that\s+)?(?:`([^`]+)`|(\S+))/gi,
+		/npm\s+\w+/gi,
+		/tsc\s+[^\n]*/gi,
+		/npx\s+\w+/gi,
+	];
+
+	let verification: string | undefined;
+	for (const pattern of verifyPatterns) {
+		const match = pattern.exec(text);
+		if (match) {
+			verification = match[1] || match[2] || match[0];
+			break;
+		}
+	}
+
+	// Clean up the name - remove verification mentions from the name
+	let name = text
+		.replace(/run\s+(?:`([^`]+)`|(\S+))/gi, "")
+		.replace(/execute\s+(?:`([^`]+)`|(\S+))/gi, "")
+		.replace(/check\s+(?:`([^`]+)`|(\S+))/gi, "")
+		.replace(/test\s+(?:`([^`]+)`|(\S+))/gi, "")
+		.replace(/verify\s+(?:that\s+)?(?:`([^`]+)`|(\S+))/gi, "")
+		.replace(/ensure\s+(?:that\s+)?(?:`([^`]+)`|(\S+))/gi, "")
+		.replace(/\s+/g, " ")
+		.trim();
+
+	return { name, verification };
+}
+
+// Helper: escape regex special characters
+function escapeRegex(str: string): string {
+	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 // Read template from templates directory
 function getTemplatePath(name: string): string {
 	const templatesDir = join(
@@ -295,20 +361,26 @@ Each item should be a verifiable requirement.
 					try {
 						const data = JSON.parse(readFileSync(syncPath, "utf-8"));
 						if (data.budgets && Array.isArray(data.budgets)) {
-							// Merge with existing budgets
-							const existingKeys = new Set(state.learnedBudgets.map((b) => b.category));
-							const newBudgets = data.budgets.filter(
-								(b: TurnBudget) => !existingKeys.has(b.category)
+							// Detect conflicts and merge
+							const { conflicts, merged } = mergeBudgetsWithConflictDetection(
+								state.learnedBudgets,
+								data.budgets
 							);
-							state.learnedBudgets.push(...newBudgets);
+							if (conflicts.length > 0) {
+								await ctx.ui.notify(
+									`⚠️ ${conflicts.length} conflicts detected: ${conflicts.join(", ")}`,
+									"warning"
+								);
+							}
+							state.learnedBudgets = merged;
 							setStore(state);
 							await ctx.ui.notify(
-								`Imported ${newBudgets.length} learned budgets`,
+								`Imported ${merged.length} budgets (${conflicts.length} conflicts resolved)`,
 								"info"
 							);
 						}
 					} catch {
-						await ctx.ui.notify("Failed to parse sync file", "error");
+					await ctx.ui.notify("Failed to parse sync file", "error");
 					}
 				} else {
 					await ctx.ui.notify(
@@ -317,6 +389,84 @@ Each item should be a verifiable requirement.
 					);
 				}
 				return;
+			}
+
+			if (command === "add") {
+				// Add new spec item via natural language
+				const itemText = tokens.slice(1).join(" ");
+				if (!itemText) {
+					await ctx.ui.notify("Usage: /respec add <item description>", "info");
+					return;
+				}
+				const parsed = parseNaturalLanguage(itemText);
+				const specPath = path;
+				const content = readFileSync(specPath, "utf-8");
+				const newItem = `### [ ] ${parsed.name}\n`;
+				if (parsed.verification) {
+					// Insert at end of Requirements section
+					const insertPoint = content.lastIndexOf("### [ ");
+					if (insertPoint === -1) {
+						writeFileSync(specPath, content + "\n" + newItem, "utf-8");
+					} else {
+						writeFileSync(specPath, content.slice(0, insertPoint) + newItem + content.slice(insertPoint), "utf-8");
+					}
+				} else {
+					writeFileSync(specPath, content + "\n" + newItem, "utf-8");
+				}
+				await ctx.ui.notify(`Added: ${parsed.name}`, "info");
+				return;
+			}
+
+			if (command === "remove") {
+				// Remove spec item by name
+				const itemName = tokens.slice(1).join(" ");
+				if (!itemName) {
+					await ctx.ui.notify("Usage: /respec remove <item name>", "info");
+					return;
+				}
+				const specPath = path;
+				const content = readFileSync(specPath, "utf-8");
+				const regex = new RegExp(`### \[ [x]?\] ${escapeRegex(itemName)}[\s\S]*?(?=### \[|\n\n|\n#|$)`, "i");
+				if (regex.test(content)) {
+					writeFileSync(specPath, content.replace(regex, ""), "utf-8");
+					await ctx.ui.notify(`Removed: ${itemName}`, "info");
+				} else {
+					await ctx.ui.notify(`Item not found: ${itemName}`, "warning");
+				}
+				return;
+			}
+
+			if (command === "edit") {
+				// Edit spec item
+				const itemName = tokens.slice(1).join(" ");
+				if (!itemName) {
+					await ctx.ui.notify("Usage: /respec edit <item name>", "info");
+					return;
+				}
+				await ctx.ui.notify("Edit mode: describe changes to the item", "info");
+				return;
+			}
+
+			if (command === "ci") {
+				// CI mode - non-interactive, JSON output
+				const ciMode = true;
+				const specPath = path;
+				const items = parseSpec(specPath);
+				if (!items) {
+					console.log(JSON.stringify({ error: "Cannot parse SPEC.md", exitCode: 2 }));
+					process.exit(2);
+				}
+				const total = items.length;
+				const checked = countChecked(items);
+				const unchecked = items.filter((i) => !i.checked);
+				const output = {
+					total,
+					checked,
+					unchecked: unchecked.map((i) => i.name),
+					exitCode: unchecked.length === 0 ? 0 : 1,
+				};
+				console.log(JSON.stringify(output));
+				process.exit(output.exitCode);
 			}
 
 			// Default: start new reconciliation

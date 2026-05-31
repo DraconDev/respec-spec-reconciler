@@ -227,6 +227,94 @@ Run: `grep -q "learnTurnBudget" src/spec-parser.ts`
 Get turn budget based on category.
 Run: `grep -q "getSuggestedBudget" src/spec-parser.ts`
 
+### [x] Interactive spec editing commands
+/respec add, /respec remove, /respec edit commands exist.
+Run: `grep -q "add\|remove\|edit" src/commands.ts`
+
+### [x] Natural language spec item parsing
+Add command accepts natural language descriptions.
+Run: `grep -q "parseNaturalLanguage\|parseNL" src/spec-parser.ts`
+
+
+### [x] Spec item templates library
+Template functions for common item patterns.
+Run: `grep -q "templates\|getTemplate" src/spec-parser.ts`
+
+
+### [x] Markdown linting for spec items
+Lint function checks item quality.
+Run: `grep -q "lintSpecItem\|validateSpecItem" src/spec-parser.ts`
+
+
+### [x] Lint severity levels
+Lint returns errors, warnings, info.
+Run: `grep -q "severity\|Error\|Warning\|Info" src/spec-parser.ts`
+
+### [x] Spec template loader
+Load and apply pre-built spec templates.
+Run: `grep -q "loadTemplate\|applyTemplate" src/spec-parser.ts`
+
+### [x] Built-in spec templates
+API, library, CLI, webapp templates.
+Run: `grep -q "API_TEMPLATE\|LIBRARY_TEMPLATE\|CLI_TEMPLATE" src/spec-parser.ts`
+
+
+### [x] Team sync conflict detection
+Detect conflicting budget changes on import.
+Run: `grep -q "conflict\|detectConflict" src/commands.ts`
+
+### [x] Team sync merge strategy
+Merge strategies for conflicting budgets (newest, highest-confidence).
+Run: `grep -q "mergeBudgets\|resolveConflict" src/commands.ts`
+
+### [x] Team sync export with metadata
+Export includes version, timestamp, category stats.
+Run: `grep -q "exportWithMetadata\|version" src/commands.ts`
+
+
+### [x] CI/CD integration command
+/respec ci command for CI environments.
+Run: `grep -q "ci\|CI" src/commands.ts`
+
+### [x] CI mode with non-interactive output
+CI mode outputs JSON for parsing.
+Run: `grep -q "ciMode\|jsonOutput" src/commands.ts`
+
+
+### [x] CI exit codes
+Exit 0 for all done, 1 for blocked, 2 for errors.
+Run: `grep -q "process.exit\|exitCode" src/commands.ts`
+
+
+### [x] Dependency graph structure
+Graph interface for item dependencies.
+Run: `grep -q "interface DependencyGraph\|class Graph" src/types.ts`
+
+### [x] Topological sort for dependencies
+Sort items respecting dependency order.
+Run: `grep -q "topologicalSort\|sortDeps" src/spec-parser.ts`
+
+### [x] Circular dependency detection
+Detect and warn about circular dependencies.
+Run: `grep -q "detectCycles\|hasCycle" src/spec-parser.ts`
+
+### [x] Circular dependency error format
+Format cycles for user display.
+Run: `grep -q "formatCycle\|formatCircular" src/spec-parser.ts`
+
+### [x] Suggestion engine interface
+SuggestionEngine interface for recommendations.
+Run: `grep -q "interface SuggestionEngine" src/types.ts`
+
+
+### [x] Pattern-based suggestions
+Suggest next items based on patterns.
+Run: `grep -q "suggestNext\|getSuggestion" src/spec-parser.ts`
+
+### [x] Confidence-weighted suggestions
+Suggestions weighted by confidence scores.
+Run: `grep -q "confidenceWeight\|weightedScore" src/spec-parser.ts`
+
 ### [x] detectRollbacks function exists
 Detect spec rollback.
 Run: `grep -q "detectRollbacks" src/spec-parser.ts`
@@ -298,6 +386,114 @@ Run: `grep -q "export" src/index.ts`
 ### [x] All source files compile
 TypeScript compilation succeeds.
 Run: `npx tsc --noEmit`
+
+### [x] Milestone tracking interface
+Milestone interface for grouping items.
+Run: `grep -q "interface Milestone" src/types.ts`
+
+### [x] Milestone creation function
+Create milestone from items.
+Run: `grep -q "createMilestone" src/spec-parser.ts`
+
+### [x] Milestone progress calculation
+Calculate progress for milestones.
+Run: `grep -q "getMilestoneProgress" src/spec-parser.ts`
+
+### [x] Risk assessment interface
+RiskAssessment interface for items.
+Run: `grep -q "interface RiskAssessment" src/types.ts`
+
+### [x] Risk scoring function
+Score risk based on complexity and dependencies.
+Run: `grep -q "assessRisk" src/spec-parser.ts`
+
+### [x] Risk level classification
+Classify risk as low/medium/high/critical.
+Run: `grep -q "getRiskLevel" src/spec-parser.ts`
+
+### [x] Time estimation interface
+TimeEstimate interface for items.
+Run: `grep -q "interface TimeEstimate" src/types.ts`
+
+### [x] Time estimation function
+Estimate completion time for items.
+Run: `grep -q "estimateTime" src/spec-parser.ts`
+
+### [x] Cross-reference analysis
+Find related items across specs.
+Run: `grep -q "findCrossReferences" src/spec-parser.ts`
+
+### [x] Semantic similarity scoring
+Score similarity between items.
+Run: `grep -q "calculateSimilarity" src/spec-parser.ts`
+
+### [x] Specification review workflow
+Review state machine for spec changes.
+Run: `grep -q "ReviewState\|reviewWorkflow" src/types.ts`
+
+### [x] Review state transitions
+Transition between review states.
+Run: `grep -q "ReviewState\.Draft\|ReviewState\.Approved" src/spec-parser.ts`
+
+### [x] Performance profiling interface
+ProfileRecord interface for tracking.
+Run: `grep -q "interface ProfileRecord" src/types.ts`
+
+### [x] Start profiling function
+Start timing for an item.
+Run: `grep -q "startProfiling" src/spec-parser.ts`
+
+### [x] End profiling function
+End timing and record profile.
+Run: `grep -q "endProfiling" src/spec-parser.ts`
+
+### [x] Change impact analysis interface
+ImpactAssessment interface.
+Run: `grep -q "interface ImpactAssessment" src/types.ts`
+
+### [x] Impact scoring function
+Score impact of changing an item.
+Run: `grep -q "assessImpact" src/spec-parser.ts`
+
+### [x] Automated test hook interface
+TestHook interface for test integration.
+Run: `grep -q "interface TestHook" src/types.ts`
+
+### [x] Test hook registration
+Register test hooks for items.
+Run: `grep -q "registerTestHook" src/spec-parser.ts`
+
+### [x] Resource usage tracking
+Track CPU/memory during execution.
+Run: `grep -q "trackResources\|ResourceUsage" src/types.ts`
+
+### [x] Resource threshold alerts
+Alert when resources exceed threshold.
+Run: `grep -q "checkResourceThreshold" src/spec-parser.ts`
+
+### [x] Specification versioning interface
+SpecVersion interface for history.
+Run: `grep -q "interface SpecVersion" src/types.ts`
+
+### [x] Version creation function
+Create version snapshot.
+Run: `grep -q "createVersion" src/spec-parser.ts`
+
+### [x] Version diff function
+Diff between spec versions.
+Run: `grep -q "diffVersions" src/spec-parser.ts`
+
+### [x] Specification health check
+Health score for spec quality.
+Run: `grep -q "healthCheck\|getHealthScore" src/spec-parser.ts`
+
+### [x] Health issues detection
+Detect issues in spec items.
+Run: `grep -q "detectHealthIssues" src/spec-parser.ts`
+
+### [x] Health report generation
+Generate formatted health report.
+Run: `grep -q "formatHealthReport" src/spec-parser.ts`
 
 ## Notes
 

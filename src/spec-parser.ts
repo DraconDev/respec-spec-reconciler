@@ -596,3 +596,529 @@ export function formatCompactQueue(items: SpecItem[], targetIndex?: number, maxI
 
 	return lines;
 }
+
+// Topological sort for dependency ordering
+export function topologicalSort(items: SpecItem[], deps: Map<string, string[]>): SpecItem[] {
+	const result: SpecItem[] = [];
+	const visited = new Set<string>();
+	const visiting = new Set<string>();
+
+	function visit(item: SpecItem): void {
+		if (visited.has(item.name)) return;
+		if (visiting.has(item.name)) {
+			// Circular dependency detected
+			return;
+		}
+
+		visiting.add(item.name);
+		const itemDeps = deps.get(item.name) || [];
+		for (const depName of itemDeps) {
+			const depItem = items.find((i) => i.name === depName);
+			if (depItem) visit(depItem);
+		}
+		visiting.delete(item.name);
+		visited.add(item.name);
+		result.push(item);
+	}
+
+	for (const item of items) {
+		if (!visited.has(item.name)) {
+			visit(item);
+		}
+	}
+
+	return result;
+}
+
+// Detect circular dependencies
+export function detectCycles(items: SpecItem[], deps: Map<string, string[]>): string[][] {
+	const cycles: string[][] = [];
+	const visiting = new Set<string>();
+	const path: string[] = [];
+
+	function dfs(itemName: string): boolean {
+		if (visiting.has(itemName)) {
+			// Found a cycle - extract it
+			const cycleStart = path.indexOf(itemName);
+			if (cycleStart >= 0) {
+				cycles.push([...path.slice(cycleStart), itemName]);
+			}
+			return true;
+		}
+
+		if (path.includes(itemName)) return false;
+
+		visiting.add(itemName);
+		path.push(itemName);
+
+		const itemDeps = deps.get(itemName) || [];
+		for (const depName of itemDeps) {
+			dfs(depName);
+		}
+
+		path.pop();
+		visiting.delete(itemName);
+		return false;
+	}
+
+	for (const item of items) {
+		dfs(item.name);
+	}
+
+	return cycles;
+}
+
+// Format circular dependency for display
+export function formatCycle(cycle: string[]): string {
+	return `Circular dependency: ${cycle.join(" → ")}`;
+}
+
+// Spec templates
+export const SPEC_TEMPLATES = {
+	api: {
+		name: "API",
+		description: "REST API project template",
+		items: [
+			"### [ ] Implement REST endpoints",
+			"### [ ] Add request validation",
+			"### [ ] Implement authentication",
+			"### [ ] Add API documentation",
+			"### [ ] Write integration tests",
+		],
+	},
+	library: {
+		name: "Library",
+		description: "Open-source library template",
+		items: [
+			"### [ ] Define public API surface",
+			"### [ ] Implement core functionality",
+			"### [ ] Add TypeScript types",
+			"### [ ] Write unit tests",
+			"### [ ] Set up CI/CD",
+		],
+	},
+	cli: {
+		name: "CLI",
+		description: "Command-line tool template",
+		items: [
+			"### [ ] Define CLI interface",
+			"### [ ] Implement command handlers",
+			"### [ ] Add help text",
+			"### [ ] Write end-to-end tests",
+		],
+	},
+	webapp: {
+		name: "Web App",
+		description: "Web application template",
+		items: [
+			"### [ ] Set up project structure",
+			"### [ ] Implement routing",
+			"### [ ] Create UI components",
+			"### [ ] Add state management",
+			"### [ ] Implement API integration",
+			"### [ ] Write E2E tests",
+		],
+	},
+};
+
+// Get template by name
+export function getTemplate(name: string): typeof SPEC_TEMPLATES.api | null {
+	return (SPEC_TEMPLATES as Record<string, typeof SPEC_TEMPLATES.api>)[name] || null;
+}
+
+// Suggestion engine - pattern-based next item recommendations
+export class SuggestionEngine {
+	private items: SpecItem[];
+	private history: RoundRecord[];
+
+	constructor(items: SpecItem[], history: RoundRecord[]) {
+		this.items = items;
+		this.history = history;
+	}
+
+	// Get weighted score for an item based on confidence
+	getConfidenceWeight(item: SpecItem): number {
+		const confidence = calculateConfidence(item.name, this.history);
+		const complexity = estimateComplexity(item);
+		// Lower complexity + higher confidence = higher weight
+		return (confidence / 100) * (1 / (complexity + 1));
+	}
+
+	// Suggest next item based on patterns
+	suggestNext(): SpecItem | null {
+		const unchecked = this.items.filter((i) => !i.checked);
+		if (unchecked.length === 0) return null;
+
+		// Score each item
+		const scored = unchecked.map((item) => ({
+			item,
+			score: this.getConfidenceWeight(item),
+		}));
+
+		// Sort by score descending
+		scored.sort((a, b) => b.score - a.score);
+
+		return scored[0]?.item || null;
+	}
+}
+
+// Milestone creation
+export function createMilestone(name: string, items: SpecItem[]): Milestone {
+	const completed = items.filter((i) => i.checked).length;
+	return {
+		name,
+		items: items.map((i) => i.name),
+		completed,
+		total: items.length,
+		progress: items.length > 0 ? Math.round((completed / items.length) * 100) : 0,
+	};
+}
+
+// Get milestone progress
+export function getMilestoneProgress(milestone: Milestone): number {
+	return milestone.progress;
+}
+
+// Risk assessment
+export function assessRisk(item: SpecItem, deps: Map<string, string[]>): RiskAssessment {
+	const complexity = estimateComplexity(item);
+	const dependencyCount = deps.get(item.name)?.length ?? 0;
+	
+	// Calculate risk score
+	let score = complexity * 10 + dependencyCount * 5;
+	
+	// Adjust for unknown verification
+	if (!item.verification) score += 20;
+	
+	// Cap at 100
+	score = Math.min(100, score);
+	
+	// Determine level
+	let level: "low" | "medium" | "high" | "critical" = "low";
+	if (score >= 75) level = "critical";
+	else if (score >= 50) level = "high";
+	else if (score >= 25) level = "medium";
+	
+	const factors: string[] = [];
+	if (complexity >= 5) factors.push("high complexity");
+	if (dependencyCount > 3) factors.push("many dependencies");
+	if (!item.verification) factors.push("no verification command");
+	
+	return { item: item.name, score, level, factors };
+}
+
+// Get risk level
+export function getRiskLevel(score: number): "low" | "medium" | "high" | "critical" {
+	if (score >= 75) return "critical";
+	if (score >= 50) return "high";
+	if (score >= 25) return "medium";
+	return "low";
+}
+
+// Time estimation
+export function estimateTime(item: SpecItem, history: RoundRecord[]): TimeEstimate {
+	const itemHistory = history.filter((r) => r.target === item.name);
+	
+	if (itemHistory.length > 0) {
+		const avgTurns = itemHistory.reduce((sum, r) => sum + r.turnsUsed, 0) / itemHistory.length;
+		const estimatedMinutes = avgTurns * 5; // Assume 5 min per turn
+		return {
+			item: item.name,
+			estimatedMinutes,
+			confidence: Math.min(100, itemHistory.length * 20),
+			basedOn: itemHistory.map((r) => `round ${r.round}`),
+		};
+	}
+	
+	// Fall back to complexity estimate
+	const complexity = estimateComplexity(item);
+	const estimatedMinutes = complexity * 10;
+	return {
+		item: item.name,
+		estimatedMinutes,
+		confidence: 30,
+		basedOn: ["complexity estimate"],
+	};
+}
+
+// Cross-reference analysis
+export function findCrossReferences(items: SpecItem[]): Map<string, string[]> {
+	const references = new Map<string, string[]>();
+	
+	for (const item of items) {
+		const related: string[] = [];
+		const itemWords = new Set(item.name.toLowerCase().split(/\s+/));
+		
+		for (const other of items) {
+			if (other.name === item.name) continue;
+			const otherWords = new Set(other.name.toLowerCase().split(/\s+/));
+			
+			// Find common words
+			const common = [...itemWords].filter((w) => otherWords.has(w) && w.length > 3);
+			if (common.length >= 2) {
+				related.push(other.name);
+			}
+		}
+		
+		references.set(item.name, related);
+	}
+	
+	return references;
+}
+
+// Semantic similarity
+export function calculateSimilarity(item1: SpecItem, item2: SpecItem): number {
+	const words1 = new Set(item1.name.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
+	const words2 = new Set(item2.name.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
+	
+	const intersection = [...words1].filter((w) => words2.has(w));
+	const union = new Set([...words1, ...words2]);
+	
+	return union.size > 0 ? (intersection.length / union.size) * 100 : 0;
+}
+
+// Review state transitions
+export function transitionReviewState(
+	current: ReviewState,
+	action: "submit" | "approve" | "reject" | "revise"
+): ReviewState {
+	switch (current) {
+		case ReviewState.Draft:
+			return action === "submit" ? ReviewState.InReview : ReviewState.Draft;
+		case ReviewState.InReview:
+			return action === "approve"
+				? ReviewState.Approved
+				: action === "reject"
+					? ReviewState.Rejected
+					: ReviewState.InReview;
+		case ReviewState.Rejected:
+			return action === "revise" ? ReviewState.Draft : ReviewState.Rejected;
+		case ReviewState.Approved:
+			return ReviewState.Approved;
+	}
+}
+
+// Performance profiling
+export function startProfiling(item: string, turnsUsed: number): ProfileRecord {
+	return {
+		item,
+		startTime: Date.now(),
+		turnsUsed,
+	};
+}
+
+// End profiling
+export function endProfiling(record: ProfileRecord): ProfileRecord {
+	return {
+		...record,
+		endTime: Date.now(),
+		durationMs: Date.now() - record.startTime,
+	};
+}
+
+// Impact assessment
+export function assessImpact(item: SpecItem, allItems: SpecItem[]): ImpactAssessment {
+	const complexity = estimateComplexity(item);
+	
+	// Determine scope
+	let scope: "local" | "module" | "project" = "local";
+	if (item.body?.includes("affects multiple")) scope = "module";
+	if (item.body?.includes("breaking")) scope = "project";
+	
+	// Find affected items
+	const affectedItems = allItems.filter((i) => {
+		if (i.name === item.name) return false;
+		// Items with similar keywords
+		const itemWords = item.name.toLowerCase().split(/\s+/);
+		const otherWords = i.name.toLowerCase().split(/\s+/);
+		return itemWords.some((w) => otherWords.includes(w) && w.length > 4);
+	}).map((i) => i.name);
+	
+	// Calculate risk
+	const risk = Math.min(100, complexity * 15 + affectedItems.length * 10);
+	
+	return { item: item.name, scope, risk, affectedItems };
+}
+
+// Spec version creation
+export function createVersion(items: SpecItem[], author?: string, message?: string): SpecVersion {
+	return {
+		version: `${Date.now()}`,
+		timestamp: Date.now(),
+		items: [...items],
+		author,
+		message,
+	};
+}
+
+// Version diff
+export function diffVersions(v1: SpecVersion, v2: SpecVersion): SpecDiff {
+	return diffSpecs(v1.items, v2.items);
+}
+
+// Health check interface
+export interface HealthReport {
+	score: number;
+	issues: HealthIssue[];
+	recommendations: string[];
+}
+
+export interface HealthIssue {
+	type: "missing_verification" | "too_long" | "too_short" | "vague" | "no_checkbox";
+	item: string;
+	severity: "error" | "warning" | "info";
+}
+
+// Health check
+export function healthCheck(items: SpecItem[]): HealthReport {
+	const issues: HealthIssue[] = [];
+	
+	for (const item of items) {
+		// Missing verification
+		if (!item.verification) {
+			issues.push({
+				type: "missing_verification",
+				item: item.name,
+				severity: "info",
+			});
+		}
+		
+		// Name too long
+		if (item.name.length > 150) {
+			issues.push({
+				type: "too_long",
+				item: item.name,
+				severity: "warning",
+			});
+		}
+		
+		// Name too short
+		if (item.name.length < 10) {
+			issues.push({
+				type: "too_short",
+				item: item.name,
+				severity: "warning",
+			});
+		}
+		
+		// Vague language
+		const vagueWords = ["fix", "improve", "update", "change", "stuff", "things"];
+		const hasVague = vagueWords.some((w) => item.name.toLowerCase().includes(w));
+		if (hasVague) {
+			issues.push({
+				type: "vague",
+				item: item.name,
+				severity: "info",
+			});
+		}
+	}
+	
+	// Calculate score
+	const baseScore = 100;
+	const deductions = issues.reduce((sum, issue) => {
+		return sum + (issue.severity === "error" ? 20 : issue.severity === "warning" ? 10 : 5);
+	}, 0);
+	const score = Math.max(0, baseScore - deductions);
+	
+	// Recommendations
+	const recommendations: string[] = [];
+	if (issues.some((i) => i.type === "missing_verification")) {
+		recommendations.push("Add verification commands to items for better testing");
+	}
+	if (issues.some((i) => i.type === "vague")) {
+		recommendations.push("Replace vague words with specific actions");
+	}
+	if (issues.some((i) => i.type === "too_long")) {
+		recommendations.push("Break long item names into smaller sub-items");
+	}
+	
+	return { score, issues, recommendations };
+}
+
+// Detect health issues
+export function detectHealthIssues(items: SpecItem[]): HealthIssue[] {
+	return healthCheck(items).issues;
+}
+
+// Format health report
+export function formatHealthReport(report: HealthReport): string[] {
+	const lines: string[] = [];
+	lines.push(`## Health Score: ${report.score}/100`);
+	
+	if (report.issues.length > 0) {
+		lines.push("\n### Issues");
+		for (const issue of report.issues) {
+			const icon = issue.severity === "error" ? "❌" : issue.severity === "warning" ? "⚠️" : "ℹ️";
+			lines.push(`${icon} [${issue.severity}] ${issue.item}: ${issue.type}`);
+		}
+	}
+	
+	if (report.recommendations.length > 0) {
+		lines.push("\n### Recommendations");
+		for (const rec of report.recommendations) {
+			lines.push(`- ${rec}`);
+		}
+	}
+	
+	return lines;
+}
+
+
+
+// Apply template to spec file
+export function applyTemplate(template: typeof SPEC_TEMPLATES.api, specPath: string, content: string): string {
+	const header = `# ${template.name} Project\n\n${template.description}\n\n## Requirements\n\n`;
+	const items = template.items.join("\n") + "\n";
+	return header + items + "\n" + content;
+}
+
+// Lint spec item for quality
+export function lintSpecItem(item: SpecItem): LintResult[] {
+	const results: LintResult[] = [];
+
+	// Check for verification command
+	if (!item.verification) {
+		results.push({
+			item: item.name,
+			severity: "info",
+			message: "No verification command specified",
+			suggestion: "Consider adding 'Run: `command`' to help verify completion",
+		});
+	}
+
+	// Check name length
+	if (item.name.length < 10) {
+		results.push({
+			item: item.name,
+			severity: "warning",
+			message: "Item name is very short",
+			suggestion: "Consider a more descriptive name",
+		});
+	}
+
+	if (item.name.length > 100) {
+		results.push({
+			item: item.name,
+			severity: "warning",
+			message: "Item name is very long",
+			suggestion: "Consider breaking into smaller items",
+		});
+	}
+
+	// Check for vague language
+	const vaguePatterns = ["fix", "improve", "update", "change"];
+	for (const pattern of vaguePatterns) {
+		if (item.name.toLowerCase().includes(pattern) && !item.verification) {
+			results.push({
+				item: item.name,
+				severity: "warning",
+				message: `Vague action word '${pattern}' without verification`,
+				suggestion: "Add a verification command to make the requirement testable",
+			});
+		}
+	}
+
+	return results;
+}
+
+

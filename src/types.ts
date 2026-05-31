@@ -60,6 +60,108 @@ export interface SpecFile {
 	lastMtime?: number; // Last modification time
 }
 
+// Dependency graph for item ordering
+export interface DependencyGraph {
+	items: Map<string, string[]>; // item name → dependencies
+	inDegree: Map<string, number>; // item name → number of dependencies
+}
+
+// Lint result for spec items
+export interface LintResult {
+	item: string;
+	severity: "error" | "warning" | "info";
+	message: string;
+	suggestion?: string;
+}
+
+// Spec template definition
+export interface SpecTemplate {
+	name: string;
+	description: string;
+	items: string[]; // Pre-defined spec items
+}
+
+// Suggestion engine for next-item recommendations
+export interface SuggestionEngine {
+	getSuggestion(items: SpecItem[], history: RoundRecord[]): SpecItem | null;
+	getConfidenceWeight(item: SpecItem): number;
+}
+
+// Milestone for grouping items
+export interface Milestone {
+	name: string;
+	items: string[]; // item names
+	completed: number;
+	total: number;
+	progress: number; // percentage
+}
+
+// Risk assessment for items
+export interface RiskAssessment {
+	item: string;
+	score: number; // 0-100
+	level: "low" | "medium" | "high" | "critical";
+	factors: string[];
+}
+
+// Time estimate for items
+export interface TimeEstimate {
+	item: string;
+	estimatedMinutes: number;
+	confidence: number; // 0-100
+	basedOn: string[]; // similar items used
+}
+
+// Profile record for timing
+export interface ProfileRecord {
+	item: string;
+	startTime: number;
+	endTime?: number;
+	durationMs?: number;
+	turnsUsed: number;
+}
+
+// Resource usage tracking
+export interface ResourceUsage {
+	item: string;
+	cpuMs?: number;
+	memoryMb?: number;
+	timestamp: number;
+}
+
+// Specification version for history
+export interface SpecVersion {
+	version: string;
+	timestamp: number;
+	items: SpecItem[];
+	author?: string;
+	message?: string;
+}
+
+// Review state machine
+export enum ReviewState {
+	Draft = "draft",
+	InReview = "in_review",
+	Approved = "approved",
+	Rejected = "rejected",
+}
+
+// Change impact assessment
+export interface ImpactAssessment {
+	item: string;
+	scope: "local" | "module" | "project";
+	risk: number; // 0-100
+	affectedItems: string[];
+}
+
+// Test hook for integration
+export interface TestHook {
+	item: string;
+	testPattern: string; // glob pattern
+	hookType: "before" | "after" | "around";
+	action: string; // code to execute
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
