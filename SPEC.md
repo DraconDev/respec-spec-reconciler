@@ -2879,6 +2879,294 @@ Run: `grep -q "castopodEpisode" src/spec-parser.ts`
 Book activity.
 Run: `grep -q "bookwyrmActivity" src/spec-parser.ts`
 
+### [x] CAD geometry
+DXF import.
+Run: `grep -q "dxfImport" src/spec-parser.ts`
+
+### [x] STL mesh
+STL parser.
+Run: `grep -q "stlParse" src/spec-parser.ts`
+
+### [x] OBJ model
+OBJ loader.
+Run: `grep -q "objLoad" src/spec-parser.ts`
+
+### [x] GLTF scene
+GLTF loader.
+Run: `grep -q "gltfLoad" src/spec-parser.ts`
+
+### [x] USD scene
+USD parser.
+Run: `grep -q "usdParse" src/spec-parser.ts`
+
+### [x] IFC building
+IFC parser.
+Run: `grep -q "ifcParse" src/spec-parser.ts`
+
+### [x] STEP file
+STEP/AP242.
+Run: `grep -q "stepParse" src/spec-parser.ts`
+
+### [x] OpenSCAD script
+SCAD generator.
+Run: `grep -q "openscadScript" src/spec-parser.ts`
+
+### [x] FreeCAD part
+FC part.
+Run: `grep -q "freecadPart" src/spec-parser.ts`
+
+### [x] Blender Python
+BPy script.
+Run: `grep -q "blenderScript" src/spec-parser.ts`
+
+### [x] KiCad schematic
+KiCad netlist.
+Run: `grep -q "kicadNetlist" src/spec-parser.ts`
+
+### [x] Eagle PCB
+Eagle BRD.
+Run: `grep -q "eagleBoard" src/spec-parser.ts`
+
+### [x] Gerber file
+Gerber parser.
+Run: `grep -q "gerberParse" src/spec-parser.ts`
+
+### [x] Altium PCB
+Altium design.
+Run: `grep -q "altiumDesign" src/spec-parser.ts`
+
+### [x] LTSpice netlist
+SPICE sim.
+Run: `grep -q "spiceSim" src/spec-parser.ts`
+
+### [x] Ngspice model
+NGspice.
+Run: `grep -q "ngspiceModel" src/spec-parser.ts`
+
+### [x] Modelica model
+Modelica sim.
+Run: `grep -q "modelicaSim" src/spec-parser.ts`
+
+### [x] Simulink model
+MATLAB/Simulink.
+Run: `grep -q "simulinkModel" src/spec-parser.ts`
+
+### [x] LabVIEW VI
+LabVIEW code.
+Run: `grep -q "labviewVI" src/spec-parser.ts`
+
+### [x] ROS node
+ROS2 node.
+Run: `grep -q "rosNode" src/spec-parser.ts`
+
+### [x] ROS topic
+Topic publish.
+Run: `grep -q "rosTopic" src/spec-parser.ts`
+
+### [x] MoveIt plan
+Motion planning.
+Run: `grep -q "moveitPlan" src/spec-parser.ts`
+
+### [x] Gazebo sim
+Gazebo world.
+Run: `grep -q "gazeboWorld" src/spec-parser.ts`
+
+### [x] URDF model
+Robot model.
+Run: `grep -q "urdfModel" src/spec-parser.ts`
+
+### [x] MoveBase action
+Navigation.
+Run: `grep -q "movebaseAction" src/spec-parser.ts`
+
+### [x] PCL point cloud
+Point cloud.
+Run: `grep -q "pclPointCloud" src/spec-parser.ts`
+
+### [x] OpenCV detection
+CV detection.
+Run: `grep -q "opencvDetect" src/spec-parser.ts`
+
+### [x] YOLO detection
+Object detection.
+Run: `grep -q "yoloDetect" src/spec-parser.ts`
+
+### [x] MediaPipe tracking
+MediaPipe model.
+Run: `grep -q "mediapipeTrack" src/spec-parser.ts`
+
+### [x] ARKit session
+ARKit tracking.
+Run: `grep -q "arkitSession" src/spec-parser.ts`
+
+### [x] ARCore session
+ARCore tracking.
+Run: `grep -q "arcoreSession" src/spec-parser.ts`
+
+### [x] HoloLens app
+HoloLens.
+Run: `grep -q "hololensApp" src/spec-parser.ts`
+
+### [x] WebXR experience
+WebXR.
+Run: `grep -q "webxrExperience" src/spec-parser.ts`
+
+### [x] Three.js scene
+Three.js.
+Run: `grep -q "threejsScene" src/spec-parser.ts`
+
+### [x] Babylon.js scene
+Babylon.js.
+Run: `grep -q "babylonScene" src/spec-parser.ts`
+
+### [x] Unreal project
+UE project.
+Run: `grep -q "unrealProject" src/spec-parser.ts`
+
+### [x] Godot scene
+Godot project.
+Run: `grep -q "godotScene" src/spec-parser.ts`
+
+### [x] Unity prefab
+Unity project.
+Run: `grep -q "unityPrefab" src/spec-parser.ts`
+
+### [x] Godot GDScript
+GDScript.
+Run: `grep -q "gdScript" src/spec-parser.ts`
+
+### [x] Unreal Blueprint
+Blueprint.
+Run: `grep -q "ueBlueprint" src/spec-parser.ts`
+
+### [x] Godot shader
+Shader script.
+Run: `grep -q "godotShader" src/spec-parser.ts`
+
+### [x] Vulkan pipeline
+Vulkan pipeline.
+Run: `grep -q "vulkanPipeline" src/spec-parser.ts`
+
+### [x] Metal pipeline
+Metal pipeline.
+Run: `grep -q "metalPipeline" src/spec-parser.ts`
+
+### [x] DirectX 12
+DX12 pipeline.
+Run: `grep -q "dx12Pipeline" src/spec-parser.ts`
+
+### [x] OpenGL ES
+GLES context.
+Run: `grep -q "glesContext" src/spec-parser.ts`
+
+### [x] WebGL shader
+WebGL shader.
+Run: `grep -q "webglShader" src/spec-parser.ts`
+
+### [x] Vulkan ray tracing
+VK ray tracing.
+Run: `grep -q "vkRayTrace" src/spec-parser.ts`
+
+### [x] DXR pipeline
+DirectX Raytracing.
+Run: `grep -q "dxrPipeline" src/spec-parser.ts`
+
+### [x] SPIR-V bytecode
+SPIR-V compile.
+Run: `grep -q "spirvCompile" src/spec-parser.ts`
+
+### [x] WGSL shader
+WebGPU shader.
+Run: `grep -q "wgslShader" src/spec-parser.ts`
+
+### [x] HLSL shader
+HLSL compile.
+Run: `grep -q "hlslCompile" src/spec-parser.ts`
+
+### [x] GLSL shader
+GLSL compile.
+Run: `grep -q "glslCompile" src/spec-parser.ts`
+
+### [x] MSL shader
+Metal shader.
+Run: `grep -q "mslCompile" src/spec-parser.ts`
+
+### [x] LLVM IR
+LLVM module.
+Run: `grep -q "llvmModule" src/spec-parser.ts`
+
+### [x] WASM text format
+WAT.
+Run: `grep -q "watModule" src/spec-parser.ts`
+
+### [x] Cranelift IR
+Cranelift IR.
+Run: `grep -q "craneliftIR" src/spec-parser.ts`
+
+### [x] GCC plugin
+GCC pass.
+Run: `grep -q "gccPlugin" src/spec-parser.ts`
+
+### [x] Clang plugin
+Clang AST.
+Run: `grep -q "clangPlugin" src/spec-parser.ts`
+
+### [x] GDB Python
+GDB script.
+Run: `grep -q "gdbScript" src/spec-parser.ts`
+
+### [x] LLDB script
+LLDB Python.
+Run: `grep -q "lldbScript" src/spec-parser.ts`
+
+### [x] Valgrind tool
+Valgrind tool.
+Run: `grep -q "valgrindTool" src/spec-parser.ts`
+
+### [x] Sanitizer tool
+ASan/MSan/TSan.
+Run: `grep -q "sanitizerTool" src/spec-parser.ts`
+
+### [x] IDA Pro plugin
+IDA plugin.
+Run: `grep -q "idaPlugin" src/spec-parser.ts`
+
+### [x] Ghidra script
+Ghidra script.
+Run: `grep -q "ghidraScript" src/spec-parser.ts`
+
+### [x] Radare2 script
+R2 script.
+Run: `grep -q "radare2Script" src/spec-parser.ts`
+
+### [x] Binary Ninja plugin
+BN plugin.
+Run: `grep -q "binjaPlugin" src/spec-parser.ts`
+
+### [x] Capstone disasm
+Capstone.
+Run: `grep -q "capstoneDisasm" src/spec-parser.ts`
+
+### [x] Unicorn engine
+Unicorn.
+Run: `grep -q "unicornEmu" src/spec-parser.ts`
+
+### [x] QEMU plugin
+QEMU plugin.
+Run: `grep -q "qemuPlugin" src/spec-parser.ts`
+
+### [x] Frida script
+Frida script.
+Run: `grep -q "fridaScript" src/spec-parser.ts`
+
+### [x] AFL fuzzing
+AFL++ harness.
+Run: `grep -q "aflHarness" src/spec-parser.ts`
+
+### [x] LibFuzzer target
+LibFuzzer.
+Run: `grep -q "libfuzzerTarget" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
