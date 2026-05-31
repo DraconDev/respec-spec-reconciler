@@ -3167,6 +3167,2534 @@ Run: `grep -q "aflHarness" src/spec-parser.ts`
 LibFuzzer.
 Run: `grep -q "libfuzzerTarget" src/spec-parser.ts`
 
+### [x] SAT solver interface
+SAT interface.
+Run: `grep -q "SatSolver" src/types.ts`
+
+### [x] SMT solver
+Z3 query.
+Run: `grep -q "smtQuery" src/spec-parser.ts`
+
+### [x] Constraint solving
+Solve CSP.
+Run: `grep -q "solveCSP" src/spec-parser.ts`
+
+### [x] Linear programming
+LP solve.
+Run: `grep -q "solveLP" src/spec-parser.ts`
+
+### [x] Integer programming
+IP solve.
+Run: `grep -q "solveIP" src/spec-parser.ts`
+
+### [x] MILP solver
+MILP solve.
+Run: `grep -q "solveMILP" src/spec-parser.ts`
+
+### [x] Dynamic programming
+DP solve.
+Run: `grep -q "dpSolve" src/spec-parser.ts`
+
+### [x] Divide and conquer
+DnC algorithm.
+Run: `grep -q "divideConquer" src/spec-parser.ts`
+
+### [x] Backtracking search
+Backtrack search.
+Run: `grep -q "backtrackSearch" src/spec-parser.ts`
+
+### [x] Branch and bound
+Branch and bound.
+Run: `grep -q "branchBound" src/spec-parser.ts`
+
+### [x] A* search
+A-star.
+Run: `grep -q "aStarSearch" src/spec-parser.ts`
+
+### [x] IDA* search
+IDA-star.
+Run: `grep -q "idaStarSearch" src/spec-parser.ts`
+
+### [x] SMA* search
+SMA-star.
+Run: `grep -q "smaStarSearch" src/spec-parser.ts`
+
+### [x] Beam search
+Beam search.
+Run: `grep -q "beamSearch" src/spec-parser.ts`
+
+### [x] Hill climbing
+Hill climb.
+Run: `grep -q "hillClimb" src/spec-parser.ts`
+
+### [x] Random restart
+Random restart.
+Run: `grep -q "randomRestart" src/spec-parser.ts`
+
+### [x] Local beam
+Local beam.
+Run: `grep -q "localBeam" src/spec-parser.ts`
+
+### [x] Stochastic search
+Stochastic.
+Run: `grep -q "stochasticSearch" src/spec-parser.ts`
+
+### [x] Greedy search
+Greedy search.
+Run: `grep -q "greedySearch" src/spec-parser.ts`
+
+### [x] Uniform cost
+Uniform cost.
+Run: `grep -q "uniformCost" src/spec-parser.ts`
+
+### [x] Depth-first search
+DFS search.
+Run: `grep -q "dfsSearch" src/spec-parser.ts`
+
+### [x] Breadth-first search
+BFS search.
+Run: `grep -q "bfsSearch" src/spec-parser.ts`
+
+### [x] Iterative deepening
+IDDFS.
+Run: `grep -q "iterativeDeepening" src/spec-parser.ts`
+
+### [x] Bidirectional search
+Bidirectional.
+Run: `grep -q "bidirectionalSearch" src/spec-parser.ts`
+
+### [x] Jump point search
+JPS algorithm.
+Run: `grep -q "jumpPointSearch" src/spec-parser.ts`
+
+### [x] Theta* search
+Theta-star.
+Run: `grep -q "thetaStar" src/spec-parser.ts`
+
+### [x] D* Lite
+D*-Lite.
+Run: `grep -q "dStarLite" src/spec-parser.ts`
+
+### [x] Field D* search
+Field D*.
+Run: `grep -q "fieldDStar" src/spec-parser.ts`
+
+### [x] LPA* algorithm
+LPA*.
+Run: `grep -q "lpaStar" src/spec-parser.ts`
+
+### [x] Anytime A*
+Anytime A*.
+Run: `grep -q "anytimeAStar" src/spec-parser.ts`
+
+### [x] Weighted A*
+Weighted A*.
+Run: `grep -q "weightedAStar" src/spec-parser.ts`
+
+### [x] Learning search
+Learning real-time A*.
+Run: `grep -q "lrtastar" src/spec-parser.ts`
+
+### [x] Hierarchical A*
+Hierarchical A*.
+Run: `grep -q "hierarchicalAStar" src/spec-parser.ts`
+
+### [x] Subgoaling
+Subgoal graph.
+Run: `grep -q "subgoalGraph" src/spec-parser.ts`
+
+### [x] Contraction hierarchy
+CH search.
+Run: `grep -q "contractionHierarchy" src/spec-parser.ts`
+
+### [x] ALT a priori
+ALT heuristic.
+Run: `grep -q "altHeuristic" src/spec-parser.ts`
+
+### [x] Reach pruning
+Reach heuristics.
+Run: `grep -q "reachPruning" src/spec-parser.ts`
+
+### [x] Portal heuristic
+Portal heuristics.
+Run: `grep -q "portalHeuristic" src/spec-parser.ts`
+
+### [x] Grid robotics
+Grid path planning.
+Run: `grep -q "gridPlanning" src/spec-parser.ts`
+
+### [x] Visibility graph
+Visibility graph.
+Run: `grep -q "visibilityGraph" src/spec-parser.ts`
+
+### [x] Voronoi path
+Voronoi path.
+Run: `grep -q "voronoiPath" src/spec-parser.ts`
+
+### [x] Probabilistic roadmap
+PRM.
+Run: `grep -q "prmPlanner" src/spec-parser.ts`
+
+### [x] Rapidly-exploring RRT
+RRT.
+Run: `grep -q "rrtPlanner" src/spec-parser.ts`
+
+### [x] RRT* optimal
+RRT*.
+Run: `grep -q "rrtStar" src/spec-parser.ts`
+
+### [x] RRT-Connect
+RRT-Connect.
+Run: `grep -q "rrtConnect" src/spec-parser.ts`
+
+### [x] Informed RRT*
+Informed RRT*.
+Run: `grep -q "informedRrtStar" src/spec-parser.ts`
+
+### [x] Bi-RRT*
+Bi-RRT*.
+Run: `grep -q "biRrtStar" src/spec-parser.ts`
+
+### [x] SPARS algorithm
+SPARS.
+Run: `grep -q "sparsAlgorithm" src/spec-parser.ts`
+
+### [x] FMT* algorithm
+FMT*.
+Run: `grep -q "fmtStar" src/spec-parser.ts`
+
+### [x] BIT* algorithm
+BIT*.
+Run: `grep -q "bitStar" src/spec-parser.ts`
+
+### [x] AD* algorithm
+Anytime D*.
+Run: `grep -q "anytimeDStar" src/spec-parser.ts`
+
+### [x] D* Lite variant
+D* Lite variant.
+Run: `grep -q "dStarLiteVariant" src/spec-parser.ts`
+
+### [x] Focus search
+Focus search.
+Run: `grep -q "focusSearch" src/spec-parser.ts`
+
+### [x] Multi-heuristic A*
+MHA*.
+Run: `grep -q "mhaStar" src/spec-parser.ts`
+
+### [x] Search with advice
+Advice heuristic.
+Run: `grep -q "adviceHeuristic" src/spec-parser.ts`
+
+### [x] Partial expansion
+Partial expansion A*.
+Run: `grep -q "partialExpansion" src/spec-parser.ts`
+
+### [x] Bounded suboptimal
+BSA search.
+Run: `grep -q "bsaSearch" src/spec-parser.ts`
+
+### [x] Scalable CSPA
+Scalable CSPA.
+Run: `grep -q "cspaPlanner" src/spec-parser.ts`
+
+### [x] LSS-LRTA*
+LSS-LRTA*.
+Run: `grep -q "lssLrtaStar" src/spec-parser.ts`
+
+### [x] D Niemeyer
+DN-astar.
+Run: `grep -q "dnAstar" src/spec-parser.ts`
+
+### [x] HCP A*
+HCP-astar.
+Run: `grep -q "hcpAstar" src/spec-parser.ts`
+
+### [x] HPA* algorithm
+HPA*.
+Run: `grep -q "hpaStar" src/spec-parser.ts`
+
+### [x] Delta A*
+Delta A*.
+Run: `grep -q "deltaAstar" src/spec-parser.ts`
+
+### [x] Adaptive A*
+Adaptive A*.
+Run: `grep -q "adaptiveAStar" src/spec-parser.ts`
+
+### [x] Forward search
+Forward planning.
+Run: `grep -q "forwardPlanning" src/spec-parser.ts`
+
+### [x] Backward search
+Backward planning.
+Run: `grep -q "backwardPlanning" src/spec-parser.ts`
+
+### [x] Bidirectional planning
+Bidirectional planning.
+Run: `grep -q "bidirPlanning" src/spec-parser.ts`
+
+### [x] HTN planning
+Hierarchical task network.
+Run: `grep -q "htnPlanning" src/spec-parser.ts`
+
+### [x] PDDL planning
+PDDL domain.
+Run: `grep -q "pddlDomain" src/spec-parser.ts`
+
+### [x] POPF planning
+POPF planner.
+Run: `grep -q "popfPlanner" src/spec-parser.ts`
+
+### [x] Metric-FF planner
+FF planner.
+Run: `grep -q "ffPlanner" src/spec-parser.ts`
+
+### [x] LPG planner
+LPG-TDDP.
+Run: `grep -q "lpgPlanner" src/spec-parser.ts`
+
+### [x] Music XML parser
+MusicXML reader.
+Run: `grep -q "musicXmlParse" src/spec-parser.ts`
+
+### [x] MIDI sequencer
+MIDI track.
+Run: `grep -q "midiSequencer" src/spec-parser.ts`
+
+### [x] SoundFont loader
+SoundFont2.
+Run: `grep -q "soundfontLoad" src/spec-parser.ts`
+
+### [x] WAV file parser
+WAV reader.
+Run: `grep -q "wavParse" src/spec-parser.ts`
+
+### [x] FLAC encoding
+FLAC compress.
+Run: `grep -q "flacEncode" src/spec-parser.ts`
+
+### [x] OGG Vorbis
+OGG decode.
+Run: `grep -q "oggDecode" src/spec-parser.ts`
+
+### [x] Opus codec
+Opus encode.
+Run: `grep -q "opusEncode" src/spec-parser.ts`
+
+### [x] AAC encoder
+AAC encode.
+Run: `grep -q "aacEncode" src/spec-parser.ts`
+
+### [x] WebM muxing
+WebM container.
+Run: `grep -q "webmMux" src/spec-parser.ts`
+
+### [x] MP4 muxing
+MP4 container.
+Run: `grep -q "mp4Mux" src/spec-parser.ts`
+
+### [x] MKV handling
+MKV container.
+Run: `grep -q "mkvMux" src/spec-parser.ts`
+
+### [x] AVI container
+AVI mux.
+Run: `grep -q "aviMux" src/spec-parser.ts`
+
+### [x] Matroska EBML
+EBML parser.
+Run: `grep -q "ebmlParse" src/spec-parser.ts`
+
+### [x] FFmpeg filter
+FFmpeg graph.
+Run: `grep -q "ffmpegFilter" src/spec-parser.ts`
+
+### [x] GStreamer pipeline
+GST pipeline.
+Run: `grep -q "gstPipeline" src/spec-parser.ts`
+
+### [x] V4L2 capture
+Video capture.
+Run: `grep -q "v4l2Capture" src/spec-parser.ts`
+
+### [x] ALSA audio
+ALSA device.
+Run: `grep -q "alsaDevice" src/spec-parser.ts`
+
+### [x] PulseAudio stream
+PA stream.
+Run: `grep -q "pulseStream" src/spec-parser.ts`
+
+### [x] Jack audio
+Jack client.
+Run: `grep -q "jackClient" src/spec-parser.ts`
+
+### [x] OSC music
+OSC messages.
+Run: `grep -q "oscMessage" src/spec-parser.ts`
+
+### [x] MIDI IO
+MIDI input/output.
+Run: `grep -q "midiIO" src/spec-parser.ts`
+
+### [x] DMX lighting
+DMX512 control.
+Run: `grep -q "dmxControl" src/spec-parser.ts`
+
+### [x] ArtNet DMX
+ArtNet protocol.
+Run: `grep -q "artnetProtocol" src/spec-parser.ts`
+
+### [x] sACN E1.31
+E1.31 streaming.
+Run: `grep -q "sacnStream" src/spec-parser.ts`
+
+### [x] OpenPixelControl
+OPC client.
+Run: `grep -q "opcClient" src/spec-parser.ts`
+
+### [x] WS2812 neopixel
+NeoPixel strip.
+Run: `grep -q "neopixelStrip" src/spec-parser.ts`
+
+### [x] FadeCandy
+FadeCandy device.
+Run: `grep -q "fadeCandy" src/spec-parser.ts`
+
+### [x] QLC+ fixture
+QLC+ fixture.
+Run: `grep -q "qlcFixture" src/spec-parser.ts`
+
+### [x] Lightact timeline
+LightAct timeline.
+Run: `grep -q "lightactTimeline" src/spec-parser.ts`
+
+### [x] MadMapper output
+MadMapper.
+Run: `grep -q "madmapperOutput" src/spec-parser.ts`
+
+### [x] Resolume layer
+Resolume layer.
+Run: `grep -q "resolumeLayer" src/spec-parser.ts`
+
+### [x] Millumin state
+Millumin.
+Run: `grep -q "milluminState" src/spec-parser.ts`
+
+### [x] Modul8 control
+Modul8.
+Run: `grep -q "modul8Control" src/spec-parser.ts`
+
+### [x] VVVV patching
+VVVV patch.
+Run: `grep -q "vvvvPatch" src/spec-parser.ts`
+
+### [x] TouchDesigner CHOP
+TD CHOP.
+Run: `grep -q "touchdesignerCHOP" src/spec-parser.ts`
+
+### [x] Notch engine
+Notch block.
+Run: `grep -q "notchBlock" src/spec-parser.ts`
+
+### [x] OBS scene
+OBS scene.
+Run: `grep -q "obsScene" src/spec-parser.ts`
+
+### [x] Streamlabs OBS
+SLOBS.
+Run: `grep -q "slobsScene" src/spec-parser.ts`
+
+### [x] XSplit scene
+XSplit.
+Run: `grep -q "xsplitScene" src/spec-parser.ts`
+
+### [x] vMix input
+vMix input.
+Run: `grep -q "vmixInput" src/spec-parser.ts`
+
+### [x] Wirecast layer
+Wirecast.
+Run: `grep -q "wirecastLayer" src/spec-parser.ts`
+
+### [x] CasparCG template
+CasparCG.
+Run: `grep -q "casparcgTemplate" src/spec-parser.ts`
+
+### [x] Tricaster scene
+Tricaster.
+Run: `grep -q "tricasterScene" src/spec-parser.ts`
+
+### [x] Blackmagic ATEM
+ATEM switcher.
+Run: `grep -q "atemSwitcher" src/spec-parser.ts`
+
+### [x] Roland V-60HD
+V-60HD.
+Run: `grep -q "v60hdControl" src/spec-parser.ts`
+
+### [x] Ross Carbonite
+Carbonite.
+Run: `grep -q "carboniteControl" src/spec-parser.ts`
+
+### [x] Sony E-HTR
+E-HTR.
+Run: `grep -q "ehvtrControl" src/spec-parser.ts`
+
+### [x] Panasonic AV-HS
+AV-HS.
+Run: `grep -q "avhsControl" src/spec-parser.ts`
+
+### [x] Barco E2
+E2 presentation.
+Run: `grep -q "barcoE2" src/spec-parser.ts`
+
+### [x] Analog Way
+Analog Way.
+Run: `grep -q "analogWay" src/spec-parser.ts`
+
+### [x] Green Hippo
+Hippo.
+Run: `grep -q "greenHippo" src/spec-parser.ts`
+
+### [x] Lumens Mediaprocessor
+Lumens.
+Run: `grep -q "lumensProcessor" src/spec-parser.ts`
+
+### [x] Magewell capture
+Capture card.
+Run: `grep -q "magewellCapture" src/spec-parser.ts`
+
+### [x] Blackmagic DeckLink
+DeckLink.
+Run: `grep -q "decklinkCapture" src/spec-parser.ts`
+
+### [x] AJA io
+AJA capture.
+Run: `grep -q "ajaCapture" src/spec-parser.ts`
+
+### [x] Teradek Sphere
+Sphere panoramic.
+Run: `grep -q "teradekSphere" src/spec-parser.ts`
+
+### [x] LiveStream Studio
+LiveStream.
+Run: `grep -q "livestreamStudio" src/spec-parser.ts`
+
+### [x] Restream
+Restream.
+Run: `grep -q "restreamService" src/spec-parser.ts`
+
+### [x] StreamYard
+StreamYard.
+Run: `grep -q "streamyardScene" src/spec-parser.ts`
+
+### [x] Be.Live
+BeLive.
+Run: `grep -q "beliveScene" src/spec-parser.ts`
+
+### [x] Streamlabs API
+Streamlabs.
+Run: `grep -q "streamlabsAPI" src/spec-parser.ts`
+
+### [x] Twitch API
+Twitch.
+Run: `grep -q "twitchAPI" src/spec-parser.ts`
+
+### [x] YouTube Live
+YT Live.
+Run: `grep -q "youtubeLive" src/spec-parser.ts`
+
+### [x] Facebook Live
+FB Live.
+Run: `grep -q "facebookLive" src/spec-parser.ts`
+
+### [x] Periscope
+Periscope.
+Run: `grep -q "periscopeAPI" src/spec-parser.ts`
+
+### [x] NDI stream
+NDI source.
+Run: `grep -q "ndiSource" src/spec-parser.ts`
+
+### [x] SRT streaming
+SRT protocol.
+Run: `grep -q "srtStream" src/spec-parser.ts`
+
+### [x] RTMP stream
+RTMP publish.
+Run: `grep -q "rtmpPublish" src/spec-parser.ts`
+
+### [x] HLS segment
+HLS packaging.
+Run: `grep -q "hlsSegment" src/spec-parser.ts`
+
+### [x] DASH manifest
+DASH MPD.
+Run: `grep -q "dashManifest" src/spec-parser.ts`
+
+### [x] CMAF chunk
+CMAF packaging.
+Run: `grep -q "cmafChunk" src/spec-parser.ts`
+
+### [x] OPC-UA server
+OPC-UA server.
+Run: `grep -q "opcuaServer" src/spec-parser.ts`
+
+### [x] MQTT broker
+MQTT broker.
+Run: `grep -q "mqttBroker" src/spec-parser.ts`
+
+### [x] AMQP broker
+RabbitMQ.
+Run: `grep -q "amqpBroker" src/spec-parser.ts`
+
+### [x] NATS server
+NATS server.
+Run: `grep -q "natsServer" src/spec-parser.ts`
+
+### [x] Redis cluster
+Redis cluster.
+Run: `grep -q "redisClusterSetup" src/spec-parser.ts`
+
+### [x] Memcached pool
+Memcached.
+Run: `grep -q "memcachedPool" src/spec-parser.ts`
+
+### [x] Cassandra cluster
+Cassandra setup.
+Run: `grep -q "cassandraCluster" src/spec-parser.ts`
+
+### [x] ScyllaDB cluster
+ScyllaDB.
+Run: `grep -q "scylladbCluster" src/spec-parser.ts`
+
+### [x] CockroachDB cluster
+CockroachDB.
+Run: `grep -q "crdbCluster" src/spec-parser.ts`
+
+### [x] TiDB cluster
+TiDB.
+Run: `grep -q "tidbCluster" src/spec-parser.ts`
+
+### [x] SingleStore cluster
+SingleStore.
+Run: `grep -q "singlestoreCluster" src/spec-parser.ts`
+
+### [x] TimescaleDB
+TimescaleDB.
+Run: `grep -q "timescaleDBSetup" src/spec-parser.ts`
+
+### [x] QuestDB
+QuestDB.
+Run: `grep -q "questdbSetup" src/spec-parser.ts`
+
+### [x] InfluxDB cluster
+InfluxDB.
+Run: `grep -q "influxdbCluster" src/spec-parser.ts`
+
+### [x] ClickHouse cluster
+ClickHouse.
+Run: `grep -q "clickhouseCluster" src/spec-parser.ts`
+
+### [x] Druid cluster
+Druid.
+Run: `grep -q "druidCluster" src/spec-parser.ts`
+
+### [x] Pinot cluster
+Pinot.
+Run: `grep -q "pinotCluster" src/spec-parser.ts`
+
+### [x] Presto cluster
+Presto.
+Run: `grep -q "prestoCluster" src/spec-parser.ts`
+
+### [x] Trino cluster
+Trino.
+Run: `grep -q "trinoCluster" src/spec-parser.ts`
+
+### [x] Spark cluster
+Spark.
+Run: `grep -q "sparkCluster" src/spec-parser.ts`
+
+### [x] Flink cluster
+Flink.
+Run: `grep -q "flinkCluster" src/spec-parser.ts`
+
+### [x] Storm cluster
+Storm.
+Run: `grep -q "stormCluster" src/spec-parser.ts`
+
+### [x] Kafka cluster
+Kafka.
+Run: `grep -q "kafkaClusterSetup" src/spec-parser.ts`
+
+### [x] Pulsar cluster
+Pulsar.
+Run: `grep -q "pulsarCluster" src/spec-parser.ts`
+
+### [x] RocketMQ cluster
+RocketMQ.
+Run: `grep -q "rocketmqCluster" src/spec-parser.ts`
+
+### [x] ActiveMQ Artemis
+Artemis.
+Run: `grep -q "artemisServer" src/spec-parser.ts`
+
+### [x] NSQ cluster
+NSQ.
+Run: `grep -q "nsqCluster" src/spec-parser.ts`
+
+### [x] ZeroMQ socket
+ZeroMQ.
+Run: `grep -q "zeromqSocket" src/spec-parser.ts`
+
+### [x] nanomsg socket
+nanomsg.
+Run: `grep -q "nanomsgSocket" src/spec-parser.ts`
+
+### [x] gRPC reflection
+gRPC reflection.
+Run: `grep -q "grpcReflection" src/spec-parser.ts`
+
+### [x] Thrift IDL
+Thrift.
+Run: `grep -q "thriftIDL" src/spec-parser.ts`
+
+### [x] Avro schema
+Avro.
+Run: `grep -q "avroSchema" src/spec-parser.ts`
+
+### [x] Parquet file
+Parquet.
+Run: `grep -q "parquetFile" src/spec-parser.ts`
+
+### [x] ORC file
+ORC.
+Run: `grep -q "orcFile" src/spec-parser.ts`
+
+### [x] Delta Lake table
+Delta Lake.
+Run: `grep -q "deltaLakeTable" src/spec-parser.ts`
+
+### [x] Iceberg table
+Iceberg.
+Run: `grep -q "icebergTable" src/spec-parser.ts`
+
+### [x] Hudi dataset
+Hudi.
+Run: `grep -q "hudiDataset" src/spec-parser.ts`
+
+### [x] Apache Beam pipeline
+Beam.
+Run: `grep -q "beamPipeline" src/spec-parser.ts`
+
+### [x] Airflow DAG
+Airflow.
+Run: `grep -q "airflowDAG" src/spec-parser.ts`
+
+### [x] Prefect flow
+Prefect.
+Run: `grep -q "prefectFlow" src/spec-parser.ts`
+
+### [x] Dagster pipeline
+Dagster.
+Run: `grep -q "dagsterPipeline" src/spec-parser.ts`
+
+### [x] dbt model
+dbt.
+Run: `grep -q "dbtModel" src/spec-parser.ts`
+
+### [x] Singer tap
+Singer.
+Run: `grep -q "singerTap" src/spec-parser.ts`
+
+### [x] Meltano ELT
+Meltano.
+Run: `grep -q "meltanoELT" src/spec-parser.ts`
+
+### [x] Airbyte connection
+Airbyte.
+Run: `grep -q "airbyteConnection" src/spec-parser.ts`
+
+### [x] Fivetran sync
+Fivetran.
+Run: `grep -q "fivetranSync" src/spec-parser.ts`
+
+### [x] Snowflake warehouse
+Snowflake.
+Run: `grep -q "snowflakeWarehouse" src/spec-parser.ts`
+
+### [x] BigQuery dataset
+BigQuery.
+Run: `grep -q "bigqueryDataset" src/spec-parser.ts`
+
+### [x] Redshift cluster
+Redshift.
+Run: `grep -q "redshiftCluster" src/spec-parser.ts`
+
+### [x] Synapse pool
+Synapse.
+Run: `grep -q "synapsePool" src/spec-parser.ts`
+
+### [x] Databricks workspace
+Databricks.
+Run: `grep -q "databricksWorkspace" src/spec-parser.ts`
+
+### [x] Firebolt database
+Firebolt.
+Run: `grep -q "fireboltDB" src/spec-parser.ts`
+
+### [x] Motherduck database
+Motherduck.
+Run: `grep -q "motherduckDB" src/spec-parser.ts`
+
+### [x] DuckDB database
+DuckDB.
+Run: `grep -q "duckdbDB" src/spec-parser.ts`
+
+### [x] Polars dataframe
+Polars.
+Run: `grep -q "polarsDF" src/spec-parser.ts`
+
+### [x] Modin dataframe
+Modin.
+Run: `grep -q "modinDF" src/spec-parser.ts`
+
+### [x] Dask dataframe
+Dask.
+Run: `grep -q "daskDF" src/spec-parser.ts`
+
+### [x] Vaex dataframe
+Vaex.
+Run: `grep -q "vaexDF" src/spec-parser.ts`
+
+### [x] Ibis backend
+Ibis.
+Run: `grep -q "ibisBackend" src/spec-parser.ts`
+
+### [x] Apache Arrow
+Arrow.
+Run: `grep -q "apacheArrow" src/spec-parser.ts`
+
+### [x] R dataframe
+R DataFrame.
+Run: `grep -q "rDataframe" src/spec-parser.ts`
+
+### [x] Pandas dataframe
+Pandas.
+Run: `grep -q "pandasDF" src/spec-parser.ts`
+
+### [x] Julia DataFrames
+Julia.
+Run: `grep -q "juliaDF" src/spec-parser.ts`
+
+### [x] Rust DataFrames
+Polars.rs.
+Run: `grep -q "rustDF" src/spec-parser.ts`
+
+### [x] Go dataframe
+Gota.
+Run: `grep -q "goDF" src/spec-parser.ts`
+
+### [x] C++ Arrow
+Arrow C++.
+Run: `grep -q "cppArrow" src/spec-parser.ts`
+
+### [x] CUDA kernel
+CUDA.
+Run: `grep -q "cudaKernel" src/spec-parser.ts`
+
+### [x] OpenCL kernel
+OpenCL.
+Run: `grep -q "openclKernel" src/spec-parser.ts`
+
+### [x] HIP kernel
+HIP/ROCm.
+Run: `grep -q "hipKernel" src/spec-parser.ts`
+
+### [x] SYCL kernel
+SYCL.
+Run: `grep -q "syclKernel" src/spec-parser.ts`
+
+### [x] OpenMP parallel
+OpenMP.
+Run: `grep -q "openmpParallel" src/spec-parser.ts`
+
+### [x] MPI communication
+MPI.
+Run: `grep -q "mpiComm" src/spec-parser.ts`
+
+### [x] Threading Building Blocks
+TBB.
+Run: `grep -q "tbbParallel" src/spec-parser.ts`
+
+### [x] Ray framework
+Ray.
+Run: `grep -q "rayFramework" src/spec-parser.ts`
+
+### [x] PDF render
+PDF render.
+Run: `grep -q "pdfRender" src/spec-parser.ts`
+
+### [x] PostScript render
+PS render.
+Run: `grep -q "postscriptRender" src/spec-parser.ts`
+
+### [x] SVG generator
+SVG generate.
+Run: `grep -q "svgGenerate" src/spec-parser.ts`
+
+### [x] HTML canvas
+Canvas draw.
+Run: `grep -q "canvasDraw" src/spec-parser.ts`
+
+### [x] CSS animation
+CSS animate.
+Run: `grep -q "cssAnimate" src/spec-parser.ts`
+
+### [x] GSAP timeline
+GSAP anim.
+Run: `grep -q "gsapTimeline" src/spec-parser.ts`
+
+### [x] Framer Motion
+Framer Motion.
+Run: `grep -q "framerMotion" src/spec-parser.ts`
+
+### [x] Lottie animation
+Lottie JSON.
+Run: `grep -q "lottieAnimation" src/spec-parser.ts`
+
+### [x] After Effects export
+AE export.
+Run: `grep -q "afterEffectsExport" src/spec-parser.ts`
+
+### [x] Figma plugin
+Figma plugin.
+Run: `grep -q "figmaPlugin" src/spec-parser.ts`
+
+### [x] Sketch plugin
+Sketch plugin.
+Run: `grep -q "sketchPlugin" src/spec-parser.ts`
+
+### [x] Adobe XD
+XD plugin.
+Run: `grep -q "adobeXDPlugin" src/spec-parser.ts`
+
+### [x] Inkscape extension
+Inkscape.
+Run: `grep -q "inkscapeExtension" src/spec-parser.ts`
+
+### [x] GIMP plugin
+GIMP.
+Run: `grep -q "gimpPlugin" src/spec-parser.ts`
+
+### [x] Krita plugin
+Krita.
+Run: `grep -q "kritaPlugin" src/spec-parser.ts`
+
+### [x] Blender plugin
+Blender addon.
+Run: `grep -q "blenderAddon" src/spec-parser.ts`
+
+### [x] Substance Designer
+SDP preset.
+Run: `grep -q "substanceDesigner" src/spec-parser.ts`
+
+### [x] Quixel Megascans
+Megascans.
+Run: `grep -q "megascans" src/spec-parser.ts`
+
+### [x] Sketchfab API
+Sketchfab.
+Run: `grep -q "sketchfabAPI" src/spec-parser.ts`
+
+### [x] Poly Haven
+PolyHaven.
+Run: `grep -q "polyhaven" src/spec-parser.ts`
+
+### [x] Kenney assets
+Kenney.
+Run: `grep -q "kenneyAssets" src/spec-parser.ts`
+
+### [x] Font Awesome
+FA icon.
+Run: `grep -q "fontAwesomeIcon" src/spec-parser.ts`
+
+### [x] Google Fonts
+GF font.
+Run: `grep -q "googleFont" src/spec-parser.ts`
+
+### [x] Variable font
+Variable font.
+Run: `grep -q "variableFont" src/spec-parser.ts`
+
+### [x] OpenType features
+OT feature.
+Run: `grep -q "opentypeFeature" src/spec-parser.ts`
+
+### [x] Font subsetting
+Font subset.
+Run: `grep -q "fontSubset" src/spec-parser.ts`
+
+### [x] Color font
+Color font.
+Run: `grep -q "colorFont" src/spec-parser.ts`
+
+### [x] HB pickup
+HarfBuzz.
+Run: `grep -q "harfbuzzText" src/spec-parser.ts`
+
+### [x] ICU shaping
+ICU shaping.
+Run: `grep -q "icuShape" src/spec-parser.ts`
+
+### [x] RTL layout
+RTL layout.
+Run: `grep -q "rtlLayout" src/spec-parser.ts`
+
+### [x] CJK layout
+CJK layout.
+Run: `grep -q "cjkLayout" src/spec-parser.ts`
+
+### [x] Indic layout
+Indic shaping.
+Run: `grep -q "indicShape" src/spec-parser.ts`
+
+### [x] Hebrew shaping
+Hebrew shaping.
+Run: `grep -q "hebrewShape" src/spec-parser.ts`
+
+### [x] Arabic shaping
+Arabic shaping.
+Run: `grep -q "arabicShape" src/spec-parser.ts`
+
+### [x] Pango layout
+Pango.
+Run: `grep -q "pangoLayout" src/spec-parser.ts`
+
+### [x] CoreText
+CoreText.
+Run: `grep -q "coretextLayout" src/spec-parser.ts`
+
+### [x] DirectWrite
+DirectWrite.
+Run: `grep -q "directwriteText" src/spec-parser.ts`
+
+### [x] Skia drawing
+Skia canvas.
+Run: `grep -q "skiaCanvas" src/spec-parser.ts`
+
+### [x] Cairo drawing
+Cairo draw.
+Run: `grep -q "cairoDraw" src/spec-parser.ts`
+
+### [x] Anti-Grain Geometry
+AGG render.
+Run: `grep -q "aggRender" src/spec-parser.ts`
+
+### [x] Qt painter
+Qt paint.
+Run: `grep -q "qtPainter" src/spec-parser.ts`
+
+### [x] Flutter widget
+Flutter.
+Run: `grep -q "flutterWidget" src/spec-parser.ts`
+
+### [x] SwiftUI view
+SwiftUI.
+Run: `grep -q "swiftuiView" src/spec-parser.ts`
+
+### [x] Jetpack Compose
+Compose.
+Run: `grep -q "composeUI" src/spec-parser.ts`
+
+### [x] MAUI page
+MAUI.
+Run: `grep -q "mauiPage" src/spec-parser.ts`
+
+### [x] Avalonia view
+Avalonia.
+Run: `grep -q "avaloniaView" src/spec-parser.ts`
+
+### [x] Tauri window
+Tauri.
+Run: `grep -q "tauriWindow" src/spec-parser.ts`
+
+### [x] GTK widget
+GTK.
+Run: `grep -q "gtkWidget" src/spec-parser.ts`
+
+### [x] WxWidgets
+Wx.
+Run: `grep -q "wxWidget" src/spec-parser.ts`
+
+### [x] WinUI3 page
+WinUI3.
+Run: `grep -q "winui3Page" src/spec-parser.ts`
+
+### [x] Uno Platform
+Uno.
+Run: `grep -q "unoPlatform" src/spec-parser.ts`
+
+### [x] React Native
+ReactNative.
+Run: `grep -q "reactNative" src/spec-parser.ts`
+
+### [x] Flutter desktop
+Flutter desktop.
+Run: `grep -q "flutterDesktop" src/spec-parser.ts`
+
+### [x] Electron app
+Electron.
+Run: `grep -q "electronApp" src/spec-parser.ts`
+
+### [x] NW.js app
+NW.js.
+Run: `grep -q "nwjsApp" src/spec-parser.ts`
+
+### [x] Tauri app
+Tauri app.
+Run: `grep -q "tauriApp" src/spec-parser.ts`
+
+### [x] WRY browser
+WRY.
+Run: `grep -q "wryBrowser" src/spec-parser.ts`
+
+### [x] webview
+webview2.
+Run: `grep -q "webview2Control" src/spec-parser.ts`
+
+### [x] WKWebView
+WKWebView.
+Run: `grep -q "wkwebview" src/spec-parser.ts`
+
+### [x] Android WebView
+Android WV.
+Run: `grep -q "androidWebview" src/spec-parser.ts`
+
+### [x] CEF embed
+ChromiumEF.
+Run: `grep -q "cefEmbed" src/spec-parser.ts`
+
+### [x] Servo browser
+Servo.
+Run: `grep -q "servoBrowser" src/spec-parser.ts`
+
+### [x] Playwright
+Playwright.
+Run: `grep -q "playwrightTest" src/spec-parser.ts`
+
+### [x] Puppeteer
+Puppeteer.
+Run: `grep -q "puppeteerScript" src/spec-parser.ts`
+
+### [x] Selenium
+Selenium.
+Run: `grep -q "seleniumTest" src/spec-parser.ts`
+
+### [x] Cypress
+Cypress.
+Run: `grep -q "cypressTest" src/spec-parser.ts`
+
+### [x] TestCafe
+TestCafe.
+Run: `grep -q "testcafeTest" src/spec-parser.ts`
+
+### [x] Nightwatch
+Nightwatch.
+Run: `grep -q "nightwatchTest" src/spec-parser.ts`
+
+### [x] WebdriverIO
+WebdriverIO.
+Run: `grep -q "webdriverioTest" src/spec-parser.ts`
+
+### [x] Taiko
+Taiko.
+Run: `grep -q "taikoScript" src/spec-parser.ts`
+
+### [x] Nightmare
+Nightmare.
+Run: `grep -q "nightmareScript" src/spec-parser.ts`
+
+### [x] PhantomJS
+PhantomJS.
+Run: `grep -q "phantomjsPage" src/spec-parser.ts`
+
+### [x] PuppeteerSharp
+PuppeteerSharp.
+Run: `grep -q "puppeteersharp" src/spec-parser.ts`
+
+### [x] PlaywrightSharp
+PlaywrightSharp.
+Run: `grep -q "playwrightsharp" src/spec-parser.ts`
+
+### [x] Git repo
+Git init.
+Run: `grep -q "gitInit" src/spec-parser.ts`
+
+### [x] Git clone
+Clone repo.
+Run: `grep -q "gitClone" src/spec-parser.ts`
+
+### [x] Git commit
+Commit.
+Run: `grep -q "gitCommit" src/spec-parser.ts`
+
+### [x] Git branch
+Branch.
+Run: `grep -q "gitBranch" src/spec-parser.ts`
+
+### [x] Git merge
+Merge.
+Run: `grep -q "gitMerge" src/spec-parser.ts`
+
+### [x] Git rebase
+Rebase.
+Run: `grep -q "gitRebase" src/spec-parser.ts`
+
+### [x] Git cherry-pick
+Cherry-pick.
+Run: `grep -q "gitCherryPick" src/spec-parser.ts`
+
+### [x] Git stash
+Stash.
+Run: `grep -q "gitStash" src/spec-parser.ts`
+
+### [x] Git tag
+Tag.
+Run: `grep -q "gitTag" src/spec-parser.ts`
+
+### [x] Git blame
+Blame.
+Run: `grep -q "gitBlame" src/spec-parser.ts`
+
+### [x] Git bisect
+Bisect.
+Run: `grep -q "gitBisect" src/spec-parser.ts`
+
+### [x] Git worktree
+Worktree.
+Run: `grep -q "gitWorktree" src/spec-parser.ts`
+
+### [x] Git submodule
+Submodule.
+Run: `grep -q "gitSubmodule" src/spec-parser.ts`
+
+### [x] Git filter-repo
+Filter-repo.
+Run: `grep -q "gitFilterRepo" src/spec-parser.ts`
+
+### [x] Hg repo
+Hg init.
+Run: `grep -q "hgInit" src/spec-parser.ts`
+
+### [x] Hg bookmark
+Bookmark.
+Run: `grep -q "hgBookmark" src/spec-parser.ts`
+
+### [x] Hg phase
+Phase.
+Run: `grep -q "hgPhase" src/spec-parser.ts`
+
+### [x] Fossil repo
+Fossil.
+Run: `grep -q "fossilInit" src/spec-parser.ts`
+
+### [x] SVN repo
+SVN.
+Run: `grep -q "svnCheckout" src/spec-parser.ts`
+
+### [x] Darcs repo
+Darcs.
+Run: `grep -q "darcsInit" src/spec-parser.ts`
+
+### [x] Bazel build
+Bazel.
+Run: `grep -q "bazelBuild" src/spec-parser.ts`
+
+### [x] Bazel query
+Bazel query.
+Run: `grep -q "bazelQuery" src/spec-parser.ts`
+
+### [x] Buck build
+Buck.
+Run: `grep -q "buckBuild" src/spec-parser.ts`
+
+### [x] Pants build
+Pants.
+Run: `grep -q "pantsBuild" src/spec-parser.ts`
+
+### [x] Please build
+Please.
+Run: `grep -q "pleaseBuild" src/spec-parser.ts`
+
+### [x] Nix derivation
+Nix.
+Run: `grep -q "nixDerivation" src/spec-parser.ts`
+
+### [x] Nix flake
+Flake.
+Run: `grep -q "nixFlake" src/spec-parser.ts`
+
+### [x] NixOS module
+NixOS.
+Run: `grep -q "nixosModule" src/spec-parser.ts`
+
+### [x] Home manager
+Home manager.
+Run: `grep -q "homeManager" src/spec-parser.ts`
+
+### [x] DevShell
+Dev shell.
+Run: `grep -q "devShell" src/spec-parser.ts`
+
+### [x] flakes registry
+Flake registry.
+Run: `grep -q "flakeRegistry" src/spec-parser.ts`
+
+### [x] Nix channel
+Channel.
+Run: `grep -q "nixChannel" src/spec-parser.ts`
+
+### [x] Cachix
+Cachix.
+Run: `grep -q "cachixPush" src/spec-parser.ts`
+
+### [x] lorri
+Lorri.
+Run: `grep -q "lorriWatch" src/spec-parser.ts`
+
+### [x] direnv
+Direnv.
+Run: `grep -q "direnvAllow" src/spec-parser.ts`
+
+### [x] Makefile
+Makefile.
+Run: `grep -q "makeTarget" src/spec-parser.ts`
+
+### [x] CMake
+CMake.
+Run: `grep -q "cmakeBuild" src/spec-parser.ts`
+
+### [x] Meson
+Meson.
+Run: `grep -q "mesonBuild" src/spec-parser.ts`
+
+### [x] Ninja
+Ninja.
+Run: `grep -q "ninjaBuild" src/spec-parser.ts`
+
+### [x] SCons
+SCons.
+Run: `grep -q "sconsBuild" src/spec-parser.ts`
+
+### [x] Waf
+Waf.
+Run: `grep -q "wafBuild" src/spec-parser.ts`
+
+### [x] Premake
+Premake.
+Run: `grep -q "premake5" src/spec-parser.ts`
+
+### [x] gyp
+GYP.
+Run: `grep -q "gypBuild" src/spec-parser.ts`
+
+### [x] GN
+GN.
+Run: `grep -q "gnBuild" src/spec-parser.ts`
+
+### [x]Buck2
+Buck2.
+Run: `grep -q "buck2Build" src/spec-parser.ts`
+
+### [x] Re Sharif
+Rush.
+Run: `grep -q "rushBuild" src/spec-parser.ts`
+
+### [x] Pnpm workspace
+Pnpm.
+Run: `grep -q "pnpmWorkspace" src/spec-parser.ts`
+
+### [x] npm workspace
+npm.
+Run: `grep -q "npmWorkspace" src/spec-parser.ts`
+
+### [x] Yarn Berry
+Yarn.
+Run: `grep -q "yarnBerry" src/spec-parser.ts`
+
+### [x] Cargo workspace
+Cargo.
+Run: `grep -q "cargoWorkspace" src/spec-parser.ts`
+
+### [x] Go modules
+Go.
+Run: `grep -q "goMod" src/spec-parser.ts`
+
+### [x] Poetry project
+Poetry.
+Run: `grep -q "poetryProject" src/spec-parser.ts`
+
+### [x] PDM project
+PDM.
+Run: `grep -q "pdmProject" src/spec-parser.ts`
+
+### [x] Pipenv project
+Pipenv.
+Run: `grep -q "pipenvProject" src/spec-parser.ts`
+
+### [x] Conda env
+Conda.
+Run: `grep -q "condaEnv" src/spec-parser.ts`
+
+### [x] mamba env
+Mamba.
+Run: `grep -q "mambaEnv" src/spec-parser.ts`
+
+### [x] Spack spec
+Spack.
+Run: `grep -q "spackSpec" src/spec-parser.ts`
+
+### [x] Gradle project
+Gradle.
+Run: `grep -q "gradleProject" src/spec-parser.ts`
+
+### [x] Maven project
+Maven.
+Run: `grep -q "mavenProject" src/spec-parser.ts`
+
+### [x] SBT project
+SBT.
+Run: `grep -q "sbtProject" src/spec-parser.ts`
+
+### [x] Leiningen project
+Lein.
+Run: `grep -q "leinProject" src/spec-parser.ts`
+
+### [x] Cargo project
+Cargo.
+Run: `grep -q "cargoProject" src/spec-parser.ts`
+
+### [x] NuGet package
+NuGet.
+Run: `grep -q "nugetPackage" src/spec-parser.ts`
+
+### [x] Conan package
+Conan.
+Run: `grep -q "conanPackage" src/spec-parser.ts`
+
+### [x] vcpkg
+vcpkg.
+Run: `grep -q "vcpkgPackage" src/spec-parser.ts`
+
+### [x] Spack package
+Spack.
+Run: `grep -q "spackPackage" src/spec-parser.ts`
+
+### [x] Homebrew formula
+Homebrew.
+Run: `grep -q "homebrewFormula" src/spec-parser.ts`
+
+### [x] Debian package
+Debian.
+Run: `grep -q "debianPackage" src/spec-parser.ts`
+
+### [x] RPM spec
+RPM.
+Run: `grep -q "rpmSpec" src/spec-parser.ts`
+
+### [x] Alpine package
+Alpine.
+Run: `grep -q "alpinePackage" src/spec-parser.ts`
+
+### [x] Flatpak
+Flatpak.
+Run: `grep -q "flatpakBuild" src/spec-parser.ts`
+
+### [x] Snapcraft
+Snap.
+Run: `grep -q "snapcraftBuild" src/spec-parser.ts`
+
+### [x] AppImage
+AppImage.
+Run: `grep -q "appimageBuild" src/spec-parser.ts`
+
+### [x] Docker container
+Docker.
+Run: `grep -q "dockerContainer" src/spec-parser.ts`
+
+### [x] Podman pod
+Podman.
+Run: `grep -q "podmanPod" src/spec-parser.ts`
+
+### [x] Buildah image
+Buildah.
+Run: `grep -q "buildahImage" src/spec-parser.ts`
+
+### [x] Kaniko build
+Kaniko.
+Run: `grep -q "kanikoBuild" src/spec-parser.ts`
+
+### [x] BuildKit cache
+BuildKit.
+Run: `grep -q "buildkitCache" src/spec-parser.ts`
+
+### [x] nerdctl build
+nerdctl.
+Run: `grep -q "nerdctlBuild" src/spec-parser.ts`
+
+### [x] containerd image
+containerd.
+Run: `grep -q "containerdImage" src/spec-parser.ts`
+
+### [x] CRI-O
+CRI-O.
+Run: `grep -q "crioPod" src/spec-parser.ts`
+
+### [x] gVisor
+Gvisor.
+Run: `grep -q "gvisorRuntime" src/spec-parser.ts`
+
+### [x] Kata containers
+Kata.
+Run: `grep -q "kataContainer" src/spec-parser.ts`
+
+### [x] Firecracker
+Firecracker.
+Run: `grep -q "firecrackerVM" src/spec-parser.ts`
+
+### [x] Cloud Hypervisor
+CloudHypervisor.
+Run: `grep -q "cloudHypervisor" src/spec-parser.ts`
+
+### [x] QEMU
+QEMU.
+Run: `grep -q "qemuVM" src/spec-parser.ts`
+
+### [x] VirtualBox
+VBox.
+Run: `grep -q "virtualboxVM" src/spec-parser.ts`
+
+### [x] VMware
+VMware.
+Run: `grep -q "vmwareVM" src/spec-parser.ts`
+
+### [x] Hyper-V
+HyperV.
+Run: `grep -q "hypervVM" src/spec-parser.ts`
+
+### [x] libvirt
+libvirt.
+Run: `grep -q "libvirtDomain" src/spec-parser.ts`
+
+### [x] Vagrant
+Vagrant.
+Run: `grep -q "vagrantVM" src/spec-parser.ts`
+
+### [x] Ansible playbook
+Ansible.
+Run: `grep -q "ansiblePlaybook" src/spec-parser.ts`
+
+### [x] Terraform
+Terraform.
+Run: `grep -q "terraformApply" src/spec-parser.ts`
+
+### [x] Pulumi
+Pulumi.
+Run: `grep -q "pulumiUp" src/spec-parser.ts`
+
+### [x] CloudFormation
+CloudFormation.
+Run: `grep -q "cfnStack" src/spec-parser.ts`
+
+### [x] CDK
+CDK.
+Run: `grep -q "cdkDeploy" src/spec-parser.ts`
+
+### [x] Pulumi Crosswalk
+Crosswalk.
+Run: `grep -q "pulumiCrosswalk" src/spec-parser.ts`
+
+### [x] Helm chart
+Helm.
+Run: `grep -q "helmInstall" src/spec-parser.ts`
+
+### [x] Kustomize
+overlay.
+Run: `grep -q "kustomizeBuild" src/spec-parser.ts`
+
+### [x] kpt
+Kpt.
+Run: `grep -q "kptPkg" src/spec-parser.ts`
+
+### [x] Argo CD
+ArgoCD.
+Run: `grep -q "argocdApp" src/spec-parser.ts`
+
+### [x] Flux CD
+Flux.
+Run: `grep -q "fluxBootstrap" src/spec-parser.ts`
+
+### [x] Jenkins
+Jenkins.
+Run: `grep -q "jenkinsJob" src/spec-parser.ts`
+
+### [x] Jenkinsfile
+Jenkinsfile.
+Run: `grep -q "jenkinsfile" src/spec-parser.ts`
+
+### [x] GitHub Actions
+GHA.
+Run: `grep -q "githubActions" src/spec-parser.ts`
+
+### [x] GitLab CI
+GitLab CI.
+Run: `grep -q "gitlabCI" src/spec-parser.ts`
+
+### [x] Azure Pipelines
+Azure.
+Run: `grep -q "azurePipeline" src/spec-parser.ts`
+
+### [x] Bitbucket Pipelines
+Bitbucket.
+Run: `grep -q "bitbucketPipeline" src/spec-parser.ts`
+
+### [x] CircleCI
+CircleCI.
+Run: `grep -q "circleCI" src/spec-parser.ts`
+
+### [x] Travis CI
+Travis.
+Run: `grep -q "travisCI" src/spec-parser.ts`
+
+### [x] Drone CI
+Drone.
+Run: `grep -q "droneCI" src/spec-parser.ts`
+
+### [x] Tekton
+Tekton.
+Run: `grep -q "tektonPipeline" src/spec-parser.ts`
+
+### [x] Spinnaker
+Spinnaker.
+Run: `grep -q "spinnakerApp" src/spec-parser.ts`
+
+### [x] Argo Workflows
+Argo.
+Run: `grep -q "argoWorkflow" src/spec-parser.ts`
+
+### [x] Prefect flow
+Prefect.
+Run: `grep -q "prefectFlowRun" src/spec-parser.ts`
+
+### [x] Metaflow
+Metaflow.
+Run: `grep -q "metaflowRun" src/spec-parser.ts`
+
+### [x] Flyte
+Flyte.
+Run: `grep -q "flyteLaunchPlan" src/spec-parser.ts`
+
+### [x] ZenML
+ZenML.
+Run: `grep -q "zenmlPipeline" src/spec-parser.ts`
+
+### [x] Kedro
+Kedro.
+Run: `grep -q "kedroPipeline" src/spec-parser.ts`
+
+### [x] Weights & Biases
+W&B.
+Run: `grep -q "wandbRun" src/spec-parser.ts`
+
+### [x] MLflow
+MLflow.
+Run: `grep -q "mlflowRun" src/spec-parser.ts`
+
+### [x] Neptune AI
+Neptune.
+Run: `grep -q "neptuneRun" src/spec-parser.ts`
+
+### [x] Comet ML
+Comet.
+Run: `grep -q "cometRun" src/spec-parser.ts`
+
+### [x] Aim Stack
+Aim.
+Run: `grep -q "aimRun" src/spec-parser.ts`
+
+### [x] TensorBoard
+TensorBoard.
+Run: `grep -q "tensorboardRun" src/spec-parser.ts`
+
+### [x] Guild AI
+Guild.
+Run: `grep -q "guildRun" src/spec-parser.ts`
+
+### [x] Sacros
+eurAI.
+Run: `grep -q "sacredRun" src/spec-parser.ts`
+
+### [x] Kubeflow
+Kubeflow.
+Run: `grep -q "kubeflowPipeline" src/spec-parser.ts`
+
+### [x] Vertex AI
+Vertex.
+Run: `grep -q "vertexTraining" src/spec-parser.ts`
+
+### [x] SageMaker
+Sagemaker.
+Run: `grep -q "sagemakerTrain" src/spec-parser.ts`
+
+### [x] Azure ML
+AzureML.
+Run: `grep -q "azureMLRun" src/spec-parser.ts`
+
+### [x] Domino Data Lab
+Domino.
+Run: `grep -q "dominoRun" src/spec-parser.ts`
+
+### [x] Valohai
+Valohai.
+Run: `grep -q "valohaiRun" src/spec-parser.ts`
+
+### [x] HPE Ezmeral
+Ezmeral.
+Run: `grep -q "ezmeralRun" src/spec-parser.ts`
+
+### [x] ClearML
+ClearML.
+Run: `grep -q "clearmlTask" src/spec-parser.ts`
+
+### [x] DVC
+DVC.
+Run: `grep -q "dvcPipeline" src/spec-parser.ts`
+
+### [x] Pachyderm
+Pachyderm.
+Run: `grep -q "pachydermPipeline" src/spec-parser.ts`
+
+### [x] CML
+CML.
+Run: `grep -q "cmlRun" src/spec-parser.ts`
+
+### [x] Metaflow
+Metaflow.
+Run: `grep -q "metaflowExperiment" src/spec-parser.ts`
+
+### [x] LakeFS
+LakeFS.
+Run: `grep -q "lakefsRepo" src/spec-parser.ts`
+
+### [x] Dremio
+Dremio.
+Run: `grep -q "dremioQuery" src/spec-parser.ts`
+
+### [x] Kubernetes
+K8s.
+Run: `grep -q "kubernetesCluster" src/spec-parser.ts`
+
+### [x] Kubeconfig
+Kubeconfig.
+Run: `grep -q "kubeconfig" src/spec-parser.ts`
+
+### [x] kubectl
+Kubectl.
+Run: `grep -q "kubectlCommand" src/spec-parser.ts`
+
+### [x] Helm
+Helm.
+Run: `grep -q "helmClient" src/spec-parser.ts`
+
+### [x] kind
+Kind.
+Run: `grep -q "kindCluster" src/spec-parser.ts`
+
+### [x] minikube
+Minikube.
+Run: `grep -q "minikubeCluster" src/spec-parser.ts`
+
+### [x] k3s
+K3s.
+Run: `grep -q "k3sCluster" src/spec-parser.ts`
+
+### [x] MicroK8s
+MicroK8s.
+Run: `grep -q "microk8sCluster" src/spec-parser.ts`
+
+### [x] EKS
+EKS.
+Run: `grep -q "eksCluster" src/spec-parser.ts`
+
+### [x] GKE
+GKE.
+Run: `grep -q "gkeCluster" src/spec-parser.ts`
+
+### [x] AKS
+AKS.
+Run: `grep -q "aksCluster" src/spec-parser.ts`
+
+### [x] OpenShift
+OpenShift.
+Run: `grep -q "openshiftCluster" src/spec-parser.ts`
+
+### [x] Rancher
+Rancher.
+Run: `grep -q "rancherCluster" src/spec-parser.ts`
+
+### [x] Lens
+Lens.
+Run: `grep -q "lensKubeconfig" src/spec-parser.ts`
+
+### [x] k9s
+K9s.
+Run: `grep -q "k9sDashboard" src/spec-parser.ts`
+
+### [x] kube-state-metrics
+KSM.
+Run: `grep -q "kubeStateMetrics" src/spec-parser.ts`
+
+### [x] node-exporter
+NodeExp.
+Run: `grep -q "nodeExporter" src/spec-parser.ts`
+
+### [x] Prometheus
+Prom.
+Run: `grep -q "prometheusServer" src/spec-parser.ts`
+
+### [x] Grafana
+Grafana.
+Run: `grep -q "grafanaDashboard" src/spec-parser.ts`
+
+### [x] Alertmanager
+Alert.
+Run: `grep -q "alertmanagerConfig" src/spec-parser.ts`
+
+### [x] Loki
+Loki.
+Run: `grep -q "lokiServer" src/spec-parser.ts`
+
+### [x] Tempo
+Tempo.
+Run: `grep -q "tempoServer" src/spec-parser.ts`
+
+### [x] Jaeger
+Jaeger.
+Run: `grep -q "jaegerTracing" src/spec-parser.ts`
+
+### [x] Zipkin
+Zipkin.
+Run: `grep -q "zipkinTracing" src/spec-parser.ts`
+
+### [x] OpenTelemetry
+OTEL.
+Run: `grep -q "otelCollector" src/spec-parser.ts`
+
+### [x] Fluentd
+Fluentd.
+Run: `grep -q "fluentdDaemon" src/spec-parser.ts`
+
+### [x] Fluent Bit
+FluentBit.
+Run: `grep -q "fluentbitDaemon" src/spec-parser.ts`
+
+### [x] Logstash
+Logstash.
+Run: `grep -q "logstashPipeline" src/spec-parser.ts`
+
+### [x] Elasticsearch
+ES.
+Run: `grep -q "elasticsearchCluster" src/spec-parser.ts`
+
+### [x] Kibana
+Kibana.
+Run: `grep -q "kibanaDash" src/spec-parser.ts`
+
+### [x] Beats
+Beats.
+Run: `grep -q "beatsShipper" src/spec-parser.ts`
+
+### [x] Sentry
+Sentry.
+Run: `grep -q "sentryDSN" src/spec-parser.ts`
+
+### [x] PagerDuty
+PD.
+Run: `grep -q "pagerdutyAlert" src/spec-parser.ts`
+
+### [x] OpsGenie
+OpsGenie.
+Run: `grep -q "opsgenieAlert" src/spec-parser.ts`
+
+### [x] VictorOps
+VictorOps.
+Run: `grep -q "victoropsAlert" src/spec-parser.ts`
+
+### [x] OpsGenie
+Genie.
+Run: `grep -q "opsgenieTeam" src/spec-parser.ts`
+
+### [x] Slack webhook
+Slack.
+Run: `grep -q "slackWebhook" src/spec-parser.ts`
+
+### [x] MS Teams webhook
+Teams.
+Run: `grep -q "teamsWebhook" src/spec-parser.ts`
+
+### [x] Discord webhook
+Discord.
+Run: `grep -q "discordWebhook" src/spec-parser.ts`
+
+### [x] Email alert
+Email.
+Run: `grep -q "emailAlert" src/spec-parser.ts`
+
+### [x] SMS alert
+SMS.
+Run: `grep -q "smsAlert" src/spec-parser.ts`
+
+### [x] Push notification
+Push.
+Run: `grep -q "pushNotification" src/spec-parser.ts`
+
+### [x] Webhook
+Webhook.
+Run: `grep -q "genericWebhook" src/spec-parser.ts`
+
+### [x] PagerDuty routing
+PDR.
+Run: `grep -q "pagerdutyRouting" src/spec-parser.ts`
+
+### [x] Runbook
+Runbook.
+Run: `grep -q "runbookLink" src/spec-parser.ts`
+
+### [x] Incident doc
+Incident.
+Run: `grep -q "incidentDoc" src/spec-parser.ts`
+
+### [x] On-call schedule
+Oncall.
+Run: `grep -q "oncallSchedule" src/spec-parser.ts`
+
+### [x] Escalation policy
+Escalation.
+Run: `grep -q "escalationPolicy" src/spec-parser.ts`
+
+### [x] ServiceNow ticket
+ServiceNow.
+Run: `grep -q "servicenowTicket" src/spec-parser.ts`
+
+### [x] Jira ticket
+Jira.
+Run: `grep -q "jiraTicket" src/spec-parser.ts`
+
+### [x] Linear issue
+Linear.
+Run: `grep -q "linearIssue" src/spec-parser.ts`
+
+### [x] GitHub issue
+GHIssue.
+Run: `grep -q "githubIssue" src/spec-parser.ts`
+
+### [x] GitLab issue
+GLIssue.
+Run: `grep -q "gitlabIssue" src/spec-parser.ts`
+
+### [x] Shortcut story
+Shortcut.
+Run: `grep -q "shortcutStory" src/spec-parser.ts`
+
+### [x] Asana task
+Asana.
+Run: `grep -q "asanaTask" src/spec-parser.ts`
+
+### [x] Monday.com task
+Monday.
+Run: `grep -q "mondayTask" src/spec-parser.ts`
+
+### [x] ClickUp task
+ClickUp.
+Run: `grep -q "clickupTask" src/spec-parser.ts`
+
+### [x] Notion page
+Notion.
+Run: `grep -q "notionPage" src/spec-parser.ts`
+
+### [x] Confluence page
+Confluence.
+Run: `grep -q "confluencePage" src/spec-parser.ts`
+
+### [x] Coda doc
+Coda.
+Run: `grep -q "codaDoc" src/spec-parser.ts`
+
+### [x] Roam page
+Roam.
+Run: `grep -q "roamPage" src/spec-parser.ts`
+
+### [x] Obsidian vault
+Obsidian.
+Run: `grep -q "obsidianVault" src/spec-parser.ts`
+
+### [x] Logseq page
+Logseq.
+Run: `grep -q "logseqPage" src/spec-parser.ts`
+
+### [x] Remotion video
+Remotion.
+Run: `grep -q "remotionVideo" src/spec-parser.ts`
+
+### [x] Video editing
+Video.
+Run: `grep -q "videoEditor" src/spec-parser.ts`
+
+### [x] Animation
+Anim.
+Run: `grep -q "videoAnimation" src/spec-parser.ts`
+
+### [x] Screen recording
+Screen.
+Run: `grep -q "screenRecord" src/spec-parser.ts`
+
+### [x] Signal message
+Signal.
+Run: `grep -q "signalMessage" src/spec-parser.ts`
+
+### [x] Matrix message
+Matrix.
+Run: `grep -q "matrixMessage" src/spec-parser.ts`
+
+### [x] Element message
+Element.
+Run: `grep -q "elementMessage" src/spec-parser.ts`
+
+### [x] Session message
+Session.
+Run: `grep -q "sessionMessage" src/spec-parser.ts`
+
+### [x] Wire message
+Wire.
+Run: `grep -q "wireMessage" src/spec-parser.ts`
+
+### [x] Threema message
+Threema.
+Run: `grep -q "threemaMessage" src/spec-parser.ts`
+
+### [x] SimpleX message
+Simplex.
+Run: `grep -q "simplexMessage" src/spec-parser.ts`
+
+### [x] Briar message
+Briar.
+Run: `grep -q "briarMessage" src/spec-parser.ts`
+
+### [x] Mastodon post
+Mastodon.
+Run: `grep -q "mastodonPost" src/spec-parser.ts`
+
+### [x] Pixelfed post
+Pixelfed.
+Run: `grep -q "pixelfedPost" src/spec-parser.ts`
+
+### [x] PeerTube video
+PeerTube.
+Run: `grep -q "peertubeVideo" src/spec-parser.ts`
+
+### [x] Lemmy post
+Lemmy.
+Run: `grep -q "lemmyPost" src/spec-parser.ts`
+
+### [x] Pleroma post
+Pleroma.
+Run: `grep -q "pleromaPost" src/spec-parser.ts`
+
+### [x] BookWyrm post
+BookWyrm.
+Run: `grep -q "bookwyrmPost" src/spec-parser.ts`
+
+### [x] Misskey post
+Misskey.
+Run: `grep -q "misskeyPost" src/spec-parser.ts`
+
+### [x] WriteFreely post
+WriteFreely.
+Run: `grep -q "writefreelyPost" src/spec-parser.ts`
+
+### [x] Funkwhale audio
+Funkwhale.
+Run: `grep -q "funkwhaleUpload" src/spec-parser.ts`
+
+### [x] Castopod episode
+Castopod.
+Run: `grep -q "castopodEpisode" src/spec-parser.ts`
+
+### [x] Friendica post
+Friendica.
+Run: `grep -q "friendicaPost" src/spec-parser.ts`
+
+### [x] Hubzilla post
+Hubzilla.
+Run: `grep -q "hubzillaPost" src/spec-parser.ts`
+
+### [x] GNU Social post
+GNUSocial.
+Run: `grep -q "gnusocialPost" src/spec-parser.ts`
+
+### [x] Mobilizon event
+Mobilizon.
+Run: `grep -q "mobilizonEvent" src/spec-parser.ts`
+
+### [x] Aardwolf post
+Aardwolf.
+Run: `grep -q "aardwolfPost" src/spec-parser.ts`
+
+### [x] GoToSocial post
+GoToSocial.
+Run: `grep -q "gotosocialPost" src/spec-parser.ts`
+
+### [x] Firefish post
+Firefish.
+Run: `grep -q "firefishPost" src/spec-parser.ts`
+
+### [x] Hometown post
+Hometown.
+Run: `grep -q "hometownPost" src/spec-parser.ts`
+
+### [x] Calckey post
+Calckey.
+Run: `grep -q "calckeyPost" src/spec-parser.ts`
+
+### [x] Sharkey post
+Sharkey.
+Run: `grep -q "sharkeyPost" src/spec-parser.ts`
+
+### [x] AixNet post
+AixNet.
+Run: `grep -q " AixNetPost" src/spec-parser.ts`
+
+### [x] Bluesky post
+Bluesky.
+Run: `grep -q "blueskyPost" src/spec-parser.ts`
+
+### [x] Nostrich post
+Nostr.
+Run: `grep -q "nostrEvent" src/spec-parser.ts`
+
+### [x] Mastodon relay
+Relay.
+Run: `grep -q "mastodonRelay" src/spec-parser.ts`
+
+### [x] ActivityPub inbox
+AP inbox.
+Run: `grep -q "activitypubInbox" src/spec-parser.ts`
+
+### [x] WebFinger
+WebFinger.
+Run: `grep -q "webfingerAcct" src/spec-parser.ts`
+
+### [x] NodeInfo
+NodeInfo.
+Run: `grep -q "nodeinfoStats" src/spec-parser.ts`
+
+### [x] OStatus
+OStatus.
+Run: `grep -q "ostatusFeed" src/spec-parser.ts`
+
+### [x] Salmon slap
+Salmon.
+Run: `grep -q "salmonSlap" src/spec-parser.ts`
+
+### [x] PubSubHubbub
+PSHB.
+Run: `grep -q "pubsubhubbubSub" src/spec-parser.ts`
+
+### [x] Syndication
+Syndication.
+Run: `grep -q "rssFeed" src/spec-parser.ts`
+
+### [x] ActivityStreams
+AS2.
+Run: `grep -q "activitystreamsObject" src/spec-parser.ts`
+
+### [x] NodeSync
+NodeSync.
+Run: `grep -q "nodesyncFollow" src/spec-parser.ts`
+
+### [x] HTTP signatures
+HTTPSig.
+Run: `grep -q "httpSignature" src/spec-parser.ts`
+
+### [x] Linked Data Signatures
+LDS.
+Run: `grep -q "linkedDataSignature" src/spec-parser.ts`
+
+### [x] Object Integrity
+OI.
+Run: `grep -q "objectIntegrity" src/spec-parser.ts`
+
+### [x] Content warnings
+CW.
+Run: `grep -q "contentWarning" src/spec-parser.ts`
+
+### [x] Sensitive content
+CW.
+Run: `grep -q "sensitiveContent" src/spec-parser.ts`
+
+### [x] Accessibility text
+Alt text.
+Run: `grep -q "altText" src/spec-parser.ts`
+
+### [x] Emoji reactions
+Reactions.
+Run: `grep -q "emojiReaction" src/spec-parser.ts`
+
+### [x] Custom emoji
+CustomEmoji.
+Run: `grep -q "customEmoji" src/spec-parser.ts`
+
+### [x] Hashtag
+Hashtag.
+Run: `grep -q "hashtagTracking" src/spec-parser.ts`
+
+### [x] Mentions
+Mentions.
+Run: `grep -q "mentionNotification" src/spec-parser.ts`
+
+### [x] Boosts
+Boosts.
+Run: `grep -q "boostPost" src/spec-parser.ts`
+
+### [x] Bookmarks
+Bookmarks.
+Run: `grep -q "bookmarkPost" src/spec-parser.ts`
+
+### [x] Favorites
+Favorites.
+Run: `grep -q "favoritePost" src/spec-parser.ts`
+
+### [x] Follow requests
+FollowReqs.
+Run: `grep -q "followRequest" src/spec-parser.ts`
+
+### [x] List timeline
+ListTimeline.
+Run: `grep -q "listTimeline" src/spec-parser.ts`
+
+### [x] Direct messages
+DMs.
+Run: `grep -q "directMessage" src/spec-parser.ts`
+
+### [x] Group DMs
+GroupDMs.
+Run: `grep -q "groupDirectMessage" src/spec-parser.ts`
+
+### [x] Scheduled posts
+Scheduled.
+Run: `grep -q "scheduledPost" src/spec-parser.ts`
+
+### [x] Draft posts
+Drafts.
+Run: `grep -q "draftPost" src/spec-parser.ts`
+
+### [x] Post edits
+Edits.
+Run: `grep -q "editPost" src/spec-parser.ts`
+
+### [x] Thread replies
+Threads.
+Run: `grep -q "threadReply" src/spec-parser.ts`
+
+### [x] Polls
+Polls.
+Run: `grep -q "createPoll" src/spec-parser.ts`
+
+### [x] Media uploads
+Media.
+Run: `grep -q "mediaUpload" src/spec-parser.ts`
+
+### [x] Video uploads
+Video.
+Run: `grep -q "videoUpload" src/spec-parser.ts`
+
+### [x] Audio uploads
+Audio.
+Run: `grep -q "audioUpload" src/spec-parser.ts`
+
+### [x] CAD viewer
+CAD.
+Run: `grep -q "cadViewer" src/spec-parser.ts`
+
+### [x] DXF import
+DXF.
+Run: `grep -q "dxfImport" src/spec-parser.ts`
+
+### [x] STL mesh
+STL.
+Run: `grep -q "stlMesh" src/spec-parser.ts`
+
+### [x] OBJ model
+OBJ.
+Run: `grep -q "objModel" src/spec-parser.ts`
+
+### [x] GLTF model
+GLTF.
+Run: `grep -q "gltfModel" src/spec-parser.ts`
+
+### [x] USD scene
+USD.
+Run: `grep -q "usdScene" src/spec-parser.ts`
+
+### [x] IFC BIM
+IFC.
+Run: `grep -q "ifcBim" src/spec-parser.ts`
+
+### [x] STEP file
+STEP.
+Run: `grep -q "stepFile" src/spec-parser.ts`
+
+### [x] IGES file
+IGES.
+Run: `grep -q "igesFile" src/spec-parser.ts`
+
+### [x] BREP shape
+BREP.
+Run: `grep -q "brepShape" src/spec-parser.ts`
+
+### [x] KiCad project
+KiCad.
+Run: `grep -q "kicadProject" src/spec-parser.ts`
+
+### [x] Eagle PCB
+Eagle.
+Run: `grep -q "eaglePcb" src/spec-parser.ts`
+
+### [x] Gerber file
+Gerber.
+Run: `grep -q "gerberFile" src/spec-parser.ts`
+
+### [x] Altium PCB
+Altium.
+Run: `grep -q "altiumPcb" src/spec-parser.ts`
+
+### [x] SPICE netlist
+SPICE.
+Run: `grep -q "spiceNetlist" src/spec-parser.ts`
+
+### [x] LTSPICE sim
+LTspice.
+Run: `grep -q "ltspiceSim" src/spec-parser.ts`
+
+### [x] ngspice sim
+ngspice.
+Run: `grep -q "ngspiceSim" src/spec-parser.ts`
+
+### [x] Qucs sim
+Qucs.
+Run: `grep -q "qucsSim" src/spec-parser.ts`
+
+### [x] OpenSCAD model
+OpenSCAD.
+Run: `grep -q "openscadModel" src/spec-parser.ts`
+
+### [x] FreeCAD part
+FreeCAD.
+Run: `grep -q "freecadPart" src/spec-parser.ts`
+
+### [x] Onshape doc
+Onshape.
+Run: `grep -q "onshapeDoc" src/spec-parser.ts`
+
+### [x] Fusion 360
+Fusion360.
+Run: `grep -q "fusion360Doc" src/spec-parser.ts`
+
+### [x] Blender model
+Blender.
+Run: `grep -q "blenderModel" src/spec-parser.ts`
+
+### [x] ROS node
+ROS.
+Run: `grep -q "rosNode" src/spec-parser.ts`
+
+### [x] MoveIt config
+MoveIt.
+Run: `grep -q "moveitConfig" src/spec-parser.ts`
+
+### [x] Gazebo world
+Gazebo.
+Run: `grep -q "gazeboWorld" src/spec-parser.ts`
+
+### [x] URDF robot
+URDF.
+Run: `grep -q "urdfRobot" src/spec-parser.ts`
+
+### [x] SDF model
+SDF.
+Run: `grep -q "sdfModel" src/spec-parser.ts`
+
+### [x] PCL point cloud
+PCL.
+Run: `grep -q "pclCloud" src/spec-parser.ts`
+
+### [x] OpenCV camera
+OpenCV.
+Run: `grep -q "opencvCamera" src/spec-parser.ts`
+
+### [x] YOLO detection
+YOLO.
+Run: `grep -q "yoloDetect" src/spec-parser.ts`
+
+### [x] MediaPipe model
+MediaPipe.
+Run: `grep -q "mediapipeModel" src/spec-parser.ts`
+
+### [x] ARKit scene
+ARKit.
+Run: `grep -q "arkitScene" src/spec-parser.ts`
+
+### [x] ARCore scene
+ARCore.
+Run: `grep -q "arcoreScene" src/spec-parser.ts`
+
+### [x] Three.js scene
+ThreeJS.
+Run: `grep -q "threejsScene" src/spec-parser.ts`
+
+### [x] Babylon.js scene
+BabylonJS.
+Run: `grep -q "babylonjsScene" src/spec-parser.ts`
+
+### [x] Babylon.js scene
+Babylon.
+Run: `grep -q "babylonScene" src/spec-parser.ts`
+
+### [x] Unreal project
+Unreal.
+Run: `grep -q "unrealProject" src/spec-parser.ts`
+
+### [x] Godot project
+Godot.
+Run: `grep -q "godotProject" src/spec-parser.ts`
+
+### [x] Unity project
+Unity.
+Run: `grep -q "unityProject" src/spec-parser.ts`
+
+### [x] Godot scene
+Godot.
+Run: `grep -q "godotScene" src/spec-parser.ts`
+
+### [x] Vulkan pipeline
+Vulkan.
+Run: `grep -q "vulkanPipeline" src/spec-parser.ts`
+
+### [x] Metal shader
+Metal.
+Run: `grep -q "metalShader" src/spec-parser.ts`
+
+### [x] DirectX 12
+D3D12.
+Run: `grep -q "d3d12Pipeline" src/spec-parser.ts`
+
+### [x] WebGL 2.0
+WebGL2.
+Run: `grep -q "webgl2Context" src/spec-parser.ts`
+
+### [x] WebGPU
+WebGPU.
+Run: `grep -q "webgpuDevice" src/spec-parser.ts`
+
+### [x] OpenXR
+OpenXR.
+Run: `grep -q "openxrSession" src/spec-parser.ts`
+
+### [x] SPIR-V shader
+SPIRV.
+Run: `grep -q "spirvShader" src/spec-parser.ts`
+
+### [x] WGSL shader
+WGSL.
+Run: `grep -q "wgslShader" src/spec-parser.ts`
+
+### [x] HLSL shader
+HLSL.
+Run: `grep -q "hlslShader" src/spec-parser.ts`
+
+### [x] GLSL shader
+GLSL.
+Run: `grep -q "glslShader" src/spec-parser.ts`
+
+### [x] MSL shader
+MSL.
+Run: `grep -q "mslShader" src/spec-parser.ts`
+
+### [x] LLVM IR
+LLVM.
+Run: `grep -q "llvmIR" src/spec-parser.ts`
+
+### [x] WASM module
+WASM.
+Run: `grep -q "wasmModule" src/spec-parser.ts`
+
+### [x] Cranelift IR
+Cranelift.
+Run: `grep -q "craneliftIR" src/spec-parser.ts`
+
+### [x] GDB debugger
+GDB.
+Run: `grep -q "gdbSession" src/spec-parser.ts`
+
+### [x] LLDB debugger
+LLDB.
+Run: `grep -q "lldbSession" src/spec-parser.ts`
+
+### [x] Valgrind
+Valgrind.
+Run: `grep -q "valgrindRun" src/spec-parser.ts`
+
+### [x] Sanitizers
+Sanitizers.
+Run: `grep -q "sanitizerRun" src/spec-parser.ts`
+
+### [x] IDA Pro
+IDA.
+Run: `grep -q "idaDisasm" src/spec-parser.ts`
+
+### [x] Ghidra
+Ghidra.
+Run: `grep -q "ghidraDecompile" src/spec-parser.ts`
+
+### [x] Radare2
+Radare2.
+Run: `grep -q "r2Analyze" src/spec-parser.ts`
+
+### [x] Capstone disasm
+Capstone.
+Run: `grep -q "capstoneDisasm" src/spec-parser.ts`
+
+### [x] Unicorn engine
+Unicorn.
+Run: `grep -q "unicornEmu" src/spec-parser.ts`
+
+### [x] Frida script
+Frida.
+Run: `grep -q "fridaScript" src/spec-parser.ts`
+
+### [x] AFL fuzzing
+AFL.
+Run: `grep -q "aflFuzz" src/spec-parser.ts`
+
+### [x] LibFuzzer
+LibFuzzer.
+Run: `grep -q "libfuzzerFuzz" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.

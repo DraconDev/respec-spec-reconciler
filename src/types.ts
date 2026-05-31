@@ -1051,6 +1051,14 @@ export interface IoTDevice {
 	protocol: "mqtt" | "coap" | "modbus" | "zigbee";
 }
 
+// SAT Solver
+export interface SatSolver {
+	solve(formula: CNF): boolean | null;
+	getModel(): Map<string, boolean> | null;
+}
+
+export type CNF = Array<Array<{ variable: string; negated: boolean }>>;
+
 // WAF
 export interface WebACL {
 	name: string;
