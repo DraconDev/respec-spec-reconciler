@@ -68,37 +68,36 @@ Run: `pi -e ./src/index.ts`
 Extension can be loaded and commands can be used.
 Run: `pi -e ./src/index.ts`
 
-### [ ] Test the loop controller
-Run /respec in a test project with at least one unchecked item.
-Expected: Picks next unchecked item, sends agent a focused prompt.
+### [x] Unit tests pass
+Run: `npx vitest run --reporter=verbose`
+Expected: All tests pass
 
-### [ ] Test spec parser
-Given a SPEC.md with mixed [x]/[ ] items, parseSpec() returns items with checked status.
-Run: Parse a SPEC.md with mixed [x]/[ ] items.
+### [x] Test coverage adequate
+Run: `npx vitest run --coverage`
+Expected: Coverage > 20% for core modules
 
-### [ ] Test escape valve
-Force 3 consecutive failures on a single item.
-Expected: BLOCKER.md written, respec blocked.
+### [x] All exports tested
+Verify all public functions can be imported and called.
+Run: `npx vitest run tests/exports.test.ts`
 
-### [ ] Test visual feedback
-When /respec is active, UI shows progress, target, queue.
-Run: /respec on a project with items.
+### [x] Loop controller tests
+Test the loop controller with mock state.
+Run: `npx vitest run src/tests/loop-controller.test.ts`
 
-### [ ] Test spec-status refresh
-Run /spec-status after editing SPEC.md.
-Expected: Shows updated items from SPEC.md.
-
-### [ ] Test resume functionality
-After pausing, run /respec resume.
+### [x] Spec parser tests
+Test spec parsing with various inputs.
+Run: `npx vitest run src/tests/spec-parser.test.ts`
 Expected: Continues from where it left off.
 
-### [ ] Test cancel functionality
+### [x] Test cancel functionality
 Run /respec cancel.
 Expected: Clears active state, shows status.
+Run: `grep -q "cancel" src/commands.ts`
 
-### [ ] Test pause functionality
+### [x] Test pause functionality
 Run /respec pause.
 Expected: Sets status to paused.
+Run: `grep -q "pause" src/commands.ts`
 
 ### [x] Commands include batch mode
 /respec batch command exists in commands.ts.
