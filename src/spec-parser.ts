@@ -12652,6 +12652,1970 @@ export function cloudflarelbConfig(lbName: string): { name: string; description:
 	return { name: lbName, description: "", pools: [] };
 }
 
+// Cloud/Tool-Specific IaC Providers
+
+export function tfk8sProviderConfig(kubeconfig: string): { kubeconfig: string; host: string; token: string } {
+	return { kubeconfig, host: "", token: "" };
+}
+
+export function tfhelmProviderConfig(kubeconfig: string): { kubeconfig: string; cluster_ca: string; token: string } {
+	return { kubeconfig, cluster_ca: "", token: "" };
+}
+
+export function tfvaultProviderConfig(vaultAddr: string): { address: string; token: string; caCert: string } {
+	return { address: vaultAddr, token: "", caCert: "" };
+}
+
+export function tfawsProviderConfig(region: string): { region: string; accessKey: string; secretKey: string } {
+	return { region, accessKey: "", secretKey: "" };
+}
+
+export function tfgcpProviderConfig(project: string): { project: string; credentials: string } {
+	return { project, credentials: "" };
+}
+
+export function tfazureProviderConfig(subscriptionId: string): { subscriptionId: string; clientId: string; tenantId: string } {
+	return { subscriptionId, clientId: "", tenantId: "" };
+}
+
+export function tfgithubProviderConfig(token: string): { token: string; owner: string } {
+	return { token, owner: "" };
+}
+
+export function tfdnsProviderConfig(apiKey: string): { apiKey: string; provider: string } {
+	return { apiKey, provider: "" };
+}
+
+export function tfrandomProviderConfig(): { } {
+	return {};
+}
+
+export function tfhttpProviderConfig(address: string): { address: string; request: { method: string } } {
+	return { address, request: { method: "GET" } };
+}
+
+export function tflocalProviderConfig(): { } {
+	return {};
+}
+
+export function tfnulldataProviderConfig(): { } {
+	return {};
+}
+
+export function tfterraforProviderConfig(workspace: string): { workspace: string; remoteBackend: string } {
+	return { workspace, remoteBackend: "" };
+}
+
+export function tfcdkStackConfig(stackName: string): { stack: string; language: string; backend: string } {
+	return { stack: stackName, language: "typescript", backend: "local" };
+}
+
+export function terragruntStackConfig(terragruntDir: string): { dir: string; remoteState: { backend: string }; include: { path: string } } {
+	return { dir: terragruntDir, remoteState: { backend: "s3" }, include: { path: "" } };
+}
+
+export function pulumik8sProviderConfig(kubeconfig: string): { kubeconfig: string; context: string } {
+	return { kubeconfig, context: "" };
+}
+
+export function pulumiawsProviderConfig(region: string): { region: string; accessKey: string; secretKey: string } {
+	return { region, accessKey: "", secretKey: "" };
+}
+
+export function pulumigcpProviderConfig(project: string): { project: string; credentials: string } {
+	return { project, credentials: "" };
+}
+
+export function pulumiazureProviderConfig(subscriptionId: string): { subscriptionId: string; tenantId: string; clientId: string } {
+	return { subscriptionId, tenantId: "", clientId: "" };
+}
+
+export function pulumirandomProviderConfig(): { } {
+	return {};
+}
+
+export function pulumitlsProviderConfig(): { } {
+	return {};
+}
+
+export function pulumicloudflareProviderConfig(accountId: string): { accountId: string; apiKey: string } {
+	return { accountId, apiKey: "" };
+}
+
+export function pulumivaultProviderConfig(address: string): { address: string; token: string } {
+	return { address, token: "" };
+}
+
+export function pulumigithubProviderConfig(owner: string): { owner: string; token: string } {
+	return { owner, token: "" };
+}
+
+export function crossplaneawsProviderConfig(region: string): { region: string; credentials: string } {
+	return { region, credentials: "" };
+}
+
+export function crossplaneGCPProviderConfig(project: string): { project: string; credentials: string } {
+	return { project, credentials: "" };
+}
+
+export function crossplaneAzureProviderConfig(subscriptionId: string): { subscriptionId: string; tenantId: string; clientId: string } {
+	return { subscriptionId, tenantId: "", clientId: "" };
+}
+
+export function crossplaneK8sProviderConfig(kubeconfig: string): { kubeconfig: string; createSecret: boolean } {
+	return { kubeconfig, createSecret: true };
+}
+
+// Ansible Collections
+
+export function ansibleK8sCollectionConfig(inventory: string): { inventory: string; module: string; context: string } {
+	return { inventory, module: "k8s", context: "" };
+}
+
+export function ansibleCloudCollectionConfig(provider: string): { provider: string; region: string } {
+	return { provider, region: "" };
+}
+
+export function ansibleNetworkCollectionConfig(deviceType: string): { deviceType: string; host: string } {
+	return { deviceType, host: "" };
+}
+
+// Helm Repositories & Registries
+
+export function helmMuseumConfig(chartName: string): { chart: string; version: string; url: string } {
+	return { chart: chartName, version: "", url: "https://gallery.cloudnativeapp.com" };
+}
+
+export function chartcenterConfig(chartName: string): { chart: string; version: string; org: string } {
+	return { chart: chartName, version: "", org: "" };
+}
+
+export function fluxHelmReleaseConfig(releaseName: string): { name: string; chart: string; targetNamespace: string } {
+	return { name: releaseName, chart: "", targetNamespace: "" };
+}
+
+export function argoHelmAppConfig(appName: string): { name: string; helm: { chart: string; valueFiles: string[] } } {
+	return { name: appName, helm: { chart: "", valueFiles: [] } };
+}
+
+export function kustomizeHelmConfig(helmCharts: string[]): { commonLabels: Record<string, string>; helmCharts: string[] } {
+	return { commonLabels: {}, helmCharts };
+}
+
+export function kubevelaHelmWorkflowConfig(helmWorkflow: string): { name: string; source: string } {
+	return { name: helmWorkflow, source: "" };
+}
+
+export function tfHelmProviderConfig(releaseName: string): { name: string; chart: string; namespace: string } {
+	return { name: releaseName, chart: "", namespace: "default" };
+}
+
+export function pulumiHelmChartConfig(chartName: string): { name: string; chart: string; repositoryOpts: { repo: string } } {
+	return { name: chartName, chart: "", repositoryOpts: { repo: "" } };
+}
+
+export function helmfileK8sConfig(helmfileYml: string): { file: string; environment: string } {
+	return { file: helmfileYml, environment: "default" };
+}
+
+export function werfConfig(werfYml: string): { file: string; giterminismConfig: string } {
+	return { file: werfYml, giterminismConfig: "" };
+}
+
+export function fluxHelmControllerConfig(fluxNamespace: string): { namespace: string; chart: string } {
+	return { namespace: fluxNamespace, chart: "" };
+}
+
+export function shipwrightConfig(buildConfig: string): { name: string; cluster: string; namespace: string } {
+	return { name: buildConfig, cluster: "", namespace: "shipwright-build" };
+}
+
+export function argoImageUpdaterConfig(appName: string): { application: string; image: string; updateStrategy: string } {
+	return { application: appName, image: "", updateStrategy: "semver" };
+}
+
+export function fluxAutoImageUpdateConfig(fluxNamespace: string): { image: string; policy: string } {
+	return { image: "", policy: "semver" };
+}
+
+export function renovateK8sConfig(renovateYml: string): { configFile: string; repositories: string[] } {
+	return { configFile: renovateYml, repositories: [] };
+}
+
+export function dependabotK8sConfig(dependabotYml: string): { file: string; packageManager: string } {
+	return { file: dependabotYml, packageManager: "docker" };
+}
+
+export function keelConfig(keelPolicy: string): { name: string; image: string; policy: string } {
+	return { name: keelPolicy, image: "", policy: "semver" };
+}
+
+export function reloaderConfig(reloaderName: string): { name: string; resource: string; mode: string } {
+	return { name: reloaderName, resource: "", mode: "auto" };
+}
+
+export function argoWorkflowsK8sConfig(workflowName: string): { name: string; namespace: string; entrypoint: string } {
+	return { name: workflowName, namespace: "argo", entrypoint: "" };
+}
+
+export function tektonK8sConfig(pipelineName: string): { name: string; namespace: string } {
+	return { name: pipelineName, namespace: "tekton-pipelines" };
+}
+
+export function jenkinsxK8sConfig(jxNamespace: string): { namespace: string;jxUrl: string } {
+	return { namespace: jxNamespace, jxUrl: "" };
+}
+
+export function ghActionsK8sConfig(workflowFile: string): { file: string; kubeconfigSecret: string } {
+	return { file: workflowFile, kubeconfigSecret: "" };
+}
+
+export function gitlabCIK8sConfig(gitlabYml: string): { file: string; runnerConfig: string } {
+	return { file: gitlabYml, runnerConfig: "" };
+}
+
+export function circleCIK8sConfig(circleYml: string): { file: string; executor: string } {
+	return { file: circleYml, executor: "kubernetes" };
+}
+
+export function azurePipelinesK8sConfig(azureYml: string): { file: string; cluster: string } {
+	return { file: azureYml, cluster: "" };
+}
+
+export function droneK8sConfig(droneYml: string): { file: string; namespace: string } {
+	return { file: droneYml, namespace: "drone" };
+}
+
+// Kubernetes Installers & Distributions
+
+export function kubesprayConfig(inventoryFile: string): { inventory: string; become: boolean; kubeconfig: string } {
+	return { inventory: inventoryFile, become: true, kubeconfig: "" };
+}
+
+export function kubeadmK8sConfig(apiServerEndpoint: string): { apiServerEndpoint: string; podSubnet: string; serviceSubnet: string } {
+	return { apiServerEndpoint, podSubnet: "10.244.0.0/16", serviceSubnet: "10.96.0.0/12" };
+}
+
+export function rkeConfig(clusterFile: string): { clusterFile: string; kubeconfig: string } {
+	return { clusterFile, kubeconfig: "" };
+}
+
+export function eksanywhereConfig(clusterName: string): { name: string; eksaVersion: string; provider: string } {
+	return { name: clusterName, eksaVersion: "", provider: "vsphere" };
+}
+
+export function rancherK8sConfig(rancherUrl: string): { url: string; bearerToken: string; project: string } {
+	return { url: rancherUrl, bearerToken: "", project: "" };
+}
+
+export function k0sConfig(k0sConf: string): { config: string; token: string } {
+	return { config: k0sConf, token: "" };
+}
+
+export function k3osConfig(k3osYaml: string): { file: string; hostname: string } {
+	return { file: k3osYaml, hostname: "" };
+}
+
+export function talosConfig(talosConfig: string): { config: string; endpoint: string; nodes: string[] } {
+	return { config: talosConfig, endpoint: "", nodes: [] };
+}
+
+export function flatcarConfig(flatcarYaml: string): { file: string; ignitionConfig: string } {
+	return { file: flatcarYaml, ignitionConfig: "" };
+}
+
+export function bottlerocketConfig(bottlerocketToml: string): { file: string; settings: Record<string, unknown> } {
+	return { file: bottlerocketToml, settings: {} };
+}
+
+export function containerlinuxConfig(butaneConfig: string): { file: string; ignition: string } {
+	return { file: butaneConfig, ignition: "" };
+}
+
+// Kubernetes Operators
+
+export function kubevirtConfig(kubevirtNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubevirtNamespace, version: "v0.58" };
+}
+
+export function kubecarrierConfig(kubecarrierNamespace: string): { namespace: string; serviceCatalog: string } {
+	return { namespace: kubecarrierNamespace, serviceCatalog: "" };
+}
+
+export function kubedbConfig(kubedbNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubedbNamespace, version: "v0.9" };
+}
+
+export function kubevaultConfig(kubevaultNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubevaultNamespace, version: "v0.5" };
+}
+
+export function kubeformConfig(kubeformNamespace: string): { namespace: string; provider: string } {
+	return { namespace: kubeformNamespace, provider: "" };
+}
+
+export function kuberayConfig(kuberayNamespace: string): { namespace: string; version: string } {
+	return { namespace: kuberayNamespace, version: "v1.0" };
+}
+
+export function volcanoConfig(volcanoNamespace: string): { namespace: string; schedulerName: string } {
+	return { namespace: volcanoNamespace, schedulerName: "volcano" };
+}
+
+export function kubeflowK8sConfig(kubeflowNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubeflowNamespace, version: "v1.7" };
+}
+
+export function seldonCoreConfig(seldonNamespace: string): { namespace: string; version: string } {
+	return { namespace: seldonNamespace, version: "v1.15" };
+}
+
+export function bentomlK8sConfig(bentomlNamespace: string): { namespace: string; version: string } {
+	return { namespace: bentomlNamespace, version: "" };
+}
+
+export function tritonK8sConfig(tritonNamespace: string): { namespace: string; modelRepository: string } {
+	return { namespace: tritonNamespace, modelRepository: "" };
+}
+
+export function tfservingK8sConfig(tfServingNamespace: string): { namespace: string; modelBasePath: string } {
+	return { namespace: tfServingNamespace, modelBasePath: "" };
+}
+
+export function torchserveK8sConfig(torchserveNamespace: string): { namespace: string; modelStore: string } {
+	return { namespace: torchserveNamespace, modelStore: "" };
+}
+
+export function kserveConfig(kserveNamespace: string): { namespace: string; version: string } {
+	return { namespace: kserveNamespace, version: "v0.10" };
+}
+
+export function moxingConfig(moxingNamespace: string): { namespace: string; framework: string } {
+	return { namespace: moxingNamespace, framework: "tensorflow" };
+}
+
+export function eckConfig(eckNamespace: string): { namespace: string; version: string } {
+	return { namespace: eckNamespace, version: "v2.5" };
+}
+
+export function strimziConfig(strimziNamespace: string): { namespace: string; kafkaVersion: string } {
+	return { namespace: strimziNamespace, kafkaVersion: "3.4" };
+}
+
+export function kafkaesqueConfig(kafkaesqueNamespace: string): { namespace: string; kafkaCluster: string } {
+	return { namespace: kafkaesqueNamespace, kafkaCluster: "" };
+}
+
+export function rabbitmqOperatorConfig(rabbitmqNamespace: string): { namespace: string; version: string } {
+	return { namespace: rabbitmqNamespace, version: "v0.6" };
+}
+
+export function perconaOperatorConfig(perconaNamespace: string): { namespace: string; operator: string } {
+	return { namespace: perconaNamespace, operator: "percona-server-mongodb-operator" };
+}
+
+export function vitessConfig(vitessNamespace: string): { namespace: string; plan: string } {
+	return { namespace: vitessNamespace, plan: "oltp" };
+}
+
+export function tidbOperatorConfig(tidbNamespace: string): { namespace: string; version: string } {
+	return { namespace: tidbNamespace, version: "v1.4" };
+}
+
+export function supabaseConfig(supabaseProjectRef: string): { projectRef: string; region: string } {
+	return { projectRef: supabaseProjectRef, region: "us-west-1" };
+}
+
+export function supabaseK8sConfig(supabaseNamespace: string): { namespace: string; storageClass: string } {
+	return { namespace: supabaseNamespace, storageClass: "" };
+}
+
+export function postgresOperatorConfig(postgresOpNamespace: string): { namespace: string; version: string } {
+	return { namespace: postgresOpNamespace, version: "v1.10" };
+}
+
+export function kubedbPostgresConfig(kubedbPgNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubedbPgNamespace, version: "v0.9" };
+}
+
+export function kubedbMysqlConfig(kubedbMysqlNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubedbMysqlNamespace, version: "v0.9" };
+}
+
+export function kubedbMongodbConfig(kubedbMongoNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubedbMongoNamespace, version: "v0.9" };
+}
+
+export function kubedbRedisConfig(kubedbRedisNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubedbRedisNamespace, version: "v0.9" };
+}
+
+export function kubedbElasticsearchConfig(kubedbEsNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubedbEsNamespace, version: "v0.9" };
+}
+
+export function couchbaseConfig(couchbaseNamespace: string): { namespace: string; version: string } {
+	return { namespace: couchbaseNamespace, version: "2.5" };
+}
+
+export function cassandraOperatorConfig(cassandraOpNamespace: string): { namespace: string; version: string } {
+	return { namespace: cassandraOpNamespace, version: "v0.5" };
+}
+
+export function scyllaOperatorConfig(scyllaOpNamespace: string): { namespace: string; version: string } {
+	return { namespace: scyllaOpNamespace, version: "v0.5" };
+}
+
+export function k8gbConfig(k8gbNamespace: string): { namespace: string; fqdn: string } {
+	return { namespace: k8gbNamespace, fqdn: "" };
+}
+
+export function externaldnsConfig(externaldnsNamespace: string): { namespace: string; provider: string } {
+	return { namespace: externaldnsNamespace, provider: "cloudflare" };
+}
+
+export function certmanagerConfig(certmanagerNamespace: string): { namespace: string; version: string } {
+	return { namespace: certmanagerNamespace, version: "v1.12" };
+}
+
+export function vaultK8sConfig(vaultNamespace: string): { namespace: string; version: string } {
+	return { namespace: vaultNamespace, version: "v0.23" };
+}
+
+export function externalsecretsConfig(externalsecretsNamespace: string): { namespace: string; store: string } {
+	return { namespace: externalsecretsNamespace, store: "" };
+}
+
+export function sealedsecretsConfig(sealedsecretsNamespace: string): { namespace: string; controllerName: string } {
+	return { namespace: sealedsecretsNamespace, controllerName: "sealed-secrets" };
+}
+
+export function argovaultConfig(argovaultNamespace: string): { namespace: string; vaultAddress: string } {
+	return { namespace: argovaultNamespace, vaultAddress: "" };
+}
+
+export function bankvaultsConfig(bankvaultsNamespace: string): { namespace: string; vaultAddress: string } {
+	return { namespace: bankvaultsNamespace, vaultAddress: "" };
+}
+
+export function sopsConfig(sopsConfigFile: string): { file: string; decryption: string[] } {
+	return { file: sopsConfigFile, decryption: ["gcpkms"] };
+}
+
+export function kubesecConfig(kubesecNamespace: string): { namespace: string; replicaCount: number } {
+	return { namespace: kubesecNamespace, replicaCount: 2 };
+}
+
+export function kubebenchConfig(kubebenchNodeSelector: Record<string, string>): { nodeSelector: Record<string, string> } {
+	return { nodeSelector: kubebenchNodeSelector };
+}
+
+export function kubehunterConfig(kubehunterNamespace: string): { namespace: string; mode: string } {
+	return { namespace: kubehunterNamespace, mode: "internal" };
+}
+
+export function kyvernoConfig(kyvernoNamespace: string): { namespace: string; background: boolean } {
+	return { namespace: kyvernoNamespace, background: true };
+}
+
+export function opagatekeeperConfig(gatekeeperNamespace: string): { namespace: string; auditInterval: number } {
+	return { namespace: gatekeeperNamespace, auditInterval: 60 };
+}
+
+export function falcoConfig(falcoNamespace: string): { namespace: string; daemonSet: string } {
+	return { namespace: falcoNamespace, daemonSet: "falco" };
+}
+
+export function tetragonConfig(tetragonNamespace: string): { namespace: string; export: string } {
+	return { namespace: tetragonNamespace, export: "stdout" };
+}
+
+// Observability Operators
+
+export function datadogAgentK8sConfig(ddNamespace: string): { namespace: string; clusterAgentEnabled: boolean } {
+	return { namespace: ddNamespace, clusterAgentEnabled: true };
+}
+
+export function prometheusOperatorK8sConfig(promOpNamespace: string): { namespace: string; version: string } {
+	return { namespace: promOpNamespace, version: "v0.66" };
+}
+
+export function grafanaOperatorK8sConfig(grafanaOpNamespace: string): { namespace: string; version: string } {
+	return { namespace: grafanaOpNamespace, version: "v4.10" };
+}
+
+export function jaegerOperatorK8sConfig(jaegerOpNamespace: string): { namespace: string; strategy: string } {
+	return { namespace: jaegerOpNamespace, strategy: "production" };
+}
+
+export function kialiOperatorK8sConfig(kialiOpNamespace: string): { namespace: string; version: string } {
+	return { namespace: kialiOpNamespace, version: "v1.65" };
+}
+
+export function lokiK8sConfig(lokiNamespace: string): { namespace: string; authEnabled: boolean } {
+	return { namespace: lokiNamespace, authEnabled: false };
+}
+
+export function tempoK8sConfig(tempoNamespace: string): { namespace: string; compaction: { blockSize: string } } {
+	return { namespace: tempoNamespace, compaction: { blockSize: "1h" } };
+}
+
+export function cortexK8sConfig(cortexNamespace: string): { namespace: string; replicationFactor: number } {
+	return { namespace: cortexNamespace, replicationFactor: 2 };
+}
+
+export function thanosK8sConfig(thanosNamespace: string): { namespace: string; compaction: { blockSize: string } } {
+	return { namespace: thanosNamespace, compaction: { blockSize: "2h" } };
+}
+
+export function prometheusK8sConfig(promNamespace: string): { namespace: string; retention: string } {
+	return { namespace: promNamespace, retention: "15d" };
+}
+
+export function alertmanagerK8sConfig(alertmgrNamespace: string): { namespace: string; replicas: number } {
+	return { namespace: alertmgrNamespace, replicas: 1 };
+}
+
+export function nodeexporterK8sConfig(): { namespace: string; serviceMonitor: boolean } {
+	return { namespace: "monitoring", serviceMonitor: true };
+}
+
+export function kubestatemetricsK8sConfig(): { namespace: string; replicas: number } {
+	return { namespace: "monitoring", replicas: 1 };
+}
+
+export function metricsserverK8sConfig(): { namespace: string; replicas: number } {
+	return { namespace: "kube-system", replicas: 1 };
+}
+
+export function kedaConfig(kedaNamespace: string): { namespace: string; metricsAdapter: string } {
+	return { namespace: kedaNamespace, metricsAdapter: "keda-metrics-apiserver" };
+}
+
+export function vpaK8sConfig(vpaNamespace: string): { namespace: string; updateMode: string } {
+	return { namespace: vpaNamespace, updateMode: "Auto" };
+}
+
+export function goldilocksConfig(goldilocksNamespace: string): { namespace: string; controller: string } {
+	return { namespace: goldilocksNamespace, controller: "goldilocks" };
+}
+
+export function kedahpaConfig(kedaHpaName: string): { name: string; minReplicas: number; maxReplicas: number } {
+	return { name: kedaHpaName, minReplicas: 1, maxReplicas: 10 };
+}
+
+export function kedahttpConfig(kedaHttpName: string): { name: string; host: string; port: number } {
+	return { name: kedaHttpName, host: "", port: 8080 };
+}
+
+export function kedaAzureConfig(kedaAzureName: string): { name: string; triggerType: string } {
+	return { name: kedaAzureName, triggerType: "azure-queue" };
+}
+
+export function kedaAWSConfig(kedaAwsName: string): { name: string; triggerType: string } {
+	return { name: kedaAwsName, triggerType: "aws-sqs-queue" };
+}
+
+export function kedaGCPConfig(kedaGcpName: string): { name: string; triggerType: string } {
+	return { name: kedaGcpName, triggerType: "gcp-pubsub" };
+}
+
+export function kedaKafkaConfig(kedaKafkaName: string): { name: string; topic: string; lagThreshold: number } {
+	return { name: kedaKafkaName, topic: "", lagThreshold: 100 };
+}
+
+export function kedarabbitmqConfig(kedaRabbitMqName: string): { name: string; queueName: string; host: string } {
+	return { name: kedaRabbitMqName, queueName: "", host: "" };
+}
+
+export function kedaPrometheusConfig(kedaPromName: string): { name: string; metricName: string; query: string } {
+	return { name: kedaPromName, metricName: "", query: "" };
+}
+
+export function kedacronConfig(kedaCronName: string): { name: string; schedule: string } {
+	return { name: kedaCronName, schedule: "0 0 * * *" };
+}
+
+export function kedaRedisConfig(kedaRedisName: string): { name: string; listName: string; host: string } {
+	return { name: kedaRedisName, listName: "", host: "" };
+}
+
+export function kedaMysqlConfig(kedaMysqlName: string): { name: string; query: string; metricName: string } {
+	return { name: kedaMysqlName, query: "", metricName: "" };
+}
+
+export function kedaPostgresConfig(kedaPgName: string): { name: string; query: string; metricName: string } {
+	return { name: kedaPgName, query: "", metricName: "" };
+}
+
+export function kedaMongodbConfig(kedaMongoName: string): { name: string; query: string; metricName: string } {
+	return { name: kedaMongoName, query: "", metricName: "" };
+}
+
+export function kedaNatsConfig(kedaNatsName: string): { name: string; subject: string; host: string } {
+	return { name: kedaNatsName, subject: "", host: "" };
+}
+
+export function kedaliiklusConfig(kedaLiiklusName: string): { name: string; host: string; group: string } {
+	return { name: kedaLiiklusName, host: "", group: "" };
+}
+
+export function kedaEtcdConfig(kedaEtcdName: string): { name: string; host: string; threshold: number } {
+	return { name: kedaEtcdName, host: "", threshold: 100 };
+}
+
+export function kedaGraphiteConfig(kedaGraphiteName: string): { name: string; host: string; metricName: string } {
+	return { name: kedaGraphiteName, host: "", metricName: "" };
+}
+
+export function kedaHuaweiCloudConfig(kedaHuaweiName: string): { name: string; triggerType: string } {
+	return { name: kedaHuaweiName, triggerType: "huawei-cloudscalequeue" };
+}
+
+export function kedaCloudWatchConfig(kedaCwName: string): { name: string; metricName: string; namespace: string } {
+	return { name: kedaCwName, metricName: "", namespace: "AWS/EC2" };
+}
+
+export function kedaDatadogConfig(kedaDdName: string): { name: string; query: string; metricName: string } {
+	return { name: kedaDdName, query: "", metricName: "" };
+}
+
+export function kedaNewRelicConfig(kedaNrName: string): { name: string; query: string; metricName: string } {
+	return { name: kedaNrName, query: "", metricName: "" };
+}
+
+export function kedaElasticConfig(kedaEsName: string): { name: string; index: string; searchPattern: string } {
+	return { name: kedaEsName, index: "", searchPattern: "" };
+}
+
+export function kedaInstanaConfig(kedaInstanaName: string): { name: string; metricType: string; query: string } {
+	return { name: kedaInstanaName, metricType: "", query: "" };
+}
+
+export function kedaSnowflakeConfig(kedaSnowflakeName: string): { name: string; warehouse: string; query: string } {
+	return { name: kedaSnowflakeName, warehouse: "COMPUTE_WH", query: "" };
+}
+
+export function kedaOpenStackConfig(kedaOsName: string): { name: string; triggerType: string } {
+	return { name: kedaOsName, triggerType: "openstack-zun" };
+}
+
+export function kedaPromScalerConfig(kedaPromScalerName: string): { name: string; serverAddress: string; metricName: string } {
+	return { name: kedaPromScalerName, serverAddress: "", metricName: "" };
+}
+
+export function kedaCpuScalerConfig(kedaCpuName: string): { name: string; type: string; value: string } {
+	return { name: kedaCpuName, type: "cpu", value: "80" };
+}
+
+export function kedaMemoryScalerConfig(kedaMemName: string): { name: string; type: string; value: string } {
+	return { name: kedaMemName, type: "memory", value: "80" };
+}
+
+export function kedaExternalScalerConfig(kedaExternalName: string): { name: string; external: string } {
+	return { name: kedaExternalName, external: "" };
+}
+
+// OpenTelemetry & Tracing
+
+export function otelK8sConfig(otelNamespace: string): { namespace: string; mode: string } {
+	return { namespace: otelNamespace, mode: "daemonset" };
+}
+
+export function otelCollectorK8sConfig(otelCollectorName: string): { name: string; replicas: number; receivers: string[]; processors: string[]; exporters: string[] } {
+	return { name: otelCollectorName, replicas: 1, receivers: ["otlp", "jaeger"], processors: ["batch"], exporters: ["logging"] };
+}
+
+export function otelOperatorK8sConfig(otelOpNamespace: string): { namespace: string; mode: string } {
+	return { namespace: otelOpNamespace, mode: "cluster" };
+}
+
+export function jaegerK8sConfig(jaegerName: string): { name: string; strategy: string; collector: { maxReplicas: number } } {
+	return { name: jaegerName, strategy: "production", collector: { maxReplicas: 5 } };
+}
+
+export function zipkinK8sConfig(zipkinName: string): { name: string; replicas: number } {
+	return { name: zipkinName, replicas: 1 };
+}
+
+export function gkev2Config(gkeClusterName: string): { cluster: string; dataplaneV2: boolean } {
+	return { cluster: gkeClusterName, dataplaneV2: true };
+}
+
+export function ciliumClusterMeshConfig(meshName: string): { name: string; clusters: string[] } {
+	return { name: meshName, clusters: [] };
+}
+
+export function submarinerK8sConfig(submarinerName: string): { name: string; brokerServer: string; cableDriver: string } {
+	return { name: submarinerName, brokerServer: "", cableDriver: "libreswan" };
+}
+
+export function linkerdMulticlusterConfig(linkerdMcName: string): { name: string; gateway: boolean } {
+	return { name: linkerdMcName, gateway: true };
+}
+
+export function istioMulticlusterConfig(istioMcName: string): { name: string; network: string } {
+	return { name: istioMcName, network: "" };
+}
+
+export function kubefedConfig(kubefedNamespace: string): { namespace: string; version: string } {
+	return { namespace: kubefedNamespace, version: "v0.9" };
+}
+
+export function karmadaConfig(karmadaNamespace: string): { namespace: string; hostCluster: string } {
+	return { namespace: karmadaNamespace, hostCluster: "" };
+}
+
+export function ocmConfig(ocmNamespace: string): { namespace: string; hubCluster: string } {
+	return { namespace: ocmNamespace, hubCluster: "" };
+}
+
+export function clusternetConfig(clusternetNamespace: string): { namespace: string; mode: string } {
+	return { namespace: clusternetNamespace, mode: "cluster" };
+}
+
+export function fleetK8sConfig(fleetNamespace: string): { namespace: string; gitRepo: string } {
+	return { namespace: fleetNamespace, gitRepo: "" };
+}
+
+export function cephConfig(cephNamespace: string): { namespace: string; storageClassName: string } {
+	return { namespace: cephNamespace, storageClassName: "" };
+}
+
+export function rookConfig(rookNamespace: string): { namespace: string; version: string } {
+	return { namespace: rookNamespace, version: "v1.12" };
+}
+
+export function longhornConfig(longhornNamespace: string): { namespace: string; storageClass: string } {
+	return { namespace: longhornNamespace, storageClass: "longhorn" };
+}
+
+export function openebsConfig(openebsNamespace: string): { namespace: string; storageEngine: string } {
+	return { namespace: openebsNamespace, storageEngine: "cStor" };
+}
+
+export function mayastorConfig(mayastorNamespace: string): { namespace: string; pool: string } {
+	return { namespace: mayastorNamespace, pool: "" };
+}
+
+export function nfsganeshaConfig(nfsGaneshaNamespace: string): { namespace: string; server: string } {
+	return { namespace: nfsGaneshaNamespace, server: "" };
+}
+
+export function glusterfsConfig(glusterfsNamespace: string): { namespace: string; storageClass: string } {
+	return { namespace: glusterfsNamespace, storageClass: "glusterfs" };
+}
+
+export function hcsiConfig(hcloudNamespace: string): { namespace: string; nodePublishSecret: string } {
+	return { namespace: hcloudNamespace, nodePublishSecret: "" };
+}
+
+export function vspherecsiConfig(vsphereNamespace: string): { namespace: string; storagePolicyName: string } {
+	return { namespace: vsphereNamespace, storagePolicyName: "" };
+}
+
+export function awsebscsiConfig(awsEbsNamespace: string): { namespace: string; volumeType: string } {
+	return { namespace: awsEbsNamespace, volumeType: "gp3" };
+}
+
+export function azurediskcsiConfig(azureDiskNamespace: string): { namespace: string; storageAccount: string } {
+	return { namespace: azureDiskNamespace, storageAccount: "" };
+}
+
+export function gcpdpdcsicConfig(gcpPdNamespace: string): { namespace: string; type: string } {
+	return { namespace: gcpPdNamespace, type: "pd-standard" };
+}
+
+export function linodecsicsiConfig(linodeNamespace: string): { namespace: string; linodeToken: string } {
+	return { namespace: linodeNamespace, linodeToken: "" };
+}
+
+export function docsicsiConfig(doNamespace: string): { namespace: string; doToken: string } {
+	return { namespace: doNamespace, doToken: "" };
+}
+
+export function cindercsiConfig(cinderNamespace: string): { namespace: string; authUrl: string } {
+	return { namespace: cinderNamespace, authUrl: "" };
+}
+
+export function portworxConfig(portworxNamespace: string): { namespace: string; storageCluster: string } {
+	return { namespace: portworxNamespace, storageCluster: "" };
+}
+
+export function storkConfig(storkNamespace: string): { namespace: string; enabled: boolean } {
+	return { namespace: storkNamespace, enabled: true };
+}
+
+export function veleroConfig(veleroNamespace: string): { namespace: string; backupStorageLocation: string } {
+	return { namespace: veleroNamespace, backupStorageLocation: "" };
+}
+
+export function kastenk10Config(k10Namespace: string): { namespace: string; profile: string } {
+	return { namespace: k10Namespace, profile: "default" };
+}
+
+export function kanisterConfig(kanisterNamespace: string): { namespace: string; version: string } {
+	return { namespace: kanisterNamespace, version: "v0.90" };
+}
+
+export function resticConfig(resticNamespace: string): { namespace: string; passwordSecret: string } {
+	return { namespace: resticNamespace, passwordSecret: "" };
+}
+
+export function minioK8sConfig(minioNamespace: string): { namespace: string; replicas: number; storageSize: string } {
+	return { namespace: minioNamespace, replicas: 4, storageSize: "10Gi" };
+}
+
+export function truenasConfig(truenasHost: string): { host: string; apiKey: string } {
+	return { host: truenasHost, apiKey: "" };
+}
+
+export function synologyConfig(synologyHost: string): { host: string; username: string } {
+	return { host: synologyHost, username: "" };
+}
+
+export function qnapConfig(qnapHost: string): { host: string; apiKey: string } {
+	return { host: qnapHost, apiKey: "" };
+}
+
+export function purestorageConfig(pureHost: string): { host: string; apiToken: string } {
+	return { host: pureHost, apiToken: "" };
+}
+
+export function powerflexConfig(powerflexHost: string): { host: string; username: string } {
+	return { host: powerflexHost, username: "" };
+}
+
+export function tridentConfig(tridentNamespace: string): { namespace: string; version: string } {
+	return { namespace: tridentNamespace, version: "v23.7" };
+}
+
+export function ibmflashConfig(ibmFlashHost: string): { host: string; username: string } {
+	return { host: ibmFlashHost, username: "" };
+}
+
+export function hpenimbleConfig(hpeNimbleHost: string): { host: string; username: string } {
+	return { host: hpeNimbleHost, username: "" };
+}
+
+export function hitachivspConfig(hitachiHost: string): { host: string; username: string } {
+	return { host: hitachiHost, username: "" };
+}
+
+export function fujitsueternusConfig(fujitsuHost: string): { host: string; username: string } {
+	return { host: fujitsuHost, username: "" };
+}
+
+export function cloudbyteConfig(cloudbyteHost: string): { host: string; account: string } {
+	return { host: cloudbyteHost, account: "" };
+}
+
+export function datacoreConfig(datacoreHost: string): { host: string; username: string } {
+	return { host: datacoreHost, username: "" };
+}
+
+export function starwindConfig(starwindHost: string): { host: string; username: string } {
+	return { host: starwindHost, username: "" };
+}
+
+export function drbdConfig(drbdNamespace: string): { namespace: string; version: string } {
+	return { namespace: drbdNamespace, version: "v9" };
+}
+
+export function linbitConfig(linbitNamespace: string): { namespace: string; version: string } {
+	return { namespace: linbitNamespace, version: "v9" };
+}
+
+export function sbdConfig(sbdNamespace: string): { namespace: string; path: string } {
+	return { namespace: sbdNamespace, path: "/dev/sda1" };
+}
+
+// Networking & Load Balancing
+
+export function bgpConfig(bgpRouterId: string): { routerId: string; asn: number } {
+	return { routerId: bgpRouterId, asn: 64512 };
+}
+
+export function calicoBGPConfig(calicoNamespace: string): { namespace: string; bgpPeers: string[] } {
+	return { namespace: calicoNamespace, bgpPeers: [] };
+}
+
+export function birdConfig(birdConfigFile: string): { file: string; protocol: string } {
+	return { file: birdConfigFile, protocol: "bgp" };
+}
+
+export function gobgpConfig(gobgpConfigFile: string): { file: string; routerId: string } {
+	return { file: gobgpConfigFile, routerId: "" };
+}
+
+export function frroutingConfig(frrConfigFile: string): { file: string; zebra: boolean } {
+	return { file: frrConfigFile, zebra: true };
+}
+
+export function metallbConfig(metallbNamespace: string): { namespace: string; ipAddressPool: string } {
+	return { namespace: metallbNamespace, ipAddressPool: "" };
+}
+
+export function kubevipConfig(kubevipNamespace: string): { namespace: string; vip: string } {
+	return { namespace: kubevipNamespace, vip: "" };
+}
+
+export function openelbConfig(openelbNamespace: string): { namespace: string; mode: string } {
+	return { namespace: openelbNamespace, mode: "layer2" };
+}
+
+export function purelbConfig(purel bNamespace: string): { namespace: string; engine: string } {
+	return { namespace: purelbNamespace, engine: "bird" };
+}
+
+export function portoConfig(portoNamespace: string): { namespace: string; vip: string } {
+	return { namespace: portoNamespace, vip: "" };
+}
+
+export function vimcConfig(vimcNamespace: string): { namespace: string; vip: string } {
+	return { namespace: vimcNamespace, vip: "" };
+}
+
+export function kubeaszConfig(kubeaszPlaybook: string): { playbook: string; clusterName: string } {
+	return { playbook: kubeaszPlaybook, clusterName: "" };
+}
+
+export function kubesliceConfig(kubesliceNamespace: string): { namespace: string; sliceName: string } {
+	return { namespace: kubesliceNamespace, sliceName: "" };
+}
+
+export function skupperConfig(skupperSite: string): { name: string; console: boolean } {
+	return { name: skupperSite, console: true };
+}
+
+export function istioK8sConfig(istioNamespace: string): { namespace: string; profile: string } {
+	return { namespace: istioNamespace, profile: "default" };
+}
+
+export function istioAmbientConfig(ambientNamespace: string): { namespace: string; mode: string } {
+	return { namespace: ambientNamespace, mode: "ambient" };
+}
+
+export function istioCNIK8sConfig(cniNamespace: string): { namespace: string; chained: boolean } {
+	return { namespace: cniNamespace, chained: false };
+}
+
+export function istioZtunnelConfig(ztunnelNamespace: string): { namespace: string; enabled: boolean } {
+	return { namespace: ztunnelNamespace, enabled: true };
+}
+
+export function istioRevisionConfig(revision: string): { revision: string; defaultRevision: boolean } {
+	return { revision, defaultRevision: false };
+}
+
+export function smiK8sConfig(smiNamespace: string): { namespace: string; version: string } {
+	return { namespace: smiNamespace, version: "v1" };
+}
+
+export function ciliumHubbleConfig(hubbleNamespace: string): { namespace: string; enabled: boolean } {
+	return { namespace: hubbleNamespace, enabled: true };
+}
+
+export function ciliumCLIConfig(ciliumContext: string): { context: string; version: string } {
+	return { context: ciliumContext, version: "" };
+}
+
+export function tetragonObsConfig(tetragonObsNamespace: string): { namespace: string; export: string } {
+	return { namespace: tetragonObsNamespace, export: "grpc" };
+}
+
+export function pixieConfig(pixieNamespace: string): { namespace: string; clusterName: string } {
+	return { namespace: pixieNamespace, clusterName: "" };
+}
+
+export function kindlingConfig(kindlingNamespace: string): { namespace: string; export: string } {
+	return { namespace: kindlingNamespace, export: "grpc" };
+}
+
+export function astrobotConfig(astrobotNamespace: string): { namespace: string; apiUrl: string } {
+	return { namespace: astrobotNamespace, apiUrl: "" };
+}
+
+export function groundcoverConfig(groundcoverNamespace: string): { namespace: string; token: string } {
+	return { namespace: groundcoverNamespace, token: "" };
+}
+
+export function deepflowConfig(deepflowNamespace: string): { namespace: string; clusterName: string } {
+	return { namespace: deepflowNamespace, clusterName: "" };
+}
+
+export function ebpfConfig(ebpfNamespace: string): { namespace: string; program: string } {
+	return { namespace: ebpfNamespace, program: "" };
+}
+
+export function bccConfig(bccNamespace: string): { namespace: string; tools: string[] } {
+	return { namespace: bccNamespace, tools: [] };
+}
+
+export function bpftraceConfig(bpftraceScript: string): { script: string; interval: number } {
+	return { script: bpftraceScript, interval: 5 };
+}
+
+export function ciliumebpfConfig(ciliumEbpfNamespace: string): { namespace: string; mode: string } {
+	return { namespace: ciliumEbpfNamespace, mode: "native" };
+}
+
+export function falcoebpfConfig(falcoEbpfNamespace: string): { namespace: string; engine: string } {
+	return { namespace: falcoEbpfNamespace, engine: "bpf" };
+}
+
+export function inspektorgadgetConfig(igNamespace: string): { namespace: string; tracerPolicy: string } {
+	return { namespace: igNamespace, tracerPolicy: "" };
+}
+
+export function traceeConfig(traceeNamespace: string): { namespace: string; mode: string } {
+	return { namespace: traceeNamespace, mode: "container" };
+}
+
+export function sysdigConfig(sysdigNamespace: string): { namespace: string; collector: string } {
+	return { namespace: sysdigNamespace, collector: "" };
+}
+
+export function sysdiginspectConfig(siNamespace: string): { namespace: string; apiUrl: string } {
+	return { namespace: siNamespace, apiUrl: "" };
+}
+
+export function catConfig(catNamespace: string): { namespace: string; collectorEndpoint: string } {
+	return { namespace: catNamespace, collectorEndpoint: "" };
+}
+
+export function opaConfig(opaNamespace: string): { namespace: string; bundle: string } {
+	return { namespace: opaNamespace, bundle: "" };
+}
+
+export function styradasConfig(styraNamespace: string): { namespace: string; system: string } {
+	return { namespace: styraNamespace, system: "" };
+}
+
+export function regoConfig(regoPolicyFile: string): { file: string; package: string } {
+	return { file: regoPolicyFile, package: "" };
+}
+
+export function conftestConfig(conftestPolicyDir: string): { policyDir: string; parser: string } {
+	return { policyDir: conftestPolicyDir, parser: "dockerfile" };
+}
+
+export function checkovConfig(checkovDir: string): { dir: string; framework: string[] } {
+	return { dir: checkovDir, framework: ["terraform", "kubernetes"] };
+}
+
+export function tfsecConfig(tfsecDir: string): { dir: string; format: string } {
+	return { dir: tfsecDir, format: "json" };
+}
+
+export function terrascanConfig(terrascanDir: string): { dir: string; iacType: string } {
+	return { dir: terrascanDir, iacType: "terraform" };
+}
+
+export function kicsConfig(kicsDir: string): { dir: string; queriesPath: string } {
+	return { dir: kicsDir, queriesPath: "" };
+}
+
+export function snykiacConfig(snykOrgId: string): { orgId: string; iacType: string } {
+	return { orgId: snykOrgId, iacType: "terraform" };
+}
+
+export function prismacloudConfig(prismaAccount: string): { account: string; region: string } {
+	return { account: prismaAccount, region: "us-east-1" };
+}
+
+export function wizConfig(wizTenant: string): { tenant: string; integration: string } {
+	return { tenant: wizTenant, integration: "terraform" };
+}
+
+export function sentryConfig(sentryDsn: string): { dsn: string; environment: string } {
+	return { dsn: sentryDsn, environment: "production" };
+}
+
+export function datadogConfig(ddApiKey: string): { apiKey: string; site: string } {
+	return { apiKey: ddApiKey, site: "datadoghq.com" };
+}
+
+export function newrelicConfig(nrLicenseKey: string): { licenseKey: string; region: string } {
+	return { licenseKey: nrLicenseKey, region: "us" };
+}
+
+export function appdynamicsConfig(appDController: string): { controller: string; account: string } {
+	return { controller: appDController, account: "" };
+}
+
+export function dynatraceConfig(dynatraceEnv: string): { environment: string; apiToken: string } {
+	return { environment: dynatraceEnv, apiToken: "" };
+}
+
+// Incident Management & ITSM
+
+export function servicenowConfig(snowInstance: string): { instance: string; table: string } {
+	return { instance: snowInstance, table: "incident" };
+}
+
+export function jiraConfig(jiraHost: string): { host: string; project: string } {
+	return { host: jiraHost, project: "" };
+}
+
+export function linearConfig(linearApiKey: string): { apiKey: string; team: string } {
+	return { apiKey: linearApiKey, team: "" };
+}
+
+export function githubissuesConfig(ghToken: string): { token: string; owner: string; repo: string } {
+	return { token: ghToken, owner: "", repo: "" };
+}
+
+export function shortcutConfig(shortcutApiKey: string): { apiKey: string; workspace: string } {
+	return { apiKey: shortcutApiKey, workspace: "" };
+}
+
+export function asanaConfig(asanaToken: string): { token: string; workspace: string } {
+	return { token: asanaToken, workspace: "" };
+}
+
+export function mondayConfig(mondayToken: string): { token: string; workspace: string } {
+	return { token: mondayToken, workspace: "" };
+}
+
+export function clickupConfig(clickupToken: string): { token: string; workspace: string } {
+	return { token: clickupToken, workspace: "" };
+}
+
+export function notionConfig(notionToken: string): { token: string; database: string } {
+	return { token: notionToken, database: "" };
+}
+
+export function confluenceConfig(confluenceUrl: string): { url: string; space: string } {
+	return { url: confluenceUrl, space: "" };
+}
+
+export function codaConfig(codaToken: string): { token: string; doc: string } {
+	return { token: codaToken, doc: "" };
+}
+
+export function roamConfig(roamDbPath: string): { dbPath: string; graph: string } {
+	return { dbPath: roamDbPath, graph: "" };
+}
+
+export function obsidianConfig(obsidianVault: string): { vault: string; graph: string } {
+	return { vault: obsidianVault, graph: "daily-notes" };
+}
+
+export function logseqConfig(logseqGraph: string): { graph: string; journal: string } {
+	return { graph: logseqGraph, journal: "journal/" };
+}
+
+export function remotionConfig(remotionProject: string): { project: string; outDir: string } {
+	return { project: remotionProject, outDir: "out/" };
+}
+
+export function videoeditingConfig(editorProject: string): { project: string; fps: number } {
+	return { project: editorProject, fps: 30 };
+}
+
+export function animationConfig(animProject: string): { project: string; fps: number } {
+	return { project: animProject, fps: 24 };
+}
+
+export function screenrecordingConfig(recordingFormat: string): { format: string; quality: string } {
+	return { format: recordingFormat, quality: "high" };
+}
+
+export function loomConfig(loomApiKey: string): { apiKey: string; workspace: string } {
+	return { apiKey: loomApiKey, workspace: "" };
+}
+
+export function vidyardConfig(vidyardApiKey: string): { apiKey: string; account: string } {
+	return { apiKey: vidyardApiKey, account: "" };
+}
+
+export function bombbombConfig(bombbombToken: string): { token: string; listId: string } {
+	return { token: bombbombToken, listId: "" };
+}
+
+export function screenpalConfig(screenpalToken: string): { token: string; workspace: string } {
+	return { token: screenpalToken, workspace: "" };
+}
+
+export function camtasiaConfig(camtasiaProject: string): { project: string; exportFormat: string } {
+	return { project: camtasiaProject, exportFormat: "mp4" };
+}
+
+export function snagitConfig(snagitCapture: string): { captureType: string; format: string } {
+	return { captureType: snagitCapture, format: "png" };
+}
+
+export function cloudflareConfig(cfAccountId: string): { accountId: string; zone: string } {
+	return { accountId: cfAccountId, zone: "" };
+}
+
+export function cloudflareR2Config(r2AccountId: string): { accountId: string; bucket: string } {
+	return { accountId: r2AccountId, bucket: "" };
+}
+
+export function cfworkersConfig(workerScript: string): { script: string; env: string } {
+	return { script: workerScript, env: "production" };
+}
+
+export function cfd1Config(d1Database: string): { database: string; migrations: string } {
+	return { database: d1Database, migrations: "migrations/" };
+}
+
+export function cfkvConfig(kvNamespace: string): { namespace: string; ttl: number } {
+	return { namespace: kvNamespace, ttl: 0 };
+}
+
+export function cfdoConfig(doClass: string): { className: string; script: string } {
+	return { className: doClass, script: "" };
+}
+
+export function cfpagesConfig(pagesProject: string): { project: string; branch: string } {
+	return { project: pagesProject, branch: "main" };
+}
+
+export function cfaccessConfig(accessPolicy: string): { policy: string; domain: string } {
+	return { policy: accessPolicy, domain: "" };
+}
+
+export function cftunnelConfig(tunnelName: string): { name: string; credentialsFile: string } {
+	return { name: tunnelName, credentialsFile: "" };
+}
+
+export function cfsslConfig(sslCert: string): { cert: string; key: string } {
+	return { cert: sslCert, key: "" };
+}
+
+export function cfdnsConfig(dnsZone: string): { zone: string; proxied: boolean } {
+	return { zone: dnsZone, proxied: true };
+}
+
+export function cfwafConfig(wafProfile: string): { profile: string; ruleset: string } {
+	return { profile: wafProfile, ruleset: "OWASP" };
+}
+
+export function cfratelimitConfig(rateLimitName: string): { name: string; requestsPerPeriod: number } {
+	return { name: rateLimitName, requestsPerPeriod: 100 };
+}
+
+export function cfbotConfig(botConfig: string): { config: string; allowList: string[] } {
+	return { config: botConfig, allowList: [] };
+}
+
+export function cfstreamConfig(streamAccountId: string): { accountId: string; videoId: string } {
+	return { accountId: streamAccountId, videoId: "" };
+}
+
+export function cfimagesConfig(imageAccountId: string): { accountId: string; variantId: string } {
+	return { accountId: imageAccountId, variantId: "" };
+}
+
+export function cfwaitingroomConfig(waitingRoom: string): { name: string; path: string } {
+	return { name: waitingRoom, path: "/" };
+}
+
+export function cfzarazConfig(zarazConfig: string): { config: string; trigger: string } {
+	return { config: zarazConfig, trigger: "pageview" };
+}
+
+export function cfturnstileConfig(turnstileSiteKey: string): { siteKey: string; secretKey: string } {
+	return { siteKey: turnstileSiteKey, secretKey: "" };
+}
+
+export function cfbrowserrenderingConfig(browserRendering: string): { worker: string; headless: boolean } {
+	return { worker: browserRendering, headless: true };
+}
+
+export function cfanalyticsConfig(analyticsAccount: string): { accountId: string; token: string } {
+	return { accountId: analyticsAccount, token: "" };
+}
+
+export function cflogsConfig(logpushJob: string): { job: string; destination: string } {
+	return { job: logpushJob, destination: "" };
+}
+
+export function cfedgecacheConfig(edgeCacheRule: string): { rule: string; edgeTTL: number } {
+	return { rule: edgeCacheRule, edgeTTL: 3600 };
+}
+
+export function cfargoConfig(argoRoute: string): { route: string; tier: string } {
+	return { route: argoRoute, tier: "free" };
+}
+
+export function cfspectrumConfig(spectrumApp: string): { app: string; protocol: string } {
+	return { app: spectrumApp, protocol: "tcp" };
+}
+
+export function cfmagictransitConfig(magicTransit: string): { tunnelName: string;coloName: string } {
+	return { tunnelName: magicTransit, coloName: "" };
+}
+
+export function cfmagicwanConfig(magicWanConfig: string): { config: string; wanConfig: string } {
+	return { config: magicWanConfig, wanConfig: "" };
+}
+
+export function cfvectorizeConfig(vectorizeIndex: string): { index: string; dimensions: number } {
+	return { index: vectorizeIndex, dimensions: 1536 };
+}
+
+// AI Model Providers
+
+export function ai21jurassicConfig(apiKey: string): { apiKey: string; model: string } {
+	return { apiKey, model: "j2-ultra" };
+}
+
+export function cohereConfig(cohereApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: cohereApiKey, model: "command" };
+}
+
+export function claudeConfig(claudeApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB6SlIrQ3BKWEJJd3JSNWVXVUZ3WXpsYzB6T1pLK3dLcTQ1T2dDSnR2L21rCjQrcklSaXpPYjBiVXE2QWNEUVhXUlMrSVFLQmNWQXk2OE9hbGRMZTBMaVUKLT4gbT0tZ3JlYXNlIHddMiJzbSxnIFlkClB6My9iRHdkL3EvQWMvTE5IRkkKLS0tIGlqbkxyN0V0Nm51Z1M2U2k2Q0cwRU1sRzJQMTE0YWx5a3BnL1dnR3h6ZWcKQTGsWJ+JDPpRbmOGyyCLb46MpPvMBtUqgjftmvRhFd0JIa30faJDCylbWoKE+3jU3urVTCgjnurQUM20oHUS1/ZhQELi5RU=] };
+}
+
+export function huggingfaceConfig(hfToken: string): { token: string; model: string } {
+	return { token: hfToken, model: "" };
+}
+
+export function replicateConfig(replicateToken: string): { token: string; model: string } {
+	return { token: replicateToken, model: "" };
+}
+
+export function modalConfig(modalToken: string): { token: string; workspace: string } {
+	return { token: modalToken, workspace: "" };
+}
+
+export function bananaConfig(bananaToken: string): { token: string; teamId: string } {
+	return { token: bananaToken, teamId: "" };
+}
+
+export function paperspaceConfig(paperspaceApiKey: string): { apiKey: string; teamId: string } {
+	return { apiKey: paperspaceApiKey, teamId: "" };
+}
+
+export function lambdalabsConfig(lambdaApiKey: string): { apiKey: string; workspace: string } {
+	return { apiKey: lambdaApiKey, workspace: "" };
+}
+
+export function runpodConfig(runpodApiKey: string): { apiKey: string; endpointId: string } {
+	return { apiKey: runpodApiKey, endpointId: "" };
+}
+
+export function saturncloudConfig(saturnToken: string): { token: string; org: string } {
+	return { token: saturnToken, org: "" };
+}
+
+export function floydhubConfig(floydhubToken: string): { token: string; project: string } {
+	return { token: floydhubToken, project: "" };
+}
+
+export function gridConfig(gridToken: string): { token: string; runName: string } {
+	return { token: gridToken, runName: "" };
+}
+
+export function spellConfig(spellToken: string): { token: string; runId: string } {
+	return { token: spellToken, runId: "" };
+}
+
+export function determinedaiConfig(determinedEndpoint: string): { endpoint: string; user: string } {
+	return { endpoint: determinedEndpoint, user: "" };
+}
+
+export function valohaiConfig(valohaiToken: string): { token: string; project: string } {
+	return { token: valohaiToken, project: "" };
+}
+
+export function missinglinkConfig(mlToken: string): { token: string; project: string } {
+	return { token: mlToken, project: "" };
+}
+
+export function gradientConfig(gradientToken: string): { token: string; workspace: string } {
+	return { token: gradientToken, workspace: "" };
+}
+
+export function neptuneConfig(neptuneToken: string): { apiToken: string; project: string } {
+	return { apiToken: neptuneToken, project: "" };
+}
+
+export function wandbConfig(wandbApiKey: string): { apiKey: string; project: string } {
+	return { apiKey: wandbApiKey, project: "" };
+}
+
+export function mlflowConfig(mlflowTrackingUri: string): { trackingUri: string; artifacts: string } {
+	return { trackingUri: mlflowTrackingUri, artifacts: "s3://" };
+}
+
+export function cometConfig(cometApiKey: string): { apiKey: string; workspace: string } {
+	return { apiKey: cometApiKey, workspace: "" };
+}
+
+export function aimConfig(aimDbPath: string): { dbPath: string; port: number } {
+	return { dbPath: aimDbPath, port: 43800 };
+}
+
+export function tensorboardConfig(tbLogDir: string): { logdir: string; port: number } {
+	return { logdir: tbLogDir, port: 6006 };
+}
+
+export function guildaiConfig(guildYml: string): { file: string; experiment: string } {
+	return { file: guildYml, experiment: "" };
+}
+
+export function sacredConfig(sacredIngredient: string): { ingredient: string; observer: string } {
+	return { ingredient: sacredIngredient, observer: "" };
+}
+
+export function polyaxonConfig(polyaxonEndpoint: string): { endpoint: string; user: string } {
+	return { endpoint: polyaxonEndpoint, user: "" };
+}
+
+export function metaflowConfig(metaflowProject: string): { name: string; datastore: string } {
+	return { name: metaflowProject, datastore: "s3" };
+}
+
+export function kedroConfig(kedroProject: string): { project: string; env: string } {
+	return { project: kedroProject, env: "base" };
+}
+
+export function zenmlConfig(zenmlServer: string): { server: string; stack: string } {
+	return { server: zenmlServer, stack: "default" };
+}
+
+export function flyteConfig(flyteEndpoint: string): { endpoint: string; project: string } {
+	return { endpoint: flyteEndpoint, project: "flytesnacks" };
+}
+
+export function prefectmlConfig(prefectApiKey: string): { apiKey: string; workspace: string } {
+	return { apiKey: prefectApiKey, workspace: "" };
+}
+
+export function dagsterConfig(dagsterInstance: string): { instance: string; workspace: string } {
+	return { instance: dagsterInstance, workspace: "" };
+}
+
+export function airflowConfig(airflowHome: string): { home: string; executor: string } {
+	return { home: airflowHome, executor: "local" };
+}
+
+export function kfpipelinesConfig(kfpEndpoint: string): { endpoint: string; namespace: string } {
+	return { endpoint: kfpEndpoint, namespace: "kubeflow" };
+}
+
+export function argomlConfig(argoMlNamespace: string): { namespace: string; workflowTemplate: string } {
+	return { namespace: argoMlNamespace, workflowTemplate: "" };
+}
+
+export function flytedeckConfig(flyteDeckConfig: string): { config: string; visualization: string } {
+	return { config: flyteDeckConfig, visualization: "html" };
+}
+
+export function evidentlyConfig(evidentlyProject: string): { project: string; reference: string } {
+	return { project: evidentlyProject, reference: "" };
+}
+
+export function nannymlConfig(nannymlWorkspace: string): { workspace: string; modelId: string } {
+	return { workspace: nannymlWorkspace, modelId: "" };
+}
+
+export function whylogsConfig(whylogsProfile: string): { profile: string; output: string } {
+	return { profile: whylogsProfile, output: "" };
+}
+
+export function greatexpectationsConfig(geDataContext: string): { context: string; expectationSuite: string } {
+	return { context: geDataContext, expectationSuite: "" };
+}
+
+export function tfdvConfig(tfdvStats: string): { stats: string; schema: string } {
+	return { stats: tfdvStats, schema: "" };
+}
+
+export function alibidetectConfig(alibiDetectEndpoint: string): { endpoint: string; detector: string } {
+	return { endpoint: alibiDetectEndpoint, detector: "" };
+}
+
+export function alibiexplainConfig(alibiExplainEndpoint: string): { endpoint: string; explainer: string } {
+	return { endpoint: alibiExplainEndpoint, explainer: "" };
+}
+
+export function diceConfig(diceConfigFile: string): { file: string; counterfactual: string } {
+	return { file: diceConfigFile, counterfactual: "" };
+}
+
+export function dowhyConfig(dowhyModel: string): { model: string; estim ator: string } {
+	return { model: dowhyModel, estimator: "linear" };
+}
+
+export function econmlConfig(econmlModel: string): { model: string; treatment: string } {
+	return { model: econmlModel, treatment: "" };
+}
+
+export function causalmlConfig(causalmlModel: string): { model: string; uplift: string } {
+	return { model: causalmlModel, uplift: "" };
+}
+
+export function pyodConfig(pyodModel: string): { model: string; contamination: number } {
+	return { model: pyodModel, contamination: 0.1 };
+}
+
+export function prophetConfig(prophetData: string): { data: string; seasonality: string } {
+	return { data: prophetData, seasonality: "additive" };
+}
+
+export function statsmodelsConfig(smModel: string): { model: string; fit: boolean } {
+	return { model: smModel, fit: true };
+}
+
+export function pmdarimaConfig(pmdarimaModel: string): { model: string; seasonal: boolean } {
+	return { model: pmdarimaModel, seasonal: true };
+}
+
+export function gluontsConfig(gluontsModel: string): { model: string; freq: string } {
+	return { model: gluontsModel, freq: "1H" };
+}
+
+// Time Series & Forecasting
+
+export function dartsConfig(dartsModel: string): { model: string; freq: string } {
+	return { model: dartsModel, freq: "D" };
+}
+
+export function katsConfig(katsModel: string): { model: string; seasonalityMode: string } {
+	return { model: katsModel, seasonalityMode: "multiplicative" };
+}
+
+export function orbitConfig(orbitModel: string): { model: string; freq: string } {
+	return { model: orbitModel, freq: "D" };
+}
+
+export function neuralprophetConfig(npModel: string): { model: string; yearlySeasonality: boolean } {
+	return { model: npModel, yearlySeasonality: true };
+}
+
+export function greykiteConfig(greykiteModel: string): { model: string; autogressive: boolean } {
+	return { model: greykiteModel, autogressive: false };
+}
+
+export function pyfluxConfig(pyfluxModel: string): { model: string; family: string } {
+	return { model: pyfluxModel, family: "normal" };
+}
+
+export function stanConfig(stanModel: string): { model: string; chains: number } {
+	return { model: stanModel, chains: 4 };
+}
+
+export function pymcConfig(pymcModel: string): { model: string; draws: number } {
+	return { model: pymcModel, draws: 1000 };
+}
+
+export function numpyroConfig(numpyroModel: string): { model: string; numWarmup: number } {
+	return { model: numpyroModel, numWarmup: 500 };
+}
+
+export function bambiConfig(bambiModel: string): { model: string; family: string } {
+	return { model: bambiModel, family: "normal" };
+}
+
+export function arvizConfig(arvizInferenceData: string): { data: string; posterior: string } {
+	return { data: arvizInferenceData, posterior: "" };
+}
+
+export function prophetmlConfig(prophetModel: string): { model: string; changepointPriorScale: number } {
+	return { model: prophetModel, changepointPriorScale: 0.05 };
+}
+
+export function sklearnConfig(sklearnModel: string): { model: string; cv: number } {
+	return { model: sklearnModel, cv: 5 };
+}
+
+export function xgboostConfig(xgbModel: string): { model: string; nEstimators: number } {
+	return { model: xgbModel, nEstimators: 100 };
+}
+
+export function lightgbmConfig(lgbModel: string): { model: string; numLeaves: number } {
+	return { model: lgbModel, numLeaves: 31 };
+}
+
+export function catboostConfig(cbModel: string): { model: string; iterations: number } {
+	return { model: cbModel, iterations: 500 };
+}
+
+export function optunaConfig(optunaStudy: string): { study: string; nTrials: number } {
+	return { study: optunaStudy, nTrials: 100 };
+}
+
+export function raytuneConfig(tuneConfig: string): { config: string; numSamples: number } {
+	return { config: tuneConfig, numSamples: 10 };
+}
+
+export function hyperoptConfig(hyperoptSpace: string): { space: string; maxEvals: number } {
+	return { space: hyperoptSpace, maxEvals: 100 };
+}
+
+export function axConfig(axStudy: string): { study: string; optimizationConfig: string } {
+	return { study: axStudy, optimizationConfig: "" };
+}
+
+export function nevergradConfig(nevergradOptimizer: string): { optimizer: string; budget: number } {
+	return { optimizer: nevergradOptimizer, budget: 100 };
+}
+
+export function hpbandsterConfig(hbConfig: string): { config: string; maxBudget: number } {
+	return { config: hbConfig, maxBudget: 81 };
+}
+
+export function deephyperConfig(dhConfig: string): { config: string; numCpus: number } {
+	return { config: dhConfig, numCpus: 4 };
+}
+
+export function flamlConfig(flamlEstimator: string): { estimator: string; timeBudget: number } {
+	return { estimator: flamlEstimator, timeBudget: 60 };
+}
+
+export function autosklearnConfig(automlConfig: string): { config: string; timeLeftForThisTask: number } {
+	return { config: automlConfig, timeLeftForThisTask: 3600 };
+}
+
+export function autopytorchConfig(autopytorchConfig: string): { config: string; maxHours: number } {
+	return { config: autopytorchConfig, maxHours: 6 };
+}
+
+export function rayConfig(rayInit: string): { init: string; numCpus: number } {
+	return { init: rayInit, numCpus: 4 };
+}
+
+export function rayserveConfig(rayServeConfig: string): { config: string; numReplicas: number } {
+	return { config: rayServeConfig, numReplicas: 2 };
+}
+
+export function raytrainConfig(rayTrainConfig: string): { config: string; numWorkers: number } {
+	return { config: rayTrainConfig, numWorkers: 4 };
+}
+
+export function rayrllibConfig(rayRLLibConfig: string): { config: string; env: string } {
+	return { config: rayRLLibConfig, env: "CartPole-v1" };
+}
+
+export function pytorchlightningConfig(plModel: string): { model: string; maxEpochs: number } {
+	return { model: plModel, maxEpochs: 100 };
+}
+
+export function pytorchigniteConfig(igniteConfig: string): { config: string; outputPath: string } {
+	return { config: igniteConfig, outputPath: "" };
+}
+
+export function catalystConfig(catalystConfig: string): { config: string; logdir: string } {
+	return { config: catalystConfig, logdir: "logs/" };
+}
+
+export function fastaiConfig(fastaiLearner: string): { learner: string; model: string } {
+	return { learner: fastaiLearner, model: "" };
+}
+
+export function jaxConfig(jaxConfig: string): { config: string; platform: string } {
+	return { config: jaxConfig, platform: "cuda" };
+}
+
+export function flaxConfig(flaxModel: string): { model: string; dtype: string } {
+	return { model: flaxModel, dtype: "float32" };
+}
+
+export function haikuConfig(haikuModel: string): { model: string; rng: string } {
+	return { model: haikuModel, rng: "key" };
+}
+
+export function objaxConfig(objaxModel: string): { model: string; device: string } {
+	return { model: objaxModel, device: "gpu" };
+}
+
+export function pygConfig(pygDataset: string): { dataset: string; hiddenChannels: number } {
+	return { dataset: pygDataset, hiddenChannels: 64 };
+}
+
+export function dglConfig(dglGraph: string): { graph: string; gnnType: string } {
+	return { graph: dglGraph, gnnType: "gcn" };
+}
+
+export function daskmlConfig(daskModel: string): { model: string; scheduler: string } {
+	return { model: daskModel, scheduler: "synchronous" };
+}
+
+export function daskdistributedConfig(daskCluster: string): { cluster: string; workers: number } {
+	return { cluster: daskCluster, workers: 4 };
+}
+
+export function cudfConfig(cudfDataframe: string): { dataframe: string; engine: string } {
+	return { dataframe: cudfDataframe, engine: "cudf" };
+}
+
+export function cumlConfig(cumlModel: string): { model: string; outputType: string } {
+	return { model: cumlModel, outputType: "numpy" };
+}
+
+export function cudnnConfig(cudnnVersion: string): { version: string; cudnnBackend: string } {
+	return { version: cudnnVersion, cudnnBackend: "cudnn" };
+}
+
+export function cufftConfig(cufftPlan: string): { plan: string; n: number } {
+	return { plan: cufftPlan, n: 1024 };
+}
+
+export function cublassConfig(cublasHandle: string): { handle: string; transpose: string } {
+	return { handle: cublasHandle, transpose: "non-transpose" };
+}
+
+export function cusparseConfig(cusparseMatrix: string): { matrix: string; format: string } {
+	return { matrix: cusparseMatrix, format: "csr" };
+}
+
+export function tensorrtConfig(trtEngine: string): { engine: string; precision: string } {
+	return { engine: trtEngine, precision: "fp32" };
+}
+
+export function torchscriptConfig(torchscriptModel: string): { model: string; optimizeForMobile: boolean } {
+	return { model: torchscriptModel, optimizeForMobile: false };
+}
+
+export function onnxConfig(onnxModel: string): { model: string; opsetVersion: number } {
+	return { model: onnxModel, opsetVersion: 17 };
+}
+
+export function tvmConfig(tvmModel: string): { model: string; target: string } {
+	return { model: tvmModel, target: "llvm" };
+}
+
+export function mxnetConfig(mxnetSymbol: string): { symbol: string; ctx: string } {
+	return { symbol: mxnetSymbol, ctx: "gpu" };
+}
+
+export function chainerConfig(chainerModel: string): { model: string; gpu: number } {
+	return { model: chainerModel, gpu: 0 };
+}
+
+export function mlxConfig(mlxModel: string): { model: string; compute: string } {
+	return { model: mlxModel, compute: "float32" };
+}
+
+export function coremlConfig(coremlModel: string): { model: string; targets: string[] } {
+	return { model: coremlModel, targets: ["ios"] };
+}
+
+// LLM Frameworks & RAG
+
+export function sentencetransformersConfig(stModel: string): { model: string; device: string } {
+	return { model: stModel, device: "cuda" };
+}
+
+export function instructorConfig(instructorModel: string): { model: string; task: string } {
+	return { model: instructorModel, task: "embedding" };
+}
+
+export function langchainConfig(lcChainType: string): { chainType: string; verbose: boolean } {
+	return { chainType: lcChainType, verbose: false };
+}
+
+export function langsmithConfig(lsProject: string): { project: string; apiKey: string } {
+	return { project: lsProject, apiKey: "" };
+}
+
+export function llamaindexConfig(liIndexType: string): { indexType: string; chunkSize: number } {
+	return { indexType: liIndexType, chunkSize: 1024 };
+}
+
+export function haystackConfig(haystackPipeline: string): { pipeline: string; version: string } {
+	return { pipeline: haystackPipeline, version: "1.9" };
+}
+
+export function ragasConfig(ragasEval: string): { eval: string; metrics: string[] } {
+	return { eval: ragasEval, metrics: ["faithfulness", "answer_relevancy"] };
+}
+
+export function trulensConfig(trulensApp: string): { app: string; provider: string } {
+	return { app: trulensApp, provider: "openai" };
+}
+
+export function phoenixConfig(phoenixEndpoint: string): { endpoint: string; project: string } {
+	return { endpoint: phoenixEndpoint, project: "default" };
+}
+
+export function arizeConfig(arizeSpaceId: string): { spaceKey: string; modelId: string } {
+	return { spaceKey: arizeSpaceId, modelId: "" };
+}
+
+export function whylabsConfig(why labsOrgId: string): { orgId: string; datasetId: string } {
+	return { orgId: whylabsOrgId, datasetId: "" };
+}
+
+export function fiddlerConfig(fiddlerUrl: string): { url: string; project: string } {
+	return { url: fiddlerUrl, project: "" };
+}
+
+export function superannotateConfig(saProject: string): { project: string; projectType: string } {
+	return { project: saProject, projectType: "image" };
+}
+
+export function labelstudioConfig(lsUrl: string): { url: string; project: string } {
+	return { url: lsUrl, project: "" };
+}
+
+export function scaleaiConfig(scaleApiKey: string): { apiKey: string; project: string } {
+	return { apiKey: scaleApiKey, project: "" };
+}
+
+export function labelboxConfig(labelboxApiKey: string): { apiKey: string; project: string } {
+	return { apiKey: labelboxApiKey, project: "" };
+}
+
+export function snorkelConfig(snorkelProject: string): { project: string; database: string } {
+	return { project: snorkelProject, database: "" };
+}
+
+export function prodigyConfig(prodigyRecipe: string): { recipe: string; host: string } {
+	return { recipe: prodigyRecipe, host: "localhost" };
+}
+
+export function cvatConfig(cvatUrl: string): { url: string; task: string } {
+	return { url: cvatUrl, task: "" };
+}
+
+export function labelimgConfig(labelImgDir: string): { dir: string; output: string } {
+	return { dir: labelImgDir, output: "" };
+}
+
+export function vottConfig(vottProject: string): { project: string; assetPath: string } {
+	return { project: vottProject, assetPath: "" };
+}
+
+export function sagemakergroundtruthConfig(smgtWorkteam: string): { workteam: string; labelingJobName: string } {
+	return { workteam: smgtWorkteam, labelingJobName: "" };
+}
+
+export function gcpvertexConfig(gcpProject: string): { project: string; location: string } {
+	return { project: gcpProject, location: "us-central1" };
+}
+
+export function azuremlConfig(azureSubId: string): { subscriptionId: string; resourceGroup: string } {
+	return { subscriptionId: azureSubId, resourceGroup: "" };
+}
+
+export function wandbsweepsConfig(wbSweepConfig: string): { config: string; project: string } {
+	return { config: wbSweepConfig, project: "" };
+}
+
+export function raydashboardConfig(rayDashboardPort: number): { port: number; dashboardHost: string } {
+	return { port: rayDashboardPort, dashboardHost: "0.0.0.0" };
+}
+
+export function netronConfig(netronModel: string): { model: string; port: number } {
+	return { model: netronModel, port: 8081 };
+}
+
+export function modelexplainerConfig(explainerType: string): { type: string; model: string } {
+	return { type: explainerType, model: "" };
+}
+
+export function shapConfig(shapExplainer: string): { explainer: string; background: string } {
+	return { explainer: shapExplainer, background: "shap.kmeans" };
+}
+
+export function limeConfig(limeExplainer: string): { explainer: string; classNames: string[] } {
+	return { explainer: limeExplainer, classNames: [] };
+}
+
+export function eli5Config(eli5Model: string): { model: string; format: string } {
+	return { model: eli5Model, format: "text" };
+}
+
+export function anchorConfig(anchorRule: string): { rule: string; threshold: number } {
+	return { rule: anchorRule, threshold: 0.95 };
+}
+
+export function dalexConfig(dalexModel: string): { model: string; data: string } {
+	return { model: dalexModel, data: "" };
+}
+
+export function pdpboxConfig(pdpFeature: string): { feature: string; model: string } {
+	return { feature: pdpFeature, model: "" };
+}
+
+export function partialdependenceConfig(pdFeature: string): { feature: string; model: string } {
+	return { feature: pdFeature, model: "" };
+}
+
+export function treeinterpreterConfig(tiModel: string): { model: string; data: string } {
+	return { model: tiModel, data: "" };
+}
+
+export function fairlearnConfig(fairlearnMetric: string): { metric: string; sensitiveFeatures: string } {
+	return { metric: fairlearnMetric, sensitiveFeatures: "" };
+}
+
+export function aif360Config(aif360Metric: string): { metric: string; privilegedGroups: string[] } {
+	return { metric: aif360Metric, privilegedGroups: [] };
+}
+
+export function aequitasConfig(aequitasConf: string): { config: string; model: string } {
+	return { config: aequitasConf, model: "" };
+}
+
+export function mlopsdiffConfig(mlopsdiffRepo: string): { repo: string; baseline: string } {
+	return { repo: mlopsdiffRepo, baseline: "" };
+}
+
+export function seldonConfig(seldonDeployment: string): { name: string; modelUri: string } {
+	return { name: seldonDeployment, modelUri: "" };
+}
+
+export function cortexMLConfig(cortexApiSpec: string): { apiSpec: string; endpoint: string } {
+	return { apiSpec: cortexApiSpec, endpoint: "" };
+}
+
+export function bentomlMLConfig(bentoService: string): { service: string; version: string } {
+	return { service: bentoService, version: "" };
+}
+
+export function tritonMLConfig(tritonServerUrl: string): { serverUrl: string; modelName: string } {
+	return { serverUrl: tritonServerUrl, modelName: "" };
+}
+
+export function tfservingConfig(tfServingPort: number): { port: number; modelName: string } {
+	return { port: tfServingPort, modelName: "" };
+}
+
+export function torchserveMLConfig(torchServeModel: string): { model: string; configFile: string } {
+	return { model: torchServeModel, configFile: "" };
+}
+
+export function mlserverConfig(mlserverEndpoint: string): { endpoint: string; model: string } {
+	return { endpoint: mlserverEndpoint, model: "" };
+}
+
+export function rayserveMLConfig(rayServeApp: string): { app: string; route: string } {
+	return { app: rayServeApp, route: "/predict" };
+}
+
+export function redisMlConfig(redisMlModel: string): { model: string; key: string } {
+	return { model: redisMlModel, key: "" };
+}
+
+export function nvidiatronConfig(nvidiaTrtModel: string): { model: string; engine: string } {
+	return { model: nvidiaTrtModel, engine: "" };
+}
+
+export function openvinoConfig(openvinoModel: string): { model: string; device: string } {
+	return { model: openvinoModel, device: "CPU" };
+}
+
+export function opencvdnnConfig(opencvDnnModel: string): { model: string; backend: string } {
+	return { model: opencvDnnModel, backend: "dnn" };
+}
+
+export function snpeConfig(snpeModel: string): { model: string; runtime: string } {
+	return { model: snpeModel, runtime: "DSP" };
+}
+
+export function dnndkConfig(dnndkModel: string): { model: string; target: string } {
+	return { model: dnndkModel, target: "zcu102" };
+}
+
 // Subset Sum
 export function subsetSum(nums: number[], target: number): boolean[] | null {
 	const dp = new Set([0]);
