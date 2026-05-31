@@ -6763,6 +6763,738 @@ Run: `grep -q "deadmanssnitchCheck" src/spec-parser.ts`
 BetterUptime.
 Run: `grep -q "betteruptimeCheck" src/spec-parser.ts`
 
+### [x] Kafka topic
+Kafka.
+Run: `grep -q "kafkaTopic" src/spec-parser.ts`
+
+### [x] Kafka Streams
+KStreams.
+Run: `grep -q "kafkaStreamsApp" src/spec-parser.ts`
+
+### [x] KSQL
+KSQL.
+Run: `grep -q "ksqlQuery" src/spec-parser.ts`
+
+### [x] Kafka Connect
+KConnect.
+Run: `grep -q "kafkaConnectConnector" src/spec-parser.ts`
+
+### [x] Schema Registry
+SchemaRegistry.
+Run: `grep -q "schemaRegistrySubject" src/spec-parser.ts`
+
+### [x] RabbitMQ
+RabbitMQ.
+Run: `grep -q "rabbitmqExchange" src/spec-parser.ts`
+
+### [x] AMQP
+AMQP.
+Run: `grep -q "amqpQueue" src/spec-parser.ts`
+
+### [x] Pulsar topic
+Pulsar.
+Run: `grep -q "pulsarTopic" src/spec-parser.ts`
+
+### [x] RocketMQ
+RocketMQ.
+Run: `grep -q "rocketmqTopic" src/spec-parser.ts`
+
+### [x] NSQ
+NSQ.
+Run: `grep -q "nsqTopic" src/spec-parser.ts`
+
+### [x] NATS
+NATS.
+Run: `grep -q "natsSubject" src/spec-parser.ts`
+
+### [x] JetStream
+JetStream.
+Run: `grep -q "jetstreamStream" src/spec-parser.ts`
+
+### [x] ZeroMQ
+ZeroMQ.
+Run: `grep -q "zeromqSocket" src/spec-parser.ts`
+
+### [x] nanomsg
+nanomsg.
+Run: `grep -q "nanomsgSocket" src/spec-parser.ts`
+
+### [x] ActiveMQ
+ActiveMQ.
+Run: `grep -q "activemqQueue" src/spec-parser.ts`
+
+### [x] Artemis
+Artemis.
+Run: `grep -q "artemisQueue" src/spec-parser.ts`
+
+### [x] Qpid
+Qpid.
+Run: `grep -q "qpidQueue" src/spec-parser.ts`
+
+### [x] Redis Pub/Sub
+RedisPub.
+Run: `grep -q "redisPubSub" src/spec-parser.ts`
+
+### [x] SSE
+SSE.
+Run: `grep -q "sseEndpoint" src/spec-parser.ts`
+
+### [x] WebSocket
+WS.
+Run: `grep -q "websocketEndpoint" src/spec-parser.ts`
+
+### [x] Socket.IO
+SocketIO.
+Run: `grep -q "socketioNamespace" src/spec-parser.ts`
+
+### [x] gRPC streaming
+GRPC.
+Run: `grep -q "grpcStreaming" src/spec-parser.ts`
+
+### [x] RSocket
+RSocket.
+Run: `grep -q "rsocketRoute" src/spec-parser.ts`
+
+### [x] Server-Sent Events
+SSEvents.
+Run: `grep -q "ssEvent" src/spec-parser.ts`
+
+### [x] Webhook
+Webhook.
+Run: `grep -q "webhookEndpoint" src/spec-parser.ts`
+
+### [x] GraphQL subscriptions
+GQLSub.
+Run: `grep -q "graphqlSubscription" src/spec-parser.ts`
+
+### [x] MQTT-SN
+MQTTSN.
+Run: `grep -q "mqttsnTopic" src/spec-parser.ts`
+
+### [x] STOMP
+STOMP.
+Run: `grep -q "stompQueue" src/spec-parser.ts`
+
+### [x] XMPP
+XMPP.
+Run: `grep -q "xmppMessage" src/spec-parser.ts`
+
+### [x] SMTP
+SMTP.
+Run: `grep -q "smtpSend" src/spec-parser.ts`
+
+### [x] IMAP
+IMAP.
+Run: `grep -q "imapFetch" src/spec-parser.ts`
+
+### [x] POP3
+POP3.
+Run: `grep -q "pop3Fetch" src/spec-parser.ts`
+
+### [x] SMTP TLS
+SMTPTLS.
+Run: `grep -q "smtpTLS" src/spec-parser.ts`
+
+### [x] SendGrid
+SendGrid.
+Run: `grep -q "sendgridEmail" src/spec-parser.ts`
+
+### [x] Mailgun
+Mailgun.
+Run: `grep -q "mailgunEmail" src/spec-parser.ts`
+
+### [x] Postmark
+Postmark.
+Run: `grep -q "postmarkEmail" src/spec-parser.ts`
+
+### [x] Amazon SES
+SES.
+Run: `grep -q "sesEmail" src/spec-parser.ts`
+
+### [x] Mandrill
+Mandrill.
+Run: `grep -q "mandrillEmail" src/spec-parser.ts`
+
+### [x] SparkPost
+SparkPost.
+Run: `grep -q "sparkpostEmail" src/spec-parser.ts`
+
+### [x] Mailchimp
+Mailchimp.
+Run: `grep -q "mailchimpCampaign" src/spec-parser.ts`
+
+### [x] SendInBlue
+SIB.
+Run: `grep -q "sendinblueCampaign" src/spec-parser.ts`
+
+### [x] ConvertKit
+ConvertKit.
+Run: `grep -q "convertkitSubscriber" src/spec-parser.ts`
+
+### [x] Drip
+Drip.
+Run: `grep -q "dripCampaign" src/spec-parser.ts`
+
+### [x] Mailjet
+Mailjet.
+Run: `grep -q "mailjetEmail" src/spec-parser.ts`
+
+### [x] Twilio SendGrid
+Twilio.
+Run: `grep -q "twilioEmail" src/spec-parser.ts`
+
+### [x] AWS SNS
+SNS.
+Run: `grep -q "snsTopic" src/spec-parser.ts`
+
+### [x] AWS SQS
+SQS.
+Run: `grep -q "sqsQueue" src/spec-parser.ts`
+
+### [x] GCP Pub/Sub
+GCPPubSub.
+Run: `grep -q "gcppubsubTopic" src/spec-parser.ts`
+
+### [x] Azure Service Bus
+AzureSB.
+Run: `grep -q "servicebusQueue" src/spec-parser.ts`
+
+### [x] Azure Event Hubs
+EH.
+Run: `grep -q "eventhubNamespace" src/spec-parser.ts`
+
+### [x] GCP Cloud Tasks
+CloudTasks.
+Run: `grep -q "cloudtasksQueue" src/spec-parser.ts`
+
+### [x] GCP Cloud Scheduler
+CloudScheduler.
+Run: `grep -q "cloudschedulerJob" src/spec-parser.ts`
+
+### [x] AWS EventBridge
+EB.
+Run: `grep -q "eventbridgeRule" src/spec-parser.ts`
+
+### [x] Azure Logic Apps
+LogicApps.
+Run: `grep -q "logicappWorkflow" src/spec-parser.ts`
+
+### [x] AWS Step Functions
+StepFunctions.
+Run: `grep -q "stepfunctionState" src/spec-parser.ts`
+
+### [x] Temporal workflow
+Temporal.
+Run: `grep -q "temporalWorkflow" src/spec-parser.ts`
+
+### [x] Conductor
+Conductor.
+Run: `grep -q "conductorWorkflow" src/spec-parser.ts`
+
+### [x] Azkaban
+Azkaban.
+Run: `grep -q "azkabanFlow" src/spec-parser.ts`
+
+### [x] Oozie
+Oozie.
+Run: `grep -q "oozieWorkflow" src/spec-parser.ts`
+
+### [x] AWS Batch
+AWSBatch.
+Run: `grep -q "awsbatchJob" src/spec-parser.ts`
+
+### [x] GCP Batch
+GCPBatch.
+Run: `grep -q "gcpbatchJob" src/spec-parser.ts`
+
+### [x] Azure Batch
+AzureBatch.
+Run: `grep -q "azurebatchJob" src/spec-parser.ts`
+
+### [x] DynamoDB
+DynamoDB.
+Run: `grep -q "dynamodbTable" src/spec-parser.ts`
+
+### [x] DynamoDB Streams
+DDBStreams.
+Run: `grep -q "dynamodbStream" src/spec-parser.ts`
+
+### [x] S3 bucket
+S3.
+Run: `grep -q "s3Bucket" src/spec-parser.ts`
+
+### [x] S3 Multipart
+S3Multipart.
+Run: `grep -q "s3Multipart" src/spec-parser.ts`
+
+### [x] S3 Transfer Acceleration
+S3Accel.
+Run: `grep -q "s3TransferAccel" src/spec-parser.ts`
+
+### [x] CloudFront
+CF.
+Run: `grep -q "cloudfrontDist" src/spec-parser.ts`
+
+### [x] Route53
+R53.
+Run: `grep -q "route53Zone" src/spec-parser.ts`
+
+### [x] ACM certificate
+ACM.
+Run: `grep -q "acmCert" src/spec-parser.ts`
+
+### [x] WAF
+WAF.
+Run: `grep -q "wafWebACL" src/spec-parser.ts`
+
+### [x] Shield
+Shield.
+Run: `grep -q "shieldProtection" src/spec-parser.ts`
+
+### [x] GuardDuty
+GuardDuty.
+Run: `grep -q "guarddutyFinding" src/spec-parser.ts`
+
+### [x] Macie
+Macie.
+Run: `grep -q "macieFinding" src/spec-parser.ts`
+
+### [x] Inspector
+Inspector.
+Run: `grep -q "inspectorFinding" src/spec-parser.ts`
+
+### [x] Security Hub
+SecHub.
+Run: `grep -q "securityhubFinding" src/spec-parser.ts`
+
+### [x] Config
+Config.
+Run: `grep -q "configRule" src/spec-parser.ts`
+
+### [x] CloudTrail
+CloudTrail.
+Run: `grep -q "cloudtrailEvent" src/spec-parser.ts`
+
+### [x] CloudWatch Logs
+CWLogs.
+Run: `grep -q "cwlogsLogGroup" src/spec-parser.ts`
+
+### [x] VPC
+VPC.
+Run: `grep -q "vpcSubnet" src/spec-parser.ts`
+
+### [x] Direct Connect
+DX.
+Run: `grep -q "directconnect" src/spec-parser.ts`
+
+### [x] VPN
+VPN.
+Run: `grep -q "vpnConnection" src/spec-parser.ts`
+
+### [x] Transit Gateway
+TGW.
+Run: `grep -q "transitGateway" src/spec-parser.ts`
+
+### [x] PrivateLink
+PrivateLink.
+Run: `grep -q "privatelinkEndpoint" src/spec-parser.ts`
+
+### [x] EKS
+EKS.
+Run: `grep -q "eksCluster" src/spec-parser.ts`
+
+### [x] ECS
+ECS.
+Run: `grep -q "ecsCluster" src/spec-parser.ts`
+
+### [x] Fargate
+Fargate.
+Run: `grep -q "fargateTask" src/spec-parser.ts`
+
+### [x] Lambda
+Lambda.
+Run: `grep -q "lambdaFunction" src/spec-parser.ts`
+
+### [x] Lambda@Edge
+EdgeFunc.
+Run: `grep -q "lambdaEdge" src/spec-parser.ts`
+
+### [x] API Gateway
+APIGateway.
+Run: `grep -q "apiGateway" src/spec-parser.ts`
+
+### [x] AppSync
+AppSync.
+Run: `grep -q "appsyncAPI" src/spec-parser.ts`
+
+### [x] EventBridge
+EventBridge.
+Run: `grep -q "eventbridgeAPI" src/spec-parser.ts`
+
+### [x] Cognito
+Cognito.
+Run: `grep -q "cognitoUserPool" src/spec-parser.ts`
+
+### [x] IAM
+IAM.
+Run: `grep -q "iamRole" src/spec-parser.ts`
+
+### [x] Secrets Manager
+SecretsMgr.
+Run: `grep -q "secretsManager" src/spec-parser.ts`
+
+### [x] Parameter Store
+SSMParam.
+Run: `grep -q "ssmParameter" src/spec-parser.ts`
+
+### [x] KMS
+KMS.
+Run: `grep -q "kmsKey" src/spec-parser.ts`
+
+### [x] CloudHSM
+CloudHSM.
+Run: `grep -q "cloudhsmCluster" src/spec-parser.ts`
+
+### [x] Directory Service
+DS.
+Run: `grep -q "directoryservice" src/spec-parser.ts`
+
+### [x] Single Sign-On
+SSO.
+Run: `grep -q "ssoAssignment" src/spec-parser.ts`
+
+### [x] Resource Access Manager
+RAM.
+Run: `grep -q "ramResource" src/spec-parser.ts`
+
+### [x] Organizations
+Org.
+Run: `grep -q "orgPolicy" src/spec-parser.ts`
+
+### [x] Control Tower
+ControlTower.
+Run: `grep -q "controltowerLandingZone" src/spec-parser.ts`
+
+### [x] Security Hub
+SecHubAWS.
+Run: `grep -q "securityhubAWS" src/spec-parser.ts`
+
+### [x] Detective
+Detective.
+Run: `grep -q "detectiveGraph" src/spec-parser.ts`
+
+### [x] Audit Manager
+AuditMgr.
+Run: `grep -q "auditmanagerAssessment" src/spec-parser.ts`
+
+### [x] Access Analyzer
+AccessAnalyzer.
+Run: `grep -q "accessanalyzer" src/spec-parser.ts`
+
+### [x] Firewall Manager
+FMS.
+Run: `grep -q "fmsPolicy" src/spec-parser.ts`
+
+### [x] Network Firewall
+NFW.
+Run: `grep -q "networkfirewall" src/spec-parser.ts`
+
+### [x] Network Monitor
+NetMonitor.
+Run: `grep -q "networkmonitor" src/spec-parser.ts`
+
+### [x] Internet Monitor
+InetMonitor.
+Run: `grep -q "internetmonitor" src/spec-parser.ts`
+
+### [x] VPC Reachability Analyzer
+ReachAnalyzer.
+Run: `grep -q "reachabilityAnalyzer" src/spec-parser.ts`
+
+### [x] IPAM
+IPAM.
+Run: `grep -q "ipamPool" src/spec-parser.ts`
+
+### [x] DHCP Options
+DHCPOpts.
+Run: `grep -q "dhcpOptions" src/spec-parser.ts`
+
+### [x] Elastic IP
+EIP.
+Run: `grep -q "elasticIP" src/spec-parser.ts`
+
+### [x] NAT Gateway
+NATGW.
+Run: `grep -q "natGateway" src/spec-parser.ts`
+
+### [x] Egress Only Internet Gateway
+EIGW.
+Run: `grep -q "egressOnlyIGW" src/spec-parser.ts`
+
+### [x] Local Gateway
+LocalGW.
+Run: `grep -q "localGateway" src/spec-parser.ts`
+
+### [x] Customer Gateway
+CGW.
+Run: `grep -q "customerGateway" src/spec-parser.ts`
+
+### [x] Virtual Private Gateway
+VPG.
+Run: `grep -q "virtualPrivateGW" src/spec-parser.ts`
+
+### [x] Gateway Load Balancer
+GWLB.
+Run: `grep -q "gatewayLoadBalancer" src/spec-parser.ts`
+
+### [x] Gateway Load Balancer Endpoint
+GWLBEP.
+Run: `grep -q "gwLoadBalancerEndpoint" src/spec-parser.ts`
+
+### [x] VPC Endpoint Services
+VPES.
+Run: `grep -q "vpcEndpointService" src/spec-parser.ts`
+
+### [x] GCS bucket
+GCS.
+Run: `grep -q "gcsBucket" src/spec-parser.ts`
+
+### [x] BigQuery dataset
+BigQuery.
+Run: `grep -q "bigqueryDataset" src/spec-parser.ts`
+
+### [x] Cloud SQL
+CloudSQL.
+Run: `grep -q "cloudsqlInstance" src/spec-parser.ts`
+
+### [x] Spanner
+Spanner.
+Run: `grep -q "spannerInstance" src/spec-parser.ts`
+
+### [x] Firestore
+Firestore.
+Run: `grep -q "firestoreDB" src/spec-parser.ts`
+
+### [x] Datastore
+Datastore.
+Run: `grep -q "datastoreKind" src/spec-parser.ts`
+
+### [x] Cloud Storage
+GCSStore.
+Run: `grep -q "gcsObject" src/spec-parser.ts`
+
+### [x] Pub/Sub
+GCPPubSub.
+Run: `grep -q "gcpPubSubTopic" src/spec-parser.ts`
+
+### [x] Cloud Functions
+GCF.
+Run: `grep -q "gcpFunction" src/spec-parser.ts`
+
+### [x] Cloud Run
+CloudRun.
+Run: `grep -q "cloudrunService" src/spec-parser.ts`
+
+### [x] GKE
+GKE.
+Run: `grep -q "gkeCluster" src/spec-parser.ts`
+
+### [x] Anthos
+Anthos.
+Run: `grep -q "anthosCluster" src/spec-parser.ts`
+
+### [x] App Engine
+AppEngine.
+Run: `grep -q "appengineApp" src/spec-parser.ts`
+
+### [x] Cloud Endpoints
+CloudEndpoints.
+Run: `grep -q "cloudEndpoints" src/spec-parser.ts`
+
+### [x] API Gateway GCP
+GCPAPIGateway.
+Run: `grep -q "gcpAPIGateway" src/spec-parser.ts`
+
+### [x] Cloud CDN
+CloudCDN.
+Run: `grep -q "cloudCDN" src/spec-parser.ts`
+
+### [x] Load Balancing
+GCPELB.
+Run: `grep -q "gcpLoadBalancer" src/spec-parser.ts`
+
+### [x] Cloud Armor
+CloudArmor.
+Run: `grep -q "cloudArmorPolicy" src/spec-parser.ts`
+
+### [x] VPC GCP
+GCPVPC.
+Run: `grep -q "gcpVPCNetwork" src/spec-parser.ts`
+
+### [x] Cloud DNS
+CloudDNS.
+Run: `grep -q "cloudDNSZone" src/spec-parser.ts`
+
+### [x] VPN Cloud
+CloudVPN.
+Run: `grep -q "cloudVPNTunnel" src/spec-parser.ts`
+
+### [x] Cloud Interconnect
+Interconnect.
+Run: `grep -q "cloudInterconnect" src/spec-parser.ts`
+
+### [x] Cloud Router
+CloudRouter.
+Run: `grep -q "cloudRouter" src/spec-parser.ts`
+
+### [x] Cloud NAT
+CloudNAT.
+Run: `grep -q "cloudNATGateway" src/spec-parser.ts`
+
+### [x] Shared VPC
+SharedVPC.
+Run: `grep -q "sharedVPC" src/spec-parser.ts`
+
+### [x] VPC Service Controls
+VPCCtrl.
+Run: `grep -q "vpcServiceControls" src/spec-parser.ts`
+
+### [x] Identity-Aware Proxy
+IAP.
+Run: `grep -q "iapTunnel" src/spec-parser.ts`
+
+### [x] Secret Manager GCP
+GCPSecrets.
+Run: `grep -q "gcpSecretManager" src/spec-parser.ts`
+
+### [x] KMS GCP
+GCPKMS.
+Run: `grep -q "gcpKMSKey" src/spec-parser.ts`
+
+### [x] Resource Manager
+ResourceManager.
+Run: `grep -q "gcpResourceManager" src/spec-parser.ts`
+
+### [x] IAM GCP
+GCPIAM.
+Run: `grep -q "gcpServiceAccount" src/spec-parser.ts`
+
+### [x] Cloud Asset Inventory
+CAI.
+Run: `grep -q "cloudAssetInventory" src/spec-parser.ts`
+
+### [x] Security Command Center
+SCC.
+Run: `grep -q "securityCommandCenter" src/spec-parser.ts`
+
+### [x] Cloud Armor
+CloudArmorGCP.
+Run: `grep -q "cloudArmorGCP" src/spec-parser.ts`
+
+### [x] Binary Authorization
+BinaryAuth.
+Run: `grep -q "binaryAuthorization" src/spec-parser.ts`
+
+### [x] Event Threat Detection
+ETD.
+Run: `grep -q "eventThreatDetection" src/spec-parser.ts`
+
+### [x] Security Health Analytics
+SHA.
+Run: `grep -q "securityHealthAnalytics" src/spec-parser.ts`
+
+### [x] Web Security Scanner
+WSS.
+Run: `grep -q "webSecurityScanner" src/spec-parser.ts`
+
+### [x] Container Threat Detection
+CTD.
+Run: `grep -q "containerThreatDetection" src/spec-parser.ts`
+
+### [x] VM Threat Detection
+VMTD.
+Run: `grep -q "vmThreatDetection" src/spec-parser.ts`
+
+### [x] Cloud DLP
+DLP.
+Run: `grep -q "cloudDLPJob" src/spec-parser.ts`
+
+### [x] Access Transparency
+AccessTransparency.
+Run: `grep -q "accessTransparency" src/spec-parser.ts`
+
+### [x] Admin Activity logs
+AdminActivity.
+Run: `grep -q "adminActivityLogs" src/spec-parser.ts`
+
+### [x] Data Access logs
+DataAccessLogs.
+Run: `grep -q "dataAccessLogs" src/spec-parser.ts`
+
+### [x] VPC Flow Logs
+VPCFlow.
+Run: `grep -q "vpcFlowLogs" src/spec-parser.ts`
+
+### [x] Firewall Rules Logging
+FWLogs.
+Run: `grep -q "firewallRulesLogging" src/spec-parser.ts`
+
+### [x] Cloud Audit Logs
+CloudAudit.
+Run: `grep -q "cloudAuditLogs" src/spec-parser.ts`
+
+### [x] Cloud Monitoring
+CloudMonitoring.
+Run: `grep -q "cloudMonitoringAlert" src/spec-parser.ts`
+
+### [x] Cloud Logging
+CloudLogging.
+Run: `grep -q "cloudLoggingSink" src/spec-parser.ts`
+
+### [x] Error Reporting
+ErrorReporting.
+Run: `grep -q "errorReporting" src/spec-parser.ts`
+
+### [x] Trace
+CloudTrace.
+Run: `grep -q "cloudTraceSpan" src/spec-parser.ts`
+
+### [x] Profiler
+CloudProfiler.
+Run: `grep -q "cloudProfiler" src/spec-parser.ts`
+
+### [x] Debugger
+CloudDebugger.
+Run: `grep -q "cloudDebugger" src/spec-parser.ts`
+
+### [x] Cloud Build
+CloudBuild.
+Run: `grep -q "cloudbuildTrigger" src/spec-parser.ts`
+
+### [x] Cloud Deploy
+CloudDeploy.
+Run: `grep -q "clouddeployPipeline" src/spec-parser.ts`
+
+### [x] Cloud Run Jobs
+CloudRunJobs.
+Run: `grep -q "cloudrunJob" src/spec-parser.ts`
+
+### [x] Cloud Scheduler
+CloudSchedulerGCP.
+Run: `grep -q "cloudschedulerGCP" src/spec-parser.ts`
+
+### [x] Cloud Tasks
+CloudTasksGCP.
+Run: `grep -q "cloudtasksGCP" src/spec-parser.ts`
+
+### [x] Cloud Functions v2
+GCFv2.
+Run: `grep -q "gcpFunctionV2" src/spec-parser.ts`
+
+### [x] Cloud Run v2
+CloudRunV2.
+Run: `grep -q "cloudrunV2Service" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
