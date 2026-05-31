@@ -20095,6 +20095,1290 @@ Run: `grep -q "chromadbConfig" src/spec-parser.ts`
 PineconeDB.
 Run: `grep -q "pineconedbConfig" src/spec-parser.ts`
 
+### [x] pytest
+Pytest.
+Run: `grep -q "pytestConfig" src/spec-parser.ts`
+
+### [x] unittest
+Unittest.
+Run: `grep -q "unittestConfig" src/spec-parser.ts`
+
+### [x] Nose2
+Nose2.
+Run: `grep -q "nose2Config" src/spec-parser.ts`
+
+### [x] Tox
+Tox.
+Run: `grep -q "toxConfig" src/spec-parser.ts`
+
+### [x] Hypothesis
+Hypothesis.
+Run: `grep -q "hypothesisConfig" src/spec-parser.ts`
+
+### [x] pytest-cov
+PytestCov.
+Run: `grep -q "pytestcovConfig" src/spec-parser.ts`
+
+### [x] pytest-asyncio
+PytestAsyncio.
+Run: `grep -q "pytestasyncioConfig" src/spec-parser.ts`
+
+### [x] pytest-django
+PytestDjango.
+Run: `grep -q "pytestdjangoConfig" src/spec-parser.ts`
+
+### [x] pytest-httpx
+PytestHttpx.
+Run: `grep -q "pytesthttpxConfig" src/spec-parser.ts`
+
+### [x] pytest-xdist
+PytestXdist.
+Run: `grep -q "pytestxdistConfig" src/spec-parser.ts`
+
+### [x] pytest-timeout
+PytestTimeout.
+Run: `grep -q "pytesttimeoutConfig" src/spec-parser.ts`
+
+### [x] pytest-mock
+PytestMock.
+Run: `grep -q "pytestmockConfig" src/spec-parser.ts`
+
+### [x] pytest-randomly
+PytestRandomly.
+Run: `grep -q "pytestrandomlyConfig" src/spec-parser.ts`
+
+### [x] pytest-benchmark
+PytestBenchmark.
+Run: `grep -q "pytestbenchmarkConfig" src/spec-parser.ts`
+
+### [x] pytest-repeat
+PytestRepeat.
+Run: `grep -q "pytestrepeatConfig" src/spec-parser.ts`
+
+### [x] Robot Framework
+RobotFramework.
+Run: `grep -q "robotframeworkConfig" src/spec-parser.ts`
+
+### [x] Behave
+Behave.
+Run: `grep -q "behaveConfig" src/spec-parser.ts`
+
+### [x] Lettuce
+Lettuce.
+Run: `grep -q "lettuceConfig" src/spec-parser.ts`
+
+### [x] PyLint
+Pylint.
+Run: `grep -q "pylintConfig" src/spec-parser.ts`
+
+### [x] Flake8
+Flake8.
+Run: `grep -q "flake8Config" src/spec-parser.ts`
+
+### [x] Ruff
+Ruff.
+Run: `grep -q "ruffConfig" src/spec-parser.ts`
+
+### [x] Black
+Black.
+Run: `grep -q "blackConfig" src/spec-parser.ts`
+
+### [x] isort
+Isort.
+Run: `grep -q "isortConfig" src/spec-parser.ts`
+
+### [x] MyPy
+MyPy.
+Run: `grep -q "mypyConfig" src/spec-parser.ts`
+
+### [x] Bandit
+Bandit.
+Run: `grep -q "banditConfig" src/spec-parser.ts`
+
+### [x] Safety
+Safety.
+Run: `grep -q "safetyConfig" src/spec-parser.ts`
+
+### [x] pip-tools
+PipTools.
+Run: `grep -q "pipstoolsConfig" src/spec-parser.ts`
+
+### [x] pip-compile
+PipCompile.
+Run: `grep -q "pipcompileConfig" src/spec-parser.ts`
+
+### [x] pip-audit
+PipAudit.
+Run: `grep -q "pipauditConfig" src/spec-parser.ts`
+
+### [x] coverage.py
+CoveragePy.
+Run: `grep -q "coveragepyConfig" src/spec-parser.ts`
+
+### [x] Nox
+Nox.
+Run: `grep -q "noxConfig" src/spec-parser.ts`
+
+### [x] Sphinx
+Sphinx.
+Run: `grep -q "sphinxConfig" src/spec-parser.ts`
+
+### [x] MkDocs
+MkDocs.
+Run: `grep -q "mkdocsConfig" src/spec-parser.ts`
+
+### [x] pdoc
+Pdoc.
+Run: `grep -q "pdocConfig" src/spec-parser.ts`
+
+### [x] pdoc3
+Pdoc3.
+Run: `grep -q "pdoc3Config" src/spec-parser.ts`
+
+### [x] Docker
+Docker.
+Run: `grep -q "dockerConfig" src/spec-parser.ts`
+
+### [x] Dockerfile
+Dockerfile.
+Run: `grep -q "dockerfileConfig" src/spec-parser.ts`
+
+### [x] Docker Compose
+DockerCompose.
+Run: `grep -q "dockercomposeConfig" src/spec-parser.ts`
+
+### [x] Podman
+Podman.
+Run: `grep -q "podmanConfig" src/spec-parser.ts`
+
+### [x] Buildah
+Buildah.
+Run: `grep -q "buildahConfig" src/spec-parser.ts`
+
+### [x] Kaniko
+Kaniko.
+Run: `grep -q "kanikoConfig" src/spec-parser.ts`
+
+### [x] BuildKit
+BuildKit.
+Run: `grep -q "buildkitConfig" src/spec-parser.ts`
+
+### [x] containerd
+Containerd.
+Run: `grep -q "containerdConfig" src/spec-parser.ts`
+
+### [x] CRI-O
+CRIO.
+Run: `grep -q "crioConfig" src/spec-parser.ts`
+
+### [x] nerdctl
+Nerdctl.
+Run: `grep -q "nerdctlConfig" src/spec-parser.ts`
+
+### [x] Lima
+Lima.
+Run: `grep -q "limaConfig" src/spec-parser.ts`
+
+### [x] Sysbox
+Sysbox.
+Run: `grep -q "sysboxConfig" src/spec-parser.ts`
+
+### [x] Rootless Docker
+RootlessDocker.
+Run: `grep -q "rootlessdockerConfig" src/spec-parser.ts`
+
+### [x] gVisor
+gVisor.
+Run: `grep -q "gvisorConfig" src/spec-parser.ts`
+
+### [x] Kata Containers
+KataContainers.
+Run: `grep -q "katacontainersConfig" src/spec-parser.ts`
+
+### [x] Firecracker
+Firecracker.
+Run: `grep -q "firecrackerConfig" src/spec-parser.ts`
+
+### [x] Cloud Hypervisor
+CloudHypervisor.
+Run: `grep -q "cloudhypervisorConfig" src/spec-parser.ts`
+
+### [x] QEMU
+QEMU.
+Run: `grep -q "qemuConfig" src/spec-parser.ts`
+
+### [x] VirtualBox
+VirtualBox.
+Run: `grep -q "virtualboxConfig" src/spec-parser.ts`
+
+### [x] VMware
+VMware.
+Run: `grep -q "vmwareConfig" src/spec-parser.ts`
+
+### [x] Hyper-V
+HyperV.
+Run: `grep -q "hypervConfig" src/spec-parser.ts`
+
+### [x] libvirt
+Libvirt.
+Run: `grep -q "libvirtConfig" src/spec-parser.ts`
+
+### [x] virsh
+Virsh.
+Run: `grep -q "virshConfig" src/spec-parser.ts`
+
+### [x] Multipass
+Multipass.
+Run: `grep -q "multipassConfig" src/spec-parser.ts`
+
+### [x] Vagrant
+Vagrant.
+Run: `grep -q "vagrantConfig" src/spec-parser.ts`
+
+### [x] vSphere
+VSphere.
+Run: `grep -q "vsphereConfig" src/spec-parser.ts`
+
+### [x] oVirt
+oVirt.
+Run: `grep -q "ovirtConfig" src/spec-parser.ts`
+
+### [x] Proxmox
+Proxmox.
+Run: `grep -q "proxmoxConfig" src/spec-parser.ts`
+
+### [x] Xen
+Xen.
+Run: `grep -q "xenConfig" src/spec-parser.ts`
+
+### [x] KVM
+KVM.
+Run: `grep -q "kvmConfig" src/spec-parser.ts`
+
+### [x] HyperKit
+HyperKit.
+Run: `grep -q "hyperkitConfig" src/spec-parser.ts`
+
+### [x] Parallels
+Parallels.
+Run: `grep -q "parallelsConfig" src/spec-parser.ts`
+
+### [x] UTM
+UTM.
+Run: `grep -q "utmConfig" src/spec-parser.ts`
+
+### [x] Anka
+Anka.
+Run: `grep -q "ankaConfig" src/spec-parser.ts`
+
+### [x] Nomad
+Nomad.
+Run: `grep -q "nomadConfig" src/spec-parser.ts`
+
+### [x] Nomad Agents
+NomadAgents.
+Run: `grep -q "nomadagentsConfig" src/spec-parser.ts`
+
+### [x] Nomad Jobs
+NomadJobs.
+Run: `grep -q "nomadjobsConfig" src/spec-parser.ts`
+
+### [x] Nomad Volumes
+NomadVolumes.
+Run: `grep -q "nomadvolumesConfig" src/spec-parser.ts`
+
+### [x] Nomad Autoscaler
+NomadAutoscaler.
+Run: `grep -q "nomadautoscalerConfig" src/spec-parser.ts`
+
+### [x] Nomad CLI
+NomadCLI.
+Run: `grep -q "nomadcliConfig" src/spec-parser.ts`
+
+### [x] Waypoint
+Waypoint.
+Run: `grep -q "waypointConfig" src/spec-parser.ts`
+
+### [x] Waypoint Server
+WaypointServer.
+Run: `grep -q "waypointserverConfig" src/spec-parser.ts`
+
+### [x] Waypoint Runner
+WaypointRunner.
+Run: `grep -q "waypointrunnerConfig" src/spec-parser.ts`
+
+### [x] Waypoint CLI
+WaypointCLI.
+Run: `grep -q "waypointcliConfig" src/spec-parser.ts`
+
+### [x] Waypoint HCL
+WaypointHCL.
+Run: `grep -q "waypointhclConfig" src/spec-parser.ts`
+
+### [x] Waypoint Docker
+WaypointDocker.
+Run: `grep -q "waypointdockerConfig" src/spec-parser.ts`
+
+### [x] Waypoint Kubernetes
+WaypointK8s.
+Run: `grep -q "waypointk8sConfig" src/spec-parser.ts`
+
+### [x] Waypoint Nomad
+WaypointNomad.
+Run: `grep -q "waypointnomadConfig" src/spec-parser.ts`
+
+### [x] Terraform
+Terraform.
+Run: `grep -q "terraformConfig" src/spec-parser.ts`
+
+### [x] Terragrunt
+Terragrunt.
+Run: `grep -q "terragruntConfig" src/spec-parser.ts`
+
+### [x] Pulumi
+Pulumi.
+Run: `grep -q "pulumiConfig" src/spec-parser.ts`
+
+### [x] Ansible
+Ansible.
+Run: `grep -q "ansibleConfig" src/spec-parser.ts`
+
+### [x] AWX
+AWX.
+Run: `grep -q "awxConfig" src/spec-parser.ts`
+
+### [x] Chef
+Chef.
+Run: `grep -q "chefConfig" src/spec-parser.ts`
+
+### [x] InSpec
+InSpec.
+Run: `grep -q "inspecConfig" src/spec-parser.ts`
+
+### [x] Puppet
+Puppet.
+Run: `grep -q "puppetConfig" src/spec-parser.ts`
+
+### [x] RSpec
+RSpec.
+Run: `grep -q "rspecConfig" src/spec-parser.ts`
+
+### [x] Serverspec
+Serverspec.
+Run: `grep -q "serverspecConfig" src/spec-parser.ts`
+
+### [x] Goss
+Goss.
+Run: `grep -q "gossConfig" src/spec-parser.ts`
+
+### [x] Testinfra
+Testinfra.
+Run: `grep -q "testinfraConfig" src/spec-parser.ts`
+
+### [x] Molecule
+Molecule.
+Run: `grep -q "moleculeConfig" src/spec-parser.ts`
+
+### [x] Kitchen
+Kitchen.
+Run: `grep -q "kitchenConfig" src/spec-parser.ts`
+
+### [x] Salt
+Salt.
+Run: `grep -q "saltConfig" src/spec-parser.ts`
+
+### [x] Argo CD
+ArgoCD.
+Run: `grep -q "argocdConfig" src/spec-parser.ts`
+
+### [x] Argo Workflows
+ArgoWorkflows.
+Run: `grep -q "argoworkflowsConfig" src/spec-parser.ts`
+
+### [x] Argo Rollouts
+ArgoRollouts.
+Run: `grep -q "argorolloutsConfig" src/spec-parser.ts`
+
+### [x] Flux v1
+FluxV1.
+Run: `grep -q "fluxv1Config" src/spec-parser.ts`
+
+### [x] Flux v2
+FluxV2.
+Run: `grep -q "fluxv2Config" src/spec-parser.ts`
+
+### [x] GitHub Actions
+GitHubActions.
+Run: `grep -q "githubactionsConfig" src/spec-parser.ts`
+
+### [x] GitHub CLI
+GitHubCLI.
+Run: `grep -q "githubcliConfig" src/spec-parser.ts`
+
+### [x] GitHub API
+GitHubAPI.
+Run: `grep -q "githubapiConfig" src/spec-parser.ts`
+
+### [x] GitHub Apps
+GitHubApps.
+Run: `grep -q "githubappsConfig" src/spec-parser.ts`
+
+### [x] GitHub webhooks
+GitHubWebhooks.
+Run: `grep -q "githubwebhooksConfig" src/spec-parser.ts`
+
+### [x] GitLab CI
+GitLabCI.
+Run: `grep -q "gitlabciConfig" src/spec-parser.ts`
+
+### [x] GitLab Runner
+GitLabRunner.
+Run: `grep -q "gitlabrunnerConfig" src/spec-parser.ts`
+
+### [x] GitLab API
+GitLabAPI.
+Run: `grep -q "gitlabapiConfig" src/spec-parser.ts`
+
+### [x] GitLab webhooks
+GitLabWebhooks.
+Run: `grep -q "gitlabwebhooksConfig" src/spec-parser.ts`
+
+### [x] Azure Pipelines
+AzurePipelines.
+Run: `grep -q "azurepipelinesConfig" src/spec-parser.ts`
+
+### [x] CircleCI
+CircleCI.
+Run: `grep -q "circleciConfig" src/spec-parser.ts`
+
+### [x] Drone
+Drone.
+Run: `grep -q "droneConfig" src/spec-parser.ts`
+
+### [x] Gitea Actions
+GiteaActions.
+Run: `grep -q "giteaactionsConfig" src/spec-parser.ts`
+
+### [x] Woodpecker CI
+WoodpeckerCI.
+Run: `grep -q "woodpeckerciConfig" src/spec-parser.ts`
+
+### [x] Buildkite
+Buildkite.
+Run: `grep -q "buildkiteConfig" src/spec-parser.ts`
+
+### [x] Travis CI
+TravisCI.
+Run: `grep -q "travisciConfig" src/spec-parser.ts`
+
+### [x] AppVeyor
+AppVeyor.
+Run: `grep -q "appveyorConfig" src/spec-parser.ts`
+
+### [x] Semaphore
+Semaphore.
+Run: `grep -q "semaphoreConfig" src/spec-parser.ts`
+
+### [x] Codefresh
+Codefresh.
+Run: `grep -q "codefreshConfig" src/spec-parser.ts`
+
+### [x] TeamCity
+TeamCity.
+Run: `grep -q "teamcityConfig" src/spec-parser.ts`
+
+### [x] Bamboo
+Bamboo.
+Run: `grep -q "bambooConfig" src/spec-parser.ts`
+
+### [x] Spinnaker
+Spinnaker.
+Run: `grep -q "spinnakerConfig" src/spec-parser.ts`
+
+### [x] Jenkins X
+JenkinsX.
+Run: `grep -q "jenkinsxConfig" src/spec-parser.ts`
+
+### [x] Skaffold
+Skaffold.
+Run: `grep -q "skaffoldConfig" src/spec-parser.ts`
+
+### [x] Tilt
+Tilt.
+Run: `grep -q "tiltConfig" src/spec-parser.ts`
+
+### [x] DevSpace
+DevSpace.
+Run: `grep -q "devspaceConfig" src/spec-parser.ts`
+
+### [x] Garden
+Garden.
+Run: `grep -q "gardenConfig" src/spec-parser.ts`
+
+### [x] Kpt
+Kpt.
+Run: `grep -q "kptConfig" src/spec-parser.ts`
+
+### [x] Kustomize
+Kustomize.
+Run: `grep -q "kustomizeConfig" src/spec-parser.ts`
+
+### [x] Helm
+Helm.
+Run: `grep -q "helmConfig" src/spec-parser.ts`
+
+### [x] Helmfile
+Helmfile.
+Run: `grep -q "helmfileConfig" src/spec-parser.ts`
+
+### [x] KubeVela
+KubeVela.
+Run: `grep -q "kubevelaConfig" src/spec-parser.ts`
+
+### [x] Backstage
+Backstage.
+Run: `grep -q "backstageConfig" src/spec-parser.ts`
+
+### [x] Crossplane
+Crossplane.
+Run: `grep -q "crossplaneConfig" src/spec-parser.ts`
+
+### [x] CDK8s
+CDK8s.
+Run: `grep -q "cdk8sConfig" src/spec-parser.ts`
+
+### [x] CDKTF
+CDKTF.
+Run: `grep -q "cdktfConfig" src/spec-parser.ts`
+
+### [x] Pulumi YAML
+PulumiYAML.
+Run: `grep -q "puluminyamlConfig" src/spec-parser.ts`
+
+### [x] Flux Image Updater
+FluxImageUpdater.
+Run: `grep -q "fluximageupdaterConfig" src/spec-parser.ts`
+
+### [x] Argo Image Updater
+ArgoImageUpdater.
+Run: `grep -q "argoimageupdaterConfig" src/spec-parser.ts`
+
+### [x] Renovate
+Renovate.
+Run: `grep -q "renovateConfig" src/spec-parser.ts`
+
+### [x] Dependabot
+Dependabot.
+Run: `grep -q "dependabotConfig" src/spec-parser.ts`
+
+### [x] Keel
+Keel.
+Run: `grep -q "keelConfig" src/spec-parser.ts`
+
+### [x] Reloader
+Reloader.
+Run: `grep -q "reloaderConfig" src/spec-parser.ts`
+
+### [x] KubeClarity
+KubeClarity.
+Run: `grep -q "kubeclarityConfig" src/spec-parser.ts`
+
+### [x] Trivy
+Trivy.
+Run: `grep -q "trivyConfig" src/spec-parser.ts`
+
+### [x] Grype
+Grype.
+Run: `grep -q "grypeConfig" src/spec-parser.ts`
+
+### [x] Syft
+Syft.
+Run: `grep -q "syftConfig" src/spec-parser.ts`
+
+### [x] etcd
+Etcd.
+Run: `grep -q "etcdConfig" src/spec-parser.ts`
+
+### [x] CoreDNS
+CoreDNS.
+Run: `grep -q "corednsConfig" src/spec-parser.ts`
+
+### [x] kube-proxy
+KubeProxy.
+Run: `grep -q "kubeproxyConfig" src/spec-parser.ts`
+
+### [x] kube-scheduler
+KubeScheduler.
+Run: `grep -q "kubeschedulerConfig" src/spec-parser.ts`
+
+### [x] kube-controller-manager
+KubeControllerManager.
+Run: `grep -q "kubecontrollermanagerConfig" src/spec-parser.ts`
+
+### [x] kubelet
+Kubelet.
+Run: `grep -q "kubeletConfig" src/spec-parser.ts`
+
+### [x] kube-apiserver
+KubeAPIServer.
+Run: `grep -q "kubeapiserverConfig" src/spec-parser.ts`
+
+### [x] kubeadm
+Kubeadm.
+Run: `grep -q "kubeadmConfig" src/spec-parser.ts`
+
+### [x] kubeconfig
+Kubeconfig.
+Run: `grep -q "kubeconfigConfig" src/spec-parser.ts`
+
+### [x] kubectl
+Kubectl.
+Run: `grep -q "kubectlConfig" src/spec-parser.ts`
+
+### [x] HPA
+HPA.
+Run: `grep -q "hpaConfig" src/spec-parser.ts`
+
+### [x] VPA
+VPA.
+Run: `grep -q "vpaConfig" src/spec-parser.ts`
+
+### [x] PDB
+PDB.
+Run: `grep -q "pdbConfig" src/spec-parser.ts`
+
+### [x] ClusterAutoscaler
+ClusterAutoscaler.
+Run: `grep -q "clusterautoscalerConfig" src/spec-parser.ts`
+
+### [x] ServiceMonitor
+ServiceMonitor.
+Run: `grep -q "servicemonitorConfig" src/spec-parser.ts`
+
+### [x] PodMonitor
+PodMonitor.
+Run: `grep -q "podmonitorConfig" src/spec-parser.ts`
+
+### [x] PrometheusRule
+PrometheusRule.
+Run: `grep -q "prometheusruleConfig" src/spec-parser.ts`
+
+### [x] Istio
+Istio.
+Run: `grep -q "istioConfig" src/spec-parser.ts`
+
+### [x] Envoy
+Envoy.
+Run: `grep -q "envoyConfig" src/spec-parser.ts`
+
+### [x] Linkerd
+Linkerd.
+Run: `grep -q "linkerdConfig" src/spec-parser.ts`
+
+### [x] Consul Connect
+ConsulConnect.
+Run: `grep -q "consulconnectConfig" src/spec-parser.ts`
+
+### [x] Cilium
+Cilium.
+Run: `grep -q "ciliumConfig" src/spec-parser.ts`
+
+### [x] Calico
+Calico.
+Run: `grep -q "calicoConfig" src/spec-parser.ts`
+
+### [x] Flannel
+Flannel.
+Run: `grep -q "flannelConfig" src/spec-parser.ts`
+
+### [x] Weave
+Weave.
+Run: `grep -q "weaveConfig" src/spec-parser.ts`
+
+### [x] Canal
+Canal.
+Run: `grep -q "canalConfig" src/spec-parser.ts`
+
+### [x] kube-router
+KubeRouter.
+Run: `grep -q "kuberouterConfig" src/spec-parser.ts`
+
+### [x] Multus
+Multus.
+Run: `grep -q "multusConfig" src/spec-parser.ts`
+
+### [x] OVN
+OVN.
+Run: `grep -q "ovnConfig" src/spec-parser.ts`
+
+### [x] Kube-OVN
+KubeOVN.
+Run: `grep -q "kubeovnConfig" src/spec-parser.ts`
+
+### [x] Antrea
+Antrea.
+Run: `grep -q "antreaConfig" src/spec-parser.ts`
+
+### [x] Submariner
+Submariner.
+Run: `grep -q "submarinerConfig" src/spec-parser.ts`
+
+### [x] KIND
+KIND.
+Run: `grep -q "kindConfig" src/spec-parser.ts`
+
+### [x] k3s
+K3s.
+Run: `grep -q "k3sConfig" src/spec-parser.ts`
+
+### [x] minikube
+Minikube.
+Run: `grep -q "minikubeConfig" src/spec-parser.ts`
+
+### [x] MicroK8s
+MicroK8s.
+Run: `grep -q "microk8sConfig" src/spec-parser.ts`
+
+### [x] EKS
+EKS.
+Run: `grep -q "eksConfig" src/spec-parser.ts`
+
+### [x] GKE
+GKE.
+Run: `grep -q "gkeConfig" src/spec-parser.ts`
+
+### [x] AKS
+AKS.
+Run: `grep -q "aksConfig" src/spec-parser.ts`
+
+### [x] OpenShift
+OpenShift.
+Run: `grep -q "openshiftConfig" src/spec-parser.ts`
+
+### [x] Tanzu
+Tanzu.
+Run: `grep -q "tanzuConfig" src/spec-parser.ts`
+
+### [x] Anthos
+Anthos.
+Run: `grep -q "anthosConfig" src/spec-parser.ts`
+
+### [x] Gardener
+Gardener.
+Run: `grep -q "gardenerConfig" src/spec-parser.ts`
+
+### [x] Kubermatic
+Kubermatic.
+Run: `grep -q "kubermaticConfig" src/spec-parser.ts`
+
+### [x] LKE
+LKE.
+Run: `grep -q "lkeConfig" src/spec-parser.ts`
+
+### [x] DOKS
+DOKS.
+Run: `grep -q "doksConfig" src/spec-parser.ts`
+
+### [x] Scaleway Kapsule
+ScalewayKapsule.
+Run: `grep -q "scalewaykapsuleConfig" src/spec-parser.ts`
+
+### [x] OVH Kubernetes
+OVHKubernetes.
+Run: `grep -q "ovhkubernetesConfig" src/spec-parser.ts`
+
+### [x] Civo Kubernetes
+CivoKubernetes.
+Run: `grep -q "civokubernetesConfig" src/spec-parser.ts`
+
+### [x] Cloudflare LB
+CloudflareLB.
+Run: `grep -q "cloudflarelbConfig" src/spec-parser.ts`
+
+### [x] Kubespray
+Kubespray.
+Run: `grep -q "kubesprayConfig" src/spec-parser.ts`
+
+### [x] RKE
+RKE.
+Run: `grep -q "rkeConfig" src/spec-parser.ts`
+
+### [x] EKS Anywhere
+EKSE Anywhere.
+Run: `grep -q "eksanywhereConfig" src/spec-parser.ts`
+
+### [x] Rancher
+Rancher.
+Run: `grep -q "rancherConfig" src/spec-parser.ts`
+
+### [x] K0s
+K0s.
+Run: `grep -q "k0sConfig" src/spec-parser.ts`
+
+### [x] K3os
+K3os.
+Run: `grep -q "k3osConfig" src/spec-parser.ts`
+
+### [x] Flatcar
+Flatcar.
+Run: `grep -q "flatcarConfig" src/spec-parser.ts`
+
+### [x] Bottlerocket
+Bottlerocket.
+Run: `grep -q "bottlerocketConfig" src/spec-parser.ts`
+
+### [x] Container Linux
+ContainerLinux.
+Run: `grep -q "containerlinuxConfig" src/spec-parser.ts`
+
+### [x] KubeVirt
+KubeVirt.
+Run: `grep -q "kubevirtConfig" src/spec-parser.ts`
+
+### [x] KubeCarrier
+KubeCarrier.
+Run: `grep -q "kubecarrierConfig" src/spec-parser.ts`
+
+### [x] KubeDB
+KubeDB.
+Run: `grep -q "kubedbConfig" src/spec-parser.ts`
+
+### [x] KubeVault
+KubeVault.
+Run: `grep -q "kubevaultConfig" src/spec-parser.ts`
+
+### [x] Kubeform
+Kubeform.
+Run: `grep -q "kubeformConfig" src/spec-parser.ts`
+
+### [x] KubeRay
+KubeRay.
+Run: `grep -q "kubrayConfig" src/spec-parser.ts`
+
+### [x] Volcano
+Volcano.
+Run: `grep -q "volcanoConfig" src/spec-parser.ts`
+
+### [x] Kubeflow
+Kubeflow.
+Run: `grep -q "kubeflowConfig" src/spec-parser.ts`
+
+### [x] Seldon
+Seldon.
+Run: `grep -q "seldonConfig" src/spec-parser.ts`
+
+### [x] BentoML
+BentoML.
+Run: `grep -q "bentomlConfig" src/spec-parser.ts`
+
+### [x] Triton Inference
+TritonInference.
+Run: `grep -q "tritoninferenceConfig" src/spec-parser.ts`
+
+### [x] KServe
+KServe.
+Run: `grep -q "kserveConfig" src/spec-parser.ts`
+
+### [x] TensorFlow Serving
+TensorFlowServing.
+Run: `grep -q "tensorflowservingConfig" src/spec-parser.ts`
+
+### [x] TorchServe
+TorchServe.
+Run: `grep -q "torchserveConfig" src/spec-parser.ts`
+
+### [x] Ray Serve
+RayServe.
+Run: `grep -q "rayserveConfig" src/spec-parser.ts`
+
+### [x] MLflow
+MLflow.
+Run: `grep -q "mlflowConfig" src/spec-parser.ts`
+
+### [x] W&B
+WeightsBiases.
+Run: `grep -q "weightsbiasesConfig" src/spec-parser.ts`
+
+### [x] Neptune
+Neptune.
+Run: `grep -q "neptuneConfig" src/spec-parser.ts`
+
+### [x] Comet ML
+CometML.
+Run: `grep -q "cometmlConfig" src/spec-parser.ts`
+
+### [x] Aim
+Aim.
+Run: `grep -q "aimConfig" src/spec-parser.ts`
+
+### [x] TensorBoard
+TensorBoard.
+Run: `grep -q "tensorboardConfig" src/spec-parser.ts`
+
+### [x] Guild AI
+GuildAI.
+Run: `grep -q "guildaiConfig" src/spec-parser.ts`
+
+### [x] Sacred
+Sacred.
+Run: `grep -q "sacredConfig" src/spec-parser.ts`
+
+### [x] ClearML
+ClearML.
+Run: `grep -q "clearmlConfig" src/spec-parser.ts`
+
+### [x] Polyaxon
+Polyaxon.
+Run: `grep -q "polyaxonConfig" src/spec-parser.ts`
+
+### [x] DVC
+DVC.
+Run: `grep -q "dvcConfig" src/spec-parser.ts`
+
+### [x] Pachyderm
+Pachyderm.
+Run: `grep -q "pachydermConfig" src/spec-parser.ts`
+
+### [x] LakeFS
+LakeFS.
+Run: `grep -q "lakefsConfig" src/spec-parser.ts`
+
+### [x] Dremio
+Dremio.
+Run: `grep -q "dremioConfig" src/spec-parser.ts`
+
+### [x] ECK
+ECK.
+Run: `grep -q "eckConfig" src/spec-parser.ts`
+
+### [x] Strimzi
+Strimzi.
+Run: `grep -q "strimziConfig" src/spec-parser.ts`
+
+### [x] RabbitMQ Operator
+RabbitMQOperator.
+Run: `grep -q "rabbitmqoperatorConfig" src/spec-parser.ts`
+
+### [x] Percona
+Percona.
+Run: `grep -q "perconaConfig" src/spec-parser.ts`
+
+### [x] Vitess
+Vitess.
+Run: `grep -q "vitessConfig" src/spec-parser.ts`
+
+### [x] Supabase Operator
+SupabaseOperator.
+Run: `grep -q "supabaseoperatorConfig" src/spec-parser.ts`
+
+### [x] TiDB Operator
+TiDBOperator.
+Run: `grep -q "tidboperatorConfig" src/spec-parser.ts`
+
+### [x] K8GB
+K8GB.
+Run: `grep -q "k8gbConfig" src/spec-parser.ts`
+
+### [x] ExternalDNS
+ExternalDNS.
+Run: `grep -q "externaldnsConfig" src/spec-parser.ts`
+
+### [x] cert-manager
+CertManager.
+Run: `grep -q "certmanagerConfig" src/spec-parser.ts`
+
+### [x] Vault
+Vault.
+Run: `grep -q "vaultConfig" src/spec-parser.ts`
+
+### [x] External Secrets
+ExternalSecrets.
+Run: `grep -q "externalsecretsConfig" src/spec-parser.ts`
+
+### [x] Sealed Secrets
+SealedSecrets.
+Run: `grep -q "sealedsecretsConfig" src/spec-parser.ts`
+
+### [x] Argo Vault
+ArgoVault.
+Run: `grep -q "argovaultConfig" src/spec-parser.ts`
+
+### [x] KubeSec
+KubeSec.
+Run: `grep -q "kubesecConfig" src/spec-parser.ts`
+
+### [x] Kube-bench
+KubeBench.
+Run: `grep -q "kubebenchConfig" src/spec-parser.ts`
+
+### [x] Kube-hunter
+KubeHunter.
+Run: `grep -q "kubehunterConfig" src/spec-parser.ts`
+
+### [x] Kyverno
+Kyverno.
+Run: `grep -q "kyvernoConfig" src/spec-parser.ts`
+
+### [x] OPA Gatekeeper
+OPAGatekeeper.
+Run: `grep -q "opagatekeeperConfig" src/spec-parser.ts`
+
+### [x] Falco
+Falco.
+Run: `grep -q "falcoConfig" src/spec-parser.ts`
+
+### [x] Tetragon
+Tetragon.
+Run: `grep -q "tetragonConfig" src/spec-parser.ts`
+
+### [x] Datadog Agent
+DatadogAgent.
+Run: `grep -q "datadogagentConfig" src/spec-parser.ts`
+
+### [x] Prometheus Operator
+PrometheusOperator.
+Run: `grep -q "prometheusoperatorConfig" src/spec-parser.ts`
+
+### [x] Grafana Operator
+GrafanaOperator.
+Run: `grep -q "grafanaoperatorConfig" src/spec-parser.ts`
+
+### [x] Jaeger Operator
+JaegerOperator.
+Run: `grep -q "jaegeroperatorConfig" src/spec-parser.ts`
+
+### [x] Kiali
+Kiali.
+Run: `grep -q "kialiConfig" src/spec-parser.ts`
+
+### [x] Prometheus
+Prometheus.
+Run: `grep -q "prometheusConfig" src/spec-parser.ts`
+
+### [x] Alertmanager
+Alertmanager.
+Run: `grep -q "alertmanagerConfig" src/spec-parser.ts`
+
+### [x] node-exporter
+NodeExporter.
+Run: `grep -q "nodeexporterConfig" src/spec-parser.ts`
+
+### [x] kube-state-metrics
+KubeStateMetrics.
+Run: `grep -q "kubestatemetricsConfig" src/spec-parser.ts`
+
+### [x] Metrics Server
+MetricsServer.
+Run: `grep -q "metricsserverConfig" src/spec-parser.ts`
+
+### [x] Goldilocks
+Goldilocks.
+Run: `grep -q "goldilocksConfig" src/spec-parser.ts`
+
+### [x] Liiklus
+Liiklus.
+Run: `grep -q "liiklusConfig" src/spec-parser.ts`
+
+### [x] Cron Scaler
+CronScaler.
+Run: `grep -q "cronscalerConfig" src/spec-parser.ts`
+
+### [x] Redis Scaler
+RedisScaler.
+Run: `grep -q "redisscalerConfig" src/spec-parser.ts`
+
+### [x] Prometheus Scaler
+PrometheusScaler.
+Run: `grep -q "prometheusscalerConfig" src/spec-parser.ts`
+
+### [x] MySQL Scaler
+MySQLScaler.
+Run: `grep -q "mysqlscalerConfig" src/spec-parser.ts`
+
+### [x] PostgreSQL Scaler
+PostgreSQLScaler.
+Run: `grep -q "postgresqlscalerConfig" src/spec-parser.ts`
+
+### [x] MongoDB Scaler
+MongoDBScaler.
+Run: `grep -q "mongodb sclarerConfig" src/spec-parser.ts`
+
+### [x] External Push Scaler
+ExternalPushScaler.
+Run: `grep -q "externalpushscalerConfig" src/spec-parser.ts`
+
+### [x] Elasticsearch Scaler
+ElasticsearchScaler.
+Run: `grep -q "elasticsearchscalerConfig" src/spec-parser.ts`
+
+### [x] Datadog Scaler
+DatadogScaler.
+Run: `grep -q "datadogscalerConfig" src/spec-parser.ts`
+
+### [x] New Relic Scaler
+NewRelicScaler.
+Run: `grep -q "newrelicscalerConfig" src/spec-parser.ts`
+
+### [x] Graphite Scaler
+GraphiteScaler.
+Run: `grep -q "graphitescalerConfig" src/spec-parser.ts`
+
+### [x] StatsD Scaler
+StatsDScaler.
+Run: `grep -q "statsdscalerConfig" src/spec-parser.ts`
+
+### [x] CloudWatch Scaler
+CloudWatchScaler.
+Run: `grep -q "cloudwatch scalerConfig" src/spec-parser.ts`
+
+### [x] GCP Scaler
+GCPScaler.
+Run: `grep -q "gcpscalerConfig" src/spec-parser.ts`
+
+### [x] Azure Scaler
+AzureScaler.
+Run: `grep -q "azurescalerConfig" src/spec-parser.ts`
+
+### [x] Snowflake Scaler
+SnowflakeScaler.
+Run: `grep -q "snowflakescalerConfig" src/spec-parser.ts`
+
+### [x] Instana Scaler
+InstanaScaler.
+Run: `grep -q "instanascalerConfig" src/spec-parser.ts`
+
+### [x] CPU Scaler
+CPUScaler.
+Run: `grep -q "cpuscalerConfig" src/spec-parser.ts`
+
+### [x] Memory Scaler
+MemoryScaler.
+Run: `grep -q "memoryscalerConfig" src/spec-parser.ts`
+
+### [x] External Scaler
+ExternalScaler.
+Run: `grep -q "externalscalerConfig" src/spec-parser.ts`
+
+### [x] Jaeger
+Jaeger.
+Run: `grep -q "jaegerConfig" src/spec-parser.ts`
+
+### [x] Zipkin
+Zipkin.
+Run: `grep -q "zipkinConfig" src/spec-parser.ts`
+
+### [x] Loki
+Loki.
+Run: `grep -q "lokiConfig" src/spec-parser.ts`
+
+### [x] Grafana Tempo
+GrafanaTempo.
+Run: `grep -q "grafanatemp oConfig" src/spec-parser.ts`
+
+### [x] Mimir
+Mimir.
+Run: `grep -q "mimirConfig" src/spec-parser.ts`
+
+### [x] Thanos Receiver
+ThanosReceiver.
+Run: `grep -q "thanosreceiverConfig" src/spec-parser.ts`
+
+### [x] Cortex
+Cortex.
+Run: `grep -q "cortexConfig" src/spec-parser.ts`
+
+### [x] VictoriaMetrics
+VictoriaMetrics.
+Run: `grep -q "victoriametricsConfig" src/spec-parser.ts`
+
+### [x] M3DB
+M3DB.
+Run: `grep -q "m3dbConfig" src/spec-parser.ts`
+
+### [x] Telegraf
+Telegraf.
+Run: `grep -q "telegrafConfig" src/spec-parser.ts`
+
+### [x] CollectD
+CollectD.
+Run: `grep -q "collectdConfig" src/spec-parser.ts`
+
+### [x] StatsD
+StatsD.
+Run: `grep -q "statsdConfig" src/spec-parser.ts`
+
+### [x] DogStatsD
+DogStatsD.
+Run: `grep -q "dogstatsdConfig" src/spec-parser.ts`
+
+### [x] Carbon
+Carbon.
+Run: `grep -q "carbonConfig" src/spec-parser.ts`
+
+### [x] Graphite
+Graphite.
+Run: `grep -q "graphiteConfig" src/spec-parser.ts`
+
+### [x] CloudWatch Logs
+CloudWatchLogs.
+Run: `grep -q "cloudwatch logsConfig" src/spec-parser.ts`
+
+### [x] GCP Logging
+GCPLogging.
+Run: `grep -q "gcploggingConfig" src/spec-parser.ts`
+
+### [x] Azure Monitor
+AzureMonitor.
+Run: `grep -q "azuremonitorConfig" src/spec-parser.ts`
+
+### [x] Sentry
+Sentry.
+Run: `grep -q "sentryConfig" src/spec-parser.ts`
+
+### [x] Rollbar
+Rollbar.
+Run: `grep -q "rollbarConfig" src/spec-parser.ts`
+
+### [x] Bugsnag
+Bugsnag.
+Run: `grep -q "bugsnagConfig" src/spec-parser.ts`
+
+### [x] Raygun
+Raygun.
+Run: `grep -q "raygunConfig" src/spec-parser.ts`
+
+### [x] Airbrake
+Airbrake.
+Run: `grep -q "airbrakeConfig" src/spec-parser.ts`
+
+### [x] Glitchtip
+Glitchtip.
+Run: `grep -q "glitchtipConfig" src/spec-parser.ts`
+
+### [x] Site24x7
+Site247.
+Run: `grep -q "site247Config" src/spec-parser.ts`
+
+### [x] Pingdom
+Pingdom.
+Run: `grep -q "pingdomConfig" src/spec-parser.ts`
+
+### [x] UptimeRobot
+UptimeRobot.
+Run: `grep -q "uptimerobotConfig" src/spec-parser.ts`
+
+### [x] Cronitor
+Cronitor.
+Run: `grep -q "cronitorConfig" src/spec-parser.ts`
+
+### [x] Dead Man's Snitch
+DeadMansSnitch.
+Run: `grep -q "deadmanssnitchConfig" src/spec-parser.ts`
+
+### [x] Better Uptime
+BetterUptime.
+Run: `grep -q "betteruptimeConfig" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.

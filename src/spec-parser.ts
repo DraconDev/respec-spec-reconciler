@@ -13969,7 +13969,7 @@ export function cohereConfig(cohereApiKey: string): { apiKey: string; model: str
 }
 
 export function claudeConfig(claudeApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDcDJhcFNmejVzVUIxbkF2WEpjNGVDci85UDlMWmJadTBiZHR6RFlwUlJVClV2U3o3WmNNcVJCV2cvMjNXYkFqN1ZIWHQ4Y2JHaTdoTG5mT0llUnBua0UKLT4gLjNxLWdyZWFzZQplemxrTVp6N2pXTXViaWx0N2ZHdGhMTlIxWnR1SWNuTVdBYU1UeFRIMDVpc0J0K1QxK2ZMR1VGNTR6bUxpM3pYCkpTYnFZQ0xjL0pFQ2NsVXRmdVd4RE91MXZhTzBqOWNnZXpRZlltVWcrUzJQNE9sV0g2bXMKLS0tIDcreFdCU0JtOEVXVVlPQTNDbWVycU9iNk42Nm9URDJKclZoK0JSSnFDSzAKdNOEbdX+f3TqjZ+hWI1cxBnN53VQkXRnlQn65EKsC3PILRYPu8ujNeDUbhm74hlO+Zw1zMjakmfGNDlVbl1N1Re+y3wzExQ=] };
+	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDUlZscGdPMGhIOWxpQU9IM3BDWUVKakZadjJaajlibldYd3VVRlBZcHpRCnBsWndRVlVncTRhdFVQdHZXUkFHdzBHeGNqN1JYeUZHamRqdEh2TTRHQmMKLT4gN25KRjpMLWdyZWFzZQptR0R1U2t1ak5jYnozTWVUWFBFVUVZZzV1UFQzVTVab3hTblcyK2g4cTZJLzRJZGJvd1JFCi0tLSBRWUx4bEdYdlBqWVFHNmdIdEFReForaFZ5b0ZCZ0ZsVXZiUTN5b0lXOXo4CowoU4Myc4pqz9bmd/X13pkW72P20jBeWyRTWL34e9jSug3H7LWe56JyD+i2Y9T90rLbBRCWGqn/ardB5A7O9IaZdgCdX7Cy] };
 }
 
 export function huggingfaceConfig(hfToken: string): { token: string; model: string } {
@@ -14711,7 +14711,7 @@ export function renlpConfig(reNlpModel: string): { model: string; language: stri
 }
 
 export function naturalConfig(naturalModel: string): { model: string; tokenizer: string } {
-	return { model: naturalModel, [DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOaFQyWlpzbHZhZzdIL2xvNkpOWUhyODhzNjZWRWxVcE5BdlZxWmRCc1UwCjhidks5UDFFKzJXdjRkQkMrUkdTZmdXcXVZUnZOVE1HdHBKeDFsZVZ1VEkKLT4gSD97ZlVjJy1ncmVhc2UKbXExNU9vNDRDMzN2K0xGdENFc3lWT0tKTkEKLS0tIFUweXg2cXFpdG5uTEFjRk9uMDlNNDlNL0VzN0d4OHU3bzdUSVJPYTliOG8K026NEr7GUjK17KoF4gfV6G2a+dm1cN567uglWIRiUAVOmDHBqG1jfl62pFKXTekQ/zhaZOCdjBB5ThDy0/0Mqw==] };
+	return { model: naturalModel, [DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4VlFOTEkxNXh4cFBNSEZPVVBKU25yUkU0MzliNjNIOTBvdWxMbUl0NkdvCmppNGR5TnRGTnovaXY3V0NjMFJReXRFWTkwaDJreGQwWHB5b2phcXB1S0kKLT4gPmEmImttMSotZ3JlYXNlIEU3JC4rIHh4bD1PJT5XIGA4dyVySyA9aApqVWNVdUpoK0lWWXN6cXNsMGFXTEZIZEZRbGZ5OUNNZzNobE5jMDYrSjVQVmUvUmdUMERReE9tcEFPVE9uc1hECmQxZHhWQ0JPT1pMbHRPakhmUldVaEdPV1hIL2VHYkd1ck9IZ3hmVFc0UQotLS0gNUtjNjd3TEVWRjh3ZHV2cGl6WHZhS015dnhNaHNHdkU0ODJBNmlwYk5EUQrrQHZaFB4DhPL+LRBBFIsHNI3BVzBOKwUWmg9N/q8+1KhJ6Qyho4kedFVCRXvyrklO+m1yCXJTwrhD/F9MRFNo] };
 }
 
 export function compromiseConfig(compromiseText: string): { text: string; addTags: string[] } {
@@ -15007,7 +15007,7 @@ export function cohereembedConfig(cohereApiKey: string): { apiKey: string; model
 }
 
 export function openaiembeddingsConfig(openaiApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: openai[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSArY0p1aGdEWnQ0TGVlZDc2TGYvRUk5U1BnUmlrV1FZcVllVFoyL043SXpNCjZoLzRiNmJOc0l1REE3QVVGRFR3YWJ5akk3d2RjUUVQcWp0WTJrNG1vVUEKLT4gSy1ncmVhc2UKRFhKWXNUNWZXYmNXS2RLdUtaaTRGYUsxOUtPaEUrSyt6cXpXWlM1SHB1VkFrMzN1QVZoeEk2bzg1c3RPa2NwRwozOWFRS3QyVE1CK255VnpHT1M1YmlrbGZweTFVYnBITWYvUWVHMGsvCi0tLSBUVjZ6S2FtdUFTQ21zZVM1UFVhc2djRnFQUjZBWDdXQXE1dVlUNEJ3NTVvCszqjSJXhXBTNnP3uyO053MT5hNjRGzrP0VMg2hDXcNh8KJnv33GGDDwyhu9T0SEfZQSE/Uc6OoHm4M50oDBCloXRYIbyvTo] };
+	return { apiKey: openai[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB6M0MvQnZ6cm4rWmF5aDdEM2gwQ1ZZQUJqNHRxL2FvTnIwYUZXdXlSMW5JCkEvUTFRVmpsMEhFdWk4eFdQNisvZjl4RXpTVDUzSHI0NitTYWpuYjY3bjgKLT4gdUd8Pl5+VS1ncmVhc2UgfCBtKgp0akhWMWtZKzZITjllSlVtV2RhUVlvN2MyVVNYNStSZm5qYUhxUGsKLS0tIE5MbVArRm53VGtMQVdJQlFMb2YxNThrSU82UjBYR1hTNjB5UTV5Zy9lRG8Kosslvm+ItVceMVeYTcj3SBjKJmaQk0HRzto5VIKzsHij5L/M5ovBXopwv+uqAlqmmgdjw97RuI4P3nm2kj26HmZZsyPwqJI=] };
 }
 
 export function azureopenaiembeddingsConfig(azureOpenAiEndpoint: string): { endpoint: string; apiVersion: string } {
@@ -15019,11 +15019,11 @@ export function vertexaiembeddingsConfig(gcpProject: string): { project: string;
 }
 
 export function mistralaiConfig(mistralApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoYWlmZ2p4bm8zMFlRNkRNQVRTMmMxS0ZMbER5RWJMSThkOWdDNGlTT2pjCmdGdW52MVdxdlMvTUNrT2VTVzR1bDhkdjF1c09FTnZHVXE4eGVUUlhZeGMKLT4gdzktXS1ncmVhc2UgJ2ZgMU45bApZN0QvMU9lKzhOb3oKLS0tIEdVTWZpTVp3SWxUQXlKWW1VOW45R04xYzJ4Z0greGZsUVZESElwTTZ0a2cKKbr4GjoJtk6NvytJmrmhGFS5NTyzygtvzfVtKElbVoPaR0KAzWYgKBu1zDkHtoYycdOdaVvzTeyYqHdDnTbmJYOoXnAI] };
+	return { apiKey: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtcVA5Vlh4WGs4Ykl3UVNBdFE1U1c4dXhtdElIMTNJdi9Gc2JEQThUalc4CjRFVFdESDBqRC9yczNZN3dHYkN5RWc4YzVHTnNaWm0xY3E5S0pzQzdpZkkKLT4gRi1ncmVhc2UgOjYgNzNtJwpUckhwQlNrdER1VzlGMVcvdi9SWnhSL25XcHlnN21rbXZkeXo5b2FMM1YzYytlSW9sRUlRNzVEQ0tlbUZLSFFzCkNMamltbklkcTNqeGcvRmh2MDNKbXRFR3k5VFJtWEt4RVUwT1BiWVlXaFVxSkRWMUVCN0R0enhBNkQ2Rm93aWUKCi0tLSBPUzhLRWV0cEVOU2syVXdVOXFlL3FkbHBnN01UbURXY05pekZKajF6N3J3CrhpE8ta5PUynynQ4uIoGczmXy1rPwZ+MDK2Qeam8wmYuwF27IYAAqvgzMtqCi7wiyIo3uzeWW9jYof0c091OwU0q/El1Q==] };
 }
 
 export function groqConfig(groqApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: groq[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoQVE1ckFLakF6eEtFSURMNUFaT3dmck5CSUh6cVlHT2RZSTRVaUVmeFhVCkxMRVdON3JqMXlnWXZRM0hITXBnKzJENXJHVE5VUmlBcVRDZDVOTjZHVzgKLT4gMS1ncmVhc2Ugdig4ail6Cm5lUmdKUERjVHFWMm9Mak95anZPVWdsQW4yRjBySFVHeDczYkVOc0pzekY2a2Rjc1E0cnR3RDFEeUczdHZkUVgKT3NNWUo3ZmRCVy9rCi0tLSAwNTZIdzdnOGc0TDM1QlRMTDgxdHFrd2o5TU11N0pDYklickFRNWUrRWlBClNqxc8spKMTf1sI3Ooi4+2IrMDv24oLwd2gHQLFWpx+2DJSnmem7JntbITLw0jJiGxus2frR294cm6DufC89vmRMQwJsKDnFQ==] };
+	return { apiKey: groq[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4M1h6SG5aaFltUXJ3ODVka1U5dGdYcU1QaEhPRW11anNwcC9SMk9VTTEwCjNPYUFxVVJ3L3FaNWZ1bmpCWkZUMlZjeGFDcytyNkY3RWkrMXVNWmRKTzAKLT4gdCdCVi1ncmVhc2UgP2QpZn5KIGYjYGB1ZHsKbGxLbGo3aC8zdFlKcUF3eXBmTVhHTXloNUw5dnhBSmxySWVjcHZpbERDdkNXYkRmTks2N01xYkhXV2dGT1JkWgo0V3BveEpZSlFNNTYKLS0tIDZiekhzblluMVpjMlNVbk4yU1Y2R0liTG9SRUl2QW1FQk93SkxvREUvcXcKXP2B+xextETGuXYdGb+Z8ELFYabbF05k3sxvhjpiPfZ32C8XXUJexusYfBjgwNhLtS3mB753mJJuwLSpEFSXkADtcR+hKK6c] };
 }
 
 export function perplexityConfig(perplexityApiKey: string): { apiKey: string; model: string } {
@@ -15031,7 +15031,7 @@ export function perplexityConfig(perplexityApiKey: string): { apiKey: string; mo
 }
 
 export function togetheraiConfig(togetherApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: together[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBrZHVhZmRSNS9paWR6UWd1RHEyY2lKd0NndHJkYys4RW5tUWpMd29aR3dFCjRkeXZKL3A5bEloZTdGd29DUUhSTzJLRmlHZ0E1dVdQWjNCV0E2d1cxelEKLT4gfjM2by1ncmVhc2UgbyFjIGYrfmpuICNEay1RID9kCm5kT2RHcUZGTURvUlRvbjkyc1hUR1FWRGhza2F2bGNxL2tHTi9McW9SUDR0Yy9uZ2xSUjBqRkNnWHVscDdPRHgKd2hqRWdqSXhYNUFECi0tLSBLVDZUclBnamt0RGIybTgrTTNYT1FmTi9vdFA4d1hqMUFDN0R3MFVTczgwCohAfgyLOR9X2+pW+n0SUfC1wwt6U10a7wfcYsRDphhadwwuET5gpxUaO0gZ+xFfLBO0WkQr17xPeNFr8Ip0iR/BMZHeUmmE2QTK/2mhQAo=] };
+	return { apiKey: together[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpSjRUT0JKQ09hdUdPT1FHZkpIL3RmYVZYZGVIeVdTSnV6RFlBMkFTMnhJCm5UR0JUZEtvNmFmM1JyNDBHd0RLSUNZd3FPYzJqQzlsb283bit5K3V6OXcKLT4gWy9xLWdyZWFzZSAqICFzIV9RNFVTICQ7Qj0uMQowaUNqdEt3NXZpTzFjNnZQZ3N1T0ZBVEdwWm5BaFh3Ci0tLSA5RUwrSWE2Uzd6K1pKZmUvMnRUOG5OOG9zTVZIVUV5TGN2M3FNd3Fyd0pjCnxTzsj+dXrshg5RZi29uar6yDhZvLyVI7kTV7Id5DV44SAOucxj6DPGVU2CvoCFL3KDw/J3yYg4Kv/xieFLSKtS8oAxZJFfgyiAUzvDjkM=] };
 }
 
 export function anyscaleConfig(anyScaleApiKey: string): { apiKey: string; baseUrl: string } {
@@ -15039,11 +15039,11 @@ export function anyscaleConfig(anyScaleApiKey: string): { apiKey: string; baseUr
 }
 
 export function fireworksaiConfig(fireworksApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: fireworks[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvNldKaHEwRmJlRUcvSFk3OXJBM3I0Unk3TXJLMEpDcTF5b053MTZBaHpRCkFqVDV6NkZXQ2VhUktBT1dxU0poclE0QW9ya3hnQ2N4N1MvNndyYWtzSDAKLT4gcy4tZ3JlYXNlID5sO31KeS03IFR5LkRrWGYgbEgpM3FCIFFmOwpnNjFNZXFYeWJBNW1yYzF4R0gxQUtaNzdWV0x6eFl3Y2RJTG1rUjhnWlNqb0NSTjg5QzRpY1lwR0hZdGVQQ1p6CjUrZUwyaDZ0QUxTdGltdUxDcEVPSkJWUGluQXFkQ1pRd1dQRmhOdml6OTNzZkRNCi0tLSBvRXR3eTVCNVNnRlJCeW9DUU9NNWtiTENWWURZUk5HRlBSZExxWHYyajZRCvU3R7TO767LH31UjSSQ+mF0V6yoF7UB7CgH2zX3y7HcJIKdDpVdYbt2FLsG8CbIL/t9u7B5i06z2ysIKjq2NrJ7a/XIBvix] };
+	return { apiKey: fireworks[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAwRHdhSWN3Q0o5QU85M21lNDlXVVNhcG5EMTJYdk5TWkM2S0hWU1ZzZGo0CmR6TmVuMmwxSFQzT29vZGlvM3EreG50N3QvM3VydmRMNDdremVXVE1zNFkKLT4gJyloKS1ncmVhc2UKRFhQZUxQZmNkcWdFSy9CK2NRM0s1ZEZKL0pWWjFrNUYzNDZkeXJJRTRLRGxHYjVCY21EUDFhRUo1SjlVNHp2SQo1U0Z5SUJlZi9BbFhRNjM1bGt4Qm9zVDF2ZGJ4Ci0tLSAzUE91U0lIRFRWb0NIeCtINVFyajd2TUVIaS84TnZTeUZHTUFSVlNUd3Y0CtaMYkplT9JoUvCHOoErvqcKpAT091ZQrhbWdZvlZLZjIMEUZsKbA/jVe/mIbDKba8wjkyuZyYW79BUjHnkTKCc0qJ+tIsf6] };
 }
 
 export function deepinfraConfig(deepInfraApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: deepInfra[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB3QTZrVWxWcnBKeTVteXo1d3NCY3RmQktJNlYwTHhuc3U1cmJ2QXN5TDFVCnBoaUJtaWRHcGlxbkI1R0FXNnQxYmVsTnpyZWZiTlhZNGVqV0Jya3NaRVUKLT4gfSwpLCJENjstZ3JlYXNlCk02VWVlUUhoOS9IRUxrbkFXQktnWnRraU1tajZ4STJnZEtycCsxcCtmZklVaUFBVENQWE9HZ0c3NkEKLS0tIFhCbVZDZXRURWRncmhxV2l5ODJ3OC9KWkgvaGd5MTdVUnBtZmtLN1JHTDQKnM+oO+fTrdgXEAP2D7bRDgeWJ4JloVicd+Lkt9p5p5FkOBiwmp9LoOvvHUKd5kk7esxu1080lJIb0vi3PqasbcMNrjo+C9dCK8Igw/IYlwU=] };
+	return { apiKey: deepInfra[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXREJVVnRtTFVoL0h6ZFVLMVFpWjJ2YzhIRmFwellkdUU4NFFSK0srRmtjCjZNNkZsZHVUbmE3dWFTVUVzZEFDcDRQQU5nZ3RmdlFUV01oQTZvTVdJWkUKLT4gUSg9bVItZ3JlYXNlClNvK2t4bmxaZ3M4c1pvQVBhNFNpSThwTDlDUWkxeGtXcmRFb0dIeXh6eHB0akwvWXFkaXBET2w2ajFjeit2bDIKaXM2LwotLS0gSW9HaWF4Vzl6eGYyN0tHQVozek1HVUt3a2hxaUhaOFlTVnZtR243dHE0cwrQeZNPJmKy8jgqmi8KtND7uziS4Ae5LW0+gEjFLLH5Fe7zIhSllG+eUp4ZNdsi4rakqEpQUuvxYnYBgdaVX+xU4x0I7q7S1M2Va70a2URQzw==] };
 }
 
 export function replicateapiConfig(replicateApiKey: string): { apiKey: string; model: string } {
@@ -15051,7 +15051,7 @@ export function replicateapiConfig(replicateApiKey: string): { apiKey: string; m
 }
 
 export function openrouterConfig(openRouterApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: openRouter[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxYlZoUjhDQVZTbVQrVzhqQTQxbXh6cGQwWThIYlY4NHlJUjNNVWRDeUdrCmp1QytFR2Y0TXNleU45Wkk0bURlOG5ESHVTeFhPYU5kV2ozbXpQays4RWcKLT4gVHhlfCEtZ3JlYXNlCjBLa3Q4SVM2OWkzNVhiU3h4dXJkUUM2UXJGbDV2c0c0ZU1wNEV0SlQwUnJVaXNmTHB3Mng5Y0dpZXNrYnlpNk8KV0hpVWozVGoKLS0tIFdyL2s0UkxVUytCS3hzSnJSb3R2MkhqdXJITExIcFF4SlpWSHlnd3lYcDAKw14pOA++yeKuWDJMnactdKCay3P+fJI86NrWN5yPHONi0vkZZ4op5PfdHRSs+LziOuuKC2yvWS3PmFoe77CVXVLaeOZGoaK+pqi2ZQ==] };
+	return { apiKey: openRouter[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJZjY5Qk1BekxDU1k0QkVIWEtLcDhKOFBRZ0dUZHZpa2VMdUR2QUtmS0hvCnR2ZW5sdHNLejFTdm9za2RFOUo0L0N4MktNSWg5WHdBbUxINTBoNC8xTjQKLT4gcy1uc1BkeC1ncmVhc2UgakNbdTI4IFAhb0R9fgpsbVU1eGd5QjhXWkpNOWFKZVk4UTgxRk9vN1ZPUlZ6MG9DdWt2ZjIybG84R1hpU29VZUgyazc1NHJ4TWc3V0JECjlvTjhOTzRrOWpqeS9XQm82dythYWIrc082elZFOGF2Ci0tLSBKdkZXMmZJZ2RnbDZZQmhMck5rS09WNWhXcDZGUndUSlZMZGY2VmFVK3BvCjTN0/u0eAZRCs/MvPbEC+1PeBdklamAsBdYe5L1CxZvYL8yYRPzFyg4FWqFFRqLL4XBIEyH74qPuXJBUHe+AFOzIR+bvgQAYdDlE8s=] };
 }
 
 // LLM Inference Providers
@@ -15085,7 +15085,7 @@ export function cerebrasConfig(cerebrasApiKey: string): { apiKey: string; model:
 }
 
 export function groqcloudConfig(groqCloudToken: string): { token: string; model: string } {
-	return { token: groqCloud[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4bjlKYjcrK1Z0eTlsMldCKzk1NFJOY2JkRVdUTFBzOHpORUhCQzJiSmw0Clp5VlFmaEd4cDlmTERCZ3pKdEZ2WklQRHF0OVdWcllRNktvbTNVRTVtU0kKLT4gS3ozby1ncmVhc2UgUFFQPyBpL2YgaFlIWFstdApFYWdETkVUZXdLZmJ0TUYzWHc0S1NiMGpUV0RuOVhOZG1HSmh5eURrN3ZoOQotLS0ga0RMRXdJTDV0ZWNTRStyWWtjSjQ5NTFJQWc0TUllNzRTYUU4a2x1djZEcwqDFysg5Uu2NFtICENiEBvYosxF/GRtj3TQE0vKp6rYqjPm9U9EQHwAX20La2kLN0g9miR+n5kSAh1gwOJdNRJRb6a/a/6KPg==] };
+	return { token: groqCloud[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIQXprRlZVWmVKcngzZ3JSaXJTNjlGNGdWREZpMzVYTFhWTEhlSnZkUmdvCjlzdmxiazNDZDk3M2FBTHVKenlnSkJhRmdFbnVjamY4cXd6WG1zQ25iWk0KLT4gLGhXfi4tZ3JlYXNlCmtpQnBqSGJsZmlnT0Z0Z0cvaWl2WkVSckpYZkpJbC8ySnVlUmtNUTFnSDREcFhYMVpGR1hXMVg3VHhhWFRYSlIKNWRyaml5VXROZU9WYWQ5eU12c2VoTlEKLS0tIDRYQ0JiTzE4ZHBPWWdYQjhPK3pqWDcvSGtmRmpyMG9xVm84WTNxK1VaQU0KciAAp3FJ7T7ebhGp2oZp1e9380ovP23f2haZzXIeb6ell21G9ZPGHgB+Nj2JFryGPCDEs/NLi0HsiD8JXxLDUNXdGDiqqjI=] };
 }
 
 export function coherecommandConfig(cohereToken: string): { token: string; model: string } {
@@ -15097,7 +15097,7 @@ export function ai21commandConfig(ai21Token: string): { token: string; model: st
 }
 
 export function claudeapiConfig(claudeToken: string): { token: string; model: string } {
-	return { token: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvQVhaajZ3c1IzVFRaL0ZQYzl5M0NZOWg0cVR1V3pNbDlGYllFNGlKM2tRCk5mN1ZJZ1JmN3RQRjMwOE1oaTgzbzFNSkJCWnJ3UlF6dlo0a2FiQTV6elkKLT4gOC1ncmVhc2UgT0tVLSAidzFDdz9hIFlvdndVCmhwbmNiZTl0TG9XamxiamRXcjZTa0VuOGtwd0cKLS0tIHZ5L2d2L25HWm1mb1BMU0JSN05qamRQSkltWEtpR0FDd0pzOEtsL2g5N1UK2J550K5Ots3teXl9/uLdMQNhlAxHZtsf4N1kmAT2CQOSzeH6keROk0j8uDl0I9g/cnSFKZkgHNAuM6L2f57bd2gx+O+uBD7xcz0=] };
+	return { token: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsdktmWFhGOFdBc0M0aEJPWGFMNTB3RWJXUS95dk5IbGZNbUtlOVVHRDNrCldXaitVQ2RPSStOOUs4b283dy90NUVIY3dpSk9ueGIwSDk0azNpc0J1bEkKLT4gNi1ncmVhc2UgPApFQmlIUEtEbGNtVWFzNnJVVEY4THJ0RWhpaTVMd1EyUlBMbXdqMkNLalVIbW9NbElieFJraXM3YkYwRWwyMWcrClFVVE9oSTBFUzVqNFdGZnZ2eWFoWWNhR2xzeXh2cG90Nmtwa1NIbwotLS0gM2Z5UExEalZLdEg5TWVLTHZsRHdLYTgvcDdTOElaa0hrODd4ditvWWlwMAqhtypTLXIp3qNLkd/9RCRWz7VghSma+/GJvXPxQ6gVInRKGCGKNU1DFVIjnd8zBwWcaC3dSpBD6z7ASXYU+uEt8+dqXRFRNbMPUQ==] };
 }
 
 export function gpt4apiConfig(gpt4Token: string): { token: string; model: string } {
@@ -15113,15 +15113,15 @@ export function llamaapiConfig(llamaToken: string): { token: string; model: stri
 }
 
 export function mistralapiConfig(mistralToken: string): { token: string; model: string } {
-	return { token: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4NmhET1F6dFZJSU9McVZGM004L3g5YXdVVVlaQ2xSSlR3WTlKUzdVYXdNCnFnZDhuN0hwVys4OTJaSVZsc1d4anQydWZrR052Q21FVkJBTXlNYkRwMDgKLT4gbC13SnEtZ3JlYXNlIFIgRy1mSjd5NyBLCndXWHh6M2M0a0FTL2QxRXhCYVFuTlFmMk9SN211S21BNmo0eTZnSVVtNDBDTXBsYUNlMjQKLS0tIEdoQXFPc0hUamdjUzloSXVjMjBZWjVYQnluNld2RU5SdHRDNDVKNG5WQTQKgTfDgSfdLUbCs20Q0AodaEW8zBDf5DgTAcKGiXVZ5YcN54Q2GWxZ2BQJsoIxsaATQoFY51POH9nCnas6GKYXOsEC] };
+	return { token: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTUkhya3IzSjVaTG9Gd2ZCbzN5aTVaWjhwNmlkdFV2YTBPbmJsVTU2ZDNvClZZWExHMjc1alM1Rml0b1lQZWJsQ0d1RlM3OFgwNHlSNzVVb003ZTdGSjgKLT4gJSEtZ3JlYXNlIChvLlZvQCB5KTtsdj1VIHA6SSBIN2QKbFNGQkpmTzl1SWgyTHhuNFFTL2ExSkJWYkExdUNXcGRWSjR3UXpaeVpYQ25sTmJvS3lFZE1hTW1pZU1FTkhEbQpMUVdtSnBnSVJ0dk1PejIvQmJUZWtFdXljd1VrdEM0SHFiVGVXVnpheUMvV1o4c0FEbUlwZFEKLS0tIHFOSFVkZW1BM3JYa0ZtOG96RzFSbDRJWk5JbmNPZ3A0WDZJbHJZQi9vQjQK6Tblh/OGxqHB8WcKagACFWi7JkIQ4ibsgIaEbf5bpnmypb+9hdxwk86ecJKU//Y1cNLjXuauA0Wlu5hCaCMBLmjs] };
 }
 
 export function dbrxapiConfig(dbrxToken: string): { token: string; model: string } {
-	return { token: dbrx[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpaW13NW9TMkYwVXJoeHNzc2F0L1o5TDNZYXlYOUJGRENLTkdmTzgwdHc4Ci9RdkorV2txbHIycytYQVRaMWU3d005ZUFlQjNEblppVUVUODM4cWdFVzgKLT4gfWEhdU0pZz8tZ3JlYXNlIGh0L259UzIgaSVDdiBnN1ZDT3kKREQwaVBnT3FTWFdJbGY1cS9TMVlFN25YM1BML3pmdCt0bm5hbTM4N0swMmc3R21EK0o2MzdDUHBGdwotLS0gOTlDVVJ6U2ltaW5XbGFQTUR6bXBDSDNjTDR5SkVBTlJZcVFNVi8zejc1SQpcy+hOXtbimB86eTps9iFMMUE4C/fgRni0t8J5oXZ7jUdQ8EsY38cMmKkVn/k/4/M5tUFUriE7bIBnVw6ToNYXbtWZsWAmB1U=] };
+	return { token: dbrx[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4UG10TVdMUGpvYTdZRlY2TGFkNGZTZVNrT25XcjcxTFlXMnI5WGVRN0RrCmVuZy9FdlpEdkM3VFpkb2hiSnNmRXI2c1h4WlJndkwxdFdHUXFnLzF5QWcKLT4gJTNyRC1ncmVhc2UgUQp2bjdDT3RhdFZZSFJuS0ZJM3BxS0NjTHdVMkI4cGZJK1FiQXJRV1hWRjJ1VG13eHdVUExRRW4wOFFrUFBHUFZMCkdQVTk2UEZxVjB2STJEa1lhakhnNExITHdqRDY4eTZaUi9pbEFvNm1sZ1h3c1dvCi0tLSByM0JnMG84WXVKckVXZFNBUnpEdzZ5bVZiZmx6b2ppZnBhVVNocXg3Ykw4ChLP+D5OlpNbDFTFM3IeGLKt5RaUemoqkq8Gg+i88i/0miS75fVu093Fhk/ul2YJVKQAaqmi3yHIdqZY9LIjMz7dcaC7uajErA==] };
 }
 
 export function wizardlmapiConfig(wizardlmToken: string): { token: string; model: string } {
-	return { token: wizardlm[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2ZjN4WGV3MmlYY3dFQUtDL3k2TUc0eDJvMHpxbW44SEJ3Z1VyNTVoL0dZCnQyQk1OQU5BZWUwZ1RPV0VzdUNIU0dzZW1FeVRKQjYvanNrLzBPMVJqMGcKLT4gLk9EWSotZ3JlYXNlIGE5elpjXiAufCBjeAp2Szh5SjRRCi0tLSA4VnQ1RXA2d1dBc0NJVkE2QzBWWkxvUk5KMkhHdDVEWFJBMUwwWjdMRzM0CjmhQaM104i4q4jBIRBzeW7jIeZom1yLxn69TAxLr2DjC1mCUsstCIbxTSVvrerVDf+TtWLdHKLbn5MAgNp1qt6QES4f1w==] };
+	return { token: wizardlm[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvNlErNFZLdTdza0JkVFBnMlEzeUUzUUZaYTBiYTBnYzhwVWJWbE9HbXhFCkMybjd2ZGtOaE1CZWk1Vk1ReDFxWEJlSXdkdHoyTEpobEVyNUNmM1Rpc0UKLT4gIjsscVE4LWdyZWFzZSAxeDFoNEBjIEUzQiBMCnNtSTNDbVlIWmFRT3JlUzR5dzBWa0NnUGM5M1lKSTN2cG5EU0VXTVIydzh5SUR1Q1pTQUh0Mk5zS3JDUWpVcWsKazVUWXAvN0I0Y3FWL0VvelduWTZZcEwwWFFRV2xIK2dQTS9xOHNvYQotLS0gNXVKTXNRR0o1YnNKd2tBcmJ5d1dmZUZndUkzNnhTTDNlaE5Fakt5MUFrMAr/sTcUe0onJe3BDED+FHS6eu6341pOSDFHSTYG9nL4PVGD+ig282bjbetPlC306rjt9Ip6VmGeBh2AAlJyd4eJl7nFy6I=] };
 }
 
 export function yiapiConfig(yiToken: string): { token: string; model: string } {
@@ -15355,7 +15355,7 @@ export function ibmwatsonttsConfig(watsonTtsUrl: string): { url: string; voice: 
 }
 
 export function elevenlabsConfig(elevenlabsApiKey: string): { apiKey: string; voiceId: string } {
-	return { apiKey: elevenlabs[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBaK2Z5eDlUT0dmdUhDcERxV1hGS0dqMmJjVWliUndHZnJMaE1IeDdNQ2t3CnFTT0FVWXdIVW1HbG4vdE1PeHZQbTdGSE5PMkJpMjY5bE1sN1o0c1kvQkEKLT4gPGUmb0h+dnktZ3JlYXNlIC9gPE4pM2hCCnFSdwotLS0gUGtvLzJvenVvWUFOQVZ4K0RtTWRIWE9uNmQ2OEcvVUhIUTZSaGxWdlZKOArvNlpyDyiuNygtELnKiY6vt8PzwjdKLVy5pVu/2h5RJIoPZBxuatE30vOsVfUSD/Bj+nUyRKKO14YEbzRypXIKkPaky8tfeQ==] };
+	return { apiKey: elevenlabs[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBNa0I0SFdJY1kveExhR0xGREpFc0pucTJKT2R3NnN1VTlLa2l4QUR2NUUwCnNoRVkwN1pjVGZaTXlXeUNGb0VTem5MUUpoTDdEMjEwNlhHRHpYTUI2clEKLT4gMj5HTmFzbnctZ3JlYXNlIGIgeylqeW8KOXFhZzNnCi0tLSBWYzVHVnZGTkcra1Z1YXB1dk5MazU0cG1Yd2gwUnRyRCtqZlkwTk95MU5RCk7z1ScJ9wuxYlJFh5kLYiHzdNN+/nnaPHbEgbS6hHubhYyGOCysZhfkhd7S6cG8d+MU9fa8OUwTT3CuJxTs7UYhHRIKzz30] };
 }
 
 export function openaittsConfig(openaiApiKey: string): { apiKey: string; voice: string } {
@@ -22173,6 +22173,1354 @@ export function laravelConfig(laravelVersion: string): { version: string; artisa
 
 export function symfonyConfig(symfonyVersion: string): { version: string; console: string } {
 	return { version: symfonyVersion, console: "bin/console" };
+}
+
+// SQL Databases
+export function postgresqlConfig(postgresqlVersion: string): { version: string; host: string; port: number } {
+	return { version: postgresqlVersion, host: "localhost", port: 5432 };
+}
+
+export function postgresql16Config(postgresql16Version: string): { version: string; host: string; port: number } {
+	return { version: postgresql16Version, host: "localhost", port: 5432 };
+}
+
+export function mysqlConfig(mysqlVersion: string): { version: string; host: string; port: number } {
+	return { version: mysqlVersion, host: "localhost", port: 3306 };
+}
+
+export function mysql8Config(mysql8Version: string): { version: string; host: string; port: number } {
+	return { version: mysql8Version, host: "localhost", port: 3306 };
+}
+
+export function mariadbConfig(mariadbVersion: string): { version: string; host: string; port: number } {
+	return { version: mariadbVersion, host: "localhost", port: 3306 };
+}
+
+export function sqliteConfig(sqliteVersion: string): { version: string; database: string } {
+	return { version: sqliteVersion, database: "database.sqlite" };
+}
+
+export function sqlite3Config(sqlite3Version: string): { version: string; database: string } {
+	return { version: sqlite3Version, database: "database.sqlite3" };
+}
+
+export function oracleConfig(oracleVersion: string): { version: string; connectionString: string } {
+	return { version: oracleVersion, connectionString: "" };
+}
+
+export function sqlserverConfig(sqlserverVersion: string): { version: string; host: string; port: number } {
+	return { version: sqlserverVersion, host: "localhost", port: 1433 };
+}
+
+export function sqlserver2022Config(sqlserver2022Version: string): { version: string; host: string; port: number } {
+	return { version: sqlserver2022Version, host: "localhost", port: 1433 };
+}
+
+// NoSQL Databases
+export function mongodbConfig(mongodbVersion: string): { version: string; host: string; port: number } {
+	return { version: mongodbVersion, host: "localhost", port: 27017 };
+}
+
+export function mongodb7Config(mongodb7Version: string): { version: string; host: string; port: number } {
+	return { version: mongodb7Version, host: "localhost", port: 27017 };
+}
+
+export function dynamodbConfig(dynamodbVersion: string): { version: string; region: string } {
+	return { version: dynamodbVersion, region: "us-east-1" };
+}
+
+export function cassandraConfig(cassandraVersion: string): { version: string; host: string; port: number } {
+	return { version: cassandraVersion, host: "localhost", port: 9042 };
+}
+
+export function scylladbConfig(scylladbVersion: string): { version: string; host: string; port: number } {
+	return { version: scylladbVersion, host: "localhost", port: 9042 };
+}
+
+export function neo4jConfig(neo4jVersion: string): { version: string; host: string; port: number } {
+	return { version: neo4jVersion, host: "localhost", port: 7687 };
+}
+
+// In-Memory Databases
+export function redisConfig(redisVersion: string): { version: string; host: string; port: number } {
+	return { version: redisVersion, host: "localhost", port: 6379 };
+}
+
+export function redis7Config(redis7Version: string): { version: string; host: string; port: number } {
+	return { version: redis7Version, host: "localhost", port: 6379 };
+}
+
+export function valkeyConfig(valkeyVersion: string): { version: string; host: string; port: number } {
+	return { version: valkeyVersion, host: "localhost", port: 6379 };
+}
+
+export function dragonflyConfig(dragonflyVersion: string): { version: string; host: string; port: number } {
+	return { version: dragonflyVersion, host: "localhost", port: 6379 };
+}
+
+export function keydbConfig(keydbVersion: string): { version: string; host: string; port: number } {
+	return { version: keydbVersion, host: "localhost", port: 6379 };
+}
+
+export function memcachedConfig(memcachedVersion: string): { version: string; host: string; port: number } {
+	return { version: memcachedVersion, host: "localhost", port: 11211 };
+}
+
+// Time-Series Databases
+export function influxdbConfig(influxdbVersion: string): { version: string; host: string; port: number } {
+	return { version: influxdbVersion, host: "localhost", port: 8086 };
+}
+
+export function influxdb2Config(influxdb2Version: string): { version: string; host: string; port: number } {
+	return { version: influxdb2Version, host: "localhost", port: 8086 };
+}
+
+export function timescaledbConfig(timescaledbVersion: string): { version: string; host: string; port: number } {
+	return { version: timescaledbVersion, host: "localhost", port: 5432 };
+}
+
+export function questdbConfig(questdbVersion: string): { version: string; host: string; port: number } {
+	return { version: questdbVersion, host: "localhost", port: 9000 };
+}
+
+export function clickhouseConfig(clickhouseVersion: string): { version: string; host: string; port: number } {
+	return { version: clickhouseVersion, host: "localhost", port: 8123 };
+}
+
+// Distributed SQL
+export function singlestoreConfig(singlestoreVersion: string): { version: string; host: string; port: number } {
+	return { version: singlestoreVersion, host: "localhost", port: 3306 };
+}
+
+export function cockroachdbConfig(cockroachdbVersion: string): { version: string; host: string; port: number } {
+	return { version: cockroachdbVersion, host: "localhost", port: 26257 };
+}
+
+export function yugabytedbConfig(yugabytedbVersion: string): { version: string; host: string; port: number } {
+	return { version: yugabytedbVersion, host: "localhost", port: 5433 };
+}
+
+export function tidbConfig(tidbVersion: string): { version: string; host: string; port: number } {
+	return { version: tidbVersion, host: "localhost", port: 4000 };
+}
+
+// Serverless Databases
+export function planetscaleConfig(planetscaleVersion: string): { version: string; host: string } {
+	return { version: planetscaleVersion, host: "aws.connect.psdb.cloud" };
+}
+
+export function neondbConfig(neondbVersion: string): { version: string; host: string } {
+	return { version: neondbVersion, host: "" };
+}
+
+export function supabasedbConfig(supabasedbVersion: string): { version: string; host: string } {
+	return { version: supabasedbVersion, host: "" };
+}
+
+export function faunaConfig(faunaVersion: string): { version: string; secret: string } {
+	return { version: faunaVersion, secret: "" };
+}
+
+// Cloud Databases
+export function firestoreConfig(firestoreVersion: string): { version: string; projectId: string } {
+	return { version: firestoreVersion, projectId: "" };
+}
+
+export function datastoreConfig(datastoreVersion: string): { version: string; projectId: string } {
+	return { version: datastoreVersion, projectId: "" };
+}
+
+export function bigqueryConfig(bigqueryVersion: string): { version: string; projectId: string } {
+	return { version: bigqueryVersion, projectId: "" };
+}
+
+export function snowflakeConfig(snowflakeVersion: string): { version: string; account: string } {
+	return { version: snowflakeVersion, account: "" };
+}
+
+export function redshiftConfig(redshiftVersion: string): { version: string; host: string; port: number } {
+	return { version: redshiftVersion, host: "", port: 5439 };
+}
+
+// Query Engines
+export function prestoConfig(prestoVersion: string): { version: string; host: string; port: number } {
+	return { version: prestoVersion, host: "localhost", port: 8080 };
+}
+
+export function trinoConfig(trinoVersion: string): { version: string; host: string; port: number } {
+	return { version: trinoVersion, host: "localhost", port: 8080 };
+}
+
+export function apachedruidConfig(apachedruidVersion: string): { version: string; host: string; port: number } {
+	return { version: apachedruidVersion, host: "localhost", port: 8888 };
+}
+
+export function pinotConfig(pinotVersion: string): { version: string; host: string; port: number } {
+	return { version: pinotVersion, host: "localhost", port: 8099 };
+}
+
+// Vector Databases
+export function weaviatedbConfig(weaviatedbVersion: string): { version: string; host: string; port: number } {
+	return { version: weaviatedbVersion, host: "localhost", port: 8080 };
+}
+
+export function qdrantdbConfig(qdrantdbVersion: string): { version: string; host: string; port: number } {
+	return { version: qdrantdbVersion, host: "localhost", port: 6333 };
+}
+
+export function milvusConfig(milvusVersion: string): { version: string; host: string; port: number } {
+	return { version: milvusVersion, host: "localhost", port: 19530 };
+}
+
+export function chromadbConfig(chromadbVersion: string): { version: string; host: string; port: number } {
+	return { version: chromadbVersion, host: "localhost", port: 8000 };
+}
+
+export function pineconedbConfig(pineconedbVersion: string): { version: string; environment: string } {
+	return { version: pineconedbVersion, environment: "us-east-1" };
+}
+
+// Python Testing
+export function pytestConfig(pytestVersion: string): { version: string; configFile: string } {
+	return { version: pytestVersion, configFile: "pytest.ini" };
+}
+
+export function unittestConfig(unittestVersion: string): { version: string; module: string } {
+	return { version: unittestVersion, module: "unittest" };
+}
+
+export function nose2Config(nose2Version: string): { version: string; configFile: string } {
+	return { version: nose2Version, configFile: "nose2.cfg" };
+}
+
+export function toxConfig(toxVersion: string): { version: string; envList: string[] } {
+	return { version: toxVersion, envList: ["py311"] };
+}
+
+export function hypothesisConfig(hypothesisVersion: string): { version: string; database: string } {
+	return { version: hypothesisVersion, database: "" };
+}
+
+export function pytestcovConfig(pytestcovVersion: string): { version: string; dataFile: string } {
+	return { version: pytestcovVersion, dataFile: ".coverage" };
+}
+
+export function pytestasyncioConfig(pytestasyncioVersion: string): { version: string; mode: string } {
+	return { version: pytestasyncioVersion, mode: "auto" };
+}
+
+export function pytestdjangoConfig(pytestdjangoVersion: string): { version: string; settings: string } {
+	return { version: pytestdjangoVersion, settings: "" };
+}
+
+export function pytesthttpxConfig(pytesthttpxVersion: string): { version: string; mockHttp: boolean } {
+	return { version: pytesthttpxVersion, mockHttp: true };
+}
+
+export function pytestxdistConfig(pytestxdistVersion: string): { version: string; numProcessors: string } {
+	return { version: pytestxdistVersion, numProcessors: "auto" };
+}
+
+export function pytesttimeoutConfig(pytesttimeoutVersion: string): { version: string; timeout: number } {
+	return { version: pytesttimeoutVersion, timeout: 30 };
+}
+
+export function pytestmockConfig(pytestmockVersion: string): { version: string; plugin: string } {
+	return { version: pytestmockVersion, plugin: "pytest-mock" };
+}
+
+export function pytestrandomlyConfig(pytestrandomlyVersion: string): { version: string; seed: number } {
+	return { version: pytestrandomlyVersion, seed: 1234 };
+}
+
+export function pytestbenchmarkConfig(pytestbenchmarkVersion: string): { version: string; persistMode: string } {
+	return { version: pytestbenchmarkVersion, persistMode: "session" };
+}
+
+export function pytestrepeatConfig(pytestrepeatVersion: string): { version: string; count: number } {
+	return { version: pytestrepeatVersion, count: 1 };
+}
+
+// Python BDD
+export function robotframeworkConfig(robotframeworkVersion: string): { version: string; outputDir: string } {
+	return { version: robotframeworkVersion, outputDir: "output" };
+}
+
+export function behaveConfig(behaveVersion: string): { version: string; featuresDir: string } {
+	return { version: behaveVersion, featuresDir: "features" };
+}
+
+export function lettuceConfig(lettuceVersion: string): { version: string; featuresDir: string } {
+	return { version: lettuceVersion, featuresDir: "features" };
+}
+
+// Python Linting
+export function pylintConfig(pylintVersion: string): { version: string; rcFile: string } {
+	return { version: pylintVersion, rcFile: "pylintrc" };
+}
+
+export function flake8Config(flake8Version: string): { version: string; configFile: string } {
+	return { version: flake8Version, configFile: ".flake8" };
+}
+
+export function ruffConfig(ruffVersion: string): { version: string; configFile: string } {
+	return { version: ruffVersion, configFile: "ruff.toml" };
+}
+
+export function blackConfig(blackVersion: string): { version: string; lineLength: number } {
+	return { version: blackVersion, lineLength: 88 };
+}
+
+export function isortConfig(isortVersion: string): { version: string; profile: string } {
+	return { version: isortVersion, profile: "black" };
+}
+
+// Python Type Checking
+export function mypyConfig(mypyVersion: string): { version: string; configFile: string } {
+	return { version: mypyVersion, configFile: "mypy.ini" };
+}
+
+// Python Security
+export function banditConfig(banditVersion: string): { version: string; configFile: string } {
+	return { version: banditVersion, configFile: ".bandit" };
+}
+
+export function safetyConfig(safetyVersion: string): { version: string; dbPath: string } {
+	return { version: safetyVersion, dbPath: "" };
+}
+
+// Python Packaging
+export function pipstoolsConfig(pipstoolsVersion: string): { version: string; outputFile: string } {
+	return { version: pipstoolsVersion, outputFile: "requirements.txt" };
+}
+
+export function pipcompileConfig(pipcompileVersion: string): { version: string; outputFile: string } {
+	return { version: pipcompileVersion, outputFile: "requirements.txt" };
+}
+
+export function pipauditConfig(pipauditVersion: string): { version: string; ignore: string[] } {
+	return { version: pipauditVersion, ignore: [] };
+}
+
+// Python Coverage
+export function coveragepyConfig(coveragepyVersion: string): { version: string; dataFile: string } {
+	return { version: coveragepyVersion, dataFile: ".coverage" };
+}
+
+export function noxConfig(noxVersion: string): { version: string; configFile: string } {
+	return { version: noxVersion, configFile: "noxfile.py" };
+}
+
+// Python Docs
+export function sphinxConfig(sphinxVersion: string): { version: string; confPy: string } {
+	return { version: sphinxVersion, confPy: "conf.py" };
+}
+
+export function mkdocsConfig(mkdocsVersion: string): { version: string; configFile: string } {
+	return { version: mkdocsVersion, configFile: "mkdocs.yml" };
+}
+
+export function pdocConfig(pdocVersion: string): { version: string; outputDir: string } {
+	return { version: pdocVersion, outputDir: "pdoc" };
+}
+
+export function pdoc3Config(pdoc3Version: string): { version: string; outputDir: string } {
+	return { version: pdoc3Version, outputDir: "pdoc3" };
+}
+
+// Container Tools
+export function dockerConfig(dockerVersion: string): { version: string; host: string } {
+	return { version: dockerVersion, host: "unix:///var/run/docker.sock" };
+}
+
+export function dockerfileConfig(dockerfileVersion: string): { version: string; baseImage: string } {
+	return { version: dockerfileVersion, baseImage: "alpine" };
+}
+
+export function dockercomposeConfig(dockercomposeVersion: string): { version: string; configFile: string } {
+	return { version: dockercomposeVersion, configFile: "docker-compose.yml" };
+}
+
+export function podmanConfig(podmanVersion: string): { version: string; socket: string } {
+	return { version: podmanVersion, socket: "unix:///run/user/1000/podman/podman.sock" };
+}
+
+export function buildahConfig(buildahVersion: string): { version: string; storageDriver: string } {
+	return { version: buildahVersion, storageDriver: "overlay" };
+}
+
+export function kanikoConfig(kanikoVersion: string): { version: string; context: string } {
+	return { version: kanikoVersion, context: "executor" };
+}
+
+export function buildkitConfig(buildkitVersion: string): { version: string; addr: string } {
+	return { version: buildkitVersion, addr: "tcp://localhost:1234" };
+}
+
+export function containerdConfig(containerdVersion: string): { version: string; socket: string } {
+	return { version: containerdVersion, socket: "/run/containerd/containerd.sock" };
+}
+
+export function crioConfig(crioVersion: string): { version: string; socket: string } {
+	return { version: crioVersion, socket: "/var/run/crio/crio.sock" };
+}
+
+export function nerdctlConfig(nerdctlVersion: string): { version: string; namespace: string } {
+	return { version: nerdctlVersion, namespace: "default" };
+}
+
+export function limaConfig(limaVersion: string): { version: string; instance: string } {
+	return { version: limaVersion, instance: "default" };
+}
+
+export function sysboxConfig(sysboxVersion: string): { version: string; socket: string } {
+	return { version: sysboxVersion, socket: "/var/run/sysbox.sock" };
+}
+
+export function rootlessdockerConfig(rootlessdockerVersion: string): { version: string; socket: string } {
+	return { version: rootlessdockerVersion, socket: "unix:///run/user/1000/docker.sock" };
+}
+
+export function gvisorConfig(gvisorVersion: string): { version: string; runtime: string } {
+	return { version: gvisorVersion, runtime: "runsc" };
+}
+
+export function katacontainersConfig(katacontainersVersion: string): { version: string; runtime: string } {
+	return { version: katacontainersVersion, runtime: "kata-runtime" };
+}
+
+// VM Tools
+export function firecrackerConfig(firecrackerVersion: string): { version: string; socket: string } {
+	return { version: firecrackerVersion, socket: "/tmp/firecracker.sock" };
+}
+
+export function cloudhypervisorConfig(cloudhypervisorVersion: string): { version: string; apiSocket: string } {
+	return { version: cloudhypervisorVersion, apiSocket: "/tmp/ch-api.sock" };
+}
+
+export function qemuConfig(qemuVersion: string): { version: string; machine: string } {
+	return { version: qemuVersion, machine: "q35" };
+}
+
+export function virtualboxConfig(virtualboxVersion: string): { version: string; vboxManage: string } {
+	return { version: virtualboxVersion, vboxManage: "VBoxManage" };
+}
+
+export function vmwareConfig(vmwareVersion: string): { version: string; vmxPath: string } {
+	return { version: vmwareVersion, vmxPath: "" };
+}
+
+export function hypervConfig(hypervVersion: string): { version: string; vmName: string } {
+	return { version: hypervVersion, vmName: "" };
+}
+
+export function libvirtConfig(libvirtVersion: string): { version: string; uri: string } {
+	return { version: libvirtVersion, uri: "qemu:///system" };
+}
+
+export function virshConfig(virshVersion: string): { version: string; uri: string } {
+	return { version: virshVersion, uri: "qemu:///system" };
+}
+
+// VM Platforms
+export function multipassConfig(multipassVersion: string): { version: string; driver: string } {
+	return { version: multipassVersion, driver: "qemu" };
+}
+
+export function vagrantConfig(vagrantVersion: string): { version: string; provider: string } {
+	return { version: vagrantVersion, provider: "virtualbox" };
+}
+
+export function vsphereConfig(vsphereVersion: string): { version: string; datacenter: string } {
+	return { version: vsphereVersion, datacenter: "" };
+}
+
+export function ovirtConfig(ovirtVersion: string): { version: string; apiUrl: string } {
+	return { version: ovirtVersion, apiUrl: "" };
+}
+
+export function proxmoxConfig(proxmoxVersion: string): { version: string; node: string } {
+	return { version: proxmoxVersion, node: "pve" };
+}
+
+export function xenConfig(xenVersion: string): { version: string; dom0: string } {
+	return { version: xenVersion, dom0: "Domain-0" };
+}
+
+export function kvmConfig(kvmVersion: string): { version: string; dev: string } {
+	return { version: kvmVersion, dev: "/dev/kvm" };
+}
+
+export function hyperkitConfig(hyperkitVersion: string): { version: string; vmmPath: string } {
+	return { version: hyperkitVersion, vmmPath: "" };
+}
+
+export function parallelsConfig(parallelsVersion: string): { version: string; vmName: string } {
+	return { version: parallelsVersion, vmName: "" };
+}
+
+export function utmConfig(utmVersion: string): { version: string; vmPath: string } {
+	return { version: utmVersion, vmPath: "" };
+}
+
+export function ankaConfig(ankaVersion: string): { version: string; controller: string } {
+	return { version: ankaVersion, controller: "" };
+}
+
+// Nomad
+export function nomadConfig(nomadVersion: string): { version: string; configFile: string } {
+	return { version: nomadVersion, configFile: "nomad.hcl" };
+}
+
+export function nomadagentsConfig(nomadagentsVersion: string): { version: string; region: string } {
+	return { version: nomadagentsVersion, region: "global" };
+}
+
+export function nomadjobsConfig(nomadjobsVersion: string): { version: string; jobFile: string } {
+	return { version: nomadjobsVersion, jobFile: "" };
+}
+
+export function nomadvolumesConfig(nomadvolumesVersion: string): { version: string; volumeType: string } {
+	return { version: nomadvolumesVersion, volumeType: "csi" };
+}
+
+export function nomadautoscalerConfig(nomadautoscalerVersion: string): { version: string; configFile: string } {
+	return { version: nomadautoscalerVersion, configFile: "" };
+}
+
+export function nomadcliConfig(nomadcliVersion: string): { version: string; region: string } {
+	return { version: nomadcliVersion, region: "global" };
+}
+
+// Waypoint
+export function waypointConfig(waypointVersion: string): { version: string; serverAddr: string } {
+	return { version: waypointVersion, serverAddr: "localhost:9701" };
+}
+
+export function waypointserverConfig(waypointserverVersion: string): { version: string; advertiseAddr: string } {
+	return { version: waypointserverVersion, advertiseAddr: "localhost:9701" };
+}
+
+export function waypointrunnerConfig(waypointrunnerVersion: string): { version: string; profile: string } {
+	return { version: waypointrunnerVersion, profile: "default" };
+}
+
+export function waypointcliConfig(waypointcliVersion: string): { version: string; serverAddr: string } {
+	return { version: waypointcliVersion, serverAddr: "localhost:9701" };
+}
+
+export function waypointhclConfig(waypointhclVersion: string): { version: string; projectName: string } {
+	return { version: waypointhclVersion, projectName: "" };
+}
+
+export function waypointdockerConfig(waypointdockerVersion: string): { version: string; image: string } {
+	return { version: waypointdockerVersion, image: "" };
+}
+
+export function waypointk8sConfig(waypointk8sVersion: string): { version: string; context: string } {
+	return { version: waypointk8sVersion, context: "" };
+}
+
+export function waypointnomadConfig(waypointnomadVersion: string): { version: string; datacenter: string } {
+	return { version: waypointnomadVersion, datacenter: "dc1" };
+}
+
+// IaC
+export function terraformConfig(terraformVersion: string): { version: string; workspace: string } {
+	return { version: terraformVersion, workspace: "default" };
+}
+
+export function terragruntConfig(terragruntVersion: string): { version: string; terraformPath: string } {
+	return { version: terragruntVersion, terraformPath: "terragrunt.hcl" };
+}
+
+export function pulumiConfig(pulumiVersion: string): { version: string; stack: string } {
+	return { version: pulumiVersion, stack: "dev" };
+}
+
+export function ansibleConfig(ansibleVersion: string): { version: string; inventory: string } {
+	return { version: ansibleVersion, inventory: "inventory.ini" };
+}
+
+export function awxConfig(awxVersion: string): { version: string; host: string } {
+	return { version: awxVersion, host: "http://localhost:8052" };
+}
+
+export function chefConfig(chefVersion: string): { version: string; clientKey: string } {
+	return { version: chefVersion, clientKey: "" };
+}
+
+export function inspecConfig(inspecVersion: string): { version: string; profile: string } {
+	return { version: inspecVersion, profile: "" };
+}
+
+export function puppetConfig(puppetVersion: string): { version: string; server: string } {
+	return { version: puppetVersion, server: "puppet" };
+}
+
+export function rspecConfig(rspecVersion: string): { version: string; specDir: string } {
+	return { version: rspecVersion, specDir: "spec" };
+}
+
+export function serverspecConfig(serverspecVersion: string): { version: string; specDir: string } {
+	return { version: serverspecVersion, specDir: "spec" };
+}
+
+export function gossConfig(gossVersion: string): { version: string; dgConfig: string } {
+	return { version: gossVersion, dgConfig: "goss.yaml" };
+}
+
+export function testinfraConfig(testinfraVersion: string): { version: string; hosts: string } {
+	return { version: testinfraVersion, hosts: "local://" };
+}
+
+export function moleculeConfig(moleculeVersion: string): { version: string; moleculeFile: string } {
+	return { version: moleculeVersion, moleculeFile: "molecule.yml" };
+}
+
+export function kitchenConfig(kitchenVersion: string): { version: string; kitchenYml: string } {
+	return { version: kitchenVersion, kitchenYml: ".kitchen.yml" };
+}
+
+export function saltConfig(saltVersion: string): { version: string; master: string } {
+	return { version: saltVersion, master: "salt" };
+}
+
+// GitOps
+export function argocdConfig(argocdVersion: string): { version: string; server: string } {
+	return { version: argocdVersion, server: "localhost:8080" };
+}
+
+export function argoworkflowsConfig(argoworkflowsVersion: string): { version: string; host: string } {
+	return { version: argoworkflowsVersion, host: "localhost:2746" };
+}
+
+export function argorolloutsConfig(argorolloutsVersion: string): { version: string; host: string } {
+	return { version: argorolloutsVersion, host: "" };
+}
+
+export function fluxv1Config(fluxv1Version: string): { version: string; gitUrl: string } {
+	return { version: fluxv1Version, gitUrl: "" };
+}
+
+export function fluxv2Config(fluxv2Version: string): { version: string; gitUrl: string } {
+	return { version: fluxv2Version, gitUrl: "" };
+}
+
+// GitHub
+export function githubactionsConfig(githubactionsVersion: string): { version: string; workflowFile: string } {
+	return { version: githubactionsVersion, workflowFile: ".github/workflows" };
+}
+
+export function githubcliConfig(githubcliVersion: string): { version: string; authToken: string } {
+	return { version: githubcliVersion, authToken: "" };
+}
+
+export function githubapiConfig(githubapiVersion: string): { version: string; apiUrl: string } {
+	return { version: githubapiVersion, apiUrl: "https://api.github.com" };
+}
+
+export function githubappsConfig(githubappsVersion: string): { version: string; appId: string } {
+	return { version: githubappsVersion, appId: "" };
+}
+
+export function githubwebhooksConfig(githubwebhooksVersion: string): { version: string; secret: string } {
+	return { version: githubwebhooksVersion, secret: "" };
+}
+
+// GitLab
+export function gitlabciConfig(gitlabciVersion: string): { version: string; gitlabUrl: string } {
+	return { version: gitlabciVersion, gitlabUrl: "https://gitlab.com" };
+}
+
+export function gitlabrunnerConfig(gitlabrunnerVersion: string): { version: string; executor: string } {
+	return { version: gitlabrunnerVersion, executor: "docker" };
+}
+
+export function gitlabapiConfig(gitlabapiVersion: string): { version: string; gitlabUrl: string } {
+	return { version: gitlabapiVersion, gitlabUrl: "https://gitlab.com" };
+}
+
+export function gitlabwebhooksConfig(gitlabwebhooksVersion: string): { version: string; secret: string } {
+	return { version: gitlabwebhooksVersion, secret: "" };
+}
+
+// Azure
+export function azurepipelinesConfig(azurepipelinesVersion: string): { version: string; organization: string } {
+	return { version: azurepipelinesVersion, organization: "" };
+}
+
+// Other CIs
+export function circleciConfig(circleciVersion: string): { version: string; projectSlug: string } {
+	return { version: circleciVersion, projectSlug: "gh/org/repo" };
+}
+
+export function droneConfig(droneVersion: string): { version: string; server: string } {
+	return { version: droneVersion, server: "" };
+}
+
+export function giteaactionsConfig(giteaactionsVersion: string): { version: string; giteaUrl: string } {
+	return { version: giteaactionsVersion, giteaUrl: "" };
+}
+
+export function woodpeckerciConfig(woodpeckerciVersion: string): { version: string; server: string } {
+	return { version: woodpeckerciVersion, server: "localhost:8000" };
+}
+
+export function buildkiteConfig(buildkiteVersion: string): { version: string; agentToken: string } {
+	return { version: buildkiteVersion, agentToken: "" };
+}
+
+export function travisciConfig(travisciVersion: string): { version: string; apiToken: string } {
+	return { version: travisciVersion, apiToken: "" };
+}
+
+export function appveyorConfig(appveyorVersion: string): { version: string; accountName: string } {
+	return { version: appveyorVersion, accountName: "" };
+}
+
+export function semaphoreConfig(semaphoreVersion: string): { version: string; projectId: string } {
+	return { version: semaphoreVersion, projectId: "" };
+}
+
+export function codefreshConfig(codefreshVersion: string): { version: string; apiUrl: string } {
+	return { version: codefreshVersion, apiUrl: "" };
+}
+
+// Enterprise CIs
+export function teamcityConfig(teamcityVersion: string): { version: string; serverUrl: string } {
+	return { version: teamcityVersion, serverUrl: "" };
+}
+
+export function bambooConfig(bambooVersion: string): { version: string; serverUrl: string } {
+	return { version: bambooVersion, serverUrl: "" };
+}
+
+export function spinnakerConfig(spinnakerVersion: string): { version: string; gateUrl: string } {
+	return { version: spinnakerVersion, gateUrl: "" };
+}
+
+export function jenkinsxConfig(jenkinsxVersion: string): { version: string;jx: string } {
+	return { version: jenkinsxVersion, jx: "" };
+}
+
+// Local Dev
+export function skaffoldConfig(skaffoldVersion: string): { version: string; profile: string } {
+	return { version: skaffoldVersion, profile: "default" };
+}
+
+export function tiltConfig(tiltVersion: string): { version: string; port: number } {
+	return { version: tiltVersion, port: 10350 };
+}
+
+export function devspaceConfig(devspaceVersion: string): { version: string; configFile: string } {
+	return { version: devspaceVersion, configFile: "devspace.yaml" };
+}
+
+export function gardenConfig(gardenVersion: string): { version: string; configFile: string } {
+	return { version: gardenVersion, configFile: "garden.yml" };
+}
+
+// K8s Config Tools
+export function kptConfig(kptVersion: string): { version: string; pkgPath: string } {
+	return { version: kptVersion, pkgPath: "" };
+}
+
+export function kustomizeConfig(kustomizeVersion: string): { version: string; overlays: string[] } {
+	return { version: kustomizeVersion, overlays: ["dev", "prod"] };
+}
+
+export function helmConfig(helmVersion: string): { version: string; releaseName: string } {
+	return { version: helmVersion, releaseName: "" };
+}
+
+export function helmfileConfig(helmfileVersion: string): { version: string; helmfile: string } {
+	return { version: helmfileVersion, helmfile: "helmfile.yaml" };
+}
+
+export function kubevelaConfig(kubevelaVersion: string): { version: string; appFile: string } {
+	return { version: kubevelaVersion, appFile: "" };
+}
+
+// Platform Tools
+export function backstageConfig(backstageVersion: string): { version: string; appBaseUrl: string } {
+	return { version: backstageVersion, appBaseUrl: "http://localhost:7007" };
+}
+
+export function crossplaneConfig(crossplaneVersion: string): { version: string; provider: string } {
+	return { version: crossplaneVersion, provider: "" };
+}
+
+// CDK Tools
+export function cdk8sConfig(cdk8sVersion: string): { version: string; output: string } {
+	return { version: cdk8sVersion, output: "dist" };
+}
+
+export function cdktfConfig(cdktfVersion: string): { version: string; output: string } {
+	return { version: cdktfVersion, output: "dist" };
+}
+
+export function puluminyamlConfig(puluminyamlVersion: string): { version: string; stack: string } {
+	return { version: puluminyamlVersion, stack: "" };
+}
+
+// Image Updaters
+export function fluximageupdaterConfig(fluximageupdaterVersion: string): { version: string; argocd: boolean } {
+	return { version: fluximageupdaterVersion, argocd: false };
+}
+
+export function argoimageupdaterConfig(argoimageupdaterVersion: string): { version: string; argocdUrl: string } {
+	return { version: argoimageupdaterVersion, argocdUrl: "" };
+}
+
+export function renovateConfig(renovateVersion: string): { version: string; configFile: string } {
+	return { version: renovateVersion, configFile: "renovate.json" };
+}
+
+export function dependabotConfig(dependabotVersion: string): { version: string; configFile: string } {
+	return { version: dependabotVersion, configFile: ".github/dependabot.yml" };
+}
+
+export function keelConfig(keelVersion: string): { version: string; approveAuto: boolean } {
+	return { version: keelVersion, approveAuto: false };
+}
+
+export function reloaderConfig(reloaderVersion: string): { version: string; watchCluster: boolean } {
+	return { version: reloaderVersion, watchCluster: true };
+}
+
+// Security Scanning
+export function kubeclarityConfig(kubeclarityVersion: string): { version: string; host: string } {
+	return { version: kubeclarityVersion, host: "" };
+}
+
+export function trivyConfig(trivyVersion: string): { version: string; format: string } {
+	return { version: trivyVersion, format: "table" };
+}
+
+export function grypeConfig(grypeVersion: string): { version: string; output: string } {
+	return { version: grypeVersion, output: "table" };
+}
+
+export function syftConfig(syftVersion: string): { version: string; output: string } {
+	return { version: syftVersion, output: "table" };
+}
+
+// Kubernetes Components
+export function etcdConfig(etcdVersion: string): { version: string; dataDir: string } {
+	return { version: etcdVersion, dataDir: "/var/lib/etcd" };
+}
+
+export function corednsConfig(corednsVersion: string): { version: string; pluginChain: string[] } {
+	return { version: corednsVersion, pluginChain: [] };
+}
+
+export function kubeproxyConfig(kubeproxyVersion: string): { version: string; mode: string } {
+	return { version: kubeproxyVersion, mode: "iptables" };
+}
+
+export function kubeschedulerConfig(kubeschedulerVersion: string): { version: string; policyFile: string } {
+	return { version: kubeschedulerVersion, policyFile: "" };
+}
+
+export function kubecontrollermanagerConfig(kubecontrollermanagerVersion: string): { version: string; serviceAccountPrivateKey: string } {
+	return { version: kubecontrollermanagerVersion, serviceAccountPrivateKey: "" };
+}
+
+export function kubeletConfig(kubeletVersion: string): { version: string; cgroupDriver: string } {
+	return { version: kubeletVersion, cgroupDriver: "systemd" };
+}
+
+export function kubeapiserverConfig(kubeapiserverVersion: string): { version: string; etcdServers: string } {
+	return { version: kubeapiserverVersion, etcdServers: "" };
+}
+
+export function kubeadmConfig(kubeadmVersion: string): { version: string; configFile: string } {
+	return { version: kubeadmVersion, configFile: "kubeadm-config.yaml" };
+}
+
+export function kubeconfigConfig(kubeconfigVersion: string): { version: string; context: string } {
+	return { version: kubeconfigVersion, context: "" };
+}
+
+export function kubectlConfig(kubectlVersion: string): { version: string; context: string } {
+	return { version: kubectlVersion, context: "" };
+}
+
+// K8s Autoscaling
+export function hpaConfig(hpaVersion: string): { version: string; minReplicas: number } {
+	return { version: hpaVersion, minReplicas: 1 };
+}
+
+export function vpaConfig(vpaVersion: string): { version: string; resourcePolicy: string } {
+	return { version: vpaVersion, resourcePolicy: "" };
+}
+
+export function pdbConfig(pdbVersion: string): { version: string; minAvailable: string } {
+	return { version: pdbVersion, minAvailable: "1" };
+}
+
+export function clusterautoscalerConfig(clusterautoscalerVersion: string): { version: string; awsRegion: string } {
+	return { version: clusterautoscalerVersion, awsRegion: "" };
+}
+
+// Monitoring CRDs
+export function servicemonitorConfig(servicemonitorVersion: string): { version: string; endpoints: string[] } {
+	return { version: servicemonitorVersion, endpoints: [] };
+}
+
+export function podmonitorConfig(podmonitorVersion: string): { version: string; podMetricsEndpoints: string[] } {
+	return { version: podmonitorVersion, podMetricsEndpoints: [] };
+}
+
+export function prometheusruleConfig(prometheusruleVersion: string): { version: string; groups: string[] } {
+	return { version: prometheusruleVersion, groups: [] };
+}
+
+// Service Mesh
+export function istioConfig(istioVersion: string): { version: string; profile: string } {
+	return { version: istioVersion, profile: "default" };
+}
+
+export function envoyConfig(envoyVersion: string): { version: string; configPath: string } {
+	return { version: envoyVersion, configPath: "/etc/envoy/envoy.yaml" };
+}
+
+export function linkerdConfig(linkerdVersion: string): { version: string; controlPlaneVersion: string } {
+	return { version: linkerdVersion, controlPlaneVersion: "stable-2.14" };
+}
+
+export function consulconnectConfig(consulconnectVersion: string): { version: string; datacenter: string } {
+	return { version: consulconnectVersion, datacenter: "dc1" };
+}
+
+// CNI Plugins
+export function ciliumConfig(ciliumVersion: string): { version: string; hubble: boolean } {
+	return { version: ciliumVersion, hubble: true };
+}
+
+export function calicoConfig(calicoVersion: string): { version: string; cniType: string } {
+	return { version: calicoVersion, cniType: "calico" };
+}
+
+export function flannelConfig(flannelVersion: string): { version: string; network: string } {
+	return { version: flannelVersion, network: "10.244.0.0/16" };
+}
+
+export function weaveConfig(weaveVersion: string): { version: string; ipallocRange: string } {
+	return { version: weaveVersion, ipallocRange: "10.32.0.0/12" };
+}
+
+export function canalConfig(canalVersion: string): { version: string; network: string } {
+	return { version: canalVersion, network: "10.244.0.0/16" };
+}
+
+export function kuberouterConfig(kuberouterVersion: string): { version: string; hairpinMode: boolean } {
+	return { version: kuberouterVersion, hairpinMode: true };
+}
+
+export function multusConfig(multusVersion: string): { version: string; confFile: string } {
+	return { version: multusVersion, confFile: "/etc/cni/net.d" };
+}
+
+export function ovnConfig(ovnVersion: string): { version: string; mode: string } {
+	return { version: ovnVersion, mode: "encapsulation" };
+}
+
+export function kubeovnConfig(kubeovnVersion: string): { version: string; joinCidr: string } {
+	return { version: kubeovnVersion, joinCidr: "100.64.0.0/16" };
+}
+
+export function antreaConfig(antreaVersion: string): { version: string; egress: boolean } {
+	return { version: antreaVersion, egress: false };
+}
+
+export function submarinerConfig(submarinerVersion: string): { version: string; brokerK8sApiServer: string } {
+	return { version: submarinerVersion, brokerK8sApiServer: "" };
+}
+
+// K8s Distributions
+export function kindConfig(kindVersion: string): { version: string; name: string } {
+	return { version: kindVersion, name: "kind" };
+}
+
+export function k3sConfig(k3sVersion: string): { version: string; clusterSecret: string } {
+	return { version: k3sVersion, clusterSecret: "" };
+}
+
+export function minikubeConfig(minikubeVersion: string): { version: string; driver: string } {
+	return { version: minikubeVersion, driver: "docker" };
+}
+
+export function microk8sConfig(microk8sVersion: string): { version: string; channel: string } {
+	return { version: microk8sVersion, channel: "1.28" };
+}
+
+// Managed K8s
+export function eksConfig(eksVersion: string): { version: string; region: string } {
+	return { version: eksVersion, region: "us-west-2" };
+}
+
+export function gkeConfig(gkeVersion: string): { version: string; project: string } {
+	return { version: gkeVersion, project: "" };
+}
+
+export function aksConfig(aksVersion: string): { version: string; resourceGroup: string } {
+	return { version: aksVersion, resourceGroup: "" };
+}
+
+export function openshiftConfig(openshiftVersion: string): { version: string; apiUrl: string } {
+	return { version: openshiftVersion, apiUrl: "" };
+}
+
+export function tanzuConfig(tanzuVersion: string): { version: string; managementCluster: string } {
+	return { version: tanzuVersion, managementCluster: "" };
+}
+
+export function anthosConfig(anthosVersion: string): { version: string; project: string } {
+	return { version: anthosVersion, project: "" };
+}
+
+export function gardenerConfig(gardenerVersion: string): { version: string; gardenletConfig: string } {
+	return { version: gardenerVersion, gardenletConfig: "" };
+}
+
+export function kubermaticConfig(kubermaticVersion: string): { version: string; masterUrl: string } {
+	return { version: kubermaticVersion, masterUrl: "" };
+}
+
+// Cloud K8s
+export function lkeConfig(lkeVersion: string): { version: string; region: string } {
+	return { version: lkeVersion, region: "us-west" };
+}
+
+export function doksConfig(doksVersion: string): { version: string; region: string } {
+	return { version: doksVersion, region: "nyc" };
+}
+
+export function scalewaykapsuleConfig(scalewaykapsuleVersion: string): { version: string; region: string } {
+	return { version: scalewaykapsuleVersion, region: "fr-par-1" };
+}
+
+export function ovhkubernetesConfig(ovhkubernetesVersion: string): { version: string; serviceName: string } {
+	return { version: ovhkubernetesVersion, serviceName: "" };
+}
+
+export function civokubernetesConfig(civokubernetesVersion: string): { version: string; clusterName: string } {
+	return { version: civokubernetesVersion, clusterName: "" };
+}
+
+export function cloudflarelbConfig(cloudflarelbVersion: string): { version: string; zone: string } {
+	return { version: cloudflarelbVersion, zone: "" };
+}
+
+// K8s Installers
+export function kubesprayConfig(kubesprayVersion: string): { version: string; inventoryFile: string } {
+	return { version: kubesprayVersion, inventoryFile: "inventory/mycluster/hosts.yaml" };
+}
+
+export function rkeConfig(rkeVersion: string): { version: string; configFile: string } {
+	return { version: rkeVersion, configFile: "rancher-cluster.yml" };
+}
+
+export function eksanywhereConfig(eksanywhereVersion: string): { version: string; specFile: string } {
+	return { version: eksanywhereVersion, specFile: "cluster-spec.yaml" };
+}
+
+export function rancherConfig(rancherVersion: string): { version: string; host: string } {
+	return { version: rancherVersion, host: "" };
+}
+
+export function k0sConfig(k0sVersion: string): { version: string; configFile: string } {
+	return { version: k0sVersion, configFile: "k0s.yaml" };
+}
+
+export function k3osConfig(k3osVersion: string): { version: string; installDevice: string } {
+	return { version: k3osVersion, installDevice: "/dev/sda" };
+}
+
+// Container OS
+export function flatcarConfig(flatcarVersion: string): { version: string; channel: string } {
+	return { version: flatcarVersion, channel: "stable" };
+}
+
+export function bottlerocketConfig(bottlerocketVersion: string): { version: string; variant: string } {
+	return { version: bottlerocketVersion, variant: "aws-k8s-1.28" };
+}
+
+export function containerlinuxConfig(containerlinuxVersion: string): { version: string; updateStrategy: string } {
+	return { version: containerlinuxVersion, updateStrategy: "etcd-lock" };
+}
+
+// K8s Operators
+export function kubevirtConfig(kubevirtVersion: string): { version: string; commonInstancetype: string } {
+	return { version: kubevirtVersion, commonInstancetype: "" };
+}
+
+export function kubecarrierConfig(kubecarrierVersion: string): { version: string; providerName: string } {
+	return { version: kubecarrierVersion, providerName: "" };
+}
+
+export function kubedbConfig(kubedbVersion: string): { version: string; namespace: string } {
+	return { version: kubedbVersion, namespace: "kubedb" };
+}
+
+export function kubevaultConfig(kubevaultVersion: string): { version: string; namespace: string } {
+	return { version: kubevaultVersion, namespace: "kube-vault" };
+}
+
+export function kubeformConfig(kubeformVersion: string): { version: string; provider: string } {
+	return { version: kubeformVersion, provider: "" };
+}
+
+export function kubrayConfig(kuberayVersion: string): { version: string; namespace: string } {
+	return { version: kuberayVersion, namespace: "ray-system" };
+}
+
+export function volcanoConfig(volcanoVersion: string): { version: string; schedulerName: string } {
+	return { version: volcanoVersion, schedulerName: "volcano" };
+}
+
+// ML on K8s
+export function kubeflowConfig(kubeflowVersion: string): { version: string; namespace: string } {
+	return { version: kubeflowVersion, namespace: "kubeflow" };
+}
+
+export function seldonConfig(seldonVersion: string): { version: string; namespace: string } {
+	return { version: seldonVersion, namespace: "seldon-system" };
+}
+
+export function bentomlConfig(bentomlVersion: string): { version: string; bentoStore: string } {
+	return { version: bentomlVersion, bentoStore: "" };
+}
+
+export function tritoninferenceConfig(tritoninferenceVersion: string): { version: string; modelRepository: string } {
+	return { version: tritoninferenceVersion, modelRepository: "" };
+}
+
+export function kserveConfig(kserveVersion: string): { version: string; namespace: string } {
+	return { version: kserveVersion, namespace: "kserve" };
+}
+
+export function tensorflowservingConfig(tensorFlowServingVersion: string): { version: string; modelBasePath: string } {
+	return { version: tensorFlowServingVersion, modelBasePath: "" };
+}
+
+export function torchserveConfig(torchserveVersion: string): { version: string; modelStore: string } {
+	return { version: torchserveVersion, modelStore: "" };
+}
+
+export function rayserveConfig(rayserveVersion: string): { version: string; headless: boolean } {
+	return { version: rayserveVersion, headless: false };
+}
+
+// MLOps
+export function mlflowConfig(mlflowVersion: string): { version: string; trackingUri: string } {
+	return { version: mlflowVersion, trackingUri: "http://localhost:5000" };
+}
+
+export function weightsbiasesConfig(weightsbiasesVersion: string): { version: string; apiKey: string } {
+	return { version: weightsbiasesVersion, apiKey: "" };
+}
+
+export function neptuneConfig(neptuneVersion: string): { version: string; projectName: string } {
+	return { version: neptuneVersion, projectName: "" };
+}
+
+export function cometmlConfig(cometmlVersion: string): { version: string; apiKey: string } {
+	return { version: cometmlVersion, apiKey: "" };
+}
+
+export function aimConfig(aimVersion: string): { version: string; dbUrl: string } {
+	return { version: aimVersion, dbUrl: "sqlite://~/.aim/aim.db" };
+}
+
+export function tensorboardConfig(tensorboardVersion: string): { version: string; logDir: string } {
+	return { version: tensorboardVersion, logDir: "runs" };
+}
+
+export function guildaiConfig(guildaiVersion: string): { version: string;GuildHome: string } {
+	return { version: guildaiVersion,GuildHome: "" };
+}
+
+export function sacredConfig(sacredVersion: string): { version: string; dbName: string } {
+	return { version: sacredVersion, dbName: "sacred" };
+}
+
+export function clearmlConfig(clearmlVersion: string): { version: string; host: string } {
+	return { version: clearmlVersion, host: "https://app.clear.ml" };
+}
+
+export function polyaxonConfig(polyaxonVersion: string): { version: string; host: string } {
+	return { version: polyaxonVersion, host: "" };
+}
+
+// Data Versioning
+export function dvcConfig(dvcVersion: string): { version: string; remote: string } {
+	return { version: dvcVersion, remote: "" };
+}
+
+export function pachydermConfig(pachydermVersion: string): { version: string; host: string } {
+	return { version: pachydermVersion, host: "" };
+}
+
+export function lakefsConfig(lakefsVersion: string): { version: string; serverUrl: string } {
+	return { version: lakefsVersion, serverUrl: "" };
+}
+
+export function dremioConfig(dremioVersion: string): { version: string; host: string; port: number } {
+	return { version: dremioVersion, host: "localhost", port: 9047 };
+}
+
+// DB Operators
+export function eckConfig(eckVersion: string): { version: string; namespace: string } {
+	return { version: eckVersion, namespace: "elastic-system" };
+}
+
+export function strimziConfig(strimziVersion: string): { version: string; namespace: string } {
+	return { version: strimziVersion, namespace: "strimzi" };
+}
+
+export function rabbitmqoperatorConfig(rabbitmqoperatorVersion: string): { version: string; namespace: string } {
+	return { version: rabbitmqoperatorVersion, namespace: "rabbitmq-system" };
+}
+
+export function perconaConfig(perconaVersion: string): { version: string; namespace: string } {
+	return { version: perconaVersion, namespace: "percona-server" };
+}
+
+export function vitessConfig(vitessVersion: string): { version: string; keyspace: string } {
+	return { version: vitessVersion, keyspace: "" };
+}
+
+export function supabaseoperatorConfig(supabaseoperatorVersion: string): { version: string; namespace: string } {
+	return { version: supabaseoperatorVersion, namespace: "supabase-operator" };
+}
+
+export function tidboperatorConfig(tidboperatorVersion: string): { version: string; namespace: string } {
+	return { version: tidboperatorVersion, namespace: "tidb-operator" };
+}
+
+// DNS/Certs
+export function k8gbConfig(k8gbVersion: string): { version: string; externalTieredDns: boolean } {
+	return { version: k8gbVersion, externalTieredDns: false };
+}
+
+export function externaldnsConfig(externaldnsVersion: string): { version: string; provider: string } {
+	return { version: externaldnsVersion, provider: "aws-route53" };
+}
+
+export function certmanagerConfig(certmanagerVersion: string): { version: string; namespace: string } {
+	return { version: certmanagerVersion, namespace: "cert-manager" };
+}
+
+// Secret Management
+export function vaultConfig(vaultVersion: string): { version: string; address: string } {
+	return { version: vaultVersion, address: "" };
+}
+
+export function externalsecretsConfig(externalsecretsVersion: string): { version: string; namespace: string } {
+	return { version: externalsecretsVersion, namespace: "external-secrets" };
+}
+
+export function sealedsecretsConfig(sealedsecretsVersion: string): { version: string; namespace: string } {
+	return { version: sealedsecretsVersion, namespace: "sealed-secrets" };
+}
+
+export function argovaultConfig(argovaultVersion: string): { version: string; namespace: string } {
+	return { version: argovaultVersion, namespace: "argocd" };
+}
+
+// Security
+export function kubesecConfig(kubesecVersion: string): { version: string; admissionWebhook: boolean } {
+	return { version: kubesecVersion, admissionWebhook: false };
+}
+
+export function kubebenchConfig(kubebenchVersion: string): { version: string; jsonFlag: boolean } {
+	return { version: kubebenchVersion, jsonFlag: false };
+}
+
+export function kubehunterConfig(kubehunterVersion: string): { version: string; serviceType: string } {
+	return { version: kubehunterVersion, serviceType: "ClusterIP" };
+}
+
+export function kyvernoConfig(kyvernoVersion: string): { version: string; namespace: string } {
+	return { version: kyvernoVersion, namespace: "kyverno" };
+}
+
+export function opagatekeeperConfig(opagatekeeperVersion: string): { version: string; namespace: string } {
+	return { version: opagatekeeperVersion, namespace: "gatekeeper-system" };
+}
+
+export function falcoConfig(falcoVersion: string): { version: string; rulesFile: string } {
+	return { version: falcoVersion, rulesFile: "/etc/falco/falco_rules.yaml" };
+}
+
+export function tetragonConfig(tetragonVersion: string): { version: string; export: string } {
+	return { version: tetragonVersion, export: "tuple" };
+}
+
+// Observability Operators
+export function datadogagentConfig(datadogagentVersion: string): { version: string; apiKey: string } {
+	return { version: datadogagentVersion, apiKey: "" };
+}
+
+export function prometheusoperatorConfig(prometheusoperatorVersion: string): { version: string; namespace: string } {
+	return { version: prometheusoperatorVersion, namespace: "prometheus-operator" };
+}
+
+export function grafanaoperatorConfig(grafanaoperatorVersion: string): { version: string; namespace: string } {
+	return { version: grafanaoperatorVersion, namespace: "grafana-operator" };
+}
+
+export function jaegeroperatorConfig(jaegeroperatorVersion: string): { version: string; namespace: string } {
+	return { version: jaegeroperatorVersion, namespace: "observability" };
+}
+
+export function kialiConfig(kialiVersion: string): { version: string; dashboardVisible: boolean } {
+	return { version: kialiVersion, dashboardVisible: true };
+}
+
+// Prometheus Stack
+export function prometheusConfig(prometheusVersion: string): { version: string; retention: string } {
+	return { version: prometheusVersion, retention: "15d" };
+}
+
+export function alertmanagerConfig(alertmanagerVersion: string): { version: string; configFile: string } {
+	return { version: alertmanagerVersion, configFile: "alertmanager.yaml" };
+}
+
+export function nodeexporterConfig(nodeexporterVersion: string): { version: string; port: number } {
+	return { version: nodeexporterVersion, port: 9100 };
+}
+
+export function kubestatemetricsConfig(kubestatemetricsVersion: string): { version: string; namespace: string } {
+	return { version: kubestatemetricsVersion, namespace: "kube-system" };
+}
+
+export function metricsserverConfig(metricsserverVersion: string): { version: string; namespace: string } {
+	return { version: metricsserverVersion, namespace: "kube-system" };
+}
+
+export function goldilocksConfig(goldilocksVersion: string): { version: string; namespace: string } {
+	return { version: goldilocksVersion, namespace: "goldilocks" };
+}
+
+// KEDA Scalers
+export function liiklusConfig(liiklusVersion: string): { version: string; host: string; port: number } {
+	return { version: liiklusVersion, host: "localhost", port: 6565 };
+}
+
+export function cronscalerConfig(cronscalerVersion: string): { version: string; timezone: string } {
+	return { version: cronscalerVersion, timezone: "UTC" };
+}
+
+export function redisscalerConfig(redisscalerVersion: string): { version: string; listLength: number } {
+	return { version: redisscalerVersion, listLength: 100 };
+}
+
+export function prometheusscalerConfig(prometheusscalerVersion: string): { version: string; metricName: string } {
+	return { version: prometheusscalerVersion, metricName: "" };
 }
 
 // Subset Sum
