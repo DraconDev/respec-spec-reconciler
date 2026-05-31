@@ -105,3 +105,4 @@ tasks*.json
 !rustfmt.toml
 !target/
 # --- END DRACON MANAGED BLOCK ---
+node_modules/
