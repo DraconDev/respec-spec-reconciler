@@ -3036,6 +3036,692 @@ export function ratcliffObershelp(a: string, b: string): number {
 	return sim + ratcliffObershelp(left, left2) + ratcliffObershelp(right, right2);
 }
 
+// Graph Algorithms
+
+export function bfs(graph: Graph, start: string): string[] {
+	const visited = new Set<string>();
+	const queue = [start];
+	const result: string[] = [];
+	
+	while (queue.length > 0) {
+		const vertex = queue.shift()!;
+		if (visited.has(vertex)) continue;
+		visited.add(vertex);
+		result.push(vertex);
+		
+		for (const edge of graph.edges) {
+			const next = edge[0] === vertex ? edge[1] : edge[0];
+			if (!visited.has(next)) queue.push(next);
+		}
+	}
+	return result;
+}
+
+export function dfs(graph: Graph, start: string): string[] {
+	const visited = new Set<string>();
+	const result: string[] = [];
+	
+	function visit(v: string): void {
+		if (visited.has(v)) return;
+		visited.add(v);
+		result.push(v);
+		for (const edge of graph.edges) {
+			const next = edge[0] === v ? edge[1] : edge[0];
+			if (!visited.has(next)) visit(next);
+		}
+	}
+	
+	visit(start);
+	return result;
+}
+
+export function dijkstra(graph: Graph, start: string, end: string): number {
+	const dist = new Map<string, number>();
+	const prev = new Map<string, string>();
+	const unvisited = new Set<string>(graph.vertices);
+	
+	for (const v of graph.vertices) dist.set(v, Infinity);
+	dist.set(start, 0);
+	
+	while (unvisited.size > 0) {
+		let u = "";
+		let minDist = Infinity;
+		for (const v of unvisited) {
+			if ((dist.get(v) || Infinity) < minDist) {
+				minDist = dist.get(v)!;
+				u = v;
+			}
+		}
+		
+		if (u === end) break;
+		unvisited.delete(u);
+		
+		for (const edge of graph.edges) {
+			const [v, w, weight] = edge;
+			if (v !== u && w !== u) continue;
+			const next = v === u ? w : v;
+			if (!unvisited.has(next)) continue;
+			const alt = (dist.get(u) || Infinity) + weight;
+			if (alt < (dist.get(next) || Infinity)) {
+				dist.set(next, alt);
+				prev.set(next, u);
+			}
+		}
+	}
+	return dist.get(end) || Infinity;
+}
+
+export function bellmanFord(graph: Graph, start: string): Map<string, number> {
+	const dist = new Map<string, number>();
+	for (const v of graph.vertices) dist.set(v, Infinity);
+	dist.set(start, 0);
+	
+	for (let i = 0; i < graph.vertices.length - 1; i++) {
+		for (const edge of graph.edges) {
+			const [u, v, w] = edge;
+			if ((dist.get(u) || Infinity) + w < (dist.get(v) || Infinity)) {
+				dist.set(v, (dist.get(u) || Infinity) + w);
+			}
+		}
+	}
+	return dist;
+}
+
+export function floydWarshall(graph: Graph): Map<string, Map<string, number>> {
+	const dist = new Map<string, Map<string, number>>();
+	for (const u of graph.vertices) {
+		dist.set(u, new Map());
+		for (const v of graph.vertices) {
+			dist.get(u)!.set(v, u === v ? 0 : Infinity);
+		}
+	}
+	for (const [u, v, w] of graph.edges) {
+		dist.get(u)!.set(v, w);
+		dist.get(v)!.set(u, w);
+	}
+	for (const k of graph.vertices) {
+		for (const i of graph.vertices) {
+			for (const j of graph.vertices) {
+				const via = (dist.get(i)!.get(k)! + dist.get(k)!.get(j)!);
+				if (via < (dist.get(i)!.get(j)!)) {
+					dist.get(i)!.set(j, via);
+				}
+			}
+		}
+	}
+	return dist;
+}
+
+export function kruskal(graph: Graph): Array<[string, string, number]> {
+	const sorted = [...graph.edges].sort((a, b) => a[2] - b[2]);
+	const parent = new Map<string, string>();
+	for (const v of graph.vertices) parent.set(v, v);
+	
+	function find(x: string): string {
+		if (parent.get(x) !== x) parent.set(x, find(parent.get(x)!));
+		return parent.get(x)!;
+	}
+	
+	const mst: Array<[string, string, number]> = [];
+	for (const [u, v, w] of sorted) {
+		if (find(u) !== find(v)) {
+			parent.set(find(u), find(v));
+			mst.push([u, v, w]);
+		}
+	}
+	return mst;
+}
+
+export function prim(graph: Graph): Array<[string, string, number]> {
+	const visited = new Set<string>();
+	const edges: Array<[string, string, number]> = [];
+	visited.add(graph.vertices[0]);
+	
+	while (visited.size < graph.vertices.length) {
+		let minEdge: [string, string, number] | null = null;
+		for (const v of visited) {
+			for (const edge of graph.edges) {
+				const [u, w, weight] = edge;
+				if (v !== u && v !== w) continue;
+				const next = u === v ? w : u;
+				if (visited.has(next)) continue;
+				if (!minEdge || weight < minEdge[2]) {
+					minEdge = [v, next, weight];
+				}
+			}
+		}
+		if (minEdge) {
+			edges.push(minEdge);
+			visited.add(minEdge[1]);
+		}
+	}
+	return edges;
+}
+
+export function tarjan(graph: Graph): string[][] {
+	const index = new Map<string, number>();
+	const lowlink = new Map<string, number>();
+	const onStack = new Set<string>();
+	const stack: string[] = [];
+	const sccs: string[][] = [];
+	let currentIndex = 0;
+	
+	function strongConnect(v: string): void {
+		index.set(v, currentIndex);
+		lowlink.set(v, currentIndex);
+		currentIndex++;
+		stack.push(v);
+		onStack.add(v);
+		
+		for (const edge of graph.edges) {
+			const w = edge[0] === v ? edge[1] : edge[0];
+			if (!index.has(w)) {
+				strongConnect(w);
+				lowlink.set(v, Math.min(lowlink.get(v)!, lowlink.get(w)!));
+			} else if (onStack.has(w)) {
+				lowlink.set(v, Math.min(lowlink.get(v)!, index.get(w)!));
+			}
+		}
+		
+		if (lowlink.get(v) === index.get(v)) {
+			const scc: string[] = [];
+			let w: string;
+			do {
+				w = stack.pop()!;
+				onStack.delete(w);
+				scc.push(w);
+			} while (w !== v);
+			sccs.push(scc);
+		}
+	}
+	
+	for (const v of graph.vertices) {
+		if (!index.has(v)) strongConnect(v);
+	}
+	return sccs;
+}
+
+export function kosaraju(graph: Graph): string[][] {
+	const visited = new Set<string>();
+	const order: string[] = [];
+	
+	function dfs(v: string): void {
+		visited.add(v);
+		for (const edge of graph.edges) {
+			const w = edge[0] === v ? edge[1] : edge[0];
+			if (!visited.has(w)) dfs(w);
+		}
+		order.push(v);
+	}
+	
+	for (const v of graph.vertices) {
+		if (!visited.has(v)) dfs(v);
+	}
+	
+	const reversed: Array<[string, string, number]> = graph.edges.map(([u, v, w]) => [v, u, w]);
+	const rgraph: Graph = { vertices: graph.vertices, edges: reversed };
+	
+	visited.clear();
+	const sccs: string[][] = [];
+	
+	for (const v of order.reverse()) {
+		if (!visited.has(v)) {
+			const scc: string[] = [];
+			const stack = [v];
+			while (stack.length > 0) {
+				const u = stack.pop()!;
+				if (visited.has(u)) continue;
+				visited.add(u);
+				scc.push(u);
+				for (const edge of rgraph.edges) {
+					const w = edge[0] === u ? edge[1] : edge[0];
+					if (!visited.has(w)) stack.push(w);
+				}
+			}
+			sccs.push(scc);
+		}
+	}
+	return sccs;
+}
+
+export function johnson(graph: Graph): Map<string, Map<string, number>> {
+	return floydWarshall(graph);
+}
+
+export function aStar(graph: Graph, start: string, end: string, heuristic: (v: string) => number): number {
+	const open = new Set<string>([start]);
+	const closed = new Set<string>();
+	const gScore = new Map<string, number>();
+	const fScore = new Map<string, number>();
+	
+	for (const v of graph.vertices) {
+		gScore.set(v, Infinity);
+		fScore.set(v, Infinity);
+	}
+	gScore.set(start, 0);
+	fScore.set(start, heuristic(start));
+	
+	while (open.size > 0) {
+		let current = "";
+		let minF = Infinity;
+		for (const v of open) {
+			if ((fScore.get(v) || Infinity) < minF) {
+				minF = fScore.get(v)!;
+				current = v;
+			}
+		}
+		
+		if (current === end) return gScore.get(end)!;
+		open.delete(current);
+		closed.add(current);
+		
+		for (const edge of graph.edges) {
+			const [u, v, weight] = edge;
+			if (u !== current && v !== current) continue;
+			const neighbor = u === current ? v : u;
+			if (closed.has(neighbor)) continue;
+			
+			const tentativeG = (gScore.get(current) || Infinity) + weight;
+			if (tentativeG < (gScore.get(neighbor) || Infinity)) {
+				gScore.set(neighbor, tentativeG);
+				fScore.set(neighbor, tentativeG + heuristic(neighbor));
+				open.add(neighbor);
+			}
+		}
+	}
+	return Infinity;
+}
+
+export function maxFlow(graph: Graph, source: string, sink: string): number {
+	const capacity = new Map<string, Map<string, number>>();
+	for (const v of graph.vertices) {
+		capacity.set(v, new Map());
+		for (const w of graph.vertices) {
+			capacity.get(v)!.set(w, 0);
+		}
+	}
+	for (const [u, v, cap] of graph.edges) {
+		capacity.get(u)!.set(v, cap);
+	}
+	
+	function bfs(): Map<string, string> | null {
+		const parent = new Map<string, string>();
+		const visited = new Set<string>([source]);
+		const queue = [source];
+		
+		while (queue.length > 0) {
+			const u = queue.shift()!;
+			for (const v of graph.vertices) {
+				if (visited.has(v)) continue;
+				const cap = capacity.get(u)!.get(v)!;
+				if (cap > 0) {
+					parent.set(v, u);
+					visited.add(v);
+					queue.push(v);
+				}
+			}
+		}
+		return parent.has(sink) ? parent : null;
+	}
+	
+	let flow = 0;
+	while (true) {
+		const parent = bfs();
+		if (!parent) break;
+		
+		let pathFlow = Infinity;
+		let v = sink;
+		while (v !== source) {
+			const u = parent.get(v)!;
+			pathFlow = Math.min(pathFlow, capacity.get(u)!.get(v)!);
+			v = u;
+		}
+		
+		v = sink;
+		while (v !== source) {
+			const u = parent.get(v)!;
+			capacity.get(u)!.set(v, capacity.get(u)!.get(v)! - pathFlow);
+			capacity.get(v)!.set(u, (capacity.get(v)!.get(u) || 0) + pathFlow);
+			v = u;
+		}
+		flow += pathFlow;
+	}
+	return flow;
+}
+
+// Trie Implementation
+export class Trie {
+	root = new TrieNode();
+
+	insert(word: string): void {
+		let node = this.root;
+		for (const char of word) {
+			if (!node.children.has(char)) {
+				node.children.set(char, new TrieNode());
+			}
+			node = node.children.get(char)!;
+		}
+		node.isEnd = true;
+	}
+
+	search(word: string): boolean {
+		let node = this.root;
+		for (const char of word) {
+			if (!node.children.has(char)) return false;
+			node = node.children.get(char)!;
+		}
+		return node.isEnd;
+	}
+
+	startsWith(prefix: string): boolean {
+		let node = this.root;
+		for (const char of prefix) {
+			if (!node.children.has(char)) return false;
+			node = node.children.get(char)!;
+		}
+		return true;
+	}
+}
+
+// Skip List Implementation
+export class SkipList {
+	private header: SkipListNode;
+	private level = 0;
+	private maxLevel = 16;
+
+	constructor() {
+		this.header = new SkipListNode(-1, this.maxLevel);
+	}
+
+	add(value: number): void {
+		const newNode = new SkipListNode(value, Math.floor(Math.random() * this.maxLevel));
+		let current = this.header;
+		
+		for (let i = this.maxLevel - 1; i >= 0; i--) {
+			while (current.forward[i] && current.forward[i]!.value < value) {
+				current = current.forward[i]!;
+			}
+			if (i <= newNode.level) {
+				newNode.forward[i] = current.forward[i];
+				current.forward[i] = newNode;
+			}
+		}
+	}
+
+	contains(value: number): boolean {
+		let current = this.header;
+		for (let i = this.maxLevel - 1; i >= 0; i--) {
+			while (current.forward[i] && current.forward[i]!.value < value) {
+				current = current.forward[i]!;
+			}
+		}
+		return current.forward[0]?.value === value;
+	}
+}
+
+// Treap Implementation
+export class Treap {
+	root: TreapNode | null = null;
+
+	insert(key: number): void {
+		this.root = this.insertRec(this.root, key);
+	}
+
+	private insertRec(node: TreapNode | null, key: number): TreapNode {
+		if (!node) {
+			const newNode = new TreapNode();
+			newNode.key = key;
+			newNode.priority = Math.random();
+			return newNode;
+		}
+		if (key < node.key) {
+			node.left = this.insertRec(node.left, key);
+			if (node.left.priority > node.priority) {
+				node = this.rotateRight(node);
+			}
+		} else {
+			node.right = this.insertRec(node.right, key);
+			if (node.right.priority > node.priority) {
+				node = this.rotateLeft(node);
+			}
+		}
+		return node;
+	}
+
+	private rotateRight(y: TreapNode): TreapNode {
+		const x = y.left!;
+		y.left = x.right;
+		x.right = y;
+		return x;
+	}
+
+	private rotateLeft(x: TreapNode): TreapNode {
+		const y = x.right!;
+		x.right = y.left;
+		y.left = x;
+		return y;
+	}
+}
+
+// Huffman Coding
+export function huffmanCode(text: string): { codes: Map<string, string>; encoded: string } {
+	const freq = new Map<string, number>();
+	for (const char of text) {
+		freq.set(char, (freq.get(char) || 0) + 1);
+	}
+	
+	const codes = new Map<string, string>();
+	const queue = [...freq.entries()].sort((a, b) => a[1] - b[1]);
+	
+	while (queue.length > 1) {
+		const [a, fa] = queue.shift()!;
+		const [b, fb] = queue.shift()!;
+		for (const [char, code] of codes) {
+			if (char.startsWith(a)) codes.set(char, "0" + code);
+			if (char.startsWith(b)) codes.set(char, "1" + code);
+		}
+		queue.push([a + b, fa + fb]);
+		queue.sort((a, b) => a[1] - b[1]);
+	}
+	
+	let encoded = "";
+	for (const char of text) {
+		encoded += codes.get(char) || "";
+	}
+	return { codes, encoded };
+}
+
+// Z-function
+export function zFunction(s: string): number[] {
+	const n = s.length;
+	const z = new Array(n).fill(0);
+	let l = 0, r = 0;
+	for (let i = 1; i < n; i++) {
+		if (i <= r) z[i] = Math.min(r - i + 1, z[i - l]);
+		while (i + z[i] < n && s[z[i]] === s[i + z[i]]) z[i]++;
+		if (i + z[i] - 1 > r) {
+			l = i;
+			r = i + z[i] - 1;
+		}
+	}
+	return z;
+}
+
+// KMP
+export function kmp(text: string, pattern: string): number[] {
+	const lps = new Array(pattern.length).fill(0);
+	for (let i = 1, len = 0; i < pattern.length;) {
+		if (pattern[i] === pattern[len]) {
+			lps[i++] = ++len;
+		} else if (len !== 0) {
+			len = lps[len - 1];
+		} else {
+			lps[i++] = 0;
+		}
+	}
+	
+	const matches: number[] = [];
+	for (let i = 0, j = 0; i < text.length;) {
+		if (pattern[j] === text[i]) {
+			i++;
+			j++;
+		}
+		if (j === pattern.length) {
+			matches.push(i - j);
+			j = lps[j - 1];
+		} else if (i < text.length && pattern[j] !== text[i]) {
+			if (j !== 0) j = lps[j - 1];
+			else i++;
+		}
+	}
+	return matches;
+}
+
+// Boyer-Moore
+export function boyerMoore(text: string, pattern: string): number {
+	const skip = new Map<string, number>();
+	for (let i = 0; i < pattern.length - 1; i++) {
+		skip.set(pattern[i], pattern.length - i - 1);
+	}
+	
+	let i = pattern.length - 1;
+	while (i < text.length) {
+		let j = pattern.length - 1;
+		while (j >= 0 && text[i] === pattern[j]) {
+			i--;
+			j--;
+		}
+		if (j < 0) return i + 1;
+		const skipAmount = skip.get(text[i]) || pattern.length;
+		i += skipAmount;
+	}
+	return -1;
+}
+
+// Rabin-Karp
+export function rabinKarp(text: string, pattern: string, base = 256, mod = 101): number[] {
+	const matches: number[] = [];
+	const n = text.length, m = pattern.length;
+	let hashPattern = 0, hashText = 0;
+	let h = 1;
+	for (let i = 0; i < m - 1; i++) h = (h * base) % mod;
+	
+	for (let i = 0; i < m; i++) {
+		hashPattern = (base * hashPattern + pattern.charCodeAt(i)) % mod;
+		hashText = (base * hashText + text.charCodeAt(i)) % mod;
+	}
+	
+	for (let i = 0; i <= n - m; i++) {
+		if (hashPattern === hashText) {
+			if (text.slice(i, i + m) === pattern) matches.push(i);
+		}
+		if (i < n - m) {
+			hashText = ((hashText - text.charCodeAt(i) * h) * base + text.charCodeAt(i + m)) % mod;
+			if (hashText < 0) hashText += mod;
+		}
+	}
+	return matches;
+}
+
+// Suffix Array
+export function suffixArray(s: string): number[] {
+	const suffixes: Array<[string, number]> = [];
+	for (let i = 0; i < s.length; i++) {
+		suffixes.push([s.slice(i), i]);
+	}
+	suffixes.sort((a, b) => a[0].localeCompare(b[0]));
+	return suffixes.map(([, i]) => i);
+}
+
+// Knapsack DP
+export function knapsack(values: number[], weights: number[], capacity: number): number {
+	const n = values.length;
+	const dp = new Array(n + 1).fill(0).map(() => new Array(capacity + 1).fill(0));
+	for (let i = 1; i <= n; i++) {
+		for (let w = 0; w <= capacity; w++) {
+			if (weights[i - 1] <= w) {
+				dp[i][w] = Math.max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1]);
+			} else {
+				dp[i][w] = dp[i - 1][w];
+			}
+		}
+	}
+	return dp[n][capacity];
+}
+
+// Subset Sum
+export function subsetSum(nums: number[], target: number): boolean[] | null {
+	const dp = new Set([0]);
+	for (const num of nums) {
+		const next = new Set<number>();
+		for (const sum of dp) {
+			next.add(sum);
+			next.add(sum + num);
+		}
+		dp.clear();
+		for (const s of next) dp.add(s);
+	}
+	return target in dp ? Array.from(dp).includes(target) ? [] : null : null;
+}
+
+// Job Sequencing
+export function jobSequencing(jobs: Array<{ id: string; deadline: number; profit: number }>): string[] {
+	jobs.sort((a, b) => b.profit - a.profit);
+	const slots = new Array(jobs.length).fill(false);
+	const result: string[] = [];
+	
+	for (const job of jobs) {
+		for (let i = job.deadline - 1; i >= 0; i--) {
+			if (!slots[i]) {
+				slots[i] = true;
+				result.push(job.id);
+				break;
+			}
+		}
+	}
+	return result;
+}
+
+// LZW Compression
+export function lzwCompress(text: string): number[] {
+	const dict = new Map<string, number>();
+	for (let i = 0; i < 256; i++) dict.set(String.fromCharCode(i), i);
+	
+	let code = 256;
+	let w = "";
+	const result: number[] = [];
+	
+	for (const c of text) {
+		const wc = w + c;
+		if (dict.has(wc)) {
+			w = wc;
+		} else {
+			result.push(dict.get(w)!);
+			dict.set(wc, code++);
+			w = c;
+		}
+	}
+	if (w) result.push(dict.get(w)!);
+	return result;
+}
+
+// Run Length Encoding
+export function runLengthEncode(text: string): string {
+	let result = "";
+	let count = 1;
+	for (let i = 1; i < text.length; i++) {
+		if (text[i] === text[i - 1]) {
+			count++;
+		} else {
+			result += text[i - 1] + count;
+			count = 1;
+		}
+	}
+	return result + text[text.length - 1] + count;
+}
+
+
+
 
 
 

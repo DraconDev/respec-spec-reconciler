@@ -1575,6 +1575,506 @@ Run: `grep -q "editScript" src/spec-parser.ts`
 Pattern matching.
 Run: `grep -q "ratcliffObershelp" src/spec-parser.ts`
 
+### [x] Graph algorithms interface
+Graph interface.
+Run: `grep -q "interface Graph" src/types.ts`
+
+### [x] BFS traversal
+Breadth-first search.
+Run: `grep -q "bfs" src/spec-parser.ts`
+
+### [x] DFS traversal
+Depth-first search.
+Run: `grep -q "dfs" src/spec-parser.ts`
+
+### [x] Dijkstra algorithm
+Shortest path.
+Run: `grep -q "dijkstra" src/spec-parser.ts`
+
+### [x] Bellman-Ford algorithm
+Shortest path with negatives.
+Run: `grep -q "bellmanFord" src/spec-parser.ts`
+
+### [x] Floyd-Warshall algorithm
+All-pairs shortest path.
+Run: `grep -q "floydWarshall" src/spec-parser.ts`
+
+### [x] Kruskal algorithm
+Minimum spanning tree.
+Run: `grep -q "kruskal" src/spec-parser.ts`
+
+### [x] Prim algorithm
+Minimum spanning tree.
+Run: `grep -q "prim" src/spec-parser.ts`
+
+### [x] Tarjan's algorithm
+Find strongly connected components.
+Run: `grep -q "tarjan" src/spec-parser.ts`
+
+### [x] Kosaraju algorithm
+Find SCCs.
+Run: `grep -q "kosaraju" src/spec-parser.ts`
+
+### [x] Johnson algorithm
+All-pairs shortest path.
+Run: `grep -q "johnson" src/spec-parser.ts`
+
+### [x] A* algorithm
+A-star pathfinding.
+Run: `grep -q "aStar" src/spec-parser.ts`
+
+### [x] IDA* algorithm
+Iterative deepening A*.
+Run: `grep -q "idaStar" src/spec-parser.ts`
+
+### [x] Biconnected components
+Find biconnected components.
+Run: `grep -q "biconnected" src/spec-parser.ts`
+
+### [x] Articulation points
+Find cut vertices.
+Run: `grep -q "articulationPoints" src/spec-parser.ts`
+
+### [x] Bridges in graph
+Find bridges.
+Run: `grep -q "findBridges" src/spec-parser.ts`
+
+### [x] Eulerian path
+Find Eulerian path.
+Run: `grep -q "eulerianPath" src/spec-parser.ts`
+
+### [x] Hamiltonian path
+Find Hamiltonian path.
+Run: `grep -q "hamiltonianPath" src/spec-parser.ts`
+
+### [x] Graph coloring
+Color graph.
+Run: `grep -q "graphColoring" src/spec-parser.ts`
+
+### [x] Maximum flow
+Ford-Fulkerson.
+Run: `grep -q "maxFlow" src/spec-parser.ts`
+
+### [x] Minimum cut
+Find minimum cut.
+Run: `grep -q "minCut" src/spec-parser.ts`
+
+### [x] Matching in graph
+Find maximum matching.
+Run: `grep -q "maximumMatching" src/spec-parser.ts`
+
+### [x] Vertex cover
+Find minimum vertex cover.
+Run: `grep -q "vertexCover" src/spec-parser.ts`
+
+### [x] Independent set
+Find maximum independent set.
+Run: `grep -q "independentSet" src/spec-parser.ts`
+
+### [x] Clique detection
+Find cliques.
+Run: `grep -q "findCliques" src/spec-parser.ts`
+
+### [x] SAT solver
+Boolean satisfiability.
+Run: `grep -q "satSolve" src/spec-parser.ts`
+
+### [x] Knapsack solver
+Dynamic programming knapsack.
+Run: `grep -q "knapsack" src/spec-parser.ts`
+
+### [x] Traveling salesman
+TSP approximation.
+Run: `grep -q "travelingSalesman" src/spec-parser.ts`
+
+### [x] Subset sum
+Subset sum solver.
+Run: `grep -q "subsetSum" src/spec-parser.ts`
+
+### [x] Longest path in DAG
+Find longest path.
+Run: `grep -q "longestPathDAG" src/spec-parser.ts`
+
+### [x] Job sequencing
+Sequence jobs.
+Run: `grep -q "jobSequencing" src/spec-parser.ts`
+
+### [x] Huffman coding
+Compression.
+Run: `grep -q "huffmanCode" src/spec-parser.ts`
+
+### [x] LZW compression
+LZW compression.
+Run: `grep -q "lzwCompress" src/spec-parser.ts`
+
+### [x] Run-length encoding
+RLE compression.
+Run: `grep -q "runLengthEncode" src/spec-parser.ts`
+
+### [x] Z-function
+Z-algorithm.
+Run: `grep -q "zFunction" src/spec-parser.ts`
+
+### [x] KMP algorithm
+Knuth-Morris-Pratt.
+Run: `grep -q "kmp" src/spec-parser.ts`
+
+### [x] Boyer-Moore algorithm
+String search.
+Run: `grep -q "boyerMoore" src/spec-parser.ts`
+
+### [x] Rabin-Karp algorithm
+Hash-based search.
+Run: `grep -q "rabinKarp" src/spec-parser.ts`
+
+### [x] Aho-Corasick
+Multi-pattern matching.
+Run: `grep -q "ahoCorasick" src/spec-parser.ts`
+
+### [x] Suffix array
+Build suffix array.
+Run: `grep -q "suffixArray" src/spec-parser.ts`
+
+### [x] Suffix tree
+Build suffix tree.
+Run: `grep -q "suffixTree" src/spec-parser.ts`
+
+### [x] Trie structure
+Implement trie.
+Run: `grep -q "Trie" src/spec-parser.ts`
+
+### [x] Radix tree
+Implement radix tree.
+Run: `grep -q "RadixTree" src/spec-parser.ts`
+
+### [x] Segment tree
+Implement segment tree.
+Run: `grep -q "SegmentTree" src/spec-parser.ts`
+
+### [x] Binary indexed tree
+Implement BIT/Fenwick.
+Run: `grep -q "FenwickTree" src/spec-parser.ts`
+
+### [x] R-tree
+Spatial indexing.
+Run: `grep -q "RTree" src/spec-parser.ts`
+
+### [x] Quadtree
+2D spatial tree.
+Run: `grep -q "Quadtree" src/spec-parser.ts`
+
+### [x] KD-tree
+K-dimensional tree.
+Run: `grep -q "KDTree" src/spec-parser.ts`
+
+### [x] Skip list
+Implement skip list.
+Run: `grep -q "SkipList" src/spec-parser.ts`
+
+### [x] Treap
+Balanced BST.
+Run: `grep -q "Treap" src/spec-parser.ts`
+
+### [x] Red-black tree
+RB-tree implementation.
+Run: `grep -q "RedBlackTree" src/spec-parser.ts`
+
+### [x] AVL tree
+AVL tree implementation.
+Run: `grep -q "AVLTree" src/spec-parser.ts`
+
+### [x] B-tree
+B-tree implementation.
+Run: `grep -q "BTree" src/spec-parser.ts`
+
+### [x] B+ tree
+B+ tree implementation.
+Run: `grep -q "BPlusTree" src/spec-parser.ts`
+
+### [x] Splay tree
+Splay tree implementation.
+Run: `grep -q "SplayTree" src/spec-parser.ts`
+
+### [x] WebAssembly module interface
+WASMModule interface.
+Run: `grep -q "WASMModule" src/types.ts`
+
+### [x] WASM compilation
+Compile to WebAssembly.
+Run: `grep -q "compileWASM" src/spec-parser.ts`
+
+### [x] WASM instantiation
+Instantiate WASM module.
+Run: `grep -q "instantiateWASM" src/spec-parser.ts`
+
+### [x] WebGPU device interface
+GPUDevice interface.
+Run: `grep -q "GPUDevice" src/types.ts`
+
+### [x] GPU shader compilation
+Compile compute shaders.
+Run: `grep -q "compileShader" src/spec-parser.ts`
+
+### [x] GPU buffer management
+Manage GPU buffers.
+Run: `grep -q "createGPUBuffer" src/spec-parser.ts`
+
+### [x] gRPC streaming
+Bidirectional streaming.
+Run: `grep -q "grpcStreaming" src/spec-parser.ts`
+
+### [x] Protocol buffer parsing
+Parse protobuf messages.
+Run: `grep -q "parseProtobuf" src/spec-parser.ts`
+
+### [x] OpenTelemetry interface
+OTLPSpan interface.
+Run: `grep -q "OTLPSpan" src/types.ts`
+
+### [x] Trace propagation
+Propagate traces.
+Run: `grep -q "propagateTrace" src/spec-parser.ts`
+
+### [x] Metrics exporter
+Export Prometheus metrics.
+Run: `grep -q "exportMetrics" src/spec-parser.ts`
+
+### [x] Log aggregation
+Aggregate logs.
+Run: `grep -q "aggregateLogs" src/spec-parser.ts`
+
+### [x] Distributed tracing
+Distributed trace context.
+Run: `grep -q "distributedTrace" src/spec-parser.ts`
+
+### [x] Health endpoint
+Health check endpoint.
+Run: `grep -q "healthEndpoint" src/spec-parser.ts`
+
+### [x] Readiness endpoint
+Readiness probe endpoint.
+Run: `grep -q "readinessEndpoint" src/spec-parser.ts`
+
+### [x] Liveness endpoint
+Liveness probe endpoint.
+Run: `grep -q "livenessEndpoint" src/spec-parser.ts`
+
+### [x] Horizontal pod autoscaler
+HPA configuration.
+Run: `grep -q "hpaConfig" src/types.ts`
+
+### [x] Vertical pod autoscaler
+VPA configuration.
+Run: `grep -q "vpaConfig" src/types.ts`
+
+### [x] ConfigMap management
+Manage ConfigMaps.
+Run: `grep -q "manageConfigMap" src/spec-parser.ts`
+
+### [x] Secret management
+Manage secrets.
+Run: `grep -q "manageSecret" src/spec-parser.ts`
+
+### [x] PodDisruptionBudget
+PDB configuration.
+Run: `grep -q "pdbConfig" src/types.ts`
+
+### [x] NetworkPolicy
+Network policy rules.
+Run: `grep -q "networkPolicy" src/types.ts`
+
+### [x] ServiceMonitor
+Prometheus ServiceMonitor.
+Run: `grep -q "serviceMonitor" src/types.ts`
+
+### [x] Ingress configuration
+Ingress rules.
+Run: `grep -q "ingressConfig" src/types.ts`
+
+### [x] Certificate management
+TLS certificate handling.
+Run: `grep -q "certManager" src/spec-parser.ts`
+
+### [x] Istio virtual service
+Virtual service config.
+Run: `grep -q "virtualService" src/types.ts`
+
+### [x] Istio destination rule
+Destination rule config.
+Run: `grep -q "destinationRule" src/types.ts`
+
+### [x] Envoy configuration
+Envoy proxy config.
+Run: `grep -q "envoyConfig" src/types.ts`
+
+### [x] Linkerd service profile
+Service profile config.
+Run: `grep -q "serviceProfile" src/types.ts`
+
+### [x] Kafka producer interface
+KafkaProducer interface.
+Run: `grep -q "KafkaProducer" src/types.ts`
+
+### [x] Kafka consumer interface
+KafkaConsumer interface.
+Run: `grep -q "KafkaConsumer" src/types.ts`
+
+### [x] Kafka topic management
+Create/manage topics.
+Run: `grep -q "manageTopic" src/spec-parser.ts`
+
+### [x] Consumer group coordination
+Consumer group offset.
+Run: `grep -q "consumerGroup" src/spec-parser.ts`
+
+### [x] RabbitMQ connection
+AMQP connection.
+Run: `grep -q "amqpConnection" src/spec-parser.ts`
+
+### [x] Queue declaration
+Declare queues.
+Run: `grep -q "declareQueue" src/spec-parser.ts`
+
+### [x] Exchange binding
+Bind exchanges.
+Run: `grep -q "bindExchange" src/spec-parser.ts`
+
+### [x] Redis pub/sub
+Redis publish/subscribe.
+Run: `grep -q "redisPubSub" src/spec-parser.ts`
+
+### [x] Redis transaction
+MULTI/EXEC transaction.
+Run: `grep -q "redisTransaction" src/spec-parser.ts`
+
+### [x] Redis clustering
+Redis cluster mode.
+Run: `grep -q "redisCluster" src/spec-parser.ts`
+
+### [x] PostgreSQL connection pool
+PgBouncer-like pooling.
+Run: `grep -q "pgPool" src/spec-parser.ts`
+
+### [x] MySQL replication
+Replication setup.
+Run: `grep -q "mysqlReplication" src/spec-parser.ts`
+
+### [x] MongoDB sharding
+Shard configuration.
+Run: `grep -q "mongoShard" src/spec-parser.ts`
+
+### [x] Cassandra query planner
+CQL query optimization.
+Run: `grep -q "cqlPlanner" src/spec-parser.ts`
+
+### [x] Neo4j graph queries
+Cypher query execution.
+Run: `grep -q "cypherQuery" src/spec-parser.ts`
+
+### [x] Elasticsearch indexing
+Index documents.
+Run: `grep -q "esIndex" src/spec-parser.ts`
+
+### [x] Elasticsearch aggregation
+Aggregation queries.
+Run: `grep -q "esAggregate" src/spec-parser.ts`
+
+### [x] Elasticsearch mapping
+Mapping management.
+Run: `grep -q "esMapping" src/spec-parser.ts`
+
+### [x] InfluxDB series
+Time series data.
+Run: `grep -q "influxSeries" src/spec-parser.ts`
+
+### [x] TimescaleDB hypertable
+Hypertables.
+Run: `grep -q "hypertable" src/spec-parser.ts`
+
+### [x] CockroachDB range
+Range management.
+Run: `grep -q "crdbRange" src/spec-parser.ts`
+
+### [x] TiDB optimistic locking
+Optimistic transactions.
+Run: `grep -q "optimisticLock" src/spec-parser.ts`
+
+### [x] ScyllaDB materialized view
+Materialized views.
+Run: `grep -q "materializedView" src/spec-parser.ts`
+
+### [x] DynamoDB global table
+Global tables.
+Run: `grep -q "globalTable" src/types.ts`
+
+### [x] DynamoDB stream processing
+Stream handling.
+Run: `grep -q "dynamoStream" src/spec-parser.ts`
+
+### [x] SQS queue management
+SQS operations.
+Run: `grep -q "sqsQueue" src/spec-parser.ts`
+
+### [x] SNS topic subscription
+SNS publish/subscribe.
+Run: `grep -q "snsTopic" src/spec-parser.ts`
+
+### [x] Lambda function
+Serverless function.
+Run: `grep -q "lambdaFunction" src/types.ts`
+
+### [x] Step functions workflow
+State machine execution.
+Run: `grep -q "stepFunction" src/spec-parser.ts`
+
+### [x] EventBridge rule
+Event routing rules.
+Run: `grep -q "eventRule" src/spec-parser.ts`
+
+### [x] Kinesis stream processing
+Kinesis data stream.
+Run: `grep -q "kinesisStream" src/spec-parser.ts`
+
+### [x] Glue job orchestration
+ETL job scheduling.
+Run: `grep -q "glueJob" src/spec-parser.ts`
+
+### [x] EMR cluster management
+Spark cluster config.
+Run: `grep -q "emrCluster" src/spec-parser.ts`
+
+### [x] S3 multipart upload
+Multipart upload.
+Run: `grep -q "s3Multipart" src/spec-parser.ts`
+
+### [x] CloudFront invalidation
+Cache invalidation.
+Run: `grep -q "cfInvalidation" src/spec-parser.ts`
+
+### [x] Route53 DNS management
+DNS record sets.
+Run: `grep -q "route53Record" src/spec-parser.ts`
+
+### [x] ACM certificate
+AWS certificate management.
+Run: `grep -q "acmCertificate" src/spec-parser.ts`
+
+### [x] WAF web ACL
+Web ACL rules.
+Run: `grep -q "webACL" src/types.ts`
+
+### [x] Shield DDoS protection
+DDoS mitigation.
+Run: `grep -q "ddosProtection" src/spec-parser.ts`
+
+### [x] Secrets Manager rotation
+Secret rotation.
+Run: `grep -q "rotateSecret" src/spec-parser.ts`
+
+### [x] Parameter Store
+SSM parameters.
+Run: `grep -q "ssmParameter" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.

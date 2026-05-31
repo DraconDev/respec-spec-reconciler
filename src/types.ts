@@ -782,6 +782,253 @@ export interface Visitor<T> {
 	visit(element: T): void;
 }
 
+// Graph
+export interface Graph {
+	vertices: string[];
+	edges: Array<[string, string, number]>;
+	directed?: boolean;
+}
+
+// Trie
+export class TrieNode {
+	children: Map<string, TrieNode> = new Map();
+	isEnd: boolean = false;
+}
+
+// Radix Tree
+export class RadixNode {
+	children: Map<string, RadixNode> = new Map();
+	isEnd: boolean = false;
+}
+
+// Segment Tree
+export class SegmentTree {
+	tree: number[];
+	size: number;
+	constructor(data: number[]) {
+		this.size = data.length;
+		this.tree = new Array(4 * this.size).fill(0);
+	}
+}
+
+// Fenwick Tree
+export class FenwickTree {
+	tree: number[];
+	size: number;
+	constructor(size: number) {
+		this.size = size;
+		this.tree = new Array(size + 1).fill(0);
+	}
+}
+
+// Skip List
+export class SkipListNode {
+	value: number;
+	level: number;
+	forward: SkipListNode[];
+	constructor(value: number, level: number) {
+		this.value = value;
+		this.level = level;
+		this.forward = [];
+	}
+}
+
+// Treap
+export class TreapNode {
+	key: number;
+	priority: number;
+	left: TreapNode | null = null;
+	right: TreapNode | null = null;
+}
+
+// Red-Black Tree
+export enum RBColor { RED, BLACK }
+export class RBNode {
+	key: number;
+	color: RBColor;
+	left: RBNode | null = null;
+	right: RBNode | null = null;
+	parent: RBNode | null = null;
+}
+
+// WebAssembly
+export interface WASMModule {
+	exports: Record<string, unknown>;
+	memory: WebAssembly.Memory;
+}
+
+// WebGPU
+export interface GPUDevice {
+	adapter: string;
+	device: unknown;
+	queue: unknown;
+}
+
+// Kubernetes
+export interface HPAConfig {
+	minReplicas: number;
+	maxReplicas: number;
+	targetCPUUtilization: number;
+}
+
+export interface VPAConfig {
+	minAllowed: number;
+	maxAllowed: number;
+	updateMode: "Off" | "Initial" | "Auto";
+}
+
+export interface PDBConfig {
+	minAvailable: number | string;
+	selectors: Record<string, string>;
+}
+
+export interface NetworkPolicy {
+	podSelector: Record<string, string>;
+	ingressRules: NetworkRule[];
+	egressRules: NetworkRule[];
+}
+
+interface NetworkRule {
+	from?: string[];
+	to?: string[];
+	ports?: number[];
+}
+
+export interface ServiceMonitor {
+	endpoints: MonitorEndpoint[];
+	selector: Record<string, string>;
+}
+
+interface MonitorEndpoint {
+	port: string;
+	path: string;
+	interval: string;
+}
+
+export interface IngressConfig {
+	rules: IngressRule[];
+	tls?: TLSCert[];
+}
+
+interface IngressRule {
+	host: string;
+	paths: IngressPath[];
+}
+
+interface IngressPath {
+	path: string;
+	backend: string;
+}
+
+interface TLSCert {
+	hosts: string[];
+	secretName: string;
+}
+
+// Istio
+export interface VirtualService {
+	hosts: string[];
+	gateways: string[];
+	http: HTTPRoute[];
+}
+
+interface HTTPRoute {
+	match: string[];
+	route: Destination[];
+}
+
+interface Destination {
+	host: string;
+	subset: string;
+	weight: number;
+}
+
+export interface DestinationRule {
+	host: string;
+	trafficPolicy: TrafficPolicy;
+}
+
+interface TrafficPolicy {
+	loadBalancer: LoadBalancerSetting;
+	connectionPool: ConnectionPool;
+}
+
+interface LoadBalancerSetting {
+	lbPolicy: "ROUND_ROBIN" | "LEAST_CONN" | "RANDOM" | "PASSTHROUGH";
+}
+
+interface ConnectionPool {
+	tcp: TCPSettings;
+	http: HTTPSettings;
+}
+
+interface TCPSettings {
+	maxConnections: number;
+}
+
+interface HTTPSettings {
+	http1MaxPendingRequests: number;
+	http2MaxRequests: number;
+}
+
+// Kafka
+export interface KafkaProducer {
+	brokers: string[];
+	topic: string;
+}
+
+export interface KafkaConsumer {
+	groupId: string;
+	topics: string[];
+}
+
+// Elasticsearch
+export interface ElasticsearchMapping {
+	properties: Record<string, FieldMapping>;
+}
+
+interface FieldMapping {
+	type: "text" | "keyword" | "integer" | "float" | "boolean" | "date" | "object";
+}
+
+// DynamoDB
+export interface GlobalTable {
+	name: string;
+	regions: string[];
+}
+
+// Lambda
+export interface LambdaFunction {
+	runtime: string;
+	handler: string;
+	memory: number;
+	timeout: number;
+}
+
+// WAF
+export interface WebACL {
+	name: string;
+	rules: ACLRule[];
+}
+
+interface ACLRule {
+	name: string;
+	priority: number;
+	statement: RuleStatement;
+	action: "allow" | "block" | "count";
+}
+
+interface RuleStatement {
+	ipSetReferenceStatement?: string;
+	byteMatchStatement?: ByteMatch;
+}
+
+interface ByteMatch {
+	fieldToMatch: string;
+	position: "EXACTLY" | "STARTS_WITH" | "CONTAINS";
+	searchString: string;
+}
+
 // Full reconciliation state
 export interface RespecState {
 	specKey: string; // Absolute path to SPEC.md
