@@ -10543,6 +10543,234 @@ Run: `grep -q "civoConfig" src/spec-parser.ts`
 CloudflareLB.
 Run: `grep -q "cloudflarelbConfig" src/spec-parser.ts`
 
+### [x] Terraform provider for Kubernetes
+TFK8s.
+Run: `grep -q "tfk8sProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for Helm
+TFHelm.
+Run: `grep -q "tfhelmProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for Vault
+TFVault.
+Run: `grep -q "tfvaultProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for AWS
+TFAWS.
+Run: `grep -q "tfawsProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for GCP
+TFGCP.
+Run: `grep -q "tfgcpProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for Azure
+TFAzure.
+Run: `grep -q "tfazureProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for GitHub
+TFGitHub.
+Run: `grep -q "tfgithubProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for DNS
+TFDNS.
+Run: `grep -q "tfdnsProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for random
+TFRandom.
+Run: `grep -q "tfrandomProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for HTTP
+TFHTTP.
+Run: `grep -q "tfhttpProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for local
+TFLocal.
+Run: `grep -q "tflocalProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for null
+TFNull.
+Run: `grep -q "tfnulldataProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform provider for terraform
+TFTerraform.
+Run: `grep -q "tfterraforProviderConfig" src/spec-parser.ts`
+
+### [x] Terraform CDK
+TFCDK.
+Run: `grep -q "tfcdkStackConfig" src/spec-parser.ts`
+
+### [x] Terragrunt
+Terragrunt.
+Run: `grep -q "terragruntStackConfig" src/spec-parser.ts`
+
+### [x] Pulumi Kubernetes provider
+PulumiK8s.
+Run: `grep -q "pulumik8sProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi AWS provider
+PulumiAWS.
+Run: `grep -q "pulumiawsProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi GCP provider
+PulumiGCP.
+Run: `grep -q "pulumigcpProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi Azure provider
+PulumiAzure.
+Run: `grep -q "pulumiazureProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi random provider
+PulumiRandom.
+Run: `grep -q "pulumirandomProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi TLS provider
+PulumiTLS.
+Run: `grep -q "pulumitlsProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi Cloudflare provider
+PulumiCloudflare.
+Run: `grep -q "pulumicloudflareProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi Vault provider
+PulumiVault.
+Run: `grep -q "pulumivaultProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi GitHub provider
+PulumiGitHub.
+Run: `grep -q "pulumigithubProviderConfig" src/spec-parser.ts`
+
+### [x] Crossplane provider for AWS
+CrossplaneAWS.
+Run: `grep -q "crossplaneawsProviderConfig" src/spec-parser.ts`
+
+### [x] Crossplane provider for GCP
+CrossplaneGCP.
+Run: `grep -q "crossplaneGCPProviderConfig" src/spec-parser.ts`
+
+### [x] Crossplane provider for Azure
+CrossplaneAzure.
+Run: `grep -q "crossplaneAzureProviderConfig" src/spec-parser.ts`
+
+### [x] Crossplane provider for Kubernetes
+CrossplaneK8s.
+Run: `grep -q "crossplaneK8sProviderConfig" src/spec-parser.ts`
+
+### [x] Ansible collections for k8s
+AnsibleK8s.
+Run: `grep -q "ansibleK8sCollectionConfig" src/spec-parser.ts`
+
+### [x] Ansible collections for cloud
+AnsibleCloud.
+Run: `grep -q "ansibleCloudCollectionConfig" src/spec-parser.ts`
+
+### [x] Ansible collections for networking
+AnsibleNetwork.
+Run: `grep -q "ansibleNetworkCollectionConfig" src/spec-parser.ts`
+
+### [x] Helm chart museum
+HelmMuseum.
+Run: `grep -q "helmMuseumConfig" src/spec-parser.ts`
+
+### [x] ChartCenter
+ChartCenter.
+Run: `grep -q "chartcenterConfig" src/spec-parser.ts`
+
+### [x] Flux CD Helm Release
+FluxHelm.
+Run: `grep -q "fluxHelmReleaseConfig" src/spec-parser.ts`
+
+### [x] Argo CD Helm Application
+ArgoHelm.
+Run: `grep -q "argoHelmAppConfig" src/spec-parser.ts`
+
+### [x] Kustomize Helm overlay
+KustomizeHelm.
+Run: `grep -q "kustomizeHelmConfig" src/spec-parser.ts`
+
+### [x] Kubevela Helm
+KubevelaHelm.
+Run: `grep -q "kubevelaHelmWorkflowConfig" src/spec-parser.ts`
+
+### [x] Terraform Helm provider
+TFHelmProvider.
+Run: `grep -q "tfHelmProviderConfig" src/spec-parser.ts`
+
+### [x] Pulumi Helm
+PulumiHelm.
+Run: `grep -q "pulumiHelmChartConfig" src/spec-parser.ts`
+
+### [x] Helmfile
+HelmfileK8s.
+Run: `grep -q "helmfileK8sConfig" src/spec-parser.ts`
+
+### [x]werf
+Werf.
+Run: `grep -q "werfConfig" src/spec-parser.ts`
+
+### [x] Flux2 HelmController
+FluxHelmController.
+Run: `grep -q "fluxHelmControllerConfig" src/spec-parser.ts`
+
+### [x] Shipwright
+Shipwright.
+Run: `grep -q "shipwrightConfig" src/spec-parser.ts`
+
+### [x] ArgoCD Image Updater
+ArgoImageUpdater.
+Run: `grep -q "argoImageUpdaterConfig" src/spec-parser.ts`
+
+### [x] Flux Automated Image Updates
+FluxAutoUpdate.
+Run: `grep -q "fluxAutoImageUpdateConfig" src/spec-parser.ts`
+
+### [x] Renovate
+RenovateK8s.
+Run: `grep -q "renovateK8sConfig" src/spec-parser.ts`
+
+### [x] Dependabot
+DependabotK8s.
+Run: `grep -q "dependabotK8sConfig" src/spec-parser.ts`
+
+### [x] Keel
+Keel.
+Run: `grep -q "keelConfig" src/spec-parser.ts`
+
+### [x] Reloader
+Reloader.
+Run: `grep -q "reloaderConfig" src/spec-parser.ts`
+
+### [x] Argo Workflows
+ArgoWorkflowsK8s.
+Run: `grep -q "argoWorkflowsK8sConfig" src/spec-parser.ts`
+
+### [x] Tekton
+TektonK8s.
+Run: `grep -q "tektonK8sConfig" src/spec-parser.ts`
+
+### [x] Jenkins X
+JenkinsXK8s.
+Run: `grep -q "jenkinsxK8sConfig" src/spec-parser.ts`
+
+### [x] GitHub Actions
+GHAK8s.
+Run: `grep -q "ghActionsK8sConfig" src/spec-parser.ts`
+
+### [x] GitLab CI
+GitLabCIK8s.
+Run: `grep -q "gitlabCIK8sConfig" src/spec-parser.ts`
+
+### [x] CircleCI
+CircleCIK8s.
+Run: `grep -q "circleCIK8sConfig" src/spec-parser.ts`
+
+### [x] Azure Pipelines
+AzurePipelinesK8s.
+Run: `grep -q "azurePipelinesK8sConfig" src/spec-parser.ts`
+
+### [x] Drone
+DroneK8s.
+Run: `grep -q "droneK8sConfig" src/spec-parser.ts`
+
 ## Notes
 
 - The spec evolves as understanding changes. Add items as you learn.
