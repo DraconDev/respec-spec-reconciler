@@ -13969,7 +13969,7 @@ export function cohereConfig(cohereApiKey: string): { apiKey: string; model: str
 }
 
 export function claudeConfig(claudeApiKey: string): { apiKey: string; model: string } {
-	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB6SlIrQ3BKWEJJd3JSNWVXVUZ3WXpsYzB6T1pLK3dLcTQ1T2dDSnR2L21rCjQrcklSaXpPYjBiVXE2QWNEUVhXUlMrSVFLQmNWQXk2OE9hbGRMZTBMaVUKLT4gbT0tZ3JlYXNlIHddMiJzbSxnIFlkClB6My9iRHdkL3EvQWMvTE5IRkkKLS0tIGlqbkxyN0V0Nm51Z1M2U2k2Q0cwRU1sRzJQMTE0YWx5a3BnL1dnR3h6ZWcKQTGsWJ+JDPpRbmOGyyCLb46MpPvMBtUqgjftmvRhFd0JIa30faJDCylbWoKE+3jU3urVTCgjnurQUM20oHUS1/ZhQELi5RU=] };
+	return { apiKey: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKVGtwSVBzQXgwL0YwRDNUZC9YaDhDOFRqTXFENFZnZFoyTFVRMVhKbmlNCk9JL2d6cGtVTjZGL2tvZUF4cWdHREUwZHIzWlpFYlJaNGEvWnFZeVMxMkkKLT4gc3B4LWdyZWFzZSAkNXwgbn4gKwpxd0NOK1BwK1VaOVdsdjQ0VCt3V2Z0a2hWMjl4Zjk2RGpCRTA0dGllVmZHd3lqU1RIcTEyeDVGTG1GRQotLS0gZ1RDUVFqUWplWFJDeWYzVEZmK05TTVU1WkxlMDFDNEMvVHhLcExJSU5SRQoYVtynYUMZgbE0d5eBqrm5XDDuTapneqQ3uDTdr0qas+OceyzJ/nidAcAJTWVTQelD2/VrZoMJJRZ6SXwF7FuXT2BVbI5EWw==] };
 }
 
 export function huggingfaceConfig(hfToken: string): { token: string; model: string } {
@@ -14614,6 +14614,1292 @@ export function snpeConfig(snpeModel: string): { model: string; runtime: string 
 
 export function dnndkConfig(dnndkModel: string): { model: string; target: string } {
 	return { model: dnndkModel, target: "zcu102" };
+}
+
+// Mobile & Edge ML
+
+export function tfliteConfig(tfliteModel: string): { model: string; delegate: string } {
+	return { model: tfliteModel, delegate: "none" };
+}
+
+export function tflitemicroConfig(tfliteMicroModel: string): { model: string; platform: string } {
+	return { model: tfliteMicroModel, platform: "arduino" };
+}
+
+export function tfedgetpuConfig(tfEdgeTpuModel: string): { model: string; edgetpu: boolean } {
+	return { model: tfEdgeTpuModel, edgetpu: true };
+}
+
+export function tflitegpuConfig(tfliteGpuModel: string): { model: string; glOptions: string } {
+	return { model: tfliteGpuModel, glOptions: "" };
+}
+
+export function tfnnapiConfig(tfNnapiModel: string): { model: string; nnapiOptions: string } {
+	return { model: tfNnapiModel, nnapiOptions: "" };
+}
+
+export function tfcoremlConfig(tfCoreMLModel: string): { model: string; computeUnits: string } {
+	return { model: tfCoreMLModel, computeUnits: "all" };
+}
+
+export function mediapipeConfig(mediapipeGraph: string): { graph: string; calculator: string[] } {
+	return { graph: mediapipeGraph, calculator: [] };
+}
+
+export function mlkitConfig(mlkitModel: string): { model: string; apiType: string } {
+	return { model: mlkitModel, apiType: "textRecognition" };
+}
+
+export function firebaseMlConfig(firebaseMlModel: string): { model: string; modelType: string } {
+	return { model: firebaseMlModel, modelType: "custom" };
+}
+
+export function tfjsConfig(tfjsModel: string): { model: string; backend: string } {
+	return { model: tfjsModel, backend: "webgl" };
+}
+
+export function tflitewebConfig(tfliteWebModel: string): { model: string; wasmPath: string } {
+	return { model: tfliteWebModel, wasmPath: "" };
+}
+
+export function onnxruntimewebConfig(onnxWebModel: string): { model: string; executionProviders: string[] } {
+	return { model: onnxWebModel, executionProviders: ["wasm", "webgl"] };
+}
+
+export function transformersjsConfig(tjsModel: string): { model: string; device: string } {
+	return { model: tjsModel, device: "webgl" };
+}
+
+export function webdnnConfig(webdnnModel: string): { model: string; backend: string } {
+	return { model: webdnnModel, backend: "webgl" };
+}
+
+export function webglinferenceConfig(webglModel: string): { model: string; textureSize: number } {
+	return { model: webglModel, textureSize: 2048 };
+}
+
+export function webgpuinferenceConfig(webgpuModel: string): { model: string; adapter: string } {
+	return { model: webgpuModel, adapter: "" };
+}
+
+export function was mmlConfig(wasmModel: string): { model: string; runtime: string } {
+	return { model: wasmModel, runtime: "pyodide" };
+}
+
+export function onnxjsConfig(onnxJsModel: string): { model: string; executionMode: string } {
+	return { model: onnxJsModel, executionMode: "async" };
+}
+
+export function synapticConfig(synapticModel: string): { model: string; layers: number[] } {
+	return { model: synapticModel, layers: [1, 1] };
+}
+
+export function brainjsConfig(brainjsModel: string): { model: string; hiddenLayers: number[] } {
+	return { model: brainjsModel, hiddenLayers: [3] };
+}
+
+export function neatapticConfig(neatapticNetwork: string): { network: string; populationSize: number } {
+	return { network: neatapticNetwork, populationSize: 100 };
+}
+
+export function convnetjsConfig(convnetjsNet: string): { net: string; layers: string } {
+	return { net: convnetjsNet, layers: "" };
+}
+
+export function renlpConfig(reNlpModel: string): { model: string; language: string } {
+	return { model: reNlpModel, language: "en" };
+}
+
+export function naturalConfig(naturalModel: string): { model: string; tokenizer: string } {
+	return { model: naturalModel, [DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjYjJpU04rbFFFNWRzWG81VXkrL0xhY0FGSVFhN2F3WmJLbk83QnRLcG44CjJNdE9TQTRzc2VQMHVNdVRxZ2FZNlQ2Q3A2bHhkaW9tQXUrTFI0MW9tNkkKLT4gcFo1UWteYi1ncmVhc2UgU3glISAtQTYKV1hZWmpoMXFXSXJaSjh5NXlZR01HZ2xWRThpZWpPeG44eHVNMWkxdldGQ3NYNGdxUmxzRWlmUVNoT3VFYTRteApjTE9pNjFWZEp1blYrWTJHZk9kRVNZOFE5TjdjbnJtOC8weHZuWEtwCi0tLSBWbVAva2hDeFF5ZVhiMnZQUFo3MmZPb01mZ3VwSHBEZXdYbEF4eTMxRzJ3CiUkSk6AFUDQhYZYk1NC3jp1S9OAOyP3TtrUJBzvLkO0AA629JURF7Nn1ii6fx79QZ/SOqBbNC/aw/EistlaN74=] };
+}
+
+export function compromiseConfig(compromiseText: string): { text: string; addTags: string[] } {
+	return { text: compromiseText, addTags: [] };
+}
+
+export function francConfig(francText: string): { text: string; minLength: number } {
+	return { text: francText, minLength: 10 };
+}
+
+export function speakingConfig(speakingModel: string): { model: string; voice: string } {
+	return { model: speakingModel, voice: "" };
+}
+
+export function winknlpConfig(winknlpText: string): { text: string; config: string } {
+	return { text: winknlpText, config: "" };
+}
+
+export function spacyConfig(spacyModel: string): { model: string; pipeline: string } {
+	return { model: spacyModel, pipeline: "en_core_web_sm" };
+}
+
+export function nltkConfig(nltkData: string): { data: string; package: string } {
+	return { data: nltkData, package: "punkt" };
+}
+
+export function textblobConfig(textblobText: string): { text: string; classifier: string } {
+	return { text: textblobText, classifier: "" };
+}
+
+export function gensimConfig(gensimModel: string): { model: string; vectorSize: number } {
+	return { model: gensimModel, vectorSize: 100 };
+}
+
+export function fasttextConfig(fasttextModel: string): { model: string; dim: number } {
+	return { model: fasttextModel, dim: 100 };
+}
+
+export function flairConfig(flairModel: string): { model: string; embeddings: string } {
+	return { model: flairModel, embeddings: "en-forward" };
+}
+
+export function allennlpConfig(allennlpModel: string): { model: string; predictor: string } {
+	return { model: allennlpModel, predictor: "" };
+}
+
+export function hfdatasetsConfig(hfDatasetName: string): { name: string; split: string } {
+	return { name: hfDatasetName, split: "train" };
+}
+
+export function hfevaluateConfig(hfMetricName: string): { metric: string; prediction: string } {
+	return { metric: hfMetricName, prediction: "" };
+}
+
+export function hfgradioConfig(gradioAppUrl: string): { url: string; title: string } {
+	return { url: gradioAppUrl, title: "" };
+}
+
+export function hfspacesConfig(spaceId: string): { id: string; hardware: string } {
+	return { id: spaceId, hardware: "cpu-basic" };
+}
+
+export function gradioConfig(gradioApp: string): { app: string; theme: string } {
+	return { app: gradioApp, theme: "default" };
+}
+
+export function streamlitConfig(streamlitApp: string): { app: string; port: number } {
+	return { app: streamlitApp, port: 8501 };
+}
+
+export function panelConfig(panelApp: string): { app: string; port: number } {
+	return { app: panelApp, port: 5007 };
+}
+
+export function voilaConfig(voilaNotebook: string): { notebook: string; port: number } {
+	return { notebook: voilaNotebook, port: 8866 };
+}
+
+export function mercuryConfig(mercuryApp: string): { app: string; title: string } {
+	return { app: mercuryApp, title: "" };
+}
+
+export function niceguiConfig(niceguiApp: string): { app: string; port: number } {
+	return { app: niceguiApp, port: 8080 };
+}
+
+export function gradeculusConfig(gradeculusApp: string): { app: string; port: number } {
+	return { app: gradeculusApp, port: 8050 };
+}
+
+export function pyodideConfig(pyodideScript: string): { script: string; packages: string[] } {
+	return { script: pyodideScript, packages: [] };
+}
+
+export function pyscriptConfig(pyscriptApp: string): { app: string; runtime: string } {
+	return { app: pyscriptApp, runtime: "2024.11.1" };
+}
+
+export function wasmpythonConfig(wasmPythonScript: string): { script: string; packages: string[] } {
+	return { script: wasmPythonScript, packages: [] };
+}
+
+export function weblanguagetoolConfig(wltUrl: string): { url: string; language: string } {
+	return { url: wltUrl, language: "en-US" };
+}
+
+export function hunspellConfig(hunspellDict: string): { dict: string; aff: string } {
+	return { dict: hunspellDict, aff: "" };
+}
+
+export function spacyindustryConfig(spacyIndustry: string): { industry: string; model: string } {
+	return { industry: spacyIndustry, model: "en_core_web_sm" };
+}
+
+export function stanzaConfig(stanzaModel: string): { model: string; processors: string[] } {
+	return { model: stanzaModel, processors: ["tokenize", "pos"] };
+}
+
+export function udpipeConfig(udpipeModel: string): { model: string; tokenizer: string } {
+	return { model: udpipeModel, tokenizer: "" };
+}
+
+// Advanced NLP
+
+export function trankitConfig(trankitLang: string): { language: string; tokenizer: string } {
+	return { language: trankitLang, tokenizer: "" };
+}
+
+export function stanzanlpConfig(stanzaPipeline: string): { pipeline: string; lang: string } {
+	return { pipeline: stanzaPipeline, lang: "en" };
+}
+
+export function spacycyConfig(spacyCyPipeline: string): { pipeline: string; lang: string } {
+	return { pipeline: spacyCyPipeline, lang: "en" };
+}
+
+export function spacypretrainConfig(spacyPretrainModel: string): { model: string; weights: string } {
+	return { model: spacyPretrainModel, weights: "" };
+}
+
+export function thincConfig(thincModel: string): { model: string; layers: number } {
+	return { model: thincModel, layers: 2 };
+}
+
+export function prodigyrecipesConfig(prodigyRecipe: string): { recipe: string; source: string } {
+	return { recipe: prodigyRecipe, source: "" };
+}
+
+export function spacywhisperConfig(spacyWhisperModel: string): { model: string; audioLang: string } {
+	return { model: spacyWhisperModel, audioLang: "en" };
+}
+
+export function parlaiConfig(parlaiTask: string): { task: string; model: string } {
+	return { task: parlaiTask, model: "" };
+}
+
+export function deeppavlovConfig(deeppavlovConfig: string): { config: string; mode: string } {
+	return { config: deeppavlovConfig, mode: "infer" };
+}
+
+export function haystackagentsConfig(haystackAgent: string): { agent: string; prompt: string } {
+	return { agent: haystackAgent, prompt: "" };
+}
+
+export function haystackretrieversConfig(haystackRetriever: string): { retriever: string; documentStore: string } {
+	return { retriever: haystackRetriever, documentStore: "" };
+}
+
+export function haystackreadersConfig(haystackReader: string): { reader: string; model: string } {
+	return { reader: haystackReader, model: "" };
+}
+
+export function haystacksummarizersConfig(haystackSummarizer: string): { summarizer: string; model: string } {
+	return { summarizer: haystackSummarizer, model: "" };
+}
+
+export function haystackgeneratorsConfig(haystackGenerator: string): { generator: string; model: string } {
+	return { generator: haystackGenerator, model: "" };
+}
+
+export function haystacklabelingConfig(haystackLabeling: string): { labeling: string; task: string } {
+	return { labeling: haystackLabeling, task: "ner" };
+}
+
+// Vector Search & Embeddings
+
+export function elasticsearchConfig(esClusterUrl: string): { clusterUrl: string; index: string } {
+	return { clusterUrl: esClusterUrl, index: "" };
+}
+
+export function opensearchConfig(opensearchUrl: string): { url: string; index: string } {
+	return { url: opensearchUrl, index: "" };
+}
+
+export function meilisearchConfig(meiliUrl: string): { url: string; index: string } {
+	return { url: meiliUrl, index: "" };
+}
+
+export function typesenseConfig(typesenseHost: string): { host: string; port: number } {
+	return { host: typesenseHost, port: 8108 };
+}
+
+export function qdrantConfig(qdrantUrl: string): { url: string; collection: string } {
+	return { url: qdrantUrl, collection: "" };
+}
+
+export function weaviateConfig(weaviateUrl: string): { url: string; className: string } {
+	return { url: weaviateUrl, className: "" };
+}
+
+export function chromaConfig(chromaPath: string): { path: string; collection: string } {
+	return { path: chromaPath, collection: "" };
+}
+
+export function pineconeConfig(pineconeIndex: string): { index: string; environment: string } {
+	return { index: pineconeIndex, environment: "" };
+}
+
+export function milvusConfig(milvusUri: string): { uri: string; collection: string } {
+	return { uri: milvusUri, collection: "" };
+}
+
+export function pgvectorConfig(pgTable: string): { table: string; column: string } {
+	return { table: pgTable, column: "embedding" };
+}
+
+export function pgembeddingConfig(pgEmbTable: string): { table: string; indexType: string } {
+	return { table: pgEmbTable, indexType: "hnsw" };
+}
+
+export function faissConfig(faissIndex: string): { indexFile: string; dimension: number } {
+	return { indexFile: faissIndex, dimension: 768 };
+}
+
+export function annoyConfig(annoyIndex: string): { indexFile: string; nTrees: number } {
+	return { indexFile: annoyIndex, nTrees: 10 };
+}
+
+export function scannConfig(scannIndex: string): { indexFile: string; distanceMeasure: string } {
+	return { indexFile: scannIndex, distanceMeasure: "dot" };
+}
+
+export function hnswlibConfig(hnswlibIndex: string): { indexFile: string; M: number } {
+	return { indexFile: hnswlibIndex, M: 16 };
+}
+
+export function nmslibConfig(nmslibIndex: string): { indexFile: string; method: string } {
+	return { indexFile: nmslibIndex, method: "hnsw" };
+}
+
+export function sptagConfig(sptagIndex: string): { indexFile: string; algo: string } {
+	return { indexFile: sptagIndex, algo: "BKT" };
+}
+
+export function diskannConfig(diskannIndex: string): { indexFile: string; R: number } {
+	return { indexFile: diskannIndex, R: 64 };
+}
+
+export function qdrantgraphConfig(qdrantGraphIndex: string): { index: string; graphType: string } {
+	return { index: qdrantGraphIndex, graphType: "hnsw" };
+}
+
+export function valdConfig(valdHost: string): { host: string; port: number } {
+	return { host: valdHost, port: 8080 };
+}
+
+export function vsagConfig(vsagIndex: string): { indexFile: string; indexType: string } {
+	return { indexFile: vsagIndex, indexType: "hnsw" };
+}
+
+export function marqoConfig(marqoUrl: string): { url: string; index: string } {
+	return { url: marqoUrl, index: "" };
+}
+
+export function docarrayConfig(docarrayIndex: string): { index: string; metric: string } {
+	return { index: docarrayIndex, metric: "cosine" };
+}
+
+export function jinaaiConfig(jinaaiEndpoint: string): { endpoint: string; model: string } {
+	return { endpoint: jinaaiEndpoint, model: "jina-embeddings-v2" };
+}
+
+export function embedchainConfig(embedchainApp: string): { app: string; model: string } {
+	return { app: embedchainApp, model: "gpt-4" };
+}
+
+export function embeddingexperienceConfig(eeApp: string): { app: string; metric: string } {
+	return { app: eeApp, metric: "cosine" };
+}
+
+export function cohereembedConfig(cohereApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: cohereApiKey, model: "embed-english-v3" };
+}
+
+export function openaiembeddingsConfig(openaiApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: openai[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBuU0ZJZ0IvTzlIQ0x1Mkk2L2w2S2o1SDdmTUVNeXI5SUNxMG1UM3RoTWdzClMzdS8rdnlxQm1sKzZmRnR4RkRlczQrV1FvRThjN3NpWmxzTFJwNEU0OTAKLT4gJVpaWi1ncmVhc2UgfmhIJQpjVC9KYThyOUxYVkd0TkExeVpjcy9RCi0tLSBsaDUyVGRXODJpTU03QmNBalkrMU55Wmp0RDQyWS9weXlWekZRT1MyTGhnChYAEL9m5oBQUWw/Wh7ItvQSzF52MGB+C0aK21550Wh8au5obOG+xGOJtaoiyBf29ib9anTngNMS+FIBxu5zH+ZMr6OmiVvs] };
+}
+
+export function azureopenaiembeddingsConfig(azureOpenAiEndpoint: string): { endpoint: string; apiVersion: string } {
+	return { endpoint: azureOpenAiEndpoint, apiVersion: "2024-02-01" };
+}
+
+export function vertexaiembeddingsConfig(gcpProject: string): { project: string; model: string } {
+	return { project: gcpProject, model: "text-embedding-005" };
+}
+
+export function mistralaiConfig(mistralApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBiSEM3T0RmcFFrUFZKUG1tYUg4c1RTb0hGTEtFbWQrZXdDRy81dzVTZzIwCkgwcUV0aDhNblBJNnIva3FVOHozOXp1UnB3WDJlQk5yRjNEVndWQXhjVzAKLT4gW01TPF9pLWdyZWFzZSBhMXQ0ewpQdjQzWk9jWXlaRFg5MFlRL2NrTzdxVS96c3ZrTksrYWJIcWx4Q3ZWbkFXTzBYMzIKLS0tIGlmSVRjNHBIbmlQNGRCTmFjSTJTQ3dmR1FObC9DSkVsT3Y5Yk1kdkpybjQKtuwGjMHPSebLER2br1A/Wr8YsDDGepLkp/lFtEc+EQLaxw006FPCVM2y6umIv4VJ9hOHhmhCgyLNrHQYr7nTbrd4S8sv] };
+}
+
+export function groqConfig(groqApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: groq[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA1QmJXamJ0RGxJTlFveTYzV0x0a281SDZEQVlMVmF1TG9nSFFWS2wyY1RBCkNnQ2Y2TDFDUHZDeDhNWVJ0bmRLMjJMSjVXUGV2USszUSt5RFpGSFBLZ28KLT4gaG5BOCctZ3JlYXNlIHkzeXMxICpyKGBkIHcgXls7L0cKUEZVb0ZPa1hEdFpIa1FPbDlmaVVaQnBiWlpvL2FnNmF5WUpPY1lCbzZ0VE1mNDY1L2tMZmpiRkJHK2xBdFBwegorYUI0d2J4SkY2SWxPQUUKLS0tIEs4UXN1ajV4aWxjalQwcG1MY3hGQjlYSWVDS1hWbjkwVnpJMGZRWlBwbzAKy0mjtCRDs6DckK4x9JT5FSwWkaMBCLbXWFi/9jeg2Gm1/fN+ziCWGIVXooTtOCxR17b/ppRPiGMmdKJL1hAlZzDTlB8+Kkwx] };
+}
+
+export function perplexityConfig(perplexityApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: perplexityApiKey, model: "sonar" };
+}
+
+export function togetheraiConfig(togetherApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: together[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzVkZtNkNuOXpGdXVPZUdnUkRrV2lmdXVERUUvRDROYk5HZTBueTFkbVhnCktnU1JqRDk2eXA2OUp3eWZ6c2lHajZZNVFKTTh3WWlyUStlUk9UYXFsTWsKLT4geCJ4fT4rLWdyZWFzZSBrIlRbJ0EoCjNMVzJDUERJMkpWYjFKVzJVVWtLMjV0N0h4K0I4WDZwejhGOEFpUE9ocTJaKysrNUVJMlU0VXdid0FnV3FRCi0tLSBmRC96SDUwY3ZRbThqRG9rTU43Rkd4N0U5NFdSMXZvamw4bXlzMGE2UmZnCt843qHvKvG4G6eHLksP+K8/NLzs+k5hjru0BtdzxY8cLFASaAiRNK2RiNPJ9RAFyu0vj9OnbqzS+taGwTEUz3fv3y6Y11ArgK/ULytLs5U=] };
+}
+
+export function anyscaleConfig(anyScaleApiKey: string): { apiKey: string; baseUrl: string } {
+	return { apiKey: anyScaleApiKey, baseUrl: "" };
+}
+
+export function fireworksaiConfig(fireworksApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: fireworks[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJWUVwMEJQUkM1WTJ1ajBFOFltaU9CVlVERXZmb2lIeDg4cFA2OHBueUgwCk5Ja3Uvc2JML2Z3NDNwVTdHRGVuZG53cWJSclBNVi9aSUhKS1NsbTdLcTgKLT4gKDMuUVpBIy1ncmVhc2UgLTQgKlVyIDZGflFLOCUrIDwwZgovRTBlaE1QYnhwTlp2elZXNzVmdjhvaDduRC9scGhMaGJjUzNuYjN2WGQrZTFUYi9BVzFPVWZzZ2oxQjJiSitoCkt1TVo2b1l6bzBldTl1UQotLS0gUlB4cWlNVGUvbmFvM1ZZQ3BmUVloYnBVM1V0MndSd1h0SjhEeHVxM0tzdwq7+1v4qfUOOYKf6I6CM8Fk1uo93I0BvUTT/sE0NSISY5Pt42ApxtZzgtaYyE75yoRIVSXa4owJXOSSR5pHyOET8ILUfyHQrA==] };
+}
+
+export function deepinfraConfig(deepInfraApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: deepInfra[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjTFFiS0J3ME40RFZ1a3lmOURiMGJBWUYzb3R4eTU0WDN4amhpTVplKzM0Cm5SenZCY0dZTXJBOU0rdTdwWkN1VkEzTVRUTzJ6OEVGdk5mYU0vWWFReTgKLT4gdiIkTEUlS2ctZ3JlYXNlIE9uKlNJUilkCkU4T2ZnbzNmM0JRaXBsdTFmVlowUUorV2FiT3hhNlJLWXR3R1d5azJZcEM1Y1c5Qzg0d0diSGNCZklLVHZHUGYKeXYrd09pRmRVb2ExWHJtUkFBK1h6ZFh3Z2pYdmsrbXMySW8KLS0tIFRoYlMxWmUvZzVRRmViVXVhM2pCNmNjRWdZcEJpWG5HWUx4WlRReXpUeE0Kc3YiNYfPiaOWvq/XUylU8jIO6hJsTJy3QcIpkPIonfO4/SQocReRukwDzInEk6OgrO5Aa6DoJI1hnt3YNal+4m7Acw8Gwy+KyINuUFtxHQs=] };
+}
+
+export function replicateapiConfig(replicateApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: replicateApiKey, model: "" };
+}
+
+export function openrouterConfig(openRouterApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: openRouter[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqMGcxNVMwMGdvSGtwWVdLOGZRUnVSeVR1Ri9KK2NlU2tPQ1JvM3pHYVJrCmFaL3FYdytZOENuaTBCS2VIbCs3RWVTT1dveWVleTNtbWx4OFdiNytmNVkKLT4gYDQnajQ+d18tZ3JlYXNlIDVjQF0kOjQgXn5IQFUgeXpdazAgcwpuUTlpTS9RZ05DUVRMbGF1VUhvSwotLS0gaTlIM0g1T3d6T2NyOXVhbVN0cE9HdzlhczIwYkt2bXpIaEozaC9oNE1ZSQrZNI1p487QBDrl7BZp4caVfOqdpjm4mb2WXbDZeI0TeVxGV9fleN+1opM6LnwsukjzyOE4EE9Pc48OdqLiPg4Z/J7tGdHx5KSs6Az+] };
+}
+
+// LLM Inference Providers
+
+export function leptonaiConfig(leptonToken: string): { token: string; model: string } {
+	return { token: leptonToken, model: "" };
+}
+
+export function predibaseConfig(predibaseToken: string): { token: string; model: string } {
+	return { token: predibaseToken, model: "" };
+}
+
+export function basetenConfig(basetenToken: string): { token: string; modelId: string } {
+	return { token: basetenToken, modelId: "" };
+}
+
+export function modalendpointsConfig(modalEndpoint: string): { endpoint: string; model: string } {
+	return { endpoint: modalEndpoint, model: "" };
+}
+
+export function octoaiConfig(octoaiToken: string): { token: string; model: string } {
+	return { token: octoaiToken, model: "" };
+}
+
+export function hyperbolicConfig(hyperbolicToken: string): { token: string; model: string } {
+	return { token: hyperbolicToken, model: "" };
+}
+
+export function cerebrasConfig(cerebrasApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: cerebrasApiKey, model: "llama-3.3-70b" };
+}
+
+export function groqcloudConfig(groqCloudToken: string): { token: string; model: string } {
+	return { token: groqCloud[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzeWI1R2tsWkJudDIvQjJsMjlJdmpzMnhzZW55aFlEU2RTLzJ0YlNpL1U4Ckh5NnNTd1FMMkhYdTZtaEd2YnEycnNtSEhpL1FJY3RNYjU1Q1lza3BIcTgKLT4gVzo4bUotZ3JlYXNlIC4gJCFhMmtZcUIKekdLR0pLOFZ4enJhUTJnQ0ZTTTZhTW1FbG1Id3JHNVowQQotLS0geVRnT1RYYWN2N29HY3RKQkgxc3BKV2xGTWxlaUs0NVp1OXdsM3ArU09zUQqqN/0WK4I9pSrDaYTWvPryrxZWDN8RuU2BL9VHV2BKkF5sqziQDkkJM0oW3kTvB6cKeyQnOLQ4K/E3frtgAC9qy7M6QX8+gA==] };
+}
+
+export function coherecommandConfig(cohereToken: string): { token: string; model: string } {
+	return { token: cohereToken, model: "command-r-plus" };
+}
+
+export function ai21commandConfig(ai21Token: string): { token: string; model: string } {
+	return { token: ai21Token, model: "jamba-1-5-large" };
+}
+
+export function claudeapiConfig(claudeToken: string): { token: string; model: string } {
+	return { token: claude[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtMmo5dWsyeHZnaEtLc1RIOTQ4SzVzSjdMOHpvOUN4RXNmWlFxeHh6YkU0CmtBZ3BDcTB1RzNUaVlHTW05WDhINXVGOC94bTUzcGV0OUV1NDBWYm5hUzgKLT4gIkZHb2M0LWdyZWFzZQpFTGtzQWZPbWNzSi9FVkRhaFdLS1ovVFFSM2xCQ25vK3JUNkdzU3RKUm1ENS9WSlFYT1BHcDBWQWh2ZHBDY2dnCmhEbFhtdncKLS0tIGVzWjgrOVhxd2V2VytkNjdKN1l2dUx1eU1FN3VxOFlXcU5RVm5BS0dmSlUKUuzmm4WkG6HeOIzmoPBySf+rnrs9LfL2MDmwgkcGiiqDahMfk0q2KlVhk78O9fOe2QwIc8JvymxSI/5Gw7n9a3Qh2Fcu0ySSCms=] };
+}
+
+export function gpt4apiConfig(gpt4Token: string): { token: string; model: string } {
+	return { token: gpt4Token, model: "gpt-4o" };
+}
+
+export function geminiapiConfig(geminiToken: string): { token: string; model: string } {
+	return { token: geminiToken, model: "gemini-1.5-pro" };
+}
+
+export function llamaapiConfig(llamaToken: string): { token: string; model: string } {
+	return { token: llamaToken, model: "llama-3.1-405b" };
+}
+
+export function mistralapiConfig(mistralToken: string): { token: string; model: string } {
+	return { token: mistral[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3VFVWNDA1aWdpckFKWGprYUJmZzZ1c0liQXQyRmVRT1kxU081ZkFRNWswCkZjRlh1K1BkTi9Ic2lwZXRIK3dudHh6U004Mm4vK3hXQWI0ZytXUmxHNE0KLT4gPGFCey1ncmVhc2UKclkzcQotLS0gakN5K3JwQ3hQOUhWVFhrc2JPVE8ydU1RdjhjSTZranNXM0hvVWZ6NnMyOAoyvCYU464+bHo9HK8Dd/IlW666aRq1DWcxKZJ5zFMU8YFCu2Ljn0j6t/hUYXgpOuxt12l2MdRWrGhD67v25W8G4yA=] };
+}
+
+export function dbrxapiConfig(dbrxToken: string): { token: string; model: string } {
+	return { token: dbrx[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5S2FtTXNRRHh0K3VMZitldXBTcHRxcVhsbVJNY2pFVk5mZ1ZwbVhnOWtrCjJxZzZtbFZLL29EZGhLWElsc1NicTFHbzJkREJNMzRaV2ZEM1lleW1uVlkKLT4gUS1ncmVhc2UgInY+dyB4MVQ4USAnIDxpRndUcSIKdWlPbXA5K2wxUEZ0ZWhFZnhrU0U5RnVSdHlnSwotLS0gVWVtQVFwQ3VZQnV0RGNwdTRjN1dJMXRSNUFvL3Q4OFQzbjRGUlZVSXZMOAoxJaA8+jQBXpVJC744myLCMrV7u1nM8mP+AUWkJPfJQbCfxtOvl/VZFscRfDJGXdhaJOvJBuujiLFebY1Y51dHVpbncM3qKrs=] };
+}
+
+export function wizardlmapiConfig(wizardlmToken: string): { token: string; model: string } {
+	return { token: wizardlm[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhdktoeXhOdkViUXpyTGU2YTczdnhwbUtvVWRmT0dKSkgwNlFZV3REZldjCjJKUkt5Z2NDTFZ3SnZ0WkNrWG1VQUhUVTBSYlN0TVY5ZVl2L1dvbWk2QmsKLT4gKHNMLWdyZWFzZQpVLzNITWJ5ckJRTEliS3hiQmFWZ1Y5QncwdWJtcXJUOVYyM29GMk5lb1JKNlpxUmJZVHZGcENVdXdPYW1kYnpNCkczR3pmMVZGbWdrCi0tLSBiVStyMHp0Qk0zb0VjempYeXN6OUdKak8yNk9peWx4Z3ZreW9qcmg4SXBZCuSoCBa6LaCtEjb6Rop7rqFjgqZa46rFZIpxi+UaAT07nHKyttnMAQPGbZup1WXPzI0BZj771pO3VfJnFzVGnNJXBd2tBQ==] };
+}
+
+export function yiapiConfig(yiToken: string): { token: string; model: string } {
+	return { token: yiToken, model: "yi-large" };
+}
+
+export function qwenapiConfig(qwenToken: string): { token: string; model: string } {
+	return { token: qwenToken, model: "qwen-72b" };
+}
+
+export function deepseekapiConfig(deepseekToken: string): { token: string; model: string } {
+	return { token: deepseekToken, model: "deepseek-chat" };
+}
+
+export function commandrapiConfig(commandrToken: string): { token: string; model: string } {
+	return { token: commandrToken, model: "command-r-plus" };
+}
+
+export function claudeslackConfig(claudeSlackToken: string): { token: string; workspace: string } {
+	return { token: claudeSlackToken, workspace: "" };
+}
+
+export function claudeteamsConfig(claudeTeamsToken: string): { token: string; org: string } {
+	return { token: claudeTeamsToken, org: "" };
+}
+
+export function azureaistudioConfig(azureAiSubId: string): { subscriptionId: string; project: string } {
+	return { subscriptionId: azureAiSubId, project: "" };
+}
+
+export function awsbedrockConfig(awsRegion: string): { region: string; modelId: string } {
+	return { region: awsRegion, modelId: "anthropic.claude-3-5-sonnet-20241022-v1:0" };
+}
+
+export function googleaistudioConfig(gcpProject: string): { project: string; model: string } {
+	return { project: gcpProject, model: "gemini-1.5-pro" };
+}
+
+export function anthropiccookbookConfig(anthropicCbRepo: string): { repo: string; example: string } {
+	return { repo: anthropicCbRepo, example: "" };
+}
+
+export function openaicookbookConfig(openaiCbRepo: string): { repo: string; example: string } {
+	return { repo: openaiCbRepo, example: "" };
+}
+
+export function langchaincookbookConfig(langchainCbRepo: string): { repo: string; example: string } {
+	return { repo: langchainCbRepo, example: "" };
+}
+
+export function llamaindexcookbookConfig(liCbRepo: string): { repo: string; example: string } {
+	return { repo: liCbRepo, example: "" };
+}
+
+export function promptengineConfig(promptTemplate: string): { template: string; variables: string[] } {
+	return { template: promptTemplate, variables: [] };
+}
+
+export function guidanceConfig(guidanceProgram: string): { program: string; llm: string } {
+	return { program: guidanceProgram, llm: "" };
+}
+
+export function instructorsdkConfig(instructorModel: string): { model: string; responseModel: string } {
+	return { model: instructorModel, responseModel: "" };
+}
+
+export function outlinesConfig(outlinesProgram: string): { program: string; schema: string } {
+	return { program: outlinesProgram, schema: "" };
+}
+
+export function textgenerationConfig(tgEndpoint: string): { endpoint: string; model: string } {
+	return { endpoint: tgEndpoint, model: "" };
+}
+
+export function lmqlConfig(lmqlProgram: string): { program: string; model: string } {
+	return { program: lmqlProgram, model: "" };
+}
+
+export function sglangConfig(sglangServer: string): { server: string; model: string } {
+	return { server: sglangServer, model: "" };
+}
+
+export function vllmConfig(vllmServer: string): { server: string; model: string } {
+	return { server: vllmServer, model: "" };
+}
+
+export function tgiConfig(tgiServer: string): { server: string; model: string } {
+	return { server: tgiServer, model: "" };
+}
+
+export function textgeninfConfig(textgenServer: string): { server: string; model: string } {
+	return { server: textgenServer, model: "" };
+}
+
+export function rayservel lmConfig(rayServeApp: string): { app: string; model: string } {
+	return { app: rayServeApp, model: "" };
+}
+
+export function smollmConfig(smolModel: string): { model: string; device: string } {
+	return { model: smolModel, device: "cpu" };
+}
+
+export function llamacppConfig(llamaCppModel: string): { model: string; nCtx: number } {
+	return { model: llamaCppModel, nCtx: 4096 };
+}
+
+export function llamafileConfig(llamafileBin: string): { bin: string; model: string } {
+	return { bin: llamafileBin, model: "" };
+}
+
+export function ollamaConfig(ollamaHost: string): { host: string; model: string } {
+	return { host: ollamaHost, model: "llama3.1" };
+}
+
+export function localaiConfig(localaiHost: string): { host: string; model: string } {
+	return { host: localaiHost, model: "" };
+}
+
+export function textembedding3Config(te3Model: string): { model: string; dimensions: number } {
+	return { model: te3Model, dimensions: 1536 };
+}
+
+export function ada002Config(ada002Model: string): { model: string; apiKey: string } {
+	return { model: ada002Model, apiKey: "" };
+}
+
+export function embeddingsapiConfig(embeddingsModel: string): { model: string; batchSize: number } {
+	return { model: embeddingsModel, batchSize: 100 };
+}
+
+export function bgeembeddingsConfig(bgeModel: string): { model: string; device: string } {
+	return { model: bgeModel, device: "cpu" };
+}
+
+export function e5embeddingsConfig(e5Model: string): { model: string; queryPrefix: string } {
+	return { model: e5Model, queryPrefix: "query: " };
+}
+
+export function instructorembeddingsConfig(instructorModel: string): { model: string; instruction: string } {
+	return { model: instructorModel, instruction: "" };
+}
+
+export function flagembeddingConfig(flagModel: string): { model: string; batchSize: number } {
+	return { model: flagModel, batchSize: 32 };
+}
+
+export function nvembedConfig(nvEmbedModel: string): { model: string; encodeType: string } {
+	return { model: nvEmbedModel, encodeType: "passage" };
+}
+
+// Speech Recognition & TTS
+
+export function whisperConfig(whisperModel: string): { model: string; language: string } {
+	return { model: whisperModel, language: "en" };
+}
+
+export function whispercppConfig(whisperCppModel: string): { model: string; nThreads: number } {
+	return { model: whisperCppModel, nThreads: 4 };
+}
+
+export function fasterwhisperConfig(fasterWhisperModel: string): { model: string; computeType: string } {
+	return { model: fasterWhisperModel, computeType: "float16" };
+}
+
+export function parlerttsConfig(parlerTtsModel: string): { model: string; duration: number } {
+	return { model: parlerTtsModel, duration: 10.0 };
+}
+
+export function barkConfig(barkModel: string): { model: string; text: string } {
+	return { model: barkModel, text: "" };
+}
+
+export function tortoisettsConfig(tortoiseModel: string): { model: string; voices: string[] } {
+	return { model: tortoiseModel, voices: [] };
+}
+
+export function coquittsConfig(coquitModel: string): { model: string; vocoder: string } {
+	return { model: coquitModel, vocoder: " GriffinLim" };
+}
+
+export function mozillattsConfig(mozTtsModel: string): { model: string; voice: string } {
+	return { model: mozTtsModel, voice: "" };
+}
+
+export function espeakConfig(espeakText: string): { text: string; voice: string } {
+	return { text: espeakText, voice: "en" };
+}
+
+export function festivalConfig(festivalText: string): { text: string; voice: string } {
+	return { text: festivalText, voice: "kal" };
+}
+
+export function fliteConfig(fliteText: string): { text: string; voice: string } {
+	return { text: fliteText, voice: "cmu_us_kal" };
+}
+
+export function maryttsConfig(maryttsUrl: string): { url: string; locale: string } {
+	return { url: maryttsUrl, locale: "en-US" };
+}
+
+export function samConfig(samText: string): { text: string; voice: string } {
+	return { text: samText, voice: "sam" };
+}
+
+export function gttsConfig(gttsText: string): { text: string; lang: string } {
+	return { text: gttsText, lang: "en" };
+}
+
+export function pyttsx3Config(pyttsx3Text: string): { text: string; voice: string } {
+	return { text: pyttsx3Text, voice: "" };
+}
+
+export function edgettsConfig(edgeTtsText: string): { text: string; voice: string } {
+	return { text: edgeTtsText, voice: "en-US-AriaNeural" };
+}
+
+export function azurettsConfig(azureTtsKey: string): { key: string; region: string } {
+	return { key: azureTtsKey, region: "eastus" };
+}
+
+export function gcpttsConfig(gcpProject: string): { project: string; voice: string } {
+	return { project: gcpProject, voice: "en-US" };
+}
+
+export function amazonpollyConfig(awsRegion: string): { region: string; voiceId: string } {
+	return { region: awsRegion, voiceId: "Joanna" };
+}
+
+export function ibmwatsonttsConfig(watsonTtsUrl: string): { url: string; voice: string } {
+	return { url: watsonTtsUrl, voice: "en-US_AllisonV3Voice" };
+}
+
+export function elevenlabsConfig(elevenlabsApiKey: string): { apiKey: string; voiceId: string } {
+	return { apiKey: elevenlabs[DRACON_SECRET:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBETmxOeWpCSUk1NEhWSmFpSWhYUjZ0NVJTYWo0bHFMKzBDTTNOajJ2Mm00CmRLZmVZOGhJZlBpNktEU0FzMld6czRnRjFkN0p1ZXloc1J4NTlSQjBZK0kKLT4gKnEtZ3JlYXNlIF9MbDJlbmJ4IEhIdiBaIUInXjI6IDNzKDROCnVrckZaUG5UcjlMM3ZJU1h1ekcxNGg1U0JyTStMU1NzajNvNjJLczhacGJqOVFpZ3l5R096RXJWWHhRTDloMUUKVHRvcWVsTUd0ZndLNDBLTCs1TjF5QVAxL2x5Nlh3Ci0tLSBScmpjTlpxV25Gc2RuRmZ1LzlRWFJ5ZzNJSTJWRzQ2bERLakJHN2FQRGs4CkQbUyFstNvuI3WKW0YTU9SxgGj5ZUGn4ygyyPTY3mC2qluaC0FJYE/S5ZnRU+81gv4h9SymSYjAfnZ8HfWbACk4XHH5/Ivh] };
+}
+
+export function openaittsConfig(openaiApiKey: string): { apiKey: string; voice: string } {
+	return { apiKey: openaiApiKey, voice: "alloy" };
+}
+
+export function cartesiaConfig(cartesiaApiKey: string): { apiKey: string; voiceId: string } {
+	return { apiKey: cartesiaApiKey, voiceId: "" };
+}
+
+export function playhtConfig(playhtUserId: string): { userId: string; voiceId: string } {
+	return { userId: playhtUserId, voiceId: "" };
+}
+
+export function murfaiConfig(murfApiKey: string): { apiKey: string; voiceId: string } {
+	return { apiKey: murfApiKey, voiceId: "" };
+}
+
+export function wellsaidConfig(wellsaidApiKey: string): { apiKey: string; voiceId: string } {
+	return { apiKey: wellsaidApiKey, voiceId: "" };
+}
+
+export function speechifyConfig(speechifyApiKey: string): { apiKey: string; voiceId: string } {
+	return { apiKey: speechifyApiKey, voiceId: "" };
+}
+
+export function descriptConfig(descriptApiKey: string): { apiKey: string; project: string } {
+	return { apiKey: descriptApiKey, project: "" };
+}
+
+export function resembleaiConfig(resembleApiKey: string): { apiKey: string; voiceUuid: string } {
+	return { apiKey: resembleApiKey, voiceUuid: "" };
+}
+
+export function uniquevoiceConfig(uvApiKey: string): { apiKey: string; voiceId: string } {
+	return { apiKey: uvApiKey, voiceId: "" };
+}
+
+export function fakeyouConfig(fakeyouToken: string): { token: string; voiceModel: string } {
+	return { token: fakeyouToken, voiceModel: "" };
+}
+
+export function vorleserConfig(vorleserUrl: string): { url: string; voice: string } {
+	return { url: vorleserUrl, voice: "" };
+}
+
+export function azurespeechConfig(azureSpeechKey: string): { key: string; region: string } {
+	return { key: azureSpeechKey, region: "eastus" };
+}
+
+export function gcpspeechConfig(gcpSpeechUrl: string): { url: string; encoding: string } {
+	return { url: gcpspeechUrl, encoding: "LINEAR16" };
+}
+
+export function amazontranscribeConfig(awsTranscribe: string): { region: string; languageCode: string } {
+	return { region: awsTranscribe, languageCode: "en-US" };
+}
+
+export function assemblyaiConfig(assemblyaiKey: string): { apiKey: string; audioUrl: string } {
+	return { apiKey: assemblyaiKey, audioUrl: "" };
+}
+
+export function revaiConfig(revaiKey: string): { accessToken: string; mediaUrl: string } {
+	return { accessToken: revaiKey, mediaUrl: "" };
+}
+
+export function speechmaticsConfig(speechmaticsToken: string): { token: string; language: string } {
+	return { token: speechmaticsToken, language: "en-US" };
+}
+
+export function deepgramConfig(deepgramApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: deepgramApiKey, model: "nova-2" };
+}
+
+export function assemblyaispeechConfig(assemblyaiSpKey: string): { apiKey: string; language: string } {
+	return { apiKey: assemblyaiSpKey, language: "en" };
+}
+
+export function otteraiConfig(otteraiToken: string): { token: string; meetingId: string } {
+	return { token: otteraiToken, meetingId: "" };
+}
+
+export function firefliesConfig(firefliesToken: string): { token: string; meetingId: string } {
+	return { token: firefliesToken, meetingId: "" };
+}
+
+export function trintConfig(trintApiKey: string): { apiKey: string; audioUrl: string } {
+	return { apiKey: trintApiKey, audioUrl: "" };
+}
+
+export function sonixConfig(sonixApiKey: string): { apiKey: string; audioUrl: string } {
+	return { apiKey: sonixApiKey, audioUrl: "" };
+}
+
+export function happyscribeConfig(happyscribeToken: string): { token: string; fileUrl: string } {
+	return { token: happyscribeToken, fileUrl: "" };
+}
+
+export function nottaConfig(nottaApiKey: string): { apiKey: string; fileUrl: string } {
+	return { apiKey: nottaApiKey, fileUrl: "" };
+}
+
+export function turboscribeConfig(turboscribeToken: string): { token: string; fileUrl: string } {
+	return { token: turboscribeToken, fileUrl: "" };
+}
+
+export function whisperjaxConfig(whisperJaxUrl: string): { url: string; model: string } {
+	return { url: whisperJaxUrl, model: "large-v2" };
+}
+
+export function whisperapiConfig(whisperApiUrl: string): { url: string; apiKey: string } {
+	return { url: whisperApiUrl, apiKey: "" };
+}
+
+export function modalwhisperConfig(modalWhisperFn: string): { fn: string; model: string } {
+	return { fn: modalWhisperFn, model: "base" };
+}
+
+export function replicatewhisperConfig(replicateWhisperModel: string): { model: string; version: string } {
+	return { model: replicateWhisperModel, version: "" };
+}
+
+// Image Generation & AI Art
+
+export function dalleConfig(dallePrompt: string): { prompt: string; size: string } {
+	return { prompt: dallePrompt, size: "1024x1024" };
+}
+
+export function dalle2Config(dalle2Prompt: string): { prompt: string; n: number } {
+	return { prompt: dalle2Prompt, n: 1 };
+}
+
+export function dalle3Config(dalle3Prompt: string): { prompt: string; quality: string } {
+	return { prompt: dalle3Prompt, quality: "standard" };
+}
+
+export function midjourneyConfig(mjPrompt: string): { prompt: string; version: string } {
+	return { prompt: mjPrompt, version: "v6" };
+}
+
+export function stablediffusionConfig(sdPrompt: string): { prompt: string; model: string } {
+	return { prompt: sdPrompt, model: "stable-diffusion-xl-base-1.0" };
+}
+
+export function sdxlConfig(sdxlPrompt: string): { prompt: string; steps: number } {
+	return { prompt: sdxlPrompt, steps: 30 };
+}
+
+export function sdwebuiConfig(sdwebuiUrl: string): { url: string; model: string } {
+	return { url: sdwebuiUrl, model: "sd_xl_base_1.0" };
+}
+
+export function comfyuiConfig(comfyuiUrl: string): { url: string; workflow: string } {
+	return { url: comfyuiUrl, workflow: "" };
+}
+
+export function fooocusConfig(fooocusPrompt: string): { prompt: string; style: string } {
+	return { prompt: fooocusPrompt, style: "cinematic" };
+}
+
+export function invokeaiConfig(invokeaiUrl: string): { url: string; model: string } {
+	return { url: invokeaiUrl, model: "" };
+}
+
+export function diffusionbeeConfig(diffusionbeeApp: string): { app: string; model: string } {
+	return { app: diffusionbeeApp, model: "" };
+}
+
+export function clipdropConfig(clipdropApiKey: string): { apiKey: string; tool: string } {
+	return { apiKey: clipdropApiKey, tool: "remove-background" };
+}
+
+export function removebgConfig(removebgApiKey: string): { apiKey: string; size: string } {
+	return { apiKey: removebgApiKey, size: "regular" };
+}
+
+export function cleanuppicturesConfig(cleanupUrl: string): { url: string; mask: string } {
+	return { url: cleanupUrl, mask: "" };
+}
+
+export function magiceraserConfig(magicEraserUrl: string): { url: string; mask: string } {
+	return { url: magicEraserUrl, mask: "" };
+}
+
+export function adobefireflyConfig(adobeFireflyToken: string): { token: string; style: string } {
+	return { token: adobeFireflyToken, style: "" };
+}
+
+export function adobesenseiConfig(adobeSenseiUrl: string): { url: string; model: string } {
+	return { url: adobeSenseiUrl, model: "" };
+}
+
+export function canvaConfig(canvaApiKey: string): { apiKey: string; designType: string } {
+	return { apiKey: canvaApiKey, designType: "presentation" };
+}
+
+export function runwaymlConfig(runwaymlToken: string): { token: string; model: string } {
+	return { token: runwaymlToken, model: "gen-2" };
+}
+
+export function leonardoaiConfig(leonardoApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: leonardoApiKey, model: "stable-diffusion-xl" };
+}
+
+export function playgroundaiConfig(playgroundApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: playgroundApiKey, model: "playground-v2" };
+}
+
+export function ideogramConfig(ideogramApiKey: string): { apiKey: string; style: string } {
+	return { apiKey: ideogramApiKey, style: "REALISTIC" };
+}
+
+export function fluxConfig(fluxPrompt: string): { prompt: string; model: string } {
+	return { prompt: fluxPrompt, model: "flux-schnell" };
+}
+
+export function fluxdevConfig(fluxDevPrompt: string): { prompt: string; steps: number } {
+	return { prompt: fluxDevPrompt, steps: 50 };
+}
+
+export function fluxschnellConfig(fluxSchnellPrompt: string): { prompt: string; steps: number } {
+	return { prompt: fluxSchnellPrompt, steps: 4 };
+}
+
+export function imagenConfig(imagenPrompt: string): { prompt: string; model: string } {
+	return { prompt: imagenPrompt, model: "imagen-2" };
+}
+
+export function imagen2Config(imagen2Prompt: string): { prompt: string; style: string } {
+	return { prompt: imagen2Prompt, style: "natural" };
+}
+
+export function imagen3Config(imagen3Prompt: string): { prompt: string; aspectRatio: string } {
+	return { prompt: imagen3Prompt, aspectRatio: "1:1" };
+}
+
+export function veoConfig(veoPrompt: string): { prompt: string; duration: number } {
+	return { prompt: veoPrompt, duration: 8 };
+}
+
+export function veo2Config(veo2Prompt: string): { prompt: string; fps: number } {
+	return { prompt: veo2Prompt, fps: 24 };
+}
+
+export function soraConfig(soraPrompt: string): { prompt: string; duration: number } {
+	return { prompt: soraPrompt, duration: 60 };
+}
+
+export function lumiereConfig(lumierePrompt: string): { prompt: string; duration: number } {
+	return { prompt: lumierePrompt, duration: 5 };
+}
+
+export function gen2Config(gen2Prompt: string): { prompt: string; model: string } {
+	return { prompt: gen2Prompt, model: "gen-2" };
+}
+
+export function gen3Config(gen3Prompt: string): { prompt: string; model: string } {
+	return { prompt: gen3Prompt, model: "gen-3" };
+}
+
+export function klingConfig(klingPrompt: string): { prompt: string; duration: number } {
+	return { prompt: klingPrompt, duration: 5 };
+}
+
+export function klingaiConfig(klingaiApiKey: string): { apiKey: string; model: string } {
+	return { apiKey: klingaiApiKey, model: "kling-v1" };
+}
+
+export function viduConfig(viduPrompt: string): { prompt: string; duration: number } {
+	return { prompt: viduPrompt, duration: 4 };
+}
+
+export function zeroscopeConfig(zeroscopeModel: string): { model: string; duration: number } {
+	return { model: zeroscopeModel, duration: 6 };
+}
+
+export function modelscopeConfig(modelscopeModel: string): { model: string; task: string } {
+	return { model: modelscopeModel, task: "text-to-video" };
+}
+
+export function i2vg enxlConfig(i2vModel: string): { model: string; guidanceScale: number } {
+	return { model: i2vModel, guidanceScale: 7.5 };
+}
+
+export function sadtalkerConfig(sadtalkerModel: string): { model: string; size: string } {
+	return { model: sadtalkerModel, size: "512" };
+}
+
+export function wav2lipConfig(wav2lipModel: string): { model: string; face: string } {
+	return { model: wav2lipModel, face: "" };
+}
+
+export function sadtalkervideoConfig(sadtalkerVideo: string): { video: string; audio: string } {
+	return { video: sadtalkerVideo, audio: "" };
+}
+
+export function animatediffConfig(animatediffModel: string): { model: string; duration: number } {
+	return { model: animatediffModel, duration: 2 };
+}
+
+export function loraConfig(loraModel: string): { model: string; rank: number } {
+	return { model: loraModel, rank: 4 };
+}
+
+export function controlnetConfig(controlnetModel: string): { model: string; preprocessor: string } {
+	return { model: controlnetModel, preprocessor: "canny" };
+}
+
+export function ipadapterConfig(ipadapterModel: string): { model: string; weight: number } {
+	return { model: ipadapterModel, weight: 1.0 };
+}
+
+export function loraimageConfig(loraImgModel: string): { model: string; scale: number } {
+	return { model: loraImgModel, scale: 1.0 };
+}
+
+export function textualinversionConfig(tiConcept: string): { concept: string; model: string } {
+	return { concept: tiConcept, model: "" };
+}
+
+export function dreamboothConfig(dreamboothModel: string): { model: string; subject: string } {
+	return { model: dreamboothModel, subject: "" };
+}
+
+export function instructpix2pixConfig(ip2pPrompt: string): { prompt: string; strength: number } {
+	return { prompt: ip2pPrompt, strength: 0.5 };
+}
+
+export function instructdiffusionConfig(idPrompt: string): { prompt: string; model: string } {
+	return { prompt: idPrompt, model: "" };
+}
+
+// ControlNet Variants
+
+export function auto1111Config(auto1111Url: string): { url: string; model: string } {
+	return { url: auto1111Url, model: "" };
+}
+
+export function controlnetsharifConfig(cnSharifModel: string): { model: string; preprocessor: string } {
+	return { model: cnSharifModel, preprocessor: "" };
+}
+
+export function controlnet11Config(cn11Model: string): { model: string; preprocessor: string } {
+	return { model: cn11Model, preprocessor: "" };
+}
+
+export function t2 iadapterConfig(t2iAdapterModel: string): { model: string; adapterType: string } {
+	return { model: t2iAdapterModel, adapterType: "" };
+}
+
+export function controlnetmodelsConfig(cnModel: string): { model: string; weight: number } {
+	return { model: cnModel, weight: 1.0 };
+}
+
+export function controlliteConfig(controlliteModel: string): { model: string; lite: boolean } {
+	return { model: controlliteModel, lite: true };
+}
+
+export function motecontrolConfig(moteModel: string): { model: string; controlType: string } {
+	return { model: moteModel, controlType: "pose" };
+}
+
+export function controlllmConfig(controlllmModel: string): { model: string; llmModel: string } {
+	return { model: controlllmModel, llmModel: "" };
+}
+
+export function t2iadaptersConfig(t2iAdaptersModel: string): { model: string; adapterType: string } {
+	return { model: t2iAdaptersModel, adapterType: "" };
+}
+
+export function controlnetzooConfig(cnZooModel: string): { model: string; preprocessor: string } {
+	return { model: cnZooModel, preprocessor: "" };
+}
+
+export function unicron trolnetConfig(uniModel: string): { model: string; mode: string } {
+	return { model: uniModel, mode: "unified" };
+}
+
+export function controlnetliteConfig(cnLiteModel: string): { model: string; lite: boolean } {
+	return { model: cnLiteModel, lite: true };
+}
+
+export function controlnetproConfig(cnProModel: string): { model: string; version: string } {
+	return { model: cnProModel, version: "v1.1" };
+}
+
+export function controlnetxlConfig(cnXlModel: string): { model: string; version: string } {
+	return { model: cnXlModel, version: "xl-1.0" };
+}
+
+export function sdxlcontrolnetConfig(sdxlCnModel: string): { model: string; preprocessor: string } {
+	return { model: sdxlCnModel, preprocessor: "" };
+}
+
+export function controlnetsegConfig(cnSegModel: string): { model: string; preprocessor: string } {
+	return { model: cnSegModel, preprocessor: "semantic_segmentation" };
+}
+
+export function controlnetnormalConfig(cnNormalModel: string): { model: string; preprocessor: string } {
+	return { model: cnNormalModel, preprocessor: "normal_bae" };
+}
+
+export function controlnetdepthConfig(cnDepthModel: string): { model: string; preprocessor: string } {
+	return { model: cnDepthModel, preprocessor: "depth_midas" };
+}
+
+export function controlnetcannyConfig(cnCannyModel: string): { model: string; preprocessor: string } {
+	return { model: cnCannyModel, preprocessor: "canny" };
+}
+
+export function controlnethedConfig(cnHedModel: string): { model: string; preprocessor: string } {
+	return { model: cnHedModel, preprocessor: "hed" };
+}
+
+export function controlnetscribbleConfig(cnScribbleModel: string): { model: string; preprocessor: string } {
+	return { model: cnScribbleModel, preprocessor: "scribble" };
+}
+
+export function controlnetopenposeConfig(cnOpenposeModel: string): { model: string; preprocessor: string } {
+	return { model: cnOpenposeModel, preprocessor: "openpose_full" };
+}
+
+export function controlnetmlsdConfig(cnMlsdModel: string): { model: string; preprocessor: string } {
+	return { model: cnMlsdModel, preprocessor: "mlsd" };
+}
+
+export function controlnetnormalmapConfig(cnNormalMapModel: string): { model: string; preprocessor: string } {
+	return { model: cnNormalMapModel, preprocessor: "normal_map" };
+}
+
+export function controlnettileConfig(cnTileModel: string): { model: string; preprocessor: string } {
+	return { model: cnTileModel, preprocessor: "tile" };
+}
+
+export function controlnetinpaintConfig(cnInpaintModel: string): { model: string; preprocessor: string } {
+	return { model: cnInpaintModel, preprocessor: "inpaint" };
+}
+
+export function controlnetip2pConfig(cnIp2pModel: string): { model: string; preprocessor: string } {
+	return { model: cnIp2pModel, preprocessor: "ip2p" };
+}
+
+export function controlnetshuffleConfig(cnShuffleModel: string): { model: string; preprocessor: string } {
+	return { model: cnShuffleModel, preprocessor: "shuffle" };
+}
+
+export function controlnetreferenceConfig(cnRefModel: string): { model: string; preprocessor: string } {
+	return { model: cnRefModel, preprocessor: "reference" };
+}
+
+export function controlnetrecolorConfig(cnRecolorModel: string): { model: string; preprocessor: string } {
+	return { model: cnRecolorModel, preprocessor: "recolor" };
+}
+
+export function controlnetanimeConfig(cnAnimeModel: string): { model: string; preprocessor: string } {
+	return { model: cnAnimeModel, preprocessor: "anime" };
+}
+
+export function controlnetlineartConfig(cnLineartModel: string): { model: string; preprocessor: string } {
+	return { model: cnLineartModel, preprocessor: "lineart" };
+}
+
+export function controlnetsoftedgeConfig(cnSoftedgeModel: string): { model: string; preprocessor: string } {
+	return { model: cnSoftedgeModel, preprocessor: "softedge" };
+}
+
+export function controlnetalanimeConfig(cnAnimeLineart: string): { model: string; preprocessor: string } {
+	return { model: cnAnimeLineart, preprocessor: "anime_lineart" };
+}
+
+export function controlnetlanimeConfig(cnLAnimeModel: string): { model: string; preprocessor: string } {
+	return { model: cnLAnimeModel, preprocessor: "lineart_anime" };
+}
+
+export function controlnetqrcodeConfig(cnQrCodeModel: string): { model: string; preprocessor: string } {
+	return { model: cnQrCodeModel, preprocessor: "qrcode" };
+}
+
+export function controlnetqrConfig(cnQrModel: string): { model: string; strength: number } {
+	return { model: cnQrModel, strength: 1.0 };
+}
+
+export function controlnetbeautyConfig(cnBeautyModel: string): { model: string; preprocessor: string } {
+	return { model: cnBeautyModel, preprocessor: "beauty" };
+}
+
+export function controlnetphotorealConfig(cnPhotorealModel: string): { model: string; preprocessor: string } {
+	return { model: cnPhotorealModel, preprocessor: "photoreal" };
+}
+
+export function controlnetillustriousConfig(cnIllusModel: string): { model: string; preprocessor: string } {
+	return { model: cnIllusModel, preprocessor: "illustrious" };
+}
+
+export function controlnetponyConfig(cnPonyModel: string): { model: string; preprocessor: string } {
+	return { model: cnPonyModel, preprocessor: "pony" };
+}
+
+export function controlnetfluxConfig(cnFluxModel: string): { model: string; preprocessor: string } {
+	return { model: cnFluxModel, preprocessor: "" };
+}
+
+export function controlnetdwopenposeConfig(cnDwOpenposeModel: string): { model: string; preprocessor: string } {
+	return { model: cnDwOpenposeModel, preprocessor: "dw_openpose_full" };
+}
+
+export function controlnetdwposeConfig(cnDwPoseModel: string): { model: string; preprocessor: string } {
+	return { model: cnDwPoseModel, preprocessor: "dw_pose" };
+}
+
+export function controlnetipadapterplusConfig(cnIpAdapterPlusModel: string): { model: string; weight: number } {
+	return { model: cnIpAdapterPlusModel, weight: 1.0 };
+}
+
+export function controlnetinstantidConfig(cnInstantIdModel: string): { model: string; preprocessor: string } {
+	return { model: cnInstantIdModel, preprocessor: "instant_id" };
+}
+
+export function controlnetfaceidConfig(cnFaceIdModel: string): { model: string; preprocessor: string } {
+	return { model: cnFaceIdModel, preprocessor: "face_id" };
+}
+
+export function controlnetfaceidplusConfig(cnFaceIdPlusModel: string): { model: string; preprocessor: string } {
+	return { model: cnFaceIdPlusModel, preprocessor: "face_id_plus" };
+}
+
+export function controlnetfaceidv2Config(cnFaceIdv2Model: string): { model: string; preprocessor: string } {
+	return { model: cnFaceIdv2Model, preprocessor: "faceid_v2" };
+}
+
+export function controlnetpulidConfig(cnPulidModel: string): { model: string; preprocessor: string } {
+	return { model: cnPulidModel, preprocessor: "pulid" };
+}
+
+export function controlnethypersdConfig(cnHyperSdModel: string): { model: string; preprocessor: string } {
+	return { model: cnHyperSdModel, preprocessor: "hypersd" };
+}
+
+export function controlnethyperConfig(cnHyperModel: string): { model: string; preprocessor: string } {
+	return { model: cnHyperModel, preprocessor: "" };
+}
+
+export function controlnetloraConfig(cnLoraModel: string): { model: string; weight: number } {
+	return { model: cnLoraModel, weight: 1.0 };
 }
 
 // Subset Sum
